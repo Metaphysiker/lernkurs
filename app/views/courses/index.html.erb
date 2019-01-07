@@ -1,25 +1,38 @@
-<p id="notice"><%= notice %></p>
+<main role="main">
 
-<h1>Courses</h1>
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Kurs-Überblick</h1>
+          <p class="lead text-muted">
+            10 Kurse im Angebot
+          </p>
+        </div>
+      </section>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <% @courses.in_groups_of(3, false).each do |groups| %>
+              <div class="card-deck">
+                  <% groups.each do |course| %>
+                  <div class="card mb-4">
+                    <% if false %>
+                        <%= image_tag course.avatar, class: "card-img-top" %>
+                        <% else %>
+                        <img class="card-img-top" src="https://loremflickr.com/320/240/science?random=<%=course.id%>" alt="Card image cap">
+                    <% end %>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= course.title %></h5>
+                      <p class="card-text"><%= course.description %></p>
 
-  <tbody>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                    </div>
+                    <div class="card-footer">
+                      <%= link_to 'Mit Kurs anfangen', course_path(course), class: "btn btn-success text-white" %>
+                    </div>
+                  </div>
+                  <% end %>
+              </div>
+          <% end %>
+        </div>
+      </div>
 
-<br>
-
-<%= link_to 'New Course', new_course_path %>
+    </main>

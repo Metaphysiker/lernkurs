@@ -45,13 +45,14 @@
 
       //get new buttons
       $.ajax({
-        url: "/render_navigation_buttons",
-        method: 'POST',
-        data: { id: "<%= course.id %>", current_slide: current_slide },
+        url: "/navigation_buttons/" + course_id + "/" + current_slide + ".js",
+        method: 'GET',
         headers: {
           'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
           }
-        });
+        }).done(function(response) {
+        $(".navigation-buttons").empty().append(response);
+      });
     });
 
   });

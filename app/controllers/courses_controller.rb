@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.all.order(:order)
   end
 
   # GET /courses/1
@@ -68,13 +68,13 @@ class CoursesController < ApplicationController
     render partial: "slides/courses/#{@course.topic}/#{@course.title.parameterize}/#{@course.slides[@current_slide]}"
   end
 
-  def render_navigation_buttons
+  def navigation_buttons
     @course = Course.find(params[:id])
     @current_slide = params[:current_slide].to_i
+  end
 
-    respond_to do |format|
-      format.js
-    end
+  def hulu
+    @hulu = "hulu"
   end
 
   private
