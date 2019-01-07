@@ -1,21 +1,16 @@
-<div class="container">
-    <h1 class="text-center"><%= course.title %></h1>
-    <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <div class="slide">
+<div class="container p-4">
+      <div class="slide text-justify">
         <%= render "slides/courses/#{course.topic}/#{course.title.parameterize}/#{course.slides[@current_slide]}" %>
       </div>
       <hr>
       <div class="navigation-buttons">
         <%= render "/courses/navigation_buttons", current_slide: @current_slide, course: course %>
       </div>
-    </div>
-  </div>
 </div>
 
 <script>
   $(document).on('ready turbolinks:load', function() {
+    console.log("ready!");
     $("body").on("click", ".get-slide-button", function() {
 
       $(".slide").empty().append(
@@ -54,6 +49,5 @@
         $(".navigation-buttons").empty().append(response);
       });
     });
-
   });
 </script>
