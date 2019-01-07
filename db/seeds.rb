@@ -8,7 +8,8 @@
 
  Course.create(
   title: "Einführung in die Ethik",
-  description: "Dieser Kurs führt dich in die Ethik ein. Darin lernst du die wichtigsten Theorien, Argumente und Begriffe der Ethik kennen.",
+  #description: "Dieser Kurs führt dich in die Ethik ein. Darin lernst du die wichtigsten Theorien, Argumente und Begriffe der Ethik kennen.",
+  description: "In diesem Kurs lernst du die wichtigsten Theorien, Begriffe und Argumente kennen."
   topic: "ethics",
   order: 1,
 )
