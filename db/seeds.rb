@@ -12,7 +12,11 @@
   description: "In diesem Kurs lernst du die wichtigsten Theorien, Begriffe und Argumente kennen.",
   topic: "ethics",
   order: 1,
-  slides: ['intro.html.erb', 'theories.html.erb']
+  slides: [
+    'introduction.html.erb',
+    'ethicaltheories.html.erb',
+    'sources.html.erb',
+   ]
 )
 
 Course.create(
