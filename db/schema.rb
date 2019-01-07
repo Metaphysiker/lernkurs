@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_01_07_064807) do
     t.text "description", default: ""
     t.string "topic", default: ""
     t.integer "order"
+    t.text "slides", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

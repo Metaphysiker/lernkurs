@@ -1,0 +1,12 @@
+<div class="text-center">
+  <button type="button" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide - 1 %>">Zurück</button>
+  <%= current_slide + 1 %> / <%= course.slides.count %>
+  <button type="button" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+</div>
+
+<script>
+  $(document).on('ready turbolinks:load', function() {
+    console.log("Buttons delivered!");
+  });
+
+</script>

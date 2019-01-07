@@ -4,15 +4,56 @@
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <div class="slide">
-
+        <%= render "slides/courses/#{course.topic}/#{course.title.parameterize}/#{course.slides[@current_slide]}" %>
       </div>
-
-      <%= render :file => Rails.root.join(Dir["app/views/slides/courses/#{course.topic}/#{course.order}/*"][@current_slide]).to_s %>
-
-
-      <%= Dir["app/views/slides/courses/#{course.topic}/#{course.order}/*"][@current_slide] %>
-
-       <%= @current_slide + 1 %> / <%= Dir["app/views/slides/courses/#{course.topic}/#{course.order}/*"].length %>
+      <hr>
+      <div class="navigation-buttons">
+        <%= render "/courses/navigation_buttons", current_slide: @current_slide, course: course %>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  $(document).on('ready turbolinks:load', function() {
+    $("body").on("click", ".get-slide-button", function() {
+
+
+      $(".slide").empty().append(
+      `<div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>`
+      );
+
+      var current_slide = $(this).attr('slide');
+      var course_id = "<%= course.id %>";
+
+      //get new slide
+        $.ajax({
+          url: "/render_slide",
+          method: 'POST',
+          data: { id: "<%= course.id %>", current_slide: current_slide },
+          headers: {
+            'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+          }
+        }).done(function(response) {
+        $(".slide").empty().append(response);
+      });
+
+      //get new buttons
+      $.ajax({
+        url: "/render_navigation_buttons",
+        method: 'POST',
+        data: { id: "<%= course.id %>", current_slide: current_slide },
+        headers: {
+          'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+          }
+        });
+    });
+
+  });
+</script>

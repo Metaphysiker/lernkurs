@@ -1,0 +1,2 @@
+content = $("<%= escape_javascript( render "courses/navigation_buttons", current_slide: @current_slide, course: @course ) %>");
+$(".navigation-buttons").empty().append(content);

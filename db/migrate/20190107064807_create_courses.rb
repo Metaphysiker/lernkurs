@@ -5,6 +5,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.text :description, default: ""
       t.string :topic, default: ""
       t.integer :order
+      t.text :slides, array: true, default: []
 
       t.timestamps
     end

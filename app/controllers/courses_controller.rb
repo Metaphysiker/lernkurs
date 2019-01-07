@@ -62,6 +62,21 @@ class CoursesController < ApplicationController
     end
   end
 
+  def render_slide
+    @course = Course.find(params[:id])
+    @current_slide = params[:current_slide].to_i
+    render partial: "slides/courses/#{@course.topic}/#{@course.title.parameterize}/#{@course.slides[@current_slide]}"
+  end
+
+  def render_navigation_buttons
+    @course = Course.find(params[:id])
+    @current_slide = params[:current_slide].to_i
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
