@@ -5,6 +5,6 @@ class StaticPagesController < ApplicationController
   end
 
   def course_overview
-
+    @courses = Course.all.order(:order)
   end
 end

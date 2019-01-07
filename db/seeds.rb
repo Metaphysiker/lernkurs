@@ -5,3 +5,73 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ Course.create(
+  title: "Einführung in die Ethik",
+  description: "Dieser Kurs führt dich in die Ethik ein. Darin lernst du die wichtigsten Theorien, Argumente und Begriffe der Ethik kennen.",
+  topic: "ethics",
+  order: 1,
+)
+
+Course.create(
+ title: "Konsequentialismus",
+ description: "Kommt es auf die Folgen drauf an?",
+ topic: "ethics",
+ order: 2,
+)
+
+Course.create(
+ title: "Deontologie",
+ description: "Pflichten?",
+ topic: "ethics",
+ order: 3,
+)
+
+Course.create(
+ title: "Tugendethik",
+ description: "Was sind Tugende und Tugendethik?",
+ topic: "ethics",
+ order: 4,
+)
+
+Course.create(
+ title: "Kontraktualismus",
+ description: "Kontraktualismus",
+ topic: "ethics",
+ order: 5,
+)
+
+Course.create(
+ title: "Feministische Ethik",
+ description: "Feministische Ethik",
+ topic: "ethics",
+ order: 6,
+)
+
+Course.create(
+ title: "Tierethik",
+ description: "Wie dürfen wir mit Tieren umgehen? Dürfen wir alles mit ihnen tun? Oder kann man Tiere auch falsch behandeln?",
+ topic: "ethics",
+ order: 7,
+)
+
+Course.create(
+ title: "Angewandte Ethik",
+ description: "Angewandte Ethik",
+ topic: "ethics",
+ order: 8,
+)
+
+Course.create(
+ title: "Metaethik",
+ description: "Metaethik",
+ topic: "ethics",
+ order: 9,
+)
+
+Course.create(
+ title: "Gegenwärtige Ethik",
+ description: "Gegenwärtige Ethik",
+ topic: "ethics",
+ order: 10,
+)
