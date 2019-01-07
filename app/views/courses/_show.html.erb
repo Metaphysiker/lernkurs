@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="text-center"><%= course.title %></h1>
+    <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <div class="slide">
+
+      </div>
+
+      <%= render :file => Rails.root.join(Dir["app/views/slides/courses/#{course.topic}/#{course.order}/*"][@current_slide]).to_s %>
+
+
+      <%= Dir["app/views/slides/courses/#{course.topic}/#{course.order}/*"][@current_slide] %>
+
+       <%= @current_slide + 1 %> / <%= Dir["app/views/slides/courses/#{course.topic}/#{course.order}/*"].length %>
+    </div>
+  </div>
+</div>
