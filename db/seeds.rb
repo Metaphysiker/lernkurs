@@ -15,6 +15,7 @@
   slides: [
     'introduction.html.erb',
     'ethicaltheories.html.erb',
+    'moral.html.erb',
     'sources.html.erb',
    ]
 )
