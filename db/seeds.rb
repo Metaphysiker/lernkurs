@@ -15,8 +15,13 @@
   slides: [
     'introduction.html.erb',
     'ethicaltheories.html.erb',
+    'kintroduction.html.erb',
+    'kexample.html.erb',
+    'dintroduction.html.erb',
+    'dintroduction1.html.erb',
+    'dexample.html.erb',
     'moral.html.erb',
-    'sources.html.erb',
+    'sources.html.erb'
    ]
 )
 

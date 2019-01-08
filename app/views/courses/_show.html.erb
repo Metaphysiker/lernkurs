@@ -10,9 +10,27 @@
 
 <script>
   $(document).on('ready turbolinks:load', function() {
-    console.log("ready!");
-    $("body").on("click", ".get-slide-button", function() {
 
+    //keys
+    $( document ).keydown(function(event) {
+      if ( event.which == 37 ) {
+        $("#get-previous-slide").click();
+      } else if ( event.which == 39 ) {
+        $("#get-next-slide").click();
+      }
+
+    });
+
+    //click on buttons
+    $("body").on("click", ".get-slide-button", function() {
+      var course_id = "<%= course.id %>";
+      var current_slide = $(this).attr('slide');
+      getSlideAndButtons(course_id, current_slide)
+    });
+
+    function getSlideAndButtons(course_id, current_slide) {
+
+      //insert spinner
       $(".slide").empty().append(
       `<div class="spinner">
         <div class="rect1"></div>
@@ -23,19 +41,18 @@
       </div>`
       );
 
-      var current_slide = $(this).attr('slide');
-      var course_id = "<%= course.id %>";
-
       //get new slide
         $.ajax({
           url: "/render_slide",
           method: 'POST',
-          data: { id: "<%= course.id %>", current_slide: current_slide },
+          data: { id: course_id, current_slide: current_slide },
           headers: {
             'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
           }
         }).done(function(response) {
-        $(".slide").empty().append(response);
+        $(".slide").fadeOut( "fast", function() {
+          $(".slide").empty().append(response).fadeIn("fast");
+        });
       });
 
       //get new buttons
@@ -46,8 +63,10 @@
           'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
           }
         }).done(function(response) {
-        $(".navigation-buttons").empty().append(response);
+        $(".navigation-buttons").fadeOut( "fast", function() {
+          $(".navigation-buttons").empty().append(response).fadeIn("fast");
+        });
       });
-    });
+    }
   });
 </script>

@@ -1,5 +1,5 @@
 <div class="text-center">
-  <button type="button" class="btn btn-info get-slide-button <%= "invisible" if current_slide <= 0 %> mx-2" slide="<%= current_slide - 1 %>">Zurück</button>
+  <button type="button" id="get-previous-slide" class="btn btn-info get-slide-button <%= "invisible" if current_slide <= 0 %> mx-2" slide="<%= current_slide - 1 %>">Zurück</button>
   <%= current_slide + 1 %> / <%= course.slides.count %>
-  <button type="button" class="btn btn-info get-slide-button <%= "invisible" if current_slide == course.slides.count-1 %> mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+  <button type="button" id="get-next-slide" class="btn btn-info get-slide-button <%= "invisible" if current_slide == course.slides.count-1 %> mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
 </div>
