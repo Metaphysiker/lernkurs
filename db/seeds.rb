@@ -20,6 +20,8 @@
     'dintroduction.html.erb',
     'dintroduction1.html.erb',
     'dexample.html.erb',
+    'dorkintroduction.html.erb',
+    'dork.html.erb',
     'moral.html.erb',
     'sources.html.erb'
    ]
