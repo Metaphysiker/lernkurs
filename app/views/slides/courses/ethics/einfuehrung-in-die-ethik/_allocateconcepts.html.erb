@@ -35,17 +35,36 @@ var definitions = [
   $( document ).ready(function() {
 
   console.log("Allocate Concepts loaded!");
-  console.log(score);
-
   getNextRound(currentnumber);
 
+  $("body").on("click", ".acanswer", function(e) {
+    e.stopImmediatePropagation();
+
+    var value = parseInt($(this).attr("value"));
+    if(value === concepts[currentnumber][1]){
+      score = score + 1
+    }
+
+    currentnumber = currentnumber + 1;
+
+    if ((currentnumber) === concepts.length){
+      alert(score);
+    } else {
+        getNextRound(currentnumber);
+    };
+  });
+
+
   function getNextRound(number) {
+    console.log(number);
     //concept
     $("#concept").fadeOut("fast", function(){
       $("#concept").empty().append(
-        `<b>
-          ${concepts[number][0]}
-        </b>`
+        `<div class="bg-light rounded p-1">
+          <b>
+            ${concepts[number][0]}
+          </b>
+        </div>`
       ).fadeIn("fast");
     });
 
@@ -53,55 +72,24 @@ var definitions = [
     $("#definition").fadeOut("fast", function(){
       var random1 = Math.floor(Math.random()*definitions.length);
       var random2 = Math.floor(Math.random()*definitions.length);
-      var random_array = [random1, random2, number];
+      do {
+        random1 = Math.floor(Math.random()*definitions.length);
+        random2 = Math.floor(Math.random()*definitions.length);
+      } while (number === random1 || number === random2 || random1 === random2);
+
+      var array = [random1, random2, number];
+
+      let random_array = array
+        .map((a) => ({sort: Math.random(), value: a}))
+        .sort((a, b) => a.sort - b.sort)
+        .map((a) => a.value)
 
       $("#definition").empty().append(
-        `<button type="button" value="${definitions[random_array[0]][1]}" class="btn btn-primary multilinebutton btn-block answer p-3 mb-4">${definitions[random_array[0]][0]}</button>
-        <button type="button" value="${definitions[random_array[1]][1]}" class="btn btn-primary multilinebutton btn-block answer p-3 mb-4">${definitions[random_array[1]][0]}</button>
-        <button type="button" value="${definitions[random_array[2]][1]}" class="btn btn-primary multilinebutton btn-block answer p-3 mb-4">${definitions[random_array[2]][0]}</button>`
+        `<button type="button" value="${definitions[random_array[0]][1]}" class="btn btn-primary multilinebutton btn-block acanswer p-3 mb-4">${definitions[random_array[0]][0]}</button>
+        <button type="button" value="${definitions[random_array[1]][1]}" class="btn btn-primary multilinebutton btn-block acanswer p-3 mb-4">${definitions[random_array[1]][0]}</button>
+        <button type="button" value="${definitions[random_array[2]][1]}" class="btn btn-primary multilinebutton btn-block acanswer p-3 mb-4">${definitions[random_array[2]][0]}</button>`
       ).fadeIn("fast");
     });
   }
-
-    function getNextOption(number) {
-      //option
-      $("#option").fadeOut("fast", function(){
-        $("#option").empty().append(
-          `<b>
-            ${options[number][0]}
-          </b>`
-        ).fadeIn("fast");
-      });
-
-      //first
-      $("#first").fadeOut("fast", function(){
-        $("#first").empty().append(
-          `<button type="button" text="${options[number][1]}" value="${options[number][3][0]}" class="btn btn-primary multilinebutton btn-block answer">${options[number][1]}</button>`
-        ).fadeIn("fast");
-      });
-
-      //second
-      $("#second").fadeOut("fast", function(){
-        $("#second").empty().append(
-        `<button type="button" text="${options[number][2]}" value="${options[number][3][1]}" class="btn btn-primary multilinebutton btn-block answer">${options[number][2]}</button>`
-        ).fadeIn("fast");
-      });
-    }
-
-    $("body").on("click", ".answer", function(e) {
-      e.stopImmediatePropagation();
-      currentnumber = currentnumber + 1;
-      score = score + parseInt($(this).attr("value"));
-      console.log(currentnumber);
-      if (currentnumber === 9){
-        alert(score);
-      } else {
-        getNextOption(currentnumber);
-      };
-    });
-
-
-
-
 });
 </script>
