@@ -22,6 +22,8 @@
     'dexample.html.erb',
     'dorkintroduction.html.erb',
     'dork.html.erb',
+    'vintroduction.html.erb',
+    'vexample.html.erb',
     'moral.html.erb',
     'sources.html.erb'
    ]
