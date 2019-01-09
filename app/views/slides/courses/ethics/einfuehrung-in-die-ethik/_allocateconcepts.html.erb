@@ -1,0 +1,107 @@
+<h5 class="text-center">Was passt zum obenstehenden Wort?</h5>
+<hr />
+
+<div id="concept" class="text-center mb-4">
+
+</div>
+
+<div id="definition" class="text-center mb-4">
+
+</div>
+
+<script>
+
+var concepts = [
+    ["Konsequentialismus", 1],
+    ["Deontologie", 2],
+    ["Utilitarismus", 3],
+    ["Tugende", 4],
+    ["Goldene Regel", 5],
+    ["Tugendethik", 6],
+]
+
+var definitions = [
+    ["Ob eine Handlung gut oder schlecht ist, hängt von den Folgen ab, die eine Handlung nach sich zieht.", 1],
+    ["Ob eine Handlung gut oder schlecht ist, hängt von der Handlung selbst ab.", 2],
+    ["Eine Handlung ist gut, wenn sie viel Glück produziert und schlecht, wenn sie viel Leid verursacht.", 3],
+    ["Klugheit, Weisheit, Gerechtigkeit, Tapferkeit, Mässigung sind vorzügliche Eigenschaften eines Menschen.", 4],
+    ["Was du nicht willst, dass man dir tu, das füg auch keinem andern zu.", 5],
+    ["Ob eine Handlung gut oder schlecht ist, hängt von der dahinterstehenden Motivation ab.", 6]
+]
+
+    var score = 0;
+    var currentnumber = 0;
+
+  $( document ).ready(function() {
+
+  console.log("Allocate Concepts loaded!");
+  console.log(score);
+
+  getNextRound(currentnumber);
+
+  function getNextRound(number) {
+    //concept
+    $("#concept").fadeOut("fast", function(){
+      $("#concept").empty().append(
+        `<b>
+          ${concepts[number][0]}
+        </b>`
+      ).fadeIn("fast");
+    });
+
+    //definition
+    $("#definition").fadeOut("fast", function(){
+      var random1 = Math.floor(Math.random()*definitions.length);
+      var random2 = Math.floor(Math.random()*definitions.length);
+      var random_array = [random1, random2, number];
+
+      $("#definition").empty().append(
+        `<button type="button" value="${definitions[random_array[0]][1]}" class="btn btn-primary multilinebutton btn-block answer p-3 mb-4">${definitions[random_array[0]][0]}</button>
+        <button type="button" value="${definitions[random_array[1]][1]}" class="btn btn-primary multilinebutton btn-block answer p-3 mb-4">${definitions[random_array[1]][0]}</button>
+        <button type="button" value="${definitions[random_array[2]][1]}" class="btn btn-primary multilinebutton btn-block answer p-3">${definitions[random_array[2]][0]}</button>`
+      ).fadeIn("fast");
+    });
+  }
+
+    function getNextOption(number) {
+      //option
+      $("#option").fadeOut("fast", function(){
+        $("#option").empty().append(
+          `<b>
+            ${options[number][0]}
+          </b>`
+        ).fadeIn("fast");
+      });
+
+      //first
+      $("#first").fadeOut("fast", function(){
+        $("#first").empty().append(
+          `<button type="button" text="${options[number][1]}" value="${options[number][3][0]}" class="btn btn-primary multilinebutton btn-block answer">${options[number][1]}</button>`
+        ).fadeIn("fast");
+      });
+
+      //second
+      $("#second").fadeOut("fast", function(){
+        $("#second").empty().append(
+        `<button type="button" text="${options[number][2]}" value="${options[number][3][1]}" class="btn btn-primary multilinebutton btn-block answer">${options[number][2]}</button>`
+        ).fadeIn("fast");
+      });
+    }
+
+    $("body").on("click", ".answer", function(e) {
+      e.stopImmediatePropagation();
+      currentnumber = currentnumber + 1;
+      score = score + parseInt($(this).attr("value"));
+      console.log(currentnumber);
+      if (currentnumber === 9){
+        alert(score);
+      } else {
+        getNextOption(currentnumber);
+      };
+    });
+
+
+
+
+});
+</script>

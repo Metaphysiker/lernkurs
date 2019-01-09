@@ -24,6 +24,8 @@
     'dork.html.erb',
     'vintroduction.html.erb',
     'vexample.html.erb',
+    'allocateconceptsintroduction.html.erb',
+    'allocateconcepts.html.erb',
     'moral.html.erb',
     'sources.html.erb'
    ]
