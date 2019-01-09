@@ -26,6 +26,7 @@
     'vexample.html.erb',
     'allocateconceptsintroduction.html.erb',
     'allocateconcepts.html.erb',
+    'criticismsintroduction',
     'moral.html.erb',
     'sources.html.erb'
    ]
