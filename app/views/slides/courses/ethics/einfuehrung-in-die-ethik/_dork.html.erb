@@ -64,11 +64,11 @@
       });
     }
 
-    $("body").on("click", ".answer", function() {
+    $("body").on("click", ".answer", function(e) {
+      e.stopImmediatePropagation();
       currentnumber = currentnumber + 1;
       score = score + parseInt($(this).attr("value"));
       console.log(currentnumber);
-      console.log(score);
       if (currentnumber === 9){
         alert(score);
       } else {
