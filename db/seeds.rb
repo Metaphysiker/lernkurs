@@ -27,6 +27,10 @@
     'allocateconceptsintroduction.html.erb',
     'allocateconcepts.html.erb',
     'criticismsintroduction',
+    'kinstrument.html.erb',
+    'kinstrument1.html.erb',
+    'dconflicts.html.erb',
+    'vformal.html.erb',
     'moral.html.erb',
     'sources.html.erb'
    ]
