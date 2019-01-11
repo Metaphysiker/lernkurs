@@ -24,7 +24,6 @@
     'dork.html.erb',
     'vintroduction.html.erb',
     'vexample.html.erb',
-    'vexample1.html.erb',
     'allocateconceptsintroduction.html.erb',
     'allocateconcepts.html.erb',
     'criticismsintroduction',

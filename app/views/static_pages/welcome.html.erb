@@ -9,23 +9,12 @@
             Finde es heraus in diesem interaktiven Lernkurs!
           </p>
           <p>
-            <div class="pyro">
-              <div class="before"></div>
-              <div class="after"></div>
-            </div>
-          </p>
-          <p>
             <div align="center">
-            <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
+              <%= link_to course_path(1) do %>
+                <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
+              <% end %>
             </div>
           </p>
-          <div class="spinner">
-            <div class="rect1"></div>
-            <div class="rect2"></div>
-            <div class="rect3"></div>
-            <div class="rect4"></div>
-            <div class="rect5"></div>
-          </div>
           <p>
             <%# if user_signed_in? %>
                 <a href="#" class="btn btn-info my-2">Kurs fortsetzen</a>
