@@ -26,6 +26,7 @@
     'vexample.html.erb',
     'allocateconceptsintroduction.html.erb',
     'allocateconcepts.html.erb',
+    'further.html.erb',
     'criticismsintroduction',
     'kinstrument.html.erb',
     'kinstrument1.html.erb',
