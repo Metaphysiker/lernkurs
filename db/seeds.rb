@@ -27,6 +27,8 @@
     'allocateconceptsintroduction.html.erb',
     'allocateconcepts.html.erb',
     'further.html.erb',
+    'konsequentialismus',
+    'nutzenmaximierung.html.erb',
     'criticismsintroduction',
     'kinstrument.html.erb',
     'kinstrument1.html.erb',
