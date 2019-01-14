@@ -29,6 +29,7 @@
     'further.html.erb',
     'kwhy.html.erb',
     'konsequentialismus',
+    'utilitarismus',
     'nutzenmaximierung.html.erb',
     'criticismsintroduction',
     'kinstrument.html.erb',
