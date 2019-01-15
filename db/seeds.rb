@@ -32,6 +32,7 @@
     'utilitarismus',
     'nutzen',
     'nutzen1',
+    'reichweite',
     'varianten',
     'nutzenmaximierung.html.erb',
     'criticismsintroduction',
