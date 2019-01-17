@@ -38,6 +38,7 @@
     'nutzen6',
     'nutzen7',
     'reichweite',
+    'reichweite1',
     'varianten',
     'nutzenmaximierung.html.erb',
     'criticismsintroduction',
