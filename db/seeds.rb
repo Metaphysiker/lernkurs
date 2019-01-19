@@ -12,6 +12,7 @@
   description: "In diesem Kurs lernst du die wichtigsten Theorien, Begriffe und Argumente kennen.",
   topic: "ethics",
   order: 1,
+  name_of_picture: "landscape.jpg",
   slides: [
     'introduction.html.erb',
     'ethicaltheories.html.erb',
@@ -55,6 +56,7 @@ Course.create(
  description: "Kommt es auf die Folgen drauf an?",
  topic: "ethics",
  order: 2,
+ name_of_picture: "domino.jpg",
 )
 
 Course.create(
@@ -62,6 +64,7 @@ Course.create(
  description: "Pflichten?",
  topic: "ethics",
  order: 3,
+ name_of_picture: "waves.jpg",
 )
 
 Course.create(
@@ -69,6 +72,7 @@ Course.create(
  description: "Was sind Tugende und Tugendethik?",
  topic: "ethics",
  order: 4,
+ name_of_picture: "aristotle.jpg",
 )
 
 Course.create(
@@ -76,6 +80,7 @@ Course.create(
  description: "Kontraktualismus",
  topic: "ethics",
  order: 5,
+ name_of_picture: "contract.jpg",
 )
 
 Course.create(
@@ -83,6 +88,7 @@ Course.create(
  description: "Feministische Ethik",
  topic: "ethics",
  order: 6,
+ name_of_picture: "clay.jpg",
 )
 
 Course.create(
@@ -90,6 +96,7 @@ Course.create(
  description: "Wie dürfen wir mit Tieren umgehen? Dürfen wir alles mit ihnen tun? Oder kann man Tiere auch falsch behandeln?",
  topic: "ethics",
  order: 7,
+ name_of_picture: "forest.jpg",
 )
 
 Course.create(
@@ -97,6 +104,7 @@ Course.create(
  description: "Angewandte Ethik",
  topic: "ethics",
  order: 8,
+ name_of_picture: "abstract.jpg",
 )
 
 Course.create(
@@ -104,6 +112,7 @@ Course.create(
  description: "Metaethik",
  topic: "ethics",
  order: 9,
+ name_of_picture: "dome.jpg",
 )
 
 Course.create(
@@ -111,4 +120,5 @@ Course.create(
  description: "Gegenwärtige Ethik",
  topic: "ethics",
  order: 10,
+ name_of_picture: "grell.jpg",
 )

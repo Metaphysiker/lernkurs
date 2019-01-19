@@ -18,10 +18,10 @@
                     <% if false %>
                         <%= image_tag course.avatar, class: "card-img-top" %>
                         <% else %>
-                        <img class="card-img-top" src="https://loremflickr.com/320/240/science?random=<%=course.id%>" alt="Card image cap">
+                        <%= image_tag(course.name_of_picture, class: "card-img-top") %>
                     <% end %>
                     <div class="card-body">
-                      <h5 class="card-title"><%= course.title %></h5>
+                      <h5 class="card-title"><b><%= course.title %></b></h5>
                       <p class="card-text"><%= course.description %></p>
 
                     </div>
