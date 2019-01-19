@@ -88,7 +88,7 @@ Course.create(
  description: "Feministische Ethik",
  topic: "ethics",
  order: 6,
- name_of_picture: "clay.jpg",
+ name_of_picture: "equity.jpg",
 )
 
 Course.create(
@@ -96,7 +96,7 @@ Course.create(
  description: "Wie dürfen wir mit Tieren umgehen? Dürfen wir alles mit ihnen tun? Oder kann man Tiere auch falsch behandeln?",
  topic: "ethics",
  order: 7,
- name_of_picture: "forest.jpg",
+ name_of_picture: "fox.jpg",
 )
 
 Course.create(
