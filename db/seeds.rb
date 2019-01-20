@@ -44,6 +44,7 @@
     'kkritiknutzen',
     'kkritikanwendbarkeit',
     'kkritikungleichheit',
+      'nichtutilitaristischetheorien',
     'criticismsintroduction',
     'kinstrument.html.erb',
     'kinstrument1.html.erb',
