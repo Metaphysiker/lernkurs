@@ -67,7 +67,7 @@ Course.create(
  description: "Pflichten?",
  topic: "ethics",
  order: 3,
- name_of_picture: "waves.jpg",
+ name_of_picture: "kant.jpg",
 )
 
 Course.create(
@@ -107,7 +107,7 @@ Course.create(
  description: "Angewandte Ethik",
  topic: "ethics",
  order: 8,
- name_of_picture: "abstract.jpg",
+ name_of_picture: "clima.jpg",
 )
 
 Course.create(
@@ -115,7 +115,7 @@ Course.create(
  description: "Metaethik",
  topic: "ethics",
  order: 9,
- name_of_picture: "dome.jpg",
+ name_of_picture: "organization.jpg",
 )
 
 Course.create(
