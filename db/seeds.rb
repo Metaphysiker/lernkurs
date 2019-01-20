@@ -45,11 +45,7 @@
     'kkritikanwendbarkeit',
     'kkritikungleichheit',
       'nichtutilitaristischetheorien',
-    'criticismsintroduction',
-    'kinstrument.html.erb',
-    'kinstrument1.html.erb',
-    'dconflicts.html.erb',
-    'vformal.html.erb',
+    'deontologie',
     'moral.html.erb',
     'sources.html.erb'
    ]
