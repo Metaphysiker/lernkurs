@@ -10,7 +10,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @current_slide = 28
+    @current_slide = 30
   end
 
   # GET /courses/new

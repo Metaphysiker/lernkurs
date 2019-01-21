@@ -46,6 +46,7 @@
     'kkritikungleichheit',
       'nichtutilitaristischetheorien',
     'deontologie',
+    'deontologie1',
     'moral.html.erb',
     'sources.html.erb'
    ]
