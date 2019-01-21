@@ -48,6 +48,9 @@
     'deontologie',
     'kantianismus',
     'dlugen',
+    'dlugen1',
+    'dlugen2',
+    'deontologists',
     'moral.html.erb',
     'sources.html.erb'
    ]
