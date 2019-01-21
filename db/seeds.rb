@@ -62,6 +62,9 @@ Course.create(
  topic: "ethics",
  order: 2,
  name_of_picture: "domino.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -70,6 +73,9 @@ Course.create(
  topic: "ethics",
  order: 3,
  name_of_picture: "kant.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -78,6 +84,9 @@ Course.create(
  topic: "ethics",
  order: 4,
  name_of_picture: "aristotle.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -86,6 +95,9 @@ Course.create(
  topic: "ethics",
  order: 5,
  name_of_picture: "contract.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -94,6 +106,9 @@ Course.create(
  topic: "ethics",
  order: 6,
  name_of_picture: "equity.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -102,6 +117,9 @@ Course.create(
  topic: "ethics",
  order: 7,
  name_of_picture: "fox.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -110,6 +128,9 @@ Course.create(
  topic: "ethics",
  order: 8,
  name_of_picture: "clima.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -118,6 +139,9 @@ Course.create(
  topic: "ethics",
  order: 9,
  name_of_picture: "organization.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
 
 Course.create(
@@ -126,4 +150,7 @@ Course.create(
  topic: "ethics",
  order: 10,
  name_of_picture: "grell.jpg",
+ slides: [
+   "einfuehrung"
+ ]
 )
