@@ -47,6 +47,7 @@
       'nichtutilitaristischetheorien',
     'deontologie',
     'kantianismus',
+    'dlugen',
     'moral.html.erb',
     'sources.html.erb'
    ]
