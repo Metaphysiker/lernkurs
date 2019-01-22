@@ -9,7 +9,7 @@
  Course.create(
   title: "Einführung in die Ethik",
   #description: "Dieser Kurs führt dich in die Ethik ein. Darin lernst du die wichtigsten Theorien, Argumente und Begriffe der Ethik kennen.",
-  description: "In diesem Kurs lernst du die wichtigsten Theorien, Begriffe und Argumente kennen.",
+  description: "In diesem Kurs lernst du die wichtigsten Theorien, Begriffe und Argumente der Ethik kennen.",
   topic: "ethics",
   order: 1,
   name_of_picture: "landscape.jpg",
@@ -131,7 +131,7 @@ Course.create(
 
 Course.create(
  title: "Angewandte Ethik",
- description: "Angewandte Ethik",
+ description: "Dürfen wir in Luxus leben, während andere Hunger leiden? Dürfen wir Fleisch aus der Massentierhaltung kaufen? Ist Sterbehilfe immer moralisch verwerflich? Ist es falsch, die Dienste einer Prostituierten anzunehmen? In welchen Fällen ist ziviler Ungehorsam angebracht?",
  topic: "ethics",
  order: 8,
  name_of_picture: "clima.jpg",
