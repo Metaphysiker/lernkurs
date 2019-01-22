@@ -56,6 +56,8 @@
     'dkritikkonflikt',
     'dkritiktragik',
     'deontologists',
+    'tugendethik',
+    'aristoteles',
     'moral.html.erb',
     'sources.html.erb'
    ]
