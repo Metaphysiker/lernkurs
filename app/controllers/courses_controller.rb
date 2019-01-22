@@ -12,6 +12,12 @@ class CoursesController < ApplicationController
   def show
     #@current_slide = 30
     #@current_slide = 0
+    if cookies["#{@course.id}-current_slide"].present?
+      #@current_slide = cookies[:current_slide].to_i
+      @current_slide = cookies["#{@course.id}-current_slide"].to_i
+    else
+      @current_slide = 0
+    end
   end
 
   # GET /courses/new

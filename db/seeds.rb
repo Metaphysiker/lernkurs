@@ -50,6 +50,8 @@
     'dlugen',
     'dlugen1',
     'dlugen2',
+    'dproblems',
+    'dkritikkonflikt',
     'deontologists',
     'moral.html.erb',
     'sources.html.erb'
@@ -144,6 +146,7 @@ Course.create(
  ]
 )
 
+=begin
 Course.create(
  title: "Gegenwärtige Ethik",
  description: "Gegenwärtige Ethik",
@@ -154,3 +157,5 @@ Course.create(
    "einfuehrung"
  ]
 )
+
+=end
