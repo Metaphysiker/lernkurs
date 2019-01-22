@@ -24,13 +24,13 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title text-center" id="exampleModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-info" data-dismiss="modal">Schliessen</button>
@@ -96,6 +96,34 @@
       score = score + parseInt($(this).attr("value"));
       console.log(currentnumber);
       if (currentnumber === 9){
+        if(score >= 5){
+          $(".modal-title").empty().append(
+            `Deontologie`
+          );
+          $(".modal-body").empty().append(
+            `<p>
+              <b>Du bist ein Deontologe!</b>
+              </p>
+              <p>
+                Du tendierst dazu, deinen Pflichten nachzugehen, selbst wenn sie unschöne Folgen nach sich ziehen!
+              </p>
+            `
+          );
+        } else {
+          $(".modal-title").empty().append(
+            `Konsequentialismus`
+          );
+          $(".modal-body").empty().append(
+            `<p>
+              <b>Du bist ein Konsequentialist!</b>
+              </p>
+              <p>
+                Du tendierst dazu, fragwürdige Handlungen zu begehen, um ein grösseres Gut zu erreichen!
+              </p>
+            `
+          );
+        }
+
         $('#dork').modal('show')
       } else {
         getNextOption(currentnumber);
