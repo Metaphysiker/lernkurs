@@ -15,6 +15,26 @@
 
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="allocateconcepts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Übung abgeschlossen!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Schliessen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 
 var concepts = [
@@ -41,6 +61,7 @@ var definitions = [
 
     var score = 0;
     var currentnumber = 0;
+    var points = 100;
 
   $( document ).ready(function() {
 
@@ -53,21 +74,33 @@ var definitions = [
     var value = parseInt($(this).attr("value"));
 
     console.log("RESULTS!");
-    console.log($(this).attr("value"));
-    console.log(concepts[currentnumber][1]);
-    console.log(value === concepts[currentnumber][1]);
+    console.log(score);
+    console.log(points);
+
 
     if(value === concepts[currentnumber][1]){
-      score = score + 1
+      score = score + points;
       currentnumber = currentnumber + 1;
+      points = 100;
 
-      $(this).animate({backgroundColor: "#32CD32" }, 200, function(){
-        setTimeout(function(){
-            getNextRound(currentnumber);
-          },500);
-      });
+      if(currentnumber === concepts.length){
+        $(".modal-body").empty().append(
+          `<p>
+              Du hast ${score} Punkte erhalten!
+            </p>
+          `
+        );
+        $('#allocateconcepts').modal('show');
+      } else {
+        $(this).animate({backgroundColor: "#32CD32" }, 200, function(){
+          setTimeout(function(){
+              getNextRound(currentnumber);
+            },500);
+        });
+      }
 
     } else {
+      points = points - 50;
       $(this).animate({backgroundColor: "#DC143C" }, 200);
     }
 
