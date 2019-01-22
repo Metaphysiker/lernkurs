@@ -50,8 +50,10 @@
     'dlugen',
     'dlugen1',
     'dlugen2',
+   'dschwarzfahren',
     'dproblems',
     'dkritikkonflikt',
+    'dkritiktragik',
     'deontologists',
     'moral.html.erb',
     'sources.html.erb'
