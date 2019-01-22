@@ -51,17 +51,26 @@ var definitions = [
     e.stopImmediatePropagation();
 
     var value = parseInt($(this).attr("value"));
+
+    console.log("RESULTS!");
+    console.log($(this).attr("value"));
+    console.log(concepts[currentnumber][1]);
+    console.log(value === concepts[currentnumber][1]);
+
     if(value === concepts[currentnumber][1]){
       score = score + 1
+      currentnumber = currentnumber + 1;
+
+      $(this).animate({backgroundColor: "#32CD32" }, 200, function(){
+        setTimeout(function(){
+            getNextRound(currentnumber);
+          },500);
+      });
+
+    } else {
+      $(this).animate({backgroundColor: "#DC143C" }, 200);
     }
 
-    currentnumber = currentnumber + 1;
-
-    if ((currentnumber) === concepts.length){
-      alert(score);
-    } else {
-        getNextRound(currentnumber);
-    };
   });
 
 
