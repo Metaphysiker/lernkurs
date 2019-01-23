@@ -1,4 +1,4 @@
-<h3 class="text-center">Prinzip?</h3>
+<h3 class="text-center">Welches Element?</h3>
 <hr />
 <p>
   Welches Element des Utilitarismus <b>passt nicht</b> zur folgenden Aussage?
@@ -13,41 +13,47 @@
   </em>
 </p>
 <p>
-  <button type="button" class="btn btn-primary multilinebutton btn-block">Der Konsequentialismus</button>
-  <button type="button" class="btn btn-primary multilinebutton btn-block">Das Nutzenprinzp</button>
-  <button type="button" class="btn btn-primary multilinebutton btn-block">Das Universalprinzp</button>
+  <button type="button" id="konsequ" class="btn btn-primary multilinebutton btn-block">Der Konsequentialismus</button>
+  <button type="button" id="nutzenu" class="btn btn-primary multilinebutton btn-block">Das Nutzenprinzp</button>
+  <button type="button" id="universa" class="btn btn-primary multilinebutton btn-block">Das Universalprinzp</button>
 </p>
+
+<!-- Modal -->
+<div class="modal fade" id="utilubung2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Das <b>Universalprinzip</b> des Utilitarismus fordert, dass bei der Errechnung
+          des Gesamtnutzens einer Handlung <b>alle Betroffenen</b>
+          dieser Handlung berücksichtigt werden.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script>
   $( document ).ready(function() {
     console.log("utilubung2 loaded!");
-    console.log("value:");
-    console.log($('input[name="praeferenz"]').val());
+
 
     var points = 100;
     var score = 0;
 
-    $( "#utilubung" ).click(function() {
-
-      if (['glück', 'glücks', 'glueck', 'gluecks'].indexOf($('input[name="glueck"]').val().toLowerCase()) >= 0) {
-        $('input[name="glueck"]').removeClass("is-invalid");
-        $('input[name="glueck"]').addClass("is-valid");
-      } else {
-        $('input[name="glueck"]').removeClass("is-valid");
-        $('input[name="glueck"]').addClass("is-invalid");
-        points = points - 50;
-      }
-
-      if (['präferenz', 'praeferenz'].indexOf($('input[name="praeferenz"]').val().toLowerCase()) >= 0) {
-          $('input[name="praeferenz"]').removeClass("is-invalid");
-          $('input[name="praeferenz"]').addClass("is-valid");
-      } else {
-        $('input[name="praeferenz"]').removeClass("is-valid");
-        $('input[name="praeferenz"]').addClass("is-invalid");
-        points = points - 50;
-      }
-
+    $( "#universa" ).click(function() {
+      $('#utilubung2').modal('show');
     });
 
   });

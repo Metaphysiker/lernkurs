@@ -69,6 +69,12 @@
     'tugendethik',
     'aristoteles',
     'aristoteles1',
+    'vubung',
+    'vubung1',
+    'vubung2',
+    'vproblems',
+    'vubung3',
+    'vubung4',
     'moral.html.erb',
     'sources.html.erb'
    ]
