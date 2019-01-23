@@ -1,0 +1,68 @@
+<h5 class="text-center">Einführung der Todesstrafe?</h5>
+<hr />
+<p>
+  Angenommen, die Einführung der Todesstrafe hätte folgende Konsequenzen:
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Weniger Kriminalität durch Abschreckung</td>
+          <td>+20</td>
+        </tr>
+        <tr>
+          <td>Weniger Gefängniskosten</td>
+          <td>+9</td>
+        </tr>
+        <tr>
+          <td>Sorge um mögliche Fehlprozesse</td>
+          <td>-7</td>
+        </tr>
+        <tr>
+          <td>Angst davor, selber die Todesstrafe zu bekommen</td>
+          <td>-4</td>
+        </tr>
+        <tr>
+          <td>Keine Angst mehr vor Wiederholungstätern</td>
+          <td>+11</td>
+        </tr>
+      </tbody>
+    </table>
+    Würde ein Glücks-Utilitarist die Einführung der Todesstrafe befürworten?
+</p>
+<p class="text-center">
+  <button type="button" class="btn btn-info">Ja</button>
+  <button type="button" class="btn btn-info">Nein</button>
+</p>
+
+<script>
+  $( document ).ready(function() {
+    console.log("utilubung loaded!");
+    console.log("value:");
+    console.log($('input[name="praeferenz"]').val());
+
+    var points = 100;
+    var score = 0;
+
+    $( "#utilubung" ).click(function() {
+
+      if (['glück', 'glücks', 'glueck', 'gluecks'].indexOf($('input[name="glueck"]').val().toLowerCase()) >= 0) {
+        $('input[name="glueck"]').removeClass("is-invalid");
+        $('input[name="glueck"]').addClass("is-valid");
+      } else {
+        $('input[name="glueck"]').removeClass("is-valid");
+        $('input[name="glueck"]').addClass("is-invalid");
+        points = points - 50;
+      }
+
+      if (['präferenz', 'praeferenz'].indexOf($('input[name="praeferenz"]').val().toLowerCase()) >= 0) {
+          $('input[name="praeferenz"]').removeClass("is-invalid");
+          $('input[name="praeferenz"]').addClass("is-valid");
+      } else {
+        $('input[name="praeferenz"]').removeClass("is-valid");
+        $('input[name="praeferenz"]').addClass("is-invalid");
+        points = points - 50;
+      }
+
+    });
+
+  });
+</script>
