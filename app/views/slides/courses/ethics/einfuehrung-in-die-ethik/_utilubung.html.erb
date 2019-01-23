@@ -8,7 +8,7 @@
   <div class="input-group input-group-lg mb-3">
   <input type="text" name="glueck" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
   <div class="input-group-append">
-    <span class="input-group-text" id="basic-addon2">-Utilitarismus</span>
+    <span class="input-group-text" id="basic-addon2"> - Utilitarismus</span>
   </div>
 </div>
 </p>
@@ -21,12 +21,12 @@
   <div class="input-group input-group-lg mb-3">
   <input type="text" name="praeferenz" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
   <div class="input-group-append">
-    <span class="input-group-text" id="basic-addon2">-Utilitarismus</span>
+    <span class="input-group-text" id="basic-addon2"> - Utilitarismus</span>
   </div>
 </div>
 </p>
 <p>
-  <button type="button" id="utilubung" class="btn btn-info btn-lg mx-2">Antworten prüfen!</button>
+  <button type="button" id="utilubung" class="btn btn-info btn-lg my-3">Antworten prüfen!</button>
 </p>
 
 <script>
@@ -41,15 +41,19 @@
     $( "#utilubung" ).click(function() {
 
       if (['glück', 'glücks', 'glueck', 'gluecks'].indexOf($('input[name="glueck"]').val().toLowerCase()) >= 0) {
-          $('input[name="glueck"]').addClass("is-valid");
+        $('input[name="glueck"]').removeClass("is-invalid");
+        $('input[name="glueck"]').addClass("is-valid");
       } else {
+        $('input[name="glueck"]').removeClass("is-valid");
         $('input[name="glueck"]').addClass("is-invalid");
         points = points - 50;
       }
 
       if (['präferenz', 'praeferenz'].indexOf($('input[name="praeferenz"]').val().toLowerCase()) >= 0) {
+          $('input[name="praeferenz"]').removeClass("is-invalid");
           $('input[name="praeferenz"]').addClass("is-valid");
       } else {
+        $('input[name="praeferenz"]').removeClass("is-valid");
         $('input[name="praeferenz"]').addClass("is-invalid");
         points = points - 50;
       }
