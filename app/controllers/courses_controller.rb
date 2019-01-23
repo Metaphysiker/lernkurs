@@ -69,10 +69,15 @@ class CoursesController < ApplicationController
     end
   end
 
-  def render_slide
+  def render_slidex
     @course = Course.find(params[:id])
     @current_slide = params[:current_slide].to_i
     render partial: "slides/courses/#{@course.topic}/#{@course.title.parameterize}/#{@course.slides[@current_slide]}"
+  end
+
+  def slide
+    @course = Course.find(params[:id])
+    @current_slide = params[:current_slide].to_i
   end
 
   def navigation_buttons

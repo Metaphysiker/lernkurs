@@ -1,6 +1,6 @@
 <div class="container p-3">
       <div class="slide">
-        <%= render "slides/courses/#{course.topic}/#{course.title.parameterize}/#{course.slides[@current_slide]}" %>
+        <%= render "slides/courses/#{course.topic}/#{course.title.parameterize}/#{course.slides[@current_slide]}", current_slide: @current_slide, course: course %>
       </div>
       <hr>
       <div class="navigation-buttons">
@@ -29,7 +29,7 @@
     });
 
     function getSlideAndButtons(course_id, current_slide) {
-      document.cookie = course_id + "-current_slide=" + current_slide; 
+      document.cookie = course_id + "-current_slide=" + current_slide;
 
       //insert spinner
       /*
@@ -46,8 +46,8 @@
 
       //get new slide
         $.ajax({
-          url: "/render_slide",
-          method: 'POST',
+          url: "/slide/" + course_id + "/" + current_slide + ".js",
+          method: 'GET',
           data: { id: course_id, current_slide: current_slide },
           headers: {
             'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
