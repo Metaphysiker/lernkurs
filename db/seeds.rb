@@ -50,7 +50,6 @@
     'nichtutilitaristischetheorien',
     'utilubung3',
     'utilubung4',
-    'utilubung5',
     'deontologie',
     'kantianismus',
     'dlugen',
