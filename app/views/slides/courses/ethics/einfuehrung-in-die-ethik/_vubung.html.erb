@@ -1,43 +1,168 @@
 <h4 class="text-center">Goldene Mitte?</h4>
 <hr />
 <p>
-  Überlege dir, was jeweils die goldene Mitte zwischen den zwei genannten Extremen ist!
+  Überlege dir, was jeweils die goldene Mitte zwischen den zwei genannten Extremen sein könnte!
 </p>
 <hr />
-<p>
-  
-</p>
+<div class="row mx-1">
+  <div class="col-5 text-center">
+    Extrem
+  </div>
+  <div class="col-2 text-center">
+    Mitte
+  </div>
+  <div class="col-5 text-center">
+    Extrem
+  </div>
+</div>
+<hr />
+
+<div class="row mx-2">
+  <div id="extrem1" class="col-5 text-center">
+
+  </div>
+  <div id="goldenemitte" class="col-2 text-center">
+    ?
+  </div>
+  <div id="extrem2" class="col-5 text-center">
+
+  </div>
+</div>
+
+<hr />
+<div id="possiblevirtues" class="mx-auto">
+  <div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="allocatevirtues" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Übung abgeschlossen!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
-  $( document ).ready(function() {
-    console.log("utilubung loaded!");
-    console.log("value:");
-    console.log($('input[name="praeferenz"]').val());
 
-    var points = 100;
+var vices = [
+  ["Faulheit, Trägheit", "hektische Betriebsamkeit, Workaholic"],
+  ["Übermässige Strenge", "Verwöhnung"],
+  ["Narrentum, Naivität", "fanatischer Wahrheitssucher, der das wirkliche Leben verfehlt."],
+  ["heilloses Durcheinander", "kleinliche Pedantrie"],
+
+]
+
+var virtues = [
+    ["Fleiss", 1],
+    ["gute Erziehung", 2],
+    ["Weisheit", 3],
+    ["Ordnungsliebe", 4],
+]
+
     var score = 0;
+    var currentnumber = 0;
+    var points = 100;
 
-    $( "#utilubung" ).click(function() {
+  $( document ).ready(function() {
 
-      if (['glück', 'glücks', 'glueck', 'gluecks'].indexOf($('input[name="glueck"]').val().toLowerCase()) >= 0) {
-        $('input[name="glueck"]').removeClass("is-invalid");
-        $('input[name="glueck"]').addClass("is-valid");
+  console.log("vubung!");
+  getNextVices(currentnumber);
+
+  $("body").on("click", ".avanswer", function(e) {
+    e.stopImmediatePropagation();
+
+    var value = parseInt($(this).attr("value"));
+
+    console.log("RESULTS!");
+    console.log(score);
+    console.log(points);
+
+
+    if(value === virtues[currentnumber][1]){
+      score = score + points;
+      currentnumber = currentnumber + 1;
+      points = 100;
+
+      if(currentnumber === virtues.length){
+        $(".modal-body").empty().append(
+          `<p>
+              Du hast ${score} Punkte erhalten!
+            </p>
+          `
+        );
+        $('#allocatevirtues').modal('show');
       } else {
-        $('input[name="glueck"]').removeClass("is-valid");
-        $('input[name="glueck"]').addClass("is-invalid");
-        points = points - 50;
+        $(this).animate({backgroundColor: "#32CD32" }, 200, function(){
+          setTimeout(function(){
+              getNextVices(currentnumber);
+            },500);
+        });
       }
 
-      if (['präferenz', 'praeferenz'].indexOf($('input[name="praeferenz"]').val().toLowerCase()) >= 0) {
-          $('input[name="praeferenz"]').removeClass("is-invalid");
-          $('input[name="praeferenz"]').addClass("is-valid");
-      } else {
-        $('input[name="praeferenz"]').removeClass("is-valid");
-        $('input[name="praeferenz"]').addClass("is-invalid");
-        points = points - 50;
-      }
-
-    });
+    } else {
+      points = points - 50;
+      $(this).animate({backgroundColor: "#DC143C" }, 200);
+    }
 
   });
+
+
+  function getNextVices(number) {
+    console.log(number);
+    //concept
+    $("#extrem1").fadeOut("fast", function(){
+      $("#extrem1").empty().append(
+        `<b>${vices[number][0]}</b>`
+      ).fadeIn("fast");
+    });
+
+    $("#extrem2").fadeOut("fast", function(){
+      $("#extrem2").empty().append(
+        `<b>${vices[number][1]}</b`
+      ).fadeIn("fast");
+    });
+
+    //definition
+    $("#possiblevirtues").fadeOut("fast", function(){
+      var random1;
+      var random2;
+      do {
+        random1 = Math.floor(Math.random()*virtues.length);
+        random2 = Math.floor(Math.random()*virtues.length);
+      } while (number === random1 || number === random2 || random1 === random2);
+
+      var array = [random1, random2, number];
+
+      let random_array = array
+        .map((a) => ({sort: Math.random(), value: a}))
+        .sort((a, b) => a.sort - b.sort)
+        .map((a) => a.value)
+
+      $("#possiblevirtues").empty().append(
+        `<button type="button" value="${virtues[random_array[0]][1]}" class="btn btn-primary multilinebutton btn-block avanswer p-3 mb-4">${virtues[random_array[0]][0]}</button>
+        <button type="button" value="${virtues[random_array[1]][1]}" class="btn btn-primary multilinebutton btn-block avanswer p-3 mb-4">${virtues[random_array[1]][0]}</button>
+        <button type="button" value="${virtues[random_array[2]][1]}" class="btn btn-primary multilinebutton btn-block avanswer p-3 mb-4">${virtues[random_array[2]][0]}</button>`
+      ).fadeIn("fast");
+    });
+  }
+});
 </script>
