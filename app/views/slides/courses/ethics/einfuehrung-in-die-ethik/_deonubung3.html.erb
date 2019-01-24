@@ -1,60 +1,45 @@
-<h4 class="text-center">Arten von Utilitarismus</h4>
+<h4 class="text-center">Welches Problem?</h4>
 <hr />
 <p>
-  Wie heisst die Art von Utilitarismus, in der es darum geht,
-  <em>die Gesamtmenge an empfundenem Glück zu maximieren</em>?
+  Welches Problem für die Deontologie wird in der untenstehenden Aussage beschrieben?
+</p>
+<p>
+  "Wie viele andere, bekomme auch ich ein schlechtes Bauchgefühl,
+  wenn ich daran denke, Menschen foltern zu müssen.
+  Dennoch müssen wir stark sein und die Folter zulassen,
+  weil wir nur so in gewissen Fällen das Leben von 1'000 oder gar 10'000 Unschuldigen retten können."
 </p>
 <p>
   <div class="input-group input-group-lg mb-3">
-  <input type="text" name="glueck" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
+    <div class="input-group-prepend">
+    <span class="input-group-text">Das </span>
+  </div>
+  <input type="text" name="aggregations" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
   <div class="input-group-append">
-    <span class="input-group-text" id="basic-addon2">-Utilitarismus</span>
+    <span class="input-group-text" id="basic-addon2">-problem</span>
   </div>
 </div>
 </p>
-<hr />
+
 <p>
-  Wie heisst die Art von Utilitarismus, in der es darum geht,
-  <em>die Gesamtmenge an befriedigter Präferenz zu maximieren</em>?
-</p>
-<p>
-  <div class="input-group input-group-lg mb-3">
-  <input type="text" name="praeferenz" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <span class="input-group-text" id="basic-addon2">-Utilitarismus</span>
-  </div>
-</div>
-</p>
-<p>
-  <button type="button" id="utilubung" class="btn btn-info btn-lg my-3">Antworten prüfen!</button>
+  <button type="button" id="deonubung3" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
 </p>
 
 <script>
   $( document ).ready(function() {
-    console.log("utilubung loaded!");
-    console.log("value:");
-    console.log($('input[name="praeferenz"]').val());
+    console.log("deonubung3 loaded!");
 
     var points = 100;
     var score = 0;
 
-    $( "#utilubung" ).click(function() {
+    $( "#deonubung3" ).click(function() {
 
-      if (['glück', 'glücks', 'glueck', 'gluecks'].indexOf($('input[name="glueck"]').val().toLowerCase()) >= 0) {
-        $('input[name="glueck"]').removeClass("is-invalid");
-        $('input[name="glueck"]').addClass("is-valid");
+      if (['aggregations', 'aggregation'].indexOf($('input[name="aggregations"]').val().toLowerCase()) >= 0) {
+        $('input[name="aggregations"]').removeClass("is-invalid");
+        $('input[name="aggregations"]').addClass("is-valid");
       } else {
-        $('input[name="glueck"]').removeClass("is-valid");
-        $('input[name="glueck"]').addClass("is-invalid");
-        points = points - 50;
-      }
-
-      if (['präferenz', 'praeferenz'].indexOf($('input[name="praeferenz"]').val().toLowerCase()) >= 0) {
-          $('input[name="praeferenz"]').removeClass("is-invalid");
-          $('input[name="praeferenz"]').addClass("is-valid");
-      } else {
-        $('input[name="praeferenz"]').removeClass("is-valid");
-        $('input[name="praeferenz"]').addClass("is-invalid");
+        $('input[name="aggregations"]').removeClass("is-valid");
+        $('input[name="aggregations"]').addClass("is-invalid");
         points = points - 50;
       }
 

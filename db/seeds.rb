@@ -59,7 +59,6 @@
    'deontologists',
    'deonubung',
    'deonubung1',
-   'deonubung2',
   'dproblems',
     'dkritikkonflikt',
     'dkritiktragik',
