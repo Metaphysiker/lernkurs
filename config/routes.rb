@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get '/navigation_buttons/:id/:current_slide', to: 'courses#navigation_buttons', as: 'navigation_buttons'
 
   get "/hulu", to: "courses#hulu", as: "hulu"
+
+  get "/textversion/:id", to: "static_pages#textversion", as: 'textversion'
 end

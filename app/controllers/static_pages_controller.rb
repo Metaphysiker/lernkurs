@@ -8,4 +8,9 @@ class StaticPagesController < ApplicationController
   def course_overview
     @courses = Course.all.order(:order)
   end
+
+  def textversion
+
+    @course = Course.find(params[:id])
+  end
 end

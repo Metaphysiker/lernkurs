@@ -1,0 +1,3 @@
+<% @course.slides.each_with_index do |slide, i| %>
+  <%= render "slides/courses/#{@course.topic}/#{@course.title.parameterize}/#{slide}", current_slide: i, course: @course %>
+<% end %>
