@@ -10,23 +10,98 @@
 
 <script>
   $(document).on('ready turbolinks:load', function() {
+    console.log("Course loaded!");
+    var course_id = "<%= course.id %>";
+
+    //get previous slide
+    function getPreviousSlide(){
+      console.log("getPreviousSlide");
+      document.cookie = course_id + "-current_slide=" + current_slide;
+      var current_slide = $("#get-previous-slide").attr('slide');
+
+      //get new slide
+        $.ajax({
+          url: "/slide/" + course_id + "/" + current_slide + ".js",
+          method: 'GET',
+          data: { id: course_id, current_slide: current_slide },
+          headers: {
+            'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+          }
+        }).done(function(response) {
+        $(".slide").fadeOut( "fast", function() {
+          $(".slide").empty().append(response).fadeIn("fast");
+        });
+      });
+
+      //get new buttons
+      $.ajax({
+        url: "/navigation_buttons/" + course_id + "/" + current_slide + ".js",
+        method: 'GET',
+        headers: {
+          'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+          }
+        }).done(function(response) {
+        $(".navigation-buttons").fadeOut( "fast", function() {
+          $(".navigation-buttons").empty().append(response).fadeIn("fast");
+        });
+      });
+    }
+
+    function getNextSlide(){
+      console.log("getNextSlide");
+      document.cookie = course_id + "-current_slide=" + current_slide;
+      var current_slide = $("#get-next-slide").attr('slide');
+
+      //get new slide
+        $.ajax({
+          url: "/slide/" + course_id + "/" + current_slide + ".js",
+          method: 'GET',
+          data: { id: course_id, current_slide: current_slide },
+          headers: {
+            'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+          }
+        }).done(function(response) {
+        $(".slide").fadeOut( "fast", function() {
+          $(".slide").empty().append(response).fadeIn("fast");
+        });
+      });
+
+      //get new buttons
+      $.ajax({
+        url: "/navigation_buttons/" + course_id + "/" + current_slide + ".js",
+        method: 'GET',
+        headers: {
+          'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
+          }
+        }).done(function(response) {
+        $(".navigation-buttons").fadeOut( "fast", function() {
+          $(".navigation-buttons").empty().append(response).fadeIn("fast");
+        });
+      });
+    }
 
     //keys
     $( document ).keydown(function(event) {
       if ( event.which == 37 ) {
-        $("#get-previous-slide").click();
+        getPreviousSlide();
       } else if ( event.which == 39 ) {
-        $("#get-next-slide").click();
+        getNextSlide();
       }
 
     });
 
     //click on buttons
-    $("body").on("click", ".get-slide-button", function() {
-      var course_id = "<%= course.id %>";
-      var current_slide = $(this).attr('slide');
-      getSlideAndButtons(course_id, current_slide)
+    $("body").on("click", "#get-next-slide", function() {
+      getNextSlide();
     });
+
+    $("body").on("click", "#get-previous-slide", function() {
+      getPreviousSlide();
+    });
+
+    // Bind the swipeleftHandler callback function to the swipe event on div.box
+    $( "body" ).on( "swiperight", getPreviousSlide );
+    $( "body" ).on( "swipeleft", getNextSlide );
 
     function getSlideAndButtons(course_id, current_slide) {
       document.cookie = course_id + "-current_slide=" + current_slide;
