@@ -18,4 +18,5 @@
 //= require popper
 //= require bootstrap-sprockets
 //= celebrate
+//= animate
 //= require_tree .
