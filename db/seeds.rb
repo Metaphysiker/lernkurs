@@ -90,7 +90,28 @@ Course.create(
  order: 2,
  name_of_picture: "domino.jpg",
  slides: [
-   "einfuehrung"
+   'konsequentialismus',
+   'utilitarismus',
+   'nutzen',
+   'nutzen1',
+   'nutzen2',
+   'nutzen3',
+   'nutzen4',
+   'nutzen5',
+   'nutzen6',
+   'reichweite',
+   'reformers',
+   'utilubung',
+   'utilubung1',
+   'utilubung2',
+   'kproblems',
+   'kkritiknutzen',
+   'kkritikanwendbarkeit',
+   'kkritikungleichheit',
+   'kkritikfreundschaft',
+   'nichtutilitaristischetheorien',
+   'utilubung3',
+   'utilubung4',
  ]
 )
 

@@ -1,0 +1,53 @@
+<h3 class="text-center">Verteidigung (2)</h3>
+<hr />
+<p>
+  Gegen <b>welche Kritik</b> wird der Utilitarismus in der untenstehenden Aussage verteidigt?
+</p>
+<p>
+    "Sklaverei verursacht Leid in sehr vielen Formen,
+    während der Genuss von Sklaven hergestellten Gütern nur einfache Freuden sind.
+    Daher wird der Nutzen von Sklaverei <b>nie</b> den Schaden von Sklaverei überwiegen."
+</p>
+
+<p>
+  <button type="button" class="btn btn-primary multilinebutton btn-block">Utilitaristisches Verhalten kann persönliche Beziehungen und Freundschaften ruinieren.</button>
+  <button type="button" class="btn btn-primary multilinebutton btn-block">Eine ökonomische Bemessung ist kategorial verschieden von einer ethischen Beurteilung.</button>
+  <button type="button" id="sklaverei" class="btn btn-primary multilinebutton btn-block">Der Utilitarismus kann zu erheblichen Ungleichheiten führen.</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="utilubung4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("utilubung3 loaded!");
+
+    var points = 100;
+    var score = 0;
+
+    $( "#sklaverei" ).click(function() {
+      $('#utilubung4').modal('show');
+    });
+
+  });
+</script>
