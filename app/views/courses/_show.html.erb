@@ -13,6 +13,16 @@
     console.log("Course loaded!");
     var course_id = "<%= course.id %>";
 
+      var element = document;
+      var h = new Hammer(element);
+      h.get("swipe").set({ threshold: 1, velocity: 0.1 });
+      h.on("swiperight", function() {
+        getPreviousSlide();
+      })
+      h.on("swipeleft", function() {
+        getNextSlide();
+      })
+
     //get previous slide
     function getPreviousSlide(){
       console.log("getPreviousSlide");

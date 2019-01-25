@@ -19,4 +19,5 @@
 //= require bootstrap-sprockets
 //= celebrate
 //= animate
+//= hammer
 //= require_tree .
