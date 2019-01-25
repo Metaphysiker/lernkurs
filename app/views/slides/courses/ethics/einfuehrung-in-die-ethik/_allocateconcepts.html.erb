@@ -1,4 +1,4 @@
-<h5 class="text-center">Was passt zum obenstehenden Wort?</h5>
+<h5 class="text-center">Welches Kästchen passt?</h5>
 <hr />
 
 <div id="concept" class="text-center mb-4">
@@ -16,7 +16,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="allocateconcepts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade animated tada" id="allocateconcepts" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -56,7 +56,7 @@ var definitions = [
     ["Ob eine Handlung gut oder schlecht ist, hängt von der Handlung selbst ab.", 2],
     ["Eine Handlung ist gut, wenn sie viel Glück produziert und schlecht, wenn sie viel Leid verursacht.", 3],
     ["Klugheit, Weisheit, Gerechtigkeit, Tapferkeit und Mässigung", 4],
-    ["Was du nicht willst, dass man dir tu, das füg auch keinem andern zu.", 5],
+    ['"Was du nicht willst, dass man dir tu, das füg auch keinem andern zu."', 5],
     ["Aberglaube, Ungerechtigkeit, Feigheit und Zügellosigkeit.", 8],
 ]
 
@@ -113,10 +113,8 @@ var definitions = [
     //concept
     $("#concept").fadeOut("fast", function(){
       $("#concept").empty().append(
-        `<div class="bg-light rounded p-1">
-          <b>
-            ${concepts[number][0]}
-          </b>
+        `<div class="bg-light rounded border p-1">
+          <h2>${concepts[number][0]}</h2>
         </div>`
       ).fadeIn("fast");
     });

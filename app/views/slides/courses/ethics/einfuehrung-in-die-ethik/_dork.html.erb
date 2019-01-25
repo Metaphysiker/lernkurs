@@ -99,26 +99,20 @@
       if (currentnumber === 9){
         if(score >= 5){
           $(".modal-title").empty().append(
-            `Deontologie`
+            `<b>Du bist ein Deontologe!</b>`
           );
           $(".modal-body").empty().append(
             `<p>
-              <b>Du bist ein Deontologe!</b>
-              </p>
-              <p>
                 Du tendierst dazu, deinen Pflichten nachzugehen, selbst wenn sie unschöne Folgen nach sich ziehen!
               </p>
             `
           );
         } else {
           $(".modal-title").empty().append(
-            `Konsequentialismus`
+            `<b>Du bist ein Konsequentialist!</b>`
           );
           $(".modal-body").empty().append(
             `<p>
-              <b>Du bist ein Konsequentialist!</b>
-              </p>
-              <p>
                 Du tendierst dazu, fragwürdige Handlungen zu begehen, um ein grösseres Gut zu erreichen!
               </p>
             `
