@@ -1,0 +1,79 @@
+<h4 class="text-center">Konflikt?</h4>
+<hr />
+<p>
+  Welche zwei Pflichten konfligieren im folgenden Textabschnitt?
+</p>
+<p>
+  "Wenn jemand bei gesundem Verstande einem Freunde Waffen übergäbe und im Zustande des Wahnsinns sie zurückforderte,
+  so wird wohl jedermann sagen,
+  daß man weder zur Zurückgabe von dergleichen verpflichtet sei,
+  noch der Zurückgebende gerecht wäre noch auch einer,
+  der einem Menschen von diesem Zustande die volle Wahrheit sagen wollte."
+</p>
+<ul class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="conflicts" value="0">
+      Die Pflicht, die Wahrheit zu sagen.
+    </label>
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="conflicts" value="1">
+      Die Pflicht, Ausgeliehenes zurückzugeben.
+    </label>
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="conflicts" value="2">
+      Die Pflicht, einem Wahnsinnigen keine Waffen zu geben.
+    </label>
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="conflicts" value="3">
+      Die Pflicht, Nothilfe zu leisten.
+    </label>
+</ul>
+<p>
+  <button type="button" id="deonubung4" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="deonubung4m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("deonubung4 loaded!");
+
+    var points = 100;
+    var score = 0;
+
+    $("#deonubung4").click(function(event){
+        event.preventDefault();
+        result1 = ($("input[name=conflicts]:checked").map(function() {
+            return this.value;
+        }).get().join(","));
+        console.log(result1);
+        if(result1.toString() == "1,2"){
+          $('#deonubung4m').modal('show');
+        } else {
+          console.log("falsch");
+        };
+    });
+
+  });
+</script>

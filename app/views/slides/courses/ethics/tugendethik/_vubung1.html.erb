@@ -1,0 +1,71 @@
+<h4 class="text-center">Lebensform?</h4>
+<hr />
+<p>
+  Nach Aristoteles gibt es ein <b>höchstes Gut</b>.
+  Wie nennt Aristoteles dieses höchste Gut?
+</p>
+<p>
+  <div class="input-group input-group-lg mb-3">
+  <input type="text" name="eudaimonia" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
+</div>
+</p>
+<p>
+  <button type="button" id="vubung1" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+</p>
+<hr />
+<p>
+  Wie können wir nach Aristoteles dieses höchste Gut erreichen?
+</p>
+<p>
+  <button type="button" id="tugendhaft" class="btn btn-primary multilinebutton btn-block">Durch tugendhaftes Leben</button>
+  <button type="button" class="btn btn-primary multilinebutton btn-block">Durch Anschaffung von Reichtum</button>
+  <button type="button" class="btn btn-primary multilinebutton btn-block">Durch Selbstaufopferung</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="vubung1m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("vubung1 loaded!");
+
+    var points = 100;
+    var score = 0;
+
+    $( "#vubung1" ).click(function() {
+      if (['eudaimonia'].indexOf($('input[name="eudaimonia"]').val().toLowerCase()) >= 0) {
+        $('input[name="eudaimonia"]').removeClass("is-invalid");
+        $('input[name="eudaimonia"]').addClass("is-valid");
+      } else {
+        $('input[name="eudaimoniak"]').removeClass("is-valid");
+        $('input[name="eudaimonia"]').addClass("is-invalid");
+        points = points - 50;
+      }
+    });
+
+    $( "#tugendhaft" ).click(function() {
+      $('#vubung1m').modal('show');
+    });
+
+  });
+</script>

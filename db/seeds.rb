@@ -122,7 +122,20 @@ Course.create(
  order: 3,
  name_of_picture: "kant.jpg",
  slides: [
-   "einfuehrung"
+   'deontologie',
+   'kantianismus',
+   'dlugen',
+   'dlugen1',
+   'dlugen2',
+  'dschwarzfahren',
+  'deontologists',
+  'deonubung',
+  'deonubung1',
+ 'dproblems',
+   'dkritikkonflikt',
+   'dkritiktragik',
+   'deonubung3',
+   'deonubung4',
  ]
 )
 
@@ -133,7 +146,20 @@ Course.create(
  order: 4,
  name_of_picture: "aristotle.jpg",
  slides: [
-   "einfuehrung"
+   'tugendethik',
+   'aristoteles',
+   'aristoteles1',
+   'aristoteles2',
+   'aristoteles3',
+   'aristoteles4',
+   'aristoteles5',
+   'vubung',
+   'vubung1',
+   'vproblems',
+   'vkritikvagheit',
+   'vkritikorientierung',
+   'vubung3',
+   'vubung4',
  ]
 )
 
