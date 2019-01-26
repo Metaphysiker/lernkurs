@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="jumbotron bg-light m-3" id="parent-toucharea">
+    <h1 class="display-4">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <div id="toucharea" style="height: 100px; width: 500px; background-color: powderblue;">
+
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+  $(document).on('ready turbolinks:load', function() {
+    //var parentTouchArea = document.getElementById('parent-toucharea')
+    //var touchArea = document.getElementById('toucharea')
+    //var myRegion = new ZingTouch.Region(document.body);
+
+    //myRegion.bind(touchArea, 'swipe', function(e){
+
+    var myRegion = new ZingTouch.Region(document.body);
+    var touchArea = document.getElementById('toucharea');
+    var myRegion = new ZingTouch.Region(touchArea);
+
+    myRegion.bind(touchArea, 'swipe', function(e){
+    	console.log(e.detail);
+      console.log(e.detail.data[0].currentDirection)
+      if(90 < e.detail.data[0].currentDirection && e.detail.data[0].currentDirection < 270){
+        console.log("LEFT!");
+      } else{
+        console.log("RIGHT!");
+      }
+    });
+
+
+  });
+</script>

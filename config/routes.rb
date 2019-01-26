@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get "/hulu", to: "courses#hulu", as: "hulu"
 
   get "/textversion/:id", to: "static_pages#textversion", as: 'textversion'
+  get "/test", to: "static_pages#test", as: 'test'
 end
