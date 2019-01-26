@@ -1,6 +1,10 @@
 <div class="container p-3">
       <div class="slide faster">
-        <%= render "slide", current_slide: @current_slide, course: @course %>
+        <%= render "slides/courses/#{course.topic}/#{course.title.parameterize}/#{course.slides[@current_slide]}", current_slide: @current_slide, course: course %>
+      </div>
+      <hr>
+      <div class="navigation-buttons faster">
+        <%= render "/courses/navigation_buttons", current_slide: @current_slide, course: course %>
       </div>
 </div>
 

@@ -1,0 +1,3 @@
+<%= render "slides/courses/#{course.topic}/#{course.title.parameterize}/#{course.slides[current_slide]}", current_slide: current_slide, course: course %>
+<hr>
+<%= render "/courses/navigation_buttons", current_slide: current_slide, course: course %>

@@ -69,6 +69,7 @@ class CoursesController < ApplicationController
     end
   end
 
+
   def render_slidex
     @course = Course.find(params[:id])
     @current_slide = params[:current_slide].to_i
