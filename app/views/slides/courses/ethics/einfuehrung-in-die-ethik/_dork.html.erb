@@ -79,14 +79,14 @@
       //first
       $("#first").fadeOut("fast", function(){
         $("#first").empty().append(
-          `<button type="button" text="${options[number][1]}" value="${options[number][3][0]}" class="btn btn-primary multilinebutton btn-block answer">${options[number][1]}</button>`
+          `<button type="button" text="${options[number][1]}" value="${options[number][3][0]}" class="btn btn-light border multilinebutton btn-block p-3 mb-4 answer">${options[number][1]}</button>`
         ).fadeIn("fast");
       });
 
       //second
       $("#second").fadeOut("fast", function(){
         $("#second").empty().append(
-        `<button type="button" text="${options[number][2]}" value="${options[number][3][1]}" class="btn btn-primary multilinebutton btn-block answer">${options[number][2]}</button>`
+        `<button type="button" text="${options[number][2]}" value="${options[number][3][1]}" class="btn btn-light border multilinebutton btn-block p-3 mb-4 answer">${options[number][2]}</button>`
         ).fadeIn("fast");
       });
     }
