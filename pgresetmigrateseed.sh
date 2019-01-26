@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rails db:drop
-rails db:create
-rails db:migrate
-rails db:seed
+heroku pg:reset --confirm lernkurs
+heroku run rails db:migrate
+heroku run rails db:seed
+heroku open
