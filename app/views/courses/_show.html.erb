@@ -13,6 +13,23 @@
     console.log("Course loaded!");
     var course_id = "<%= course.id %>";
 
+    //zingtouch
+    var touchArea = document.body;
+    var myRegion = new ZingTouch.Region(touchArea);
+
+    myRegion.bind(touchArea, 'swipe', function(e){
+      console.log(e.detail);
+      console.log(e.detail.data[0].currentDirection)
+      if(90 < e.detail.data[0].currentDirection && e.detail.data[0].currentDirection < 270){
+        console.log("LEFT!");
+        getNextSlide();
+      } else{
+        console.log("RIGHT!");
+        getPreviousSlide();
+      }
+    });
+
+/*
       var element = document;
       var h = new Hammer(element);
       h.get("swipe").set({ threshold: 1, velocity: 0.1 });
@@ -22,6 +39,7 @@
       h.on("swipeleft", function() {
         getNextSlide();
       })
+      */
 
     //get previous slide
     function getPreviousSlide(){

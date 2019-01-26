@@ -21,9 +21,7 @@
     //var myRegion = new ZingTouch.Region(document.body);
 
     //myRegion.bind(touchArea, 'swipe', function(e){
-
-    var myRegion = new ZingTouch.Region(document.body);
-    var touchArea = document.getElementById('toucharea');
+    var touchArea = document.body;
     var myRegion = new ZingTouch.Region(touchArea);
 
     myRegion.bind(touchArea, 'swipe', function(e){
