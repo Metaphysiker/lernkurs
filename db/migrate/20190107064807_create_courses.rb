@@ -2,6 +2,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
   def change
     create_table :courses do |t|
       t.string :title, default: ""
+      t.string :language, default: ""
       t.text :description, default: ""
       t.string :slug, default: "", unique: true
       t.string :topic, default: ""

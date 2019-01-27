@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_063050) do
 
   create_table "courses", force: :cascade do |t|
     t.string "title", default: ""
+    t.string "language", default: ""
     t.text "description", default: ""
     t.string "slug", default: ""
     t.string "topic", default: ""

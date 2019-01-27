@@ -11,6 +11,7 @@
   #description: "Dieser Kurs führt dich in die Ethik ein. Darin lernst du die wichtigsten Theorien, Argumente und Begriffe der Ethik kennen.",
   description: "In diesem Kurs lernst du die wichtigsten Theorien, Begriffe und Argumente der Ethik kennen.",
   topic: "ethics",
+  language: "de",
   order: 1,
   name_of_picture: "landscape.jpg",
   slides: [
@@ -35,6 +36,7 @@ Course.create(
  title: "Konsequentialismus",
  description: "Kommt es auf die Folgen drauf an?",
  topic: "ethics",
+ language: "de",
  order: 2,
  name_of_picture: "domino.jpg",
  slides: [
@@ -67,6 +69,7 @@ Course.create(
  title: "Deontologie",
  description: "Pflichten?",
  topic: "ethics",
+ language: "de",
  order: 3,
  name_of_picture: "kant.jpg",
  slides: [
@@ -91,6 +94,7 @@ Course.create(
  title: "Tugendethik",
  description: "Was sind Tugende und Tugendethik?",
  topic: "ethics",
+ language: "de",
  order: 4,
  name_of_picture: "aristotle.jpg",
  slides: [
@@ -115,6 +119,7 @@ Course.create(
  title: "Kontraktualismus",
  description: "Kontraktualismus",
  topic: "ethics",
+ language: "de",
  order: 5,
  name_of_picture: "contract.jpg",
  slides: [
@@ -126,6 +131,7 @@ Course.create(
  title: "Feministische Ethik",
  description: "Feministische Ethik",
  topic: "ethics",
+ language: "de",
  order: 6,
  name_of_picture: "equity.jpg",
  slides: [
@@ -137,6 +143,7 @@ Course.create(
  title: "Tierethik",
  description: "Wie dürfen wir mit Tieren umgehen? Dürfen wir alles mit ihnen tun? Oder kann man Tiere auch falsch behandeln?",
  topic: "ethics",
+ language: "de",
  order: 7,
  name_of_picture: "fox.jpg",
  slides: [
@@ -148,6 +155,7 @@ Course.create(
  title: "Angewandte Ethik",
  description: "Dürfen wir in Luxus leben, während andere Hunger leiden? Dürfen wir Fleisch aus der Massentierhaltung kaufen? Ist Sterbehilfe immer moralisch verwerflich?",
  topic: "ethics",
+ language: "de",
  order: 8,
  name_of_picture: "clima.jpg",
  slides: [
@@ -159,6 +167,7 @@ Course.create(
  title: "Metaethik",
  description: "Metaethik",
  topic: "ethics",
+ language: "de",
  order: 9,
  name_of_picture: "organization.jpg",
  slides: [
