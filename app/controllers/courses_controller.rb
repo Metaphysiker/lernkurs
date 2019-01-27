@@ -12,8 +12,16 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @pagetitle = @course.title
-    @current_slide = @attendance.current_slide
-    @account.current_course_id = @course.id
+
+    if @attendance.current_slide > @course.slides.count
+      @current_slide = 0
+    elsif -1 > @attendance.current_slide
+      @current_slide = 0
+    else
+      @current_slide = @attendance.current_slide
+    end
+
+    @account.update(current_course_id: @course.id)
   end
 
   # GET /courses/new
@@ -84,6 +92,22 @@ class CoursesController < ApplicationController
 
   def hulu
     @hulu = "hulu"
+  end
+
+  def set_current_slide
+    course_id = params[:course_id].to_i
+    number_of_slide = params[:number_of_slide].to_i
+
+    @account.attendances.where(course_id: course_id).first.update(current_slide: number_of_slide)
+
+  end
+
+  def add_points_to_course
+    course_id = params[:course_id].to_i
+    exercise = params[:exercise].to_s
+    points = params[:points].to_i
+
+    @account.attendances.where(course_id: course_id).first
   end
 
   private

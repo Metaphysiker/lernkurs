@@ -38,7 +38,7 @@
     function getPreviousSlide(){
       console.log("getPreviousSlide");
       var current_slide = $("#get-previous-slide").attr('slide');
-      document.cookie = course_id + "-current_slide=" + current_slide;
+      setCurrentSlide(course_id, current_slide);
 
       //get new slide
         $.ajax({
@@ -59,7 +59,7 @@
     function getNextSlide(){
       console.log("getNextSlide");
       var current_slide = $("#get-next-slide").attr('slide');
-      document.cookie = course_id + "-current_slide=" + current_slide;
+      setCurrentSlide(course_id, current_slide);
 
       //get new slide
         $.ajax({
