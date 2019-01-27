@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2019_01_27_185318) do
     t.bigint "account_id"
     t.bigint "course_id"
     t.integer "current_slide", default: 0
+    t.string "status", default: ""
     t.text "progress", default: [], array: true
-    t.integer "score", default: 0
     t.string "result1", default: ""
     t.string "result2", default: ""
     t.string "result3", default: ""
