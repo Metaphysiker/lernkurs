@@ -30,10 +30,10 @@
       console.log(e.detail);
       console.log(e.detail.data[0].currentDirection)
       if(90 < e.detail.data[0].currentDirection && e.detail.data[0].currentDirection < 270){
-        console.log("LEFT!");
+        console.log("LEFTSWIPE!");
         getNextSlide();
       } else{
-        console.log("RIGHT!");
+        console.log("RIGHTSWIPE!");
         getPreviousSlide();
       }
     });
@@ -70,20 +70,6 @@
             animateCss('.slide', 'fadeInLeft');
           })
       });
-
-      //get new buttons
-      $.ajax({
-        url: "/navigation_buttons/" + course_id + "/" + current_slide + ".js",
-        method: 'GET',
-        headers: {
-          'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
-          }
-        }).done(function(response) {
-          animateCss(".navigation-buttons", 'fadeOutRight', function() {
-            $(".navigation-buttons").empty().append(response);
-            animateCss(".navigation-buttons", 'fadeInLeft');
-          })
-      });
     }
 
     function getNextSlide(){
@@ -104,20 +90,6 @@
             $(".slide").empty().append(response);
             animateCss('.slide', 'fadeInRight');
           })
-      });
-
-      //get new buttons
-      $.ajax({
-        url: "/navigation_buttons/" + course_id + "/" + current_slide + ".js",
-        method: 'GET',
-        headers: {
-          'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
-          }
-        }).done(function(response) {
-        animateCss(".navigation-buttons", 'fadeOutLeft', function() {
-          $(".navigation-buttons").empty().append(response);
-          animateCss(".navigation-buttons", 'fadeInRight');
-        })
       });
     }
 
