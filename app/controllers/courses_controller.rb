@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_attendance, only: [:show, :edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
@@ -10,15 +11,8 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    #@current_slide = 30
-    #@current_slide = 0
     @pagetitle = @course.title
-    if cookies["#{@course.id}-current_slide"].present?
-      #@current_slide = cookies[:current_slide].to_i
-      @current_slide = cookies["#{@course.id}-current_slide"].to_i
-    else
-      @current_slide = 0
-    end
+    @current_slide = @attendance.current_slide
   end
 
   # GET /courses/new
@@ -96,6 +90,14 @@ class CoursesController < ApplicationController
     def set_course
       @course = Course.friendly.find(params[:id])
       #@course = Course.find_by_slug(params[:slug])
+    end
+
+    def set_attendance
+      unless @account.courses.include?(@course)
+        @account.courses << @course
+      end
+
+      @attendance = @account.attendances.where(course_id: @course.id).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
