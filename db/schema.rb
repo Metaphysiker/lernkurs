@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_27_063050) do
+ActiveRecord::Schema.define(version: 2019_01_27_185318) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "attendances", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "course_id"
+    t.integer "current_slide", default: 0
+    t.text "progress", default: [], array: true
+    t.integer "score", default: 0
+    t.string "result1", default: ""
+    t.string "result2", default: ""
+    t.string "result3", default: ""
+    t.string "result4", default: ""
+    t.string "result5", default: ""
+    t.hstore "exercises"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_attendances_on_account_id"
+    t.index ["course_id"], name: "index_attendances_on_course_id"
+    t.index ["exercises"], name: "index_attendances_on_exercises", using: :gin
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "title", default: ""
