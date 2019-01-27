@@ -93,16 +93,16 @@ var definitions = [
         );
         $('#allocateconcepts').modal('show');
       } else {
-        $(this).animate({backgroundColor: "#32CD32" }, 200, function(){
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
               getNextRound(currentnumber);
-            },500);
+            }, 600);
         });
       }
 
     } else {
       points = points - 50;
-      $(this).animate({backgroundColor: "#DC143C" }, 200);
+      $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
     }
 
   });
