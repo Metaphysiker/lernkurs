@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
   def show
     #@current_slide = 30
     #@current_slide = 0
+    @pagetitle = @course.title
     if cookies["#{@course.id}-current_slide"].present?
       #@current_slide = cookies[:current_slide].to_i
       @current_slide = cookies["#{@course.id}-current_slide"].to_i
@@ -93,7 +94,8 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      @course = Course.friendly.find(params[:id])
+      #@course = Course.find_by_slug(params[:slug])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -3,6 +3,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
     create_table :courses do |t|
       t.string :title, default: ""
       t.text :description, default: ""
+      t.string :slug, default: "", unique: true
       t.string :topic, default: ""
       t.string :name_of_picture, default: ""
       t.integer :order

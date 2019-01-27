@@ -218,6 +218,10 @@ Course.create(
  ]
 )
 
+Course.all.each do |course|
+  course.update(slug: course.title.parameterize)
+end
+
 =begin
 Course.create(
  title: "Gegenwärtige Ethik",

@@ -11,6 +11,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 #gem 'jquery_mobile_rails'
+gem 'friendly_id', '~> 5.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

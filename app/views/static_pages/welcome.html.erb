@@ -10,7 +10,7 @@
           </p>
           <p>
             <div align="center">
-              <%= link_to course_path(1) do %>
+              <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
                 <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
               <% end %>
             </div>
