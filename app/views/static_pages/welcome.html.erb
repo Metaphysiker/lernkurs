@@ -9,11 +9,20 @@
             Finde es heraus in diesem interaktiven Lernkurs!
           </p>
           <p>
+            <% unless @account.current_course_id.blank? %>
+              <div align="center">
+                <%= link_to course_path(@account.current_course_id) do %>
+                  <button class="pulse-button rounded text-white">Kurs fortsetzen</button>
+                <% end %>
+              </div>
+            <% else %>
             <div align="center">
               <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
                 <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
               <% end %>
             </div>
+            <% end %>
+
           </p>
         </div>
       </section>
