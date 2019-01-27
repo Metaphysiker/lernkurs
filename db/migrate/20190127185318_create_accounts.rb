@@ -20,11 +20,10 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.string :result4, default: ""
       t.string :result5, default: ""
 
-      t.hstore 'exercises'
-
       t.timestamps
     end
 
+    add_column :attendances, :exercises, :hstore, default: {}
     add_index :attendances, :exercises, using: :gin
   end
 end

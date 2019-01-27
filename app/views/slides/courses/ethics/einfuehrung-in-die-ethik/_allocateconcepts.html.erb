@@ -84,6 +84,9 @@ var definitions = [
       points = 100;
 
       if(currentnumber === concepts.length){
+
+        addPointsToCourse(1, "allocateconcepts", score);
+
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           $(".modal-body").empty().append(
             `<p class="text-center lead">

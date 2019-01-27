@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2019_01_27_185318) do
     t.string "result3", default: ""
     t.string "result4", default: ""
     t.string "result5", default: ""
-    t.hstore "exercises"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.hstore "exercises", default: {}
     t.index ["account_id"], name: "index_attendances_on_account_id"
     t.index ["course_id"], name: "index_attendances_on_course_id"
     t.index ["exercises"], name: "index_attendances_on_exercises", using: :gin

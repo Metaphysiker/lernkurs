@@ -107,7 +107,11 @@ class CoursesController < ApplicationController
     exercise = params[:exercise].to_s
     points = params[:points].to_i
 
-    @account.attendances.where(course_id: course_id).first
+    attendance = @account.attendances.where(course_id: course_id).first
+
+    attendance.exercises[exercise] = points
+    attendance.save
+
   end
 
   private
