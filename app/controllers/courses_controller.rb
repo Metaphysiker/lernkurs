@@ -13,6 +13,7 @@ class CoursesController < ApplicationController
   def show
     @pagetitle = @course.title
     @current_slide = @attendance.current_slide
+    @account.current_course_id = @course.id
   end
 
   # GET /courses/new

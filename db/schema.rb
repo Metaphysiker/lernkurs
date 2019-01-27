@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_185318) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
+    t.integer "current_course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

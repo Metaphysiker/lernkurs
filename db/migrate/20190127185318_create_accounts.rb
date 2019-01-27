@@ -3,6 +3,7 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
     enable_extension 'hstore' unless extension_enabled?('hstore')
 
     create_table :accounts do |t|
+      t.integer :current_course_id
 
       t.timestamps
     end
