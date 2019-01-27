@@ -16,7 +16,7 @@
           <% @courses.in_groups_of(3, false).each do |groups| %>
               <div class="card-deck">
                   <% groups.each do |course| %>
-                  <div class="card mb-4">
+                  <div class="card mb-4  bg-success">
                     <% if false %>
                         <%= image_tag course.avatar, class: "card-img-top" %>
                         <% else %>
