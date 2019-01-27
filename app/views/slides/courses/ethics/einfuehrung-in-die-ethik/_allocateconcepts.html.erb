@@ -1,6 +1,5 @@
 <h5 class="text-center">Welches Kästchen passt?</h5>
 <hr />
-
 <div id="concept" class="text-center mb-4">
   <div class="spinner">
     <div class="rect1"></div>
@@ -20,7 +19,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Übung abgeschlossen!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Übung abgeschlossen!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -85,13 +84,22 @@ var definitions = [
       points = 100;
 
       if(currentnumber === concepts.length){
-        $(".modal-body").empty().append(
-          `<p>
-              Du hast ${score} Punkte erhalten!
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          $(".modal-body").empty().append(
+            `<p class="text-center lead">
+                Du hast
+              </p>
+                  <div class="text-center lead animated infinite pulse">${score} Punkte</div>
+            <p class="text-center lead">
+                  <br />
+                 erhalten!
             </p>
-          `
-        );
-        $('#allocateconcepts').modal('show');
+            `
+          );
+          setTimeout(function(){
+              $('#allocateconcepts').modal('show');
+            }, 600);
+        });
       } else {
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
