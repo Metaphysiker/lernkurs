@@ -1,0 +1,16 @@
+<%= render "layouts/navigation" %>
+
+<main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Kurs-Überblick</h1>
+          <p class="lead text-muted">
+            <%= courses.count %> Kurse vorhanden
+          </p>
+        </div>
+      </section>
+
+      <%= render "courses/courses_in_groups_of_3", courses: courses %>
+
+    </main>
