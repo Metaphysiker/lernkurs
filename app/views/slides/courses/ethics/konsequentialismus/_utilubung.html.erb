@@ -38,6 +38,10 @@
     var points = 100;
     var score = 0;
 
+    $( 'input[name="glueck"]' ).click(function() {
+      $( this ).focus();
+    });
+
     $( "#utilubung" ).click(function() {
 
       if (['glück', 'glücks', 'glueck', 'gluecks'].indexOf($('input[name="glueck"]').val().toLowerCase()) >= 0) {
