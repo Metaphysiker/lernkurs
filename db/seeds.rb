@@ -65,6 +65,8 @@ Course.create(
    'nichtutilitaristischetheorien',
    'utilubung3',
    'utilubung4',
+   'porgintro',
+   'porg',
    'abschluss',
  ]
 )
@@ -130,7 +132,7 @@ Course.create(
  order: 5,
  name_of_picture: "contract.jpg",
  slides: [
-   "einfuehrung"
+   "kontraktualismus"
  ]
 )
 
@@ -156,7 +158,7 @@ Course.create(
  order: 6,
  name_of_picture: "fox.jpg",
  slides: [
-   "einfuehrung"
+   "tierethik"
  ]
 )
 
