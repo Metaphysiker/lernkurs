@@ -14,6 +14,7 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.integer :current_slide, default: 0
       t.string :status, default: ""
       t.text :progress, array: true, default: []
+      t.string :orden, default: ""
       t.string :result1, default: ""
       t.string :result2, default: ""
       t.string :result3, default: ""

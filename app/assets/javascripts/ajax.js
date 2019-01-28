@@ -30,6 +30,16 @@ function setResult1(course_id, result){
   });
 }
 
+function setOrden(course_id, orden){
+  console.log(course_id + " " + orden);
+  $.ajax({
+    url: "/set_orden",
+    method: 'POST',
+    data: { course_id: course_id, orden: orden},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+  });
+}
+
 function addPointsToCourse(course_id, exercise, points){
   console.log(course_id + " " + exercise + " " + points);
   $.ajax({

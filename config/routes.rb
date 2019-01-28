@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   post '/add_points_to_course', to: 'courses#add_points_to_course', as: 'add_points_to_course'
   post '/set_status', to: 'courses#set_status', as: 'set_status'
   post '/set_result1', to: 'courses#set_result1', as: 'set_result1'
+  post '/set_orden', to: 'courses#set_orden', as: 'set_orden'
 end

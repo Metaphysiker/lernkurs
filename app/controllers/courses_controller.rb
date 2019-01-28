@@ -116,6 +116,13 @@ class CoursesController < ApplicationController
     @account.attendances.where(course_id: course_id).first.update(result1: result)
   end
 
+  def set_orden
+    course_id = params[:course_id].to_i
+    orden = params[:orden].to_s
+
+    @account.attendances.where(course_id: course_id).first.update(orden: orden)
+  end
+
   def add_points_to_course
     course_id = params[:course_id].to_i
     exercise = params[:exercise].to_s
