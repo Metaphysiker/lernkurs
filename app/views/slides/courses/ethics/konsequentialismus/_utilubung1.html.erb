@@ -51,7 +51,7 @@
           Der Gesamtnutzen beträgt: <b>+29</b>.
         </p>
         <p>
-          Damit überwiegt der Nutzen den Schaden, der bei der Einführung der Todesstrafe entsteht.
+          Damit überwiegt der Nutzen den Schaden, der bei der Einführung der Todesstrafe entsteht!
         </p>
 
       </div>
@@ -70,9 +70,25 @@
     console.log($('input[name="praeferenz"]').val());
 
     var points = 100;
-    var score = 0;
 
     $( "#kosten1" ).click(function() {
+      $(".modal-body").append(
+        `<p class="text-center lead">
+            Du hast ${points} Punkte erhalten!
+          </p>
+        `
+      );
+      addPointsToCourse(2, "utilubung1", points);
+      $('#utilubung1').modal('show');
+    });
+
+    $( "#kosten2" ).click(function() {
+       points = 0;
+      $(".modal-title").empty().append(
+        `Falsch!
+        `
+      );
+      addPointsToCourse(2, "utilubung1", points);
       $('#utilubung1').modal('show');
     });
 

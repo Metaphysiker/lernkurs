@@ -6,7 +6,7 @@
 </p>
 <p>
   <div class="input-group input-group-lg mb-3">
-  <input type="text" name="glueck" class="form-control" style="z-index: 100;" placeholder="" aria-label="..." aria-describedby="basic-addon2">
+  <input type="text" name="glueck" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
   <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">-Utilitarismus</span>
   </div>
@@ -29,19 +29,35 @@
   <button type="button" id="utilubung" class="btn btn-info btn-lg my-3">Antworten prüfen!</button>
 </p>
 
+<!-- Modal -->
+<div class="modal fade animated tada" id="utilubungm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Übung abgeschlossen!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   $( document ).ready(function() {
     console.log("utilubung loaded!");
     console.log("value:");
     console.log($('input[name="praeferenz"]').val());
 
-    var points = 100;
-    var score = 0;
-
-
-    $( 'input' ).click(function() {
-      $( this ).focus();
-    });
+    var points1 = 100;
+    var points2 = 100;
 
     $( "#utilubung" ).click(function() {
 
@@ -51,7 +67,7 @@
       } else {
         $('input[name="glueck"]').removeClass("is-valid");
         $('input[name="glueck"]').addClass("is-invalid");
-        points = points - 50;
+        points1 = 50;
       }
 
       if (['präferenz', 'praeferenz'].indexOf($('input[name="praeferenz"]').val().toLowerCase()) >= 0) {
@@ -60,7 +76,24 @@
       } else {
         $('input[name="praeferenz"]').removeClass("is-valid");
         $('input[name="praeferenz"]').addClass("is-invalid");
-        points = points - 50;
+        points2 = 50;
+      }
+
+      if((['glück', 'glücks', 'glueck', 'gluecks'].indexOf($('input[name="glueck"]').val().toLowerCase()) >= 0) && (['präferenz', 'praeferenz'].indexOf($('input[name="praeferenz"]').val().toLowerCase()) >= 0)){
+        var score = points1 + points2;
+        $(".modal-body").empty().append(
+          `<p class="text-center lead">
+              Du hast
+            </p>
+                <div class="text-center lead animated infinite pulse">${score} Punkte</div>
+          <p class="text-center lead">
+                <br />
+               erhalten!
+          </p>
+          `
+        );
+        addPointsToCourse(2, "utilubung", score);
+        $('#utilubungm').modal('show');
       }
 
     });
