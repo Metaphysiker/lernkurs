@@ -1,9 +1,14 @@
 $completed-background-color: #58d68d;
 $started-background-color: #f9e79f;
-$unstarted-background-color: #e5e7e9;
+$unstarted-background-color: white; //#e5e7e9;
+$philosophiech-grey: #E6E5E6;
 
 .multilinebutton{
     white-space:normal !important;
+}
+
+.philosopiech-background{
+  background-color: $philosophiech-grey !important;
 }
 
 .completed-background{
