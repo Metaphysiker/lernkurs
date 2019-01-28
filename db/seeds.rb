@@ -65,6 +65,7 @@ Course.create(
    'nichtutilitaristischetheorien',
    'utilubung3',
    'utilubung4',
+   'abschluss',
  ]
 )
 
@@ -142,7 +143,6 @@ Course.create(
  order: 8,
  name_of_picture: "equity.jpg",
  slides: [
-   "einfuehrung",
    "feminismus",
  ]
 )
