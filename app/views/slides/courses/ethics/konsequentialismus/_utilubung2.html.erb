@@ -9,13 +9,13 @@
     Daher ist es in Ordnung,
     wenn jeder nur seine eigenen Ziele verfolgt
     oder nur das macht, was zur Befriedigung seiner eigenen Interessen oder Bedürfnissen dient.
-    Eine Handlung ist somit gut, wenn ihre Konsequenzen zur Erfüllung deiner Ziele dienen."
+    Eine Handlung ist somit gut, wenn ihre Konsequenzen zur Erfüllung deiner Ziele führen."
   </em>
 </p>
 <p>
-  <button type="button" id="konsequ" class="btn btn-primary multilinebutton btn-block">Der Konsequentialismus</button>
-  <button type="button" id="nutzenu" class="btn btn-primary multilinebutton btn-block">Das Nutzenprinzp</button>
-  <button type="button" id="universa" class="btn btn-primary multilinebutton btn-block">Das Universalprinzp</button>
+  <button type="button" id="konsequ" class="btn btn-light border multilinebutton btn-block p-3 mb-4">Der Konsequentialismus</button>
+  <button type="button" id="nutzenu" class="btn btn-light border multilinebutton btn-block p-3 mb-4">Das Nutzenprinzp</button>
+  <button type="button" id="universa" class="btn btn-light border multilinebutton btn-block p-3 mb-4">Das Universalprinzp</button>
 </p>
 
 <!-- Modal -->
@@ -50,10 +50,26 @@
 
 
     var points = 100;
-    var score = 0;
+
+    $( "#konsequ, #nutzenu" ).click(function() {
+      console.log("CLICK!");
+      $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+      points = points - 50;
+    });
 
     $( "#universa" ).click(function() {
-      $('#utilubung2').modal('show');
+      $(".modal-body").append(
+        `<p class="text-center lead">
+            Du hast ${points} Punkte erhalten!
+          </p>
+        `
+      );
+      addPointsToCourse(2, "utilubung2", points);
+      $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+        setTimeout(function(){
+            $('#utilubung2').modal('show');
+          }, 600);
+      });
     });
 
   });
