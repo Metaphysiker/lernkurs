@@ -1,7 +1,7 @@
 <h3 class="text-center">Verteidigung (1)</h3>
 <hr />
 <p>
-  Gegen <b>welche Kritik</b> wird der Utilitarismus in der untenstehenden Aussage verteidigt?
+  <b>Welche Kritik</b> am Utilitarismus wird hier hinterfragt?
 </p>
 <p>
     "In einer Demokratie stimmen Menschen über Gesetze ab,
@@ -11,9 +11,9 @@
 </p>
 
 <p>
-  <button type="button" id="zuschwierig" class="btn btn-primary multilinebutton btn-block">Es ist zu schwierig, den Gesamtnutzen zu errechnen.</button>
-  <button type="button" class="btn btn-primary multilinebutton btn-block">Der Utilitarismus kann zu erheblichen Ungleichheiten führen.</button>
-  <button type="button" class="btn btn-primary multilinebutton btn-block">Utilitaristisches Verhalten kann persönliche Beziehungen und Freundschaften ruinieren.</button>
+  <button type="button" value="zuschwierig" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Es ist zu schwierig, den Gesamtnutzen zu errechnen.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus kann zu erheblichen Ungleichheiten führen.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Utilitaristisches Verhalten kann persönliche Beziehungen und Freundschaften ruinieren.</button>
 </p>
 
 <!-- Modal -->
@@ -21,7 +21,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+          <h5 class="modal-title text-center" id="exampleModalLabel">Übung abgeschlossen!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -44,11 +44,26 @@
     console.log("utilubung3 loaded!");
 
     var points = 100;
-    var score = 0;
 
-    $( "#zuschwierig" ).click(function() {
-      $('#utilubung3').modal('show');
+    $( ".zuschwierig" ).click(function() {
+
+      if($(this).attr("value") === "zuschwierig"){
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        addPointsToCourse(2, "utilubung3", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#utilubung3').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
+      }
     });
-
   });
 </script>
