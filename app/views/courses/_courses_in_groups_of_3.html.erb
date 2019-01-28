@@ -21,7 +21,8 @@
 
                   </div>
                   <div class="card-footer">
-                    <%= link_to 'Kurs fortsetzen', course_path(course), class: "btn btn-info text-white" %>
+                    <% linktext = @account.attendances.where(course_id: course.id).first.status == 'COMPLETED' ? "Kurs wiederholen" : "Kurs fortsetzen" %>
+                    <%= link_to linktext, course_path(course), class: "btn btn-info text-white" %>
                   </div>
                 </div>
               <% else %>
