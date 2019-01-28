@@ -7,11 +7,11 @@
   <b>Du hast diesen Orden erhalten!</b>
 </p>
 <% if @account.attendances.where(course_id: course.id).first.result1.blank? %>
-<div class="text-center rounded border philosopiech-background p-2 my-3">
+<div class="text-center rounded border philosopiech-background">
   <%= image_tag("konsequentialismus-badge.png", class: "img-fluid") %>
 </div>
 <% elsif @account.attendances.where(course_id: course.id).first.result1 == "Deontologie" %>
-<div class="text-center rounded border philosopiech-background p-2 my-3">
+<div class="text-center rounded border philosopiech-background">
   <%= image_tag("deontologie-badge.png", class: "img-fluid") %>
 </div>
 <% else %>

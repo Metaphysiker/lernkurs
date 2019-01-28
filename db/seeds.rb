@@ -133,7 +133,7 @@ Course.create(
  description: "Feministische Ethik",
  topic: "ethics",
  language: "de",
- order: 6,
+ order: 8,
  name_of_picture: "equity.jpg",
  slides: [
    "einfuehrung"
@@ -145,7 +145,7 @@ Course.create(
  description: "Wie dürfen wir mit Tieren umgehen? Dürfen wir alles mit ihnen tun? Oder kann man Tiere auch falsch behandeln?",
  topic: "ethics",
  language: "de",
- order: 7,
+ order: 6,
  name_of_picture: "fox.jpg",
  slides: [
    "einfuehrung"
@@ -157,7 +157,7 @@ Course.create(
  description: "Dürfen wir in Luxus leben, während andere Hunger leiden? Dürfen wir Fleisch aus der Massentierhaltung kaufen? Ist Sterbehilfe immer moralisch verwerflich?",
  topic: "ethics",
  language: "de",
- order: 8,
+ order: 7,
  name_of_picture: "clima.jpg",
  slides: [
    "einfuehrung"
