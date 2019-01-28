@@ -20,6 +20,16 @@ function setStatus(course_id, status){
   });
 }
 
+function setResult1(course_id, result){
+  console.log(course_id + " " + result);
+  $.ajax({
+    url: "/set_result1",
+    method: 'POST',
+    data: { course_id: course_id, result: result},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+  });
+}
+
 function addPointsToCourse(course_id, exercise, points){
   console.log(course_id + " " + exercise + " " + points);
   $.ajax({
