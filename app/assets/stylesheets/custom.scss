@@ -1,0 +1,14 @@
+$completed-background-color: #58d68d;
+$started-background-color: #f9e79f ;
+
+.multilinebutton{
+    white-space:normal !important;
+}
+
+.completed-background{
+  background-color: $completed-background-color;
+}
+
+.started-background{
+  background-color: $started-background-color;
+}

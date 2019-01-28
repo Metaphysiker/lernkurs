@@ -10,6 +10,16 @@ function setCurrentSlide(course_id, number_of_slide){
   });
 }
 
+function setStatus(course_id, status){
+  console.log(course_id + " " + status);
+  $.ajax({
+    url: "/set_status",
+    method: 'POST',
+    data: { course_id: course_id, status: status},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+  });
+}
+
 function addPointsToCourse(course_id, exercise, points){
   console.log(course_id + " " + exercise + " " + points);
   $.ajax({

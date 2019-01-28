@@ -28,6 +28,7 @@
     'allocateconcepts.html.erb',
     'dorkintroduction.html.erb',
     'dork.html.erb',
+    'abschluss',
     'sources.html.erb'
    ]
 )

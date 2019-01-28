@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   post '/set_current_slide', to: 'courses#set_current_slide', as: 'set_current_slide'
   post '/add_points_to_course', to: 'courses#add_points_to_course', as: 'add_points_to_course'
+  post '/set_status', to: 'courses#set_status', as: 'set_status'
 end

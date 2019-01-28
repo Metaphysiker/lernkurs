@@ -4,7 +4,7 @@
         <div class="card-deck">
             <% groups.each do |course| %>
               <% if @account.courses.include?(course) %>
-                <div class="card mb-4 border border-warning">
+                <div class="card mb-4 <%= @account.attendances.where(course_id: course.id).first.status == 'COMPLETED' ? "completed-background" : "started-background" %>">
                   <% if false %>
                       <%= image_tag course.avatar, class: "card-img-top" %>
                       <% else %>
@@ -25,7 +25,7 @@
                   </div>
                 </div>
               <% else %>
-                <div class="card mb-4 border border-secondary">
+                <div class="card mb-4">
                   <% if false %>
                       <%= image_tag course.avatar, class: "card-img-top" %>
                       <% else %>
