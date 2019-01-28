@@ -4,26 +4,27 @@
 
       <section class="jumbotron text-center">
         <div class="container">
+          <% unless @account.current_course_id.blank? %>
+          <h1 class="jumbotron-heading">Willkommen zurück!</h1>
+          <p class="lead text-muted">
+            Dein Punktestand: <b><%= @account.total_score %></b>
+          </p>
+          <div align="center">
+            <%= link_to course_path(@account.current_course_id) do %>
+              <button class="pulse-button rounded text-white">Kurs fortsetzen</button>
+            <% end %>
+          </div>
+          <% else %>
           <h1 class="jumbotron-heading">Was ist Ethik?</h1>
           <p class="lead text-muted">
             Finde es heraus in diesem interaktiven Lernkurs!
           </p>
-          <p>
-            <% unless @account.current_course_id.blank? %>
-              <div align="center">
-                <%= link_to course_path(@account.current_course_id) do %>
-                  <button class="pulse-button rounded text-white">Kurs fortsetzen</button>
-                <% end %>
-              </div>
-            <% else %>
-            <div align="center">
-              <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
-                <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
-              <% end %>
-            </div>
+          <div align="center">
+            <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
+              <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
             <% end %>
-
-          </p>
+          </div>
+          <% end %>
         </div>
       </section>
 

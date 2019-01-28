@@ -13,6 +13,7 @@ class Attendance < ApplicationRecord
 
     sum
   end
+
   def self.statuses
     ['STARTED', 'MIDDLE', 'ALMOST COMPLETED', 'COMPLETED']
   end

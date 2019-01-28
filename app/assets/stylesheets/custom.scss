@@ -3,6 +3,14 @@ $started-background-color: #f9e79f;
 $unstarted-background-color: white; //#e5e7e9;
 $philosophiech-grey: #E6E5E6;
 
+html {
+  font-size: 15px;
+}
+
+.navbar {
+  min-height: 100px;
+}
+
 .multilinebutton{
     white-space:normal !important;
 }
@@ -10,6 +18,11 @@ $philosophiech-grey: #E6E5E6;
 .philosopiech-background{
   background-color: $philosophiech-grey !important;
 }
+
+.philosopiech-background-lighten{
+  background-color: lighten($philosophiech-grey, 5%) !important;
+}
+
 
 .completed-background{
   background-color: $completed-background-color;

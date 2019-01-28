@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_185318) do
     t.text "description", default: ""
     t.string "slug", default: ""
     t.string "topic", default: ""
+    t.string "duration", default: ""
     t.string "name_of_picture", default: ""
     t.integer "order"
     t.text "slides", default: [], array: true
