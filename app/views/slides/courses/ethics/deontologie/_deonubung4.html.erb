@@ -4,28 +4,28 @@
   Welche zwei Pflichten konfligieren im folgenden Textabschnitt?
 </p>
 <p>
-  "Wenn jemand bei gesundem Verstande einem Freunde Waffen übergäbe und im Zustande des Wahnsinns sie zurückforderte,
-  so wird wohl jedermann sagen,
-  daß man weder zur Zurückgabe von dergleichen verpflichtet sei,
-  noch der Zurückgebende gerecht wäre noch auch einer,
-  der einem Menschen von diesem Zustande die volle Wahrheit sagen wollte."
+  "Die Zeugen Jehovas sind eine Religionsgemeinschaft.
+  Sie lehnen die Bluttransfusion aus religiösen Gründen ab.
+  Sie würden lieber sterben, als das Blut von anderen Menschen anzunehmen.
+  Soll ein Arzt einen Zeugen Jehovas verbluten lassen
+  oder ihn gegen seinen Wunsch behandeln und Blut geben?"
 </p>
-<ul class="form-check">
+<ul class="form-check rounded">
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="conflicts" value="0">
-      Die Pflicht, die Wahrheit zu sagen.
+      Die Pflicht, Patienten die Wahrheit zu sagen.
     </label>
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="conflicts" value="1">
-      Die Pflicht, Ausgeliehenes zurückzugeben.
+      Die Pflicht, Patienten nicht sterben zu lassen.
     </label>
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="conflicts" value="2">
-      Die Pflicht, einem Wahnsinnigen keine Waffen zu geben.
+      Die Pflicht, die Wünsche der Patienten zu respektieren.
     </label>
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="conflicts" value="3">
-      Die Pflicht, Nothilfe zu leisten.
+      Die Pflicht, Patienten nicht für wissenschaftliche Forschung zu missbrauchen.
     </label>
 </ul>
 <p>
@@ -69,9 +69,23 @@
         }).get().join(","));
         console.log(result1);
         if(result1.toString() == "1,2"){
+                    $(".form-check").animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
+          addPointsToCourse(3, "deonubung4", points);
+          $(".modal-body").empty().append(
+            `
+            <p>
+                Du hast ${points} Punkte erhalten!
+              </p>
+            `
+          );
           $('#deonubung4m').modal('show');
         } else {
           console.log("falsch");
+          $(".form-check").animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200).delay(400).animate({backgroundColor: "#FFFFFF", color: "#000000" }, 200);
+          $('input[name=conflicts]').prop('checked', false);
+          if(points > 0){
+            points = points - 50;
+          }
         };
     });
 

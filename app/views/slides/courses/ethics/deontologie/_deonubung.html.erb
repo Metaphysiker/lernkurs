@@ -16,22 +16,53 @@
   <button type="button" id="deonubung" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
 </p>
 
+<!-- Modal -->
+<div class="modal fade" id="katimperativ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   $( document ).ready(function() {
     console.log("deonubung loaded!");
 
     var points = 100;
-    var score = 0;
 
     $( "#deonubung" ).click(function() {
 
       if (['kategorischer imperativ'].indexOf($('input[name="verfahren"]').val().toLowerCase()) >= 0) {
+        addPointsToCourse(3, "deonubung", points);
         $('input[name="verfahren"]').removeClass("is-invalid");
         $('input[name="verfahren"]').addClass("is-valid");
+        $(".modal-body").empty().append(
+          `
+          <p>
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        $('#katimperativ').modal('show')
       } else {
         $('input[name="verfahren"]').removeClass("is-valid");
         $('input[name="verfahren"]').addClass("is-invalid");
-        points = points - 50;
+        if(points > 0){
+          points = points - 50;
+        }
       }
 
     });

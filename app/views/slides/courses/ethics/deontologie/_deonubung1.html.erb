@@ -10,9 +10,9 @@
   Wähle die Antwort aus, die von einer kantischen Ethik stammen könnte!
 </p>
 <p>
-  <button type="button" class="btn btn-primary multilinebutton btn-block">Nein, weil zu viel Abfall in der Umwelt zu Krankheiten führen. </button>
-  <button type="button" id="littering" class="btn btn-primary multilinebutton btn-block">Nein, weil wenn jeder Littering betreiben würde, es keine Umwelt mehr gäbe.</button>
-  <button type="button" class="btn btn-primary multilinebutton btn-block">Nein, weil nur faule Menschen Littering betreiben.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Nein, weil zu viel Abfall in der Umwelt zu Krankheiten führen.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Nein, weil wenn jeder Littering betreiben würde, es keine Umwelt mehr gäbe.</button>
+  <button type="button" value="litteringf" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Nein, weil nur faule Menschen Littering betreiben.</button>
 </p>
 
 <!-- Modal -->
@@ -43,10 +43,26 @@
     console.log("deonubung1 loaded!");
 
     var points = 100;
-    var score = 0;
 
-    $( "#littering" ).click(function() {
-      $('#deonubung1').modal('show');
+    $( ".litteringf" ).click(function() {
+
+      if($(this).attr("value") === "litteringf"){
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        addPointsToCourse(3, "deonubung1", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#deonubung1').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
+      }
     });
 
   });
