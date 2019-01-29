@@ -26,13 +26,14 @@
   </select>
 
 <hr />
-<button type="button" id="addvaluetorechnung" class="btn btn-info get-slide-button mx-2">Hinzufügen</button>
+<button type="button" id="addvaluetorechnung" class="btn btn-info mx-2">Hinzufügen</button>
+<button type="button" id="alladded" class="btn btn-warning mx-2 disabled">Fertig</button>
 
 <hr />
 <p>
     <b>Nutzen und Schaden:</b>
 </p>
-<div class="row rounded border" id="rechnungtable">
+<div class="row" id="rechnungtable">
 </div>
 
 <b>Gesamtnutzen: </b> <span id="gesamtnutzen"></span>
@@ -45,36 +46,25 @@
     <div class="modal-content">
       <div class="modal-body">
         <p>
-          Welcher <b>Nutzen</b> hätte folgendes Gesetz?
-        </p>
-        <p>
-          <em>
-            Arbeitslose müssen ein gut sichtbares, gelbes Armband tragen.
-          </em>
-        </p>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Nutzen</label>
-          <input type="email" class="form-control" name="name" placeholder="z.B. Anreiz, Arbeit zu suchen">
+          <b>Deine Analyse:</b>
+          </p>
+        <div class="pb-2" id="rechnungtablecopy">
 
-          <label>Wert:</label>
-          <select class="form-control" id="valueforname" name="value">
-            <% (-20..20).each do |i| %>
-              <% if i == 0 %>
-                <option value="0" selected>Auswählen</option>
-              <% else %>
-                <option value="<%= i %>">
-                  <%= i %>
-                </option>
-              <% end %>
-            <% end %>
-          </select>
         </div>
+        <p>
+          Was ist der <b>Gesamtnutzen</b>?
+          </p>
+          <div class="input-group input-group-lg mb-3">
+          <input type="text" name="gesamtnutzenist" class="form-control" placeholder="z.B. -14 oder 7">
+        </div>
+        <p>
+          <button type="button" id="gesamtnutzenist" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+        </p>
         <hr />
-        <button type="button" id="addvaluetorechnung" class="btn btn-info get-slide-button mx-2">Hinzufügen</button>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
-        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
       </div>
     </div>
   </div>
@@ -90,6 +80,24 @@
 
     var points = 100;
     //$('#porgnutzen').modal('show');
+    $( "#alladded" ).click(function() {
+      $("#rechnungtable").appendTo("#rechnungtablecopy");
+      $('#porgnutzen').modal('show');
+    });
+
+    $("#gesamtnutzenist").click(function(){
+      var input = parseInt($('input[name="gesamtnutzenist"]').val());
+      var element = $('input[name="gesamtnutzenist"]');
+      console.log(input);
+      console.log(sum);
+      if (input === sum) {
+        element.removeClass("is-invalid").addClass("is-valid");
+      } else {
+        element.removeClass("is-valid").addClass("is-invalid");
+      }
+    });
+
+
 
     $( "#addvaluetorechnung" ).click(function() {
       var text = $('input[name="name"]').val();
@@ -98,13 +106,18 @@
       sum = sum + parseInt(value);
       entries = entries + 1;
 
+      if(entries == 3){
+        $("#alladded").removeClass("disabled");
+        console.log("GO");
+      }
+
       $('#rechnungtable').fadeOut(300).fadeIn(500);
 
       $("#rechnungtable").append(
         `
-        <div class="col-12 px-2 py-1" id="entries-${entries}">
+        <div class="col rounded border m-1 p-1" id="entries-${entries}">
           ${text}
-          <div class="float-right">+${value}</div>
+          <div class="float-right">${value>0?'+' + value:'' + value}</div>
         </div>
         `
       );
