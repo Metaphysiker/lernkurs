@@ -9,7 +9,7 @@
   </em>
 </p>
 <hr />
-<label>Nutzen</label>
+<label>Nutzen / Schaden</label>
 <div class="input-group input-group-lg mb-3">
   <input type="text" name="name" class="form-control" placeholder="z.B. Anreiz, Arbeit zu suchen">
 </div>
@@ -18,9 +18,9 @@
   <select class="form-control" id="valueforname" name="value">
     <% (-20..20).reverse_each do |i| %>
       <% if i == 0 %>
-        <option selected>Auswählen</option>
+        <option value="<%= i %>" selected>Auswählen</option>
       <% else %>
-        <option>
+        <option value="<%= i %>">
           <%= i %>
         </option>
       <% end %>
@@ -31,15 +31,11 @@
 <button type="button" id="addvaluetorechnung" class="btn btn-info get-slide-button mx-2">Hinzufügen</button>
 
 <hr />
-<div id="rechnung" class="rounded my-2 p-1">
-
+<p>
+    <b>Nutzen und Schaden:</b>
+</p>
+<div class="row rounded border" id="rechnungtable">
 </div>
-
-<table class="table" id="rechnungtable">
-  <tbody>
-
-  </tbody>
-</table>
 
 <b>Gesamtnutzen: </b> <span id="gesamtnutzen"></span>
 
@@ -62,13 +58,13 @@
           <label for="exampleFormControlInput1">Nutzen</label>
           <input type="email" class="form-control" name="name" placeholder="z.B. Anreiz, Arbeit zu suchen">
 
-          <label for="sel1">Wert:</label>
+          <label>Wert:</label>
           <select class="form-control" id="valueforname" name="value">
             <% (-20..20).each do |i| %>
               <% if i == 0 %>
-                <option selected>Auswählen</option>
+                <option value="0" selected>Auswählen</option>
               <% else %>
-                <option>
+                <option value="<%= i %>">
                   <%= i %>
                 </option>
               <% end %>
@@ -89,8 +85,8 @@
 <script>
   $( document ).ready(function() {
     console.log("porg loaded!");
+    var entries = 0;
     var sum = 0;
-    var table = document.getElementById("rechnungtable");
     //addPointsToCourse(2, "utilubung4", points);
 
     var points = 100;
@@ -98,29 +94,32 @@
 
     $( "#addvaluetorechnung" ).click(function() {
       var text = $('input[name="name"]').val();
-      //var value = $('input[name="value"]').val();
-      var value = $('#valueforname').find(":selected").text();
-      console.log(text);
-      console.log(value);
-      //var textwithvalue = $('input[name="name"]').val() + " +" + $('input[name="value"]').val();
+      //var value = $('#valueforname').find(":selected").val();
+      var value = $('#valueforname :selected').val();
       sum = sum + parseInt(value);
-      console.log(sum);
+      entries = entries + 1;
 
       $('#rechnungtable').fadeOut(300).fadeIn(500);
-      $('#rechnungtable').animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
-      $('#rechnungtable').animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
 
-      var row = table.insertRow(0);
-      var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
-      cell1.innerHTML = text;
-      cell2.innerHTML = value;
+      $("#rechnungtable").append(
+        `
+        <div class="col-12 px-2 py-1" id="entries-${entries}">
+          ${text}
+          <div class="float-right">+${value}</div>
+        </div>
+        `
+      );
 
-      $('input[name="name"]').addClass("is-valid");
+      if(value > 0){
+        $('#entries-' + entries).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
+      } else {
+        $('#entries-' + entries).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+      }
 
-        //$("#rechnung").append(textwithvalue);
+      $('input[name="name"]').val("");
+      $("#valueforname").val(0);
 
-        $("#gesamtnutzen").empty().append(sum);
+      $("#gesamtnutzen").empty().append(sum);
 
     });
   });
