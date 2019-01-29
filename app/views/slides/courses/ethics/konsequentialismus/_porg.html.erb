@@ -1,18 +1,86 @@
-<h4 class="text-center">Deine Kosten- und Nutzenanalyse!</h4>
+<h5 class="text-center">Deine Kosten- und Nutzenanalyse!</h5>
 <hr />
 <p>
+  Welcher Nutzen und welcher Schaden hätte folgendes Gesetz?
+</p>
+<p>
+  <em>
+    Arbeitslose müssen ein gut sichtbares, gelbes Armband tragen.
+  </em>
+</p>
 
-</p>
-<p>
-  Es wird darüber abgestimmt,
-  ob alle Arbeitslose per Gesetz ein
-  <b>gut sichtbares, gelbes Armband</b> tragen sollen oder nicht,
-  so dass Arbeitslose einfach erkannt werden können.
-</p>
-<p>
-  Du wurdest angefragt, eine Kosten- und Nutzenanalyse zu erstellen!
-</p>
-<p>
-  Überlege dir, <b>welche Vorteile und Nachteile</b> dieses Gesetz hat
-  und gib ihnen einen <b>Nutzwert</b>.
-</p>
+<hr />
+
+<div class="form-group">
+  <label for="exampleFormControlInput1">Nutzen</label>
+  <input type="email" class="form-control" id="1n" placeholder="z.B. Anreiz, Arbeit zu suchen">
+</div>
+
+<div class="form-group">
+  <label for="exampleFormControlInput1">Wert</label>
+  <input type="email" class="form-control" id="1nv" placeholder="1 = sehr wenig, 20 = sehr hoch">
+</div>
+
+<hr />
+<div id="rechnung" class="rounded my-2 p-1">
+
+</div>
+
+<b>Gesamtnutzen: </b> <span id="gesamtnutzen"></span>
+
+<!-- Modal -->
+<div class="modal fade" id="porgnutzen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>
+          Welcher <b>Nutzen</b> hätte folgendes Gesetz?
+        </p>
+        <p>
+          <em>
+            Arbeitslose müssen ein gut sichtbares, gelbes Armband tragen.
+          </em>
+        </p>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nutzen</label>
+          <input type="email" class="form-control" name="name" placeholder="z.B. Anreiz, Arbeit zu suchen">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Wert</label>
+          <input type="email" class="form-control" name="value" placeholder="1 = sehr wenig, 20 = sehr hoch">
+        </div>
+        <hr />
+        <button type="button" id="addvaluetorechnung" class="btn btn-info get-slide-button mx-2">Hinzufügen</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("porg loaded!");
+    var sum = 0;
+    //addPointsToCourse(2, "utilubung4", points);
+
+    var points = 100;
+    $('#porgnutzen').modal('show');
+
+    $( "#addvaluetorechnung" ).click(function() {
+      console.log($('input[name="name"]').val());
+      console.log($('input[name="value"]').val());
+      var textwithvalue = $('input[name="name"]').val() + " +" + $('input[name="value"]').val();
+      sum = sum + parseInt($('input[name="value"]').val());
+      console.log(sum);
+
+        $("#rechnung").append(textwithvalue);
+
+        $("#gesamtnutzen").empty().append(sum);
+
+    });
+  });
+</script>
