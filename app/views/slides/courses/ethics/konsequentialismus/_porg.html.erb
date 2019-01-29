@@ -1,32 +1,49 @@
 <h5 class="text-center">Deine Kosten- und Nutzenanalyse!</h5>
 <hr />
 <p>
-  Welcher Nutzen und welcher Schaden hätte folgendes Gesetz?
+  Welcher Nutzen und welcher Schaden bränge das folgendes Gesetz?
 </p>
 <p>
   <em>
     Arbeitslose müssen ein gut sichtbares, gelbes Armband tragen.
   </em>
 </p>
+<hr />
+<label>Nutzen</label>
+<div class="input-group input-group-lg mb-3">
+  <input type="text" name="name" class="form-control" placeholder="z.B. Anreiz, Arbeit zu suchen">
+</div>
+
+  <label>Wert</label>
+  <select class="form-control" id="valueforname" name="value">
+    <% (-20..20).reverse_each do |i| %>
+      <% if i == 0 %>
+        <option selected>Auswählen</option>
+      <% else %>
+        <option>
+          <%= i %>
+        </option>
+      <% end %>
+    <% end %>
+  </select>
 
 <hr />
-
-<div class="form-group">
-  <label for="exampleFormControlInput1">Nutzen</label>
-  <input type="email" class="form-control" id="1n" placeholder="z.B. Anreiz, Arbeit zu suchen">
-</div>
-
-<div class="form-group">
-  <label for="exampleFormControlInput1">Wert</label>
-  <input type="email" class="form-control" id="1nv" placeholder="1 = sehr wenig, 20 = sehr hoch">
-</div>
+<button type="button" id="addvaluetorechnung" class="btn btn-info get-slide-button mx-2">Hinzufügen</button>
 
 <hr />
 <div id="rechnung" class="rounded my-2 p-1">
 
 </div>
 
+<table class="table" id="rechnungtable">
+  <tbody>
+
+  </tbody>
+</table>
+
 <b>Gesamtnutzen: </b> <span id="gesamtnutzen"></span>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="porgnutzen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -44,11 +61,19 @@
         <div class="form-group">
           <label for="exampleFormControlInput1">Nutzen</label>
           <input type="email" class="form-control" name="name" placeholder="z.B. Anreiz, Arbeit zu suchen">
-        </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Wert</label>
-          <input type="email" class="form-control" name="value" placeholder="1 = sehr wenig, 20 = sehr hoch">
+          <label for="sel1">Wert:</label>
+          <select class="form-control" id="valueforname" name="value">
+            <% (-20..20).each do |i| %>
+              <% if i == 0 %>
+                <option selected>Auswählen</option>
+              <% else %>
+                <option>
+                  <%= i %>
+                </option>
+              <% end %>
+            <% end %>
+          </select>
         </div>
         <hr />
         <button type="button" id="addvaluetorechnung" class="btn btn-info get-slide-button mx-2">Hinzufügen</button>
@@ -65,19 +90,35 @@
   $( document ).ready(function() {
     console.log("porg loaded!");
     var sum = 0;
+    var table = document.getElementById("rechnungtable");
     //addPointsToCourse(2, "utilubung4", points);
 
     var points = 100;
-    $('#porgnutzen').modal('show');
+    //$('#porgnutzen').modal('show');
 
     $( "#addvaluetorechnung" ).click(function() {
-      console.log($('input[name="name"]').val());
-      console.log($('input[name="value"]').val());
-      var textwithvalue = $('input[name="name"]').val() + " +" + $('input[name="value"]').val();
-      sum = sum + parseInt($('input[name="value"]').val());
+      var text = $('input[name="name"]').val();
+      //var value = $('input[name="value"]').val();
+      var value = $('#valueforname').find(":selected").text();
+      console.log(text);
+      console.log(value);
+      //var textwithvalue = $('input[name="name"]').val() + " +" + $('input[name="value"]').val();
+      sum = sum + parseInt(value);
       console.log(sum);
 
-        $("#rechnung").append(textwithvalue);
+      $('#rechnungtable').fadeOut(300).fadeIn(500);
+      $('#rechnungtable').animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+      $('#rechnungtable').animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
+
+      var row = table.insertRow(0);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      cell1.innerHTML = text;
+      cell2.innerHTML = value;
+
+      $('input[name="name"]').addClass("is-valid");
+
+        //$("#rechnung").append(textwithvalue);
 
         $("#gesamtnutzen").empty().append(sum);
 
