@@ -94,6 +94,9 @@ Course.create(
    'dkritiktragik',
    'deonubung3',
    'deonubung4',
+   'universalisiererintro',
+   'universalisierer',
+   'abschluss',
  ]
 )
 
