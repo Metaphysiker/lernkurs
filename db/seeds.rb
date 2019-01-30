@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
  Course.create(
+  id: 1,
   title: "Einführung in die Ethik",
   #description: "Dieser Kurs führt dich in die Ethik ein. Darin lernst du die wichtigsten Theorien, Argumente und Begriffe der Ethik kennen.",
   description: "In diesem Einführungskurs lernst du die wichtigsten Theorien, Begriffe und Argumente der Ethik kennen!",
@@ -35,6 +36,7 @@
 )
 
 Course.create(
+ id: 2,
  title: "Konsequentialismus",
  description: "Darf man etwas Schlimmes tun, um etwas Gutes zu erreichen? Sollen wir Handlungen danach beurteilen, wie viel Glück sie in die Welt bringen? Heiligt der Zweck die Mittel?",
  topic: "ethics",
@@ -72,6 +74,7 @@ Course.create(
 )
 
 Course.create(
+ id: 3,
  title: "Deontologie",
  description: "Soll man seine Versprechen immer halten? Ist Lügen auch dann schlecht, wenn man gute Absichten hat? Gibt es Regeln, die wir immer befolgen sollten?",
  topic: "ethics",
@@ -101,6 +104,7 @@ Course.create(
 )
 
 Course.create(
+ id: 4,
  title: "Tugendethik",
  description: "Was für eine Person soll ich sein? Welche Charaktereigenschaften sind gut und welche schlecht? Gibt es so was wie ein gutes Leben?",
  topic: "ethics",
@@ -128,6 +132,7 @@ Course.create(
 )
 
 Course.create(
+ id: 5,
  title: "Kontraktualismus",
  description: "Sind ethische Normen ein Produkt von Verhandlungen? Spielen bei ethischen Fragen unsere Vorlieben und persönlichen Interessen eine Rolle?",
  topic: "ethics",
@@ -141,6 +146,7 @@ Course.create(
 )
 
 Course.create(
+ id: 8,
  title: "Feministische Ethik",
  description: "Spielen Unterschiede zwischen den Geschlechtern eine ethische Rolle? Sind traditionelle Ethiken unfair gegenüber Frauen? Gibt es so was wie \"männliche\" und \"weibliche\" Werte?",
  topic: "ethics",
@@ -154,6 +160,7 @@ Course.create(
 )
 
 Course.create(
+ id: 6,
  title: "Tierethik",
  description: "Wie sollen wir mit Tieren umgehen? Dürfen wir alles mit ihnen machen? Oder kann man Tiere auch falsch behandeln?",
  topic: "ethics",
@@ -167,6 +174,7 @@ Course.create(
 )
 
 Course.create(
+ id: 7,
  title: "Angewandte Ethik",
  description: "Dürfen wir in Luxus leben, während andere Hunger leiden? Dürfen wir Fleisch aus der Massentierhaltung kaufen? Ist Prostitution immer moralisch verwerflich?",
  topic: "ethics",
@@ -176,10 +184,11 @@ Course.create(
  name_of_picture: "clima.jpg",
  slides: [
    "einfuehrung"
- ]
+  ]
 )
 
 Course.create(
+ id: 9,
  title: "Metaethik",
  description: "Ist Ethik eine Wissenschaft? Kann man ethische Fragen jemals wirklich beantworten? Was machen wir, wenn wir ethische Urteile fällen?",
  topic: "ethics",
