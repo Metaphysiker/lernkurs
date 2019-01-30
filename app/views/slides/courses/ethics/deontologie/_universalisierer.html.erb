@@ -1,6 +1,62 @@
-<h3 class="text-center">Universalisieren!</h3>
-<hr />
 <p>
-  <label for="comment">Aufsatz:</label>
+  <label for="comment">"Jeder muss jeden Monat seinen Besitz mit dem Besitz seines Nachbarn tauschen!"</label>
   <textarea class="form-control" rows="5" id="aufsatz1"></textarea>
+  <div class="rounded p-1">
+    Anzahl Zeichen: <span id="aufsatz1l">0</span>
+  </div>
 </p>
+<p>
+  <label for="comment">"Du sollst entweder Arzt oder Ingenieur werden!"</label>
+  <textarea class="form-control" rows="5" id="aufsatz2"></textarea>
+  <div class="rounded p-1">
+    Anzahl Zeichen: <span id="aufsatz2l">0</span>
+  </div>
+</p>
+
+<p>
+  <button type="button" id="universalisierer" class="btn btn-info btn-lg my-3 disabled">Fertig</button>
+</p>
+
+<script>
+  $( document ).ready(function() {
+    console.log("universalisierer loaded!");
+    var enablefinishbutton = 0;
+
+    $("#aufsatz1").keypress(function() {
+        var length = $(this).val().length;
+        $("#aufsatz1l").text(length);
+        if(length > 20) {
+          enablefinishbutton = enablefinishbutton + 1;
+          $("#aufsatz1l").parent().animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
+        } else {
+          $("#aufsatz1l").parent().animate({backgroundColor: "#FFFFFF", color: "#000000" }, 200);
+           enablefinishbutton = enablefinishbutton -1;
+        }
+    });
+
+    $( "#deonubung" ).click(function() {
+
+      if (['kategorischer imperativ'].indexOf($('input[name="verfahren"]').val().toLowerCase()) >= 0) {
+        addPointsToCourse(3, "deonubung", points);
+        $('input[name="verfahren"]').removeClass("is-invalid");
+        $('input[name="verfahren"]').addClass("is-valid");
+        $(".modal-body").empty().append(
+          `
+          <p>
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        $('#katimperativ').modal('show')
+      } else {
+        $('input[name="verfahren"]').removeClass("is-valid");
+        $('input[name="verfahren"]').addClass("is-invalid");
+        if(points > 0){
+          points = points - 50;
+        }
+      }
+
+    });
+
+  });
+</script>
