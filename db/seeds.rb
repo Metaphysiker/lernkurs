@@ -127,7 +127,7 @@ Course.create(
    'vkritikvagheit',
    'vkritikorientierung',
    'vubung3',
-   'vubung4',
+    'abschluss',
  ]
 )
 
