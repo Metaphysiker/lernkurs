@@ -103,6 +103,8 @@ var virtues = [
       points = 100;
 
       if(currentnumber === virtues.length){
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
+        addPointsToCourse(4, "vubung", score);
         $(".modal-body").empty().append(
           `<p>
               Du hast ${score} Punkte erhalten!
@@ -111,7 +113,7 @@ var virtues = [
         );
         $('#allocatevirtues').modal('show');
       } else {
-        $(this).animate({backgroundColor: "#32CD32" }, 200, function(){
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
               getNextVices(currentnumber);
             },500);
@@ -120,7 +122,7 @@ var virtues = [
 
     } else {
       points = points - 50;
-      $(this).animate({backgroundColor: "#DC143C" }, 200);
+      $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
     }
 
   });
@@ -158,9 +160,9 @@ var virtues = [
         .map((a) => a.value)
 
       $("#possiblevirtues").empty().append(
-        `<button type="button" value="${virtues[random_array[0]][1]}" class="btn btn-primary multilinebutton btn-block avanswer p-3 mb-4">${virtues[random_array[0]][0]}</button>
-        <button type="button" value="${virtues[random_array[1]][1]}" class="btn btn-primary multilinebutton btn-block avanswer p-3 mb-4">${virtues[random_array[1]][0]}</button>
-        <button type="button" value="${virtues[random_array[2]][1]}" class="btn btn-primary multilinebutton btn-block avanswer p-3 mb-4">${virtues[random_array[2]][0]}</button>`
+        `<button type="button" value="${virtues[random_array[0]][1]}" class="btn btn-light border multilinebutton btn-block p-3 mb-4 avanswer">${virtues[random_array[0]][0]}</button>
+        <button type="button" value="${virtues[random_array[1]][1]}" class="btn btn-light border multilinebutton btn-block p-3 mb-4 avanswer">${virtues[random_array[1]][0]}</button>
+        <button type="button" value="${virtues[random_array[2]][1]}" class="btn btn-light border multilinebutton btn-block p-3 mb-4 avanswer">${virtues[random_array[2]][0]}</button>`
       ).fadeIn("fast");
     });
   }
