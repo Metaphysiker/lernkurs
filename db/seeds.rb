@@ -141,7 +141,17 @@ Course.create(
  order: 5,
  name_of_picture: "contract.jpg",
  slides: [
-   "kontraktualismus"
+   "kontraktualismus",
+   "vertrag",
+   "vertrag1",
+   "vertrag2",
+   "vertrag3",
+   "vertrag4",
+   "hobbes",
+   "hobbes1",
+   "hobbes2",
+   "hobbes3",
+   "vertrag4",
  ]
 )
 
@@ -183,7 +193,7 @@ Course.create(
  order: 7,
  name_of_picture: "clima.jpg",
  slides: [
-   "einfuehrung"
+   "angewandteethik",
   ]
 )
 
@@ -197,7 +207,7 @@ Course.create(
  order: 9,
  name_of_picture: "organization.jpg",
  slides: [
-   "einfuehrung"
+   "metaethik",
  ]
 )
 
