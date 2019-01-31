@@ -150,8 +150,12 @@ Course.create(
    "hobbes",
    "hobbes1",
    "hobbes2",
-   "hobbes3",
-   "vertrag4",
+   "rawls",
+   "rawls1",
+   "rawls2",
+   "ktproblems",
+   "ktkritikmoralvsinteresse",
+   "ktkritikpartnersincrime",
  ]
 )
 
