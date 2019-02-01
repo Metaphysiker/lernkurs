@@ -184,7 +184,12 @@ Course.create(
  order: 6,
  name_of_picture: "fox.jpg",
  slides: [
-   "tierethik"
+   "tierethik",
+   "anthropologischedifferenz",
+   "anthropologischedifferenz1",
+   "anthropologischedifferenz2",
+   "extensionsmodell",
+   "relationalismus",
  ]
 )
 
