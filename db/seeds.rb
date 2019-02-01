@@ -190,6 +190,7 @@ Course.create(
    "anthropologischedifferenz2",
    "anthropologischedifferenz3",
    "extensionsmodell",
+   "extensionsmodell1",
    "relationalismus",
  ]
 )
