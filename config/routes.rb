@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get "/textversion/:id", to: "static_pages#textversion", as: 'textversion'
   get "/test", to: "static_pages#test", as: 'test'
+  get "/overview", to: "static_pages#overview", as: 'overview'
 
   post '/set_current_slide', to: 'courses#set_current_slide', as: 'set_current_slide'
   post '/add_points_to_course', to: 'courses#add_points_to_course', as: 'add_points_to_course'
