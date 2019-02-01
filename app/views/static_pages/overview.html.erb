@@ -1,0 +1,18 @@
+
+<div class="container">
+  <h3>Übersicht</h3>
+  <p>
+    Accounts: <%= @accounts.count %>
+  </p>
+  <% @accounts.each do |account| %>
+    Attendances: <%= account.attendances.count %>
+    <hr />
+    <% account.attendances.each do |attendance| %>
+      Course: <%= attendance.course.title %>
+      <hr />
+      Points: <%= attendance.points %>
+      <hr />
+      Current Slide: <%= attendance.current_slide %>
+    <% end %>
+  <% end %>
+</div>

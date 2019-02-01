@@ -5,6 +5,10 @@ class StaticPagesController < ApplicationController
     cookies[:progress] = "Epic!"
   end
 
+  def overview
+    @accounts = Account.all
+  end
+
   def course_overview
     @courses = Course.all.order(:order)
   end
