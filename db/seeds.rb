@@ -186,6 +186,7 @@ Course.create(
  slides: [
    "tierethik",
    "anthropologischedifferenz",
+   "anthropozentrismus",
    "anthropologischedifferenz1",
    "anthropologischedifferenz2",
    "anthropologischedifferenz3",
