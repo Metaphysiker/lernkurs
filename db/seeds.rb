@@ -153,6 +153,7 @@ Course.create(
    "rawls",
    "rawls1",
    "rawls2",
+   "rawls3",
    "ktproblems",
    "ktkritikmoralvsinteresse",
    "ktkritikpartnersincrime",
