@@ -196,9 +196,10 @@ Course.create(
    "biozentrismus",
    "biozentrismus1",
    "aquin",
+   "aquin1",
    "singer",
-   "schweitzer",
-   "relationalismus",
+   "singer1",
+   "singer2",
    "anthropologischedifferenz3",
  ]
 )
