@@ -189,10 +189,17 @@ Course.create(
    "anthropozentrismus",
    "anthropologischedifferenz1",
    "anthropologischedifferenz2",
-   "anthropologischedifferenz3",
    "extensionsmodell",
    "extensionsmodell1",
+   "pathozentrismus",
+   "pathozentrismus1",
+   "biozentrismus",
+   "biozentrismus1",
+   "aquin",
+   "singer",
+   "schweitzer",
    "relationalismus",
+   "anthropologischedifferenz3",
  ]
 )
 
