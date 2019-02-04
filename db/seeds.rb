@@ -215,6 +215,13 @@ Course.create(
  name_of_picture: "clima.jpg",
  slides: [
    "angewandteethik",
+   "gleichheit",
+   "gleichheit1",
+   "gleichheit2",
+   "gleichheit3",
+   "luxus",
+   "luxus1",
+   "luxus2",
   ]
 )
 

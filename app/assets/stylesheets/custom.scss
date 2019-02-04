@@ -2,7 +2,26 @@ $completed-background-color: #58d68d;
 $started-background-color: #f9e79f;
 $unstarted-background-color: white; //#e5e7e9;
 $philosophiech-grey: #E6E5E6;
+$philosophiech-yellow: #F3E380;
+$philosophiech-green: #B7FFAF;
 
+.previous-next-button {
+  @extend .btn;
+  background-color: $philosophiech-yellow !important;
+  &:hover {
+    background-color: darken($philosophiech-yellow, 15%) !important;
+  }
+}
+
+.start-course-button{
+  @extend .btn;
+  @extend .btn-info;
+  @extend .text-white;
+  //background-color: $philosophiech-green !important;
+  //&:hover {
+  //  background-color: darken($philosophiech-green, 15%) !important;
+  //}
+}
 
 .navbar {
   min-height: 100px;
