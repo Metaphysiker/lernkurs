@@ -1,11 +1,13 @@
-
 <div class="container">
   <h3>Übersicht</h3>
   <p>
-    Accounts: <%= @accounts.count %>
+    <b>Accounts:</b> <%= @accounts.count %>
   </p>
+  <hr />
   <% @accounts.each do |account| %>
-    Attendances: <%= account.attendances.count %>
+    <b>ID: </b> <%= account.id %>
+    <br />
+    <b>Attendances: </b> <%= account.attendances.count %>
     <hr />
     <% account.attendances.each do |attendance| %>
       Course: <%= attendance.course.title %>
@@ -13,6 +15,7 @@
       Points: <%= attendance.points %>
       <hr />
       Current Slide: <%= attendance.current_slide %>
+      <hr />
     <% end %>
   <% end %>
 </div>
