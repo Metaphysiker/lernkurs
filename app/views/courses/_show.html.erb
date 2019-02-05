@@ -44,12 +44,8 @@
         $.ajax({
           url: "/slide/" + course_id + "/" + current_slide + ".js",
           method: 'GET',
-          data: { id: course_id, current_slide: current_slide },
           async: true,
-          cache: false,
-          headers: {
-            'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
-          }
+          cache: false
         }).done(function(response) {
           animateCss('.slide', 'fadeOutRight', function() {
             $(".slide").empty().append(response);
@@ -67,12 +63,8 @@
         $.ajax({
           url: "/slide/" + course_id + "/" + current_slide + ".js",
           method: 'GET',
-          data: { id: course_id, current_slide: current_slide },
           async: true,
-          cache: false,
-          headers: {
-            'X-CSRF-Token': document.querySelector("meta[name=csrf-token]").content
-          }
+          cache: false
         }).done(function(response) {
           animateCss('.slide', 'fadeOutLeft', function() {
             $(".slide").empty().append(response);
