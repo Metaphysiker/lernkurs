@@ -8,6 +8,8 @@
     <b>ID: </b> <%= account.id %>
     <br />
     <b>Attendances: </b> <%= account.attendances.count %>
+    <br />
+    Total Score: <b><%= account.total_score %></b>
     <hr />
     <% account.attendances.each do |attendance| %>
       Course: <%= attendance.course.title %>
