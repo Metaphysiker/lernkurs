@@ -171,6 +171,9 @@ Course.create(
  name_of_picture: "equity.jpg",
  slides: [
    "feminismus",
+   "benachteiligung",
+   "benachteiligung1",
+   "benachteiligung2",
  ]
 )
 
@@ -222,6 +225,13 @@ Course.create(
    "luxus",
    "luxus1",
    "luxus2",
+   "luxus3",
+   "sterbehilfe",
+   "sterbehilfe1",
+   "sterbehilfe2",
+   "prostitution",
+   "prostitution1",
+   "prostitution2"
   ]
 )
 
