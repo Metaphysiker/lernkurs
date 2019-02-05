@@ -99,7 +99,7 @@ class CoursesController < ApplicationController
     number_of_slide = params[:number_of_slide].to_i
 
     @account.attendances.where(course_id: course_id).first.update(current_slide: number_of_slide)
-
+    head :ok
   end
 
   def set_status
@@ -107,6 +107,7 @@ class CoursesController < ApplicationController
     status = params[:status].to_s
 
     @account.attendances.where(course_id: course_id).first.update(status: status)
+    head :ok
   end
 
   def set_result1
@@ -114,6 +115,7 @@ class CoursesController < ApplicationController
     result = params[:result].to_s
 
     @account.attendances.where(course_id: course_id).first.update(result1: result)
+    head :ok
   end
 
   def set_orden
@@ -121,6 +123,7 @@ class CoursesController < ApplicationController
     orden = params[:orden].to_s
 
     @account.attendances.where(course_id: course_id).first.update(orden: orden)
+    head :ok
   end
 
   def add_points_to_course
@@ -132,7 +135,7 @@ class CoursesController < ApplicationController
 
     attendance.exercises[exercise] = points
     attendance.save
-
+    head :ok
   end
 
   private

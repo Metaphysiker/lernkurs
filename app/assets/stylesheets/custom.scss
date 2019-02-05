@@ -7,15 +7,19 @@ $philosophiech-green: #B7FFAF;
 
 .previous-next-button {
   @extend .btn;
+  @extend .btn-dark;
+  /*
   background-color: $philosophiech-yellow !important;
   &:hover {
     background-color: darken($philosophiech-yellow, 15%) !important;
   }
+  */
 }
 
 .start-course-button{
   @extend .btn;
-  @extend .btn-info;
+  //@extend .btn-info;
+  @extend .btn-dark;
   @extend .text-white;
   //background-color: $philosophiech-green !important;
   //&:hover {
