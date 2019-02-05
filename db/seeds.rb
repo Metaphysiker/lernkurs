@@ -226,6 +226,7 @@ Course.create(
    "luxus1",
    "luxus2",
    "luxus3",
+   "luxus4",
    "sterbehilfe",
    "sterbehilfe1",
    "sterbehilfe2",
