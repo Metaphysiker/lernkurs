@@ -40,7 +40,7 @@
       var current_slide = $("#get-previous-slide").attr('slide');
       setCurrentSlide(course_id, current_slide);
 
-      //get new slide
+      //get previous slide
         $.ajax({
           url: "/slide/" + course_id + "/" + current_slide + ".js",
           method: 'GET',
@@ -59,7 +59,7 @@
       var current_slide = $("#get-next-slide").attr('slide');
       setCurrentSlide(course_id, current_slide);
 
-      //get new slide
+      //get next slide
         $.ajax({
           url: "/slide/" + course_id + "/" + current_slide + ".js",
           method: 'GET',
