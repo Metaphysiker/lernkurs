@@ -19,6 +19,5 @@
 //= require bootstrap-sprockets
 //= celebrate
 //= animate
-//= focusinput
 //= ajax
 //= require_tree .
