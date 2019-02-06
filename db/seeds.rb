@@ -230,9 +230,7 @@ Course.create(
    "sterbehilfe",
    "sterbehilfe1",
    "sterbehilfe2",
-   "prostitution",
-   "prostitution1",
-   "prostitution2"
+   "sterbehilfe3",
   ]
 )
 
