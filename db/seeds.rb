@@ -180,7 +180,8 @@ Course.create(
    "benachteiligung6",
    "benachteiligung7",
    "benachteiligung8",
-   "partikularismus",
+   "benachteiligung9",
+   "benachteiligung10",
  ]
 )
 
