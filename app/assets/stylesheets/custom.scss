@@ -60,3 +60,9 @@ html, body {
 .unstarted-background{
   background-color: $unstarted-background-color;
 }
+
+.space-between-li-10{
+  li{
+    margin-bottom: 10px;
+  }
+}

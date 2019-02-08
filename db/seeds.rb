@@ -17,21 +17,23 @@
   order: 1,
   name_of_picture: "landscape.jpg",
   slides: [
-    'introduction.html.erb',
-    'ethicaltheories.html.erb',
-    'kintroduction.html.erb',
-    'kexample.html.erb',
-    'dintroduction.html.erb',
-    'dintroduction1.html.erb',
-    'dexample.html.erb',
-    'vintroduction.html.erb',
-    'vexample.html.erb',
-    'allocateconceptsintroduction.html.erb',
-    'allocateconcepts.html.erb',
-    'dorkintroduction.html.erb',
-    'dork.html.erb',
+    'kompetenzen',
+    'introduction',
+    'introduction1',
+    'ethicaltheories',
+    'kintroduction',
+    'kexample',
+    'dintroduction',
+    'dintroduction1',
+    'dexample',
+    'vintroduction',
+    'vexample',
+    'allocateconceptsintroduction',
+    'allocateconcepts',
+    'dorkintroduction',
+    'dork',
     'abschluss',
-    'sources.html.erb'
+    'sources'
    ]
 )
 
