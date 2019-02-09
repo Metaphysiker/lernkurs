@@ -21,6 +21,7 @@
     'introduction',
     'introduction1',
     'ethicaltheories',
+    'ethicaltheories1',
     'kintroduction',
     'kexample',
     'dintroduction',
