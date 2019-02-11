@@ -28,4 +28,8 @@ class StaticPagesController < ApplicationController
   def test
 
   end
+
+  def why_ethics
+
+  end
 end

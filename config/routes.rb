@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/course_overview', to: 'static_pages#course_overview', as: 'course_overview'
 
+  get '/why_ethics', to: 'static_pages#why_ethics', as: 'why_ethics'
+
   #RENDER
   post '/render_slide', to: 'courses#render_slide', as: 'render_slide'
   get '/slide/:id/:current_slide', to: 'courses#slide', as: 'slide'
