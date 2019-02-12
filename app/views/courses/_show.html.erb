@@ -76,7 +76,7 @@
       });
     }
 
-    //remove previous event handlers because of possible bugs
+    //remove previous event handlers to prevent bugs
     $(document).unbind('keydown');
     $("body").off("click", "#get-next-slide");
     $("body").off("click", "#get-previous-slide");
