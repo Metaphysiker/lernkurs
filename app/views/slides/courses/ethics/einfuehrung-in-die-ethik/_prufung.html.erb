@@ -1,0 +1,109 @@
+<p>
+  <b>Kreuze</b> die ethischen Theorien an!
+</p>
+<hr />
+<ul class="form-check rounded">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="0">
+      Relativitätstheorie
+    </label>
+    <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="1">
+      Konsequentialismus
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="2">
+      Nationalökonomie
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="3">
+      Quantenphysik
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="4">
+      Tugendethik
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="5">
+      Evolutionstheorie
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="6">
+      Entwicklungspsychologie
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="7">
+      Deontologie
+    </label>
+        <hr />
+</ul>
+<p>
+  <button type="button" id="prufung" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="prufungm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("prufung loaded!");
+
+    var points = 100;
+    var score = 0;
+
+    $("#prufung").click(function(event){
+        event.preventDefault();
+        result1 = ($("input[name=theories]:checked").map(function() {
+            return this.value;
+        }).get().join(","));
+        console.log(result1);
+        if(result1.toString() == "1,4,7"){
+          $(".form-check").animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
+          addPointsToCourse(1, "prufung", points);
+          $(".modal-body").empty().append(
+            `
+            <p>
+                Du hast ${points} Punkte erhalten!
+              </p>
+            `
+          );
+          $('#prufungm').modal('show');
+        } else {
+          console.log("falsch");
+          $(".form-check").animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200).delay(400).animate({backgroundColor: "#FFFFFF", color: "#000000" }, 200);
+          $('input[name=theories]').prop('checked', false);
+          if(points > 0){
+            points = points - 50;
+          }
+        };
+    });
+
+  });
+</script>

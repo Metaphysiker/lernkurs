@@ -23,7 +23,6 @@
     'ethicaltheories',
     'ethicaltheories1',
     'ethicaltheories2',
-    'ethicaltheoriesubung',
     'kintroduction',
     'kintroduction1',
     'kexample',
@@ -35,8 +34,12 @@
     'vexample',
     'allocateconceptsintroduction',
     'allocateconcepts',
-    'dorkintroduction',
-    'dork',
+    'zuordnen',
+    'bank',
+    'bank1',
+    'bank2',
+    'bank3',
+    'bank4',
     'abschluss',
     'sources'
    ]
