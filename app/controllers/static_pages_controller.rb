@@ -30,10 +30,10 @@ class StaticPagesController < ApplicationController
   end
 
   def why_ethics
-
+    @pagetitle = "Warum sich mit Ethik befassen?"
   end
 
   def structure
-
+    @pagetitle = "Wie ist der Kurs aufgebaut?"
   end
 end
