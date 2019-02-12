@@ -1,0 +1,74 @@
+<p>
+  <b>Warum</b> könnte diese Bewertung aus dem Konsequentialismus stammen?
+</p>
+<hr />
+<p>
+  "Was Toni getan hat, war <b>falsch!</b>
+  Tonis Falschinformation führte dazu, dass Lara ihre Stelle verlor, der Kunde verärgert und Geld verschwendet wurde.
+</p>
+<p>
+  Hätte Toni nicht diese Falschinformation nicht gegeben,
+  dann wäre das alles nicht passiert, was besser gewesen wäre."
+</p>
+<hr />
+<p>
+  Weil ...
+</p>
+<p>
+  <button type="button" value="kbewertungs" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertungs">... die Handlung im Bezug auf die Folgen bewertet wurde.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertungs">... die Handlung an sich bewertet wurde.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertungss">... weil die Handlung im Bezug auf eine Charaktereigenschaft bewertet wurde.</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="bank2s" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("bank2s loaded!");
+
+    var points = 100;
+
+    $( ".kbewertungs" ).click(function() {
+
+      if($(this).attr("value") === "kbewertungs"){
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        addPointsToCourse(1, "bank2s", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#bank2s').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
+      }
+    });
+
+  });
+</script>

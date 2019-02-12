@@ -38,6 +38,7 @@
     'bank',
     'bank1',
     'bank2',
+    'bank2s',
     'bank3',
     'bank4',
     'abschluss',
