@@ -1,7 +1,7 @@
 console.log("ajax loaded!");
 
 function setCurrentSlide(course_id, number_of_slide){
-  console.log(course_id + " " + number_of_slide);
+  console.log("setCurrentSlide: " + course_id + " " + number_of_slide);
   $.ajax({
     url: "/set_current_slide",
     method: 'POST',
