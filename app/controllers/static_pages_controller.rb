@@ -32,4 +32,8 @@ class StaticPagesController < ApplicationController
   def why_ethics
 
   end
+
+  def structure
+
+  end
 end

@@ -10,7 +10,9 @@
       </p>
       <p class="lead text-justify">
         Sie beschäftigt sich mit Fragen wie:
-        <br />
+      </p>
+      <p class="lead text-justify">
+
         <b> - Wie soll ich leben?</b>
         <br />
         <b> - Was ist das gute Leben?</b>
@@ -19,15 +21,22 @@
         <br />
         <b> - Wie sollen wir miteinander umgehen?</b>
         <br />
-        <br />
 
       </p>
       <p class="lead text-justify">
-        Die Ethik hat ein <b>praktisches Ziel:</b>
+        Das Studium der Ethik hilft dir,
+        die <b>richtigen Entscheidungen</b> im Leben zu treffen
+        und das <b>gute Leben</b> zu erreichen.
       </p>
       <p class="lead text-justify">
-        Sie versucht uns eine <b>Orientierung</b> in allen Bereichen des menschlichen Lebens zu geben.
+        Nebenbei erwirbst du <b>analytische Fähigkeiten</b> und ein <b>kritisches Denkvermögen</b>,
+        die dir im Beruf sowie im alltäglichen Leben nützlich sein werden.
       </p>
+    </div>
+    <div align="center" class="m-2">
+      <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
+        <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
+      <% end %>
     </div>
   </section>
 </main>

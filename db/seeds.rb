@@ -30,7 +30,6 @@
     'kexample1',
     'dintroduction',
     'dintroduction1',
-    'dintroduction2',
     'dexample',
     'vintroduction',
     'vexample',

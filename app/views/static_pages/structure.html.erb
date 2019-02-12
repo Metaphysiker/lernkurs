@@ -1,0 +1,23 @@
+<%= render "layouts/navigation" %>
+
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h3 class="jumbotron-heading">Wie ist der Kurs aufgebaut?</h3>
+      <hr />
+      <p class="lead text-justify">
+        Der Kurs besteht aus <b>9 Teilen</b>.
+      </p>
+      <p class="lead text-justify">
+        Der erste Kurs führt in die <b>Begrifflichkeiten</b> der Ethik ein.
+      </p>
+    </div>
+    <div align="center" class="m-2">
+      <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
+        <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
+      <% end %>
+    </div>
+  </section>
+</main>
+
+<%= render "layouts/footer" %>

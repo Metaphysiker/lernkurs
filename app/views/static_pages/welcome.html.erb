@@ -18,6 +18,9 @@
             <%= link_to why_ethics_path do %>
               <button class="btn btn-dark ml-1">Warum sich mit Ethik befassen?</button>
             <% end %>
+            <%= link_to structure_path do %>
+              <button class="btn btn-dark ml-1">Wie ist der Kurs aufgebaut?</button>
+            <% end %>
           </div>
           <% else %>
           <h1 class="jumbotron-heading">Was ist Ethik?</h1>
@@ -33,11 +36,14 @@
             <%= link_to why_ethics_path do %>
               <button class="btn btn-dark ml-1">Warum sich mit Ethik befassen?</button>
             <% end %>
+            <%= link_to structure_path do %>
+              <button class="btn btn-dark ml-1">Wie ist der Kurs aufgebaut?</button>
+            <% end %>
           </div>
           <% end %>
         </div>
       </section>
-
+https://study.com/academy/lesson/advanced-organizers-in-the-classroom-teaching-strategies-advantages.html
       <%= render "courses/courses_in_groups_of_3", courses: @courses %>
 
     </main>
