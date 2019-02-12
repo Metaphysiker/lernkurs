@@ -40,8 +40,10 @@
     'bank2',
     'bank2s',
     'bank3',
+    'bank3s',
     'bank4',
-    'abschluss',
+    'bank4s',
+    'abschluss', 
     'sources'
    ]
 )
@@ -56,6 +58,7 @@ Course.create(
  order: 2,
  name_of_picture: "domino.jpg",
  slides: [
+   'kompetenzen',
    'konsequentialismus',
    'utilitarismus',
    'nutzen',

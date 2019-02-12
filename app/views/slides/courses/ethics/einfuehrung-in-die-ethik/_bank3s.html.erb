@@ -1,5 +1,5 @@
 <p>
-  Überlege dir, <b>von welcher Ethik</b> die folgende Bewertung stammen könnte!
+  <b>Warum</b> ist diese Bewertung typisch für die Tugendethik?
 </p>
 <hr />
 <p>
@@ -16,13 +16,18 @@
 </p>
 <hr />
 <p>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">Konsequentialismus</button>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">Deontologie</button>
-  <button type="button" value="kbewertung" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">Tugendethik</button>
+  <b>
+    Weil ...
+  </b>
+</p>
+<p>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertungs">... die Handlung an sich bewertet wurde.</button>
+  <button type="button" value="kbewertungs" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertungs">... weil die Handlung im Bezug auf Charaktereigenschaften bewertet wurde.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertungs">... die Handlung im Bezug auf die Folgen bewertet wurde.</button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="bank3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="bank3s" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -46,23 +51,23 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("bank3 loaded!");
+    console.log("bank3s loaded!");
 
     var points = 100;
 
-    $( ".kbewertung" ).click(function() {
+    $( ".kbewertungs" ).click(function() {
 
-      if($(this).attr("value") === "kbewertung"){
+      if($(this).attr("value") === "kbewertungs"){
         $(".modal-body").append(
           `<p class="text-center lead">
               Du hast ${points} Punkte erhalten!
             </p>
           `
         );
-        addPointsToCourse(1, "bank3", points);
+        addPointsToCourse(1, "bank3s", points);
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
-              $('#bank3').modal('show');
+              $('#bank3s').modal('show');
             }, 600);
         });
       } else {
