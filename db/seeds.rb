@@ -43,7 +43,7 @@
     'bank3s',
     'bank4',
     'bank4s',
-    'abschluss', 
+    'abschluss',
     'sources'
    ]
 )
@@ -53,14 +53,20 @@ Course.create(
  title: "Konsequentialismus",
  description: "Darf man etwas Schlimmes tun, um etwas Gutes zu erreichen? Sollen wir Handlungen danach beurteilen, wie viel Glück sie in die Welt bringen? Heiligt der Zweck die Mittel?",
  topic: "ethics",
- duration: "15 Minuten",
+ duration: "20 Minuten",
  language: "de",
  order: 2,
  name_of_picture: "domino.jpg",
  slides: [
    'kompetenzen',
    'konsequentialismus',
+   'konsequentialismus1',
+   'konstheorie',
+   'konstheories',
+   'konstheorie1',
+   'konstheorie1s',
    'utilitarismus',
+   'utilitarismus1',
    'nutzen',
    'nutzen1',
    'nutzen2',

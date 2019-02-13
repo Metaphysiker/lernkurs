@@ -1,0 +1,80 @@
+<b>Warum</b> ist die folgende Theorie <b>nicht konsequentialistisch</b>?
+<hr />
+<p>
+  "Eine Handlung ist dann gut, wenn sie von <b>Gott gewollt</b> ist.
+</p>
+<p>
+  <b>Zum Beispiel: </b>
+</p>
+<p>
+  Wenn Gott nicht will, dass Menschen töten,
+  dann ist Töten <b>immer falsch</b>!"
+</p>
+<hr />
+<p>
+  Weil ...
+</p>
+<p>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kkonstheorie">
+    ... das Wort "Konsequentialismus" nirgends in der Theorie auftaucht.
+  </button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kkonstheorie">
+    ... eine Handlung nicht im Bezug auf Charaktereigenschaften beurteilt wird.
+  </button>
+  <button type="button" value="kkonstheorie" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kkonstheorie">
+    ... eine Handlung nicht im Bezug auf ihre Folgen oder Konsequenzen beurteilt wird.
+  </button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="konstheorie" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("konstheorie loaded!");
+
+    var points = 100;
+
+    $( ".kkonstheorie" ).click(function() {
+
+      if($(this).attr("value") === "kkonstheorie"){
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        addPointsToCourse(2, "konstheories", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#konstheorie').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
+      }
+    });
+
+  });
+</script>
