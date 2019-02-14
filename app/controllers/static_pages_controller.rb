@@ -36,4 +36,22 @@ class StaticPagesController < ApplicationController
   def structure
     @pagetitle = "Wie ist der Kurs aufgebaut?"
   end
+
+  def set_group
+    code = params[:code].to_s
+    firstname = params[:firstname].to_s
+
+    @account.update(code: code, firstname: firstname)
+    head :ok
+  end
+
+  def group_overview
+    code = params[:code].to_s
+
+    @accounts = Account.where(code: code)
+  end
+
+  def register
+
+  end
 end

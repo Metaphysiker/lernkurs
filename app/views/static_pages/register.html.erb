@@ -1,0 +1,62 @@
+<div class="container">
+  <h3 class="text-center">Anmelde-Seite</h3>
+  <hr />
+  <p>
+    Gib hier den <b>Code</b> ein!
+  </p>
+  <p>
+    <div class="input-group input-group-lg mb-3">
+    <input type="text" name="code" class="form-control" placeholder="Code hier eingeben" aria-label="..." aria-describedby="basic-addon2">
+  </div>
+  </p>
+  <p>
+    Gib hier deinen <b>Vornamen</b> ein!
+  </p>
+  <p>
+    <div class="input-group input-group-lg mb-3">
+    <input type="text" name="firstname" class="form-control" placeholder="Vornamen hier eingeben" aria-label="..." aria-describedby="basic-addon2">
+  </div>
+  </p>
+
+  <p>
+    <button type="button" id="send" class="btn btn-info btn-lg my-3">Senden!</button>
+  </p>
+
+  <!-- Modal -->
+  <div class="modal fade animated tada" id="utilubungm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Übung abgeschlossen!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+          <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2">Weiter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("register loaded!");
+
+
+    $( "#send" ).click(function() {
+      var code = $('input[name="code"]').val();
+      var firstname = $('input[name="firstname"]').val();
+      setGroup(code, firstname);
+      $('input[name="code"]').addClass("is-valid");
+      $('input[name="firstname"]').addClass("is-valid");
+    });
+
+  });
+</script>

@@ -4,6 +4,8 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
 
     create_table :accounts do |t|
       t.integer :current_course_id
+      t.string :firstname, default: ""
+      t.string :code, default: ""
 
       t.timestamps
     end

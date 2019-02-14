@@ -49,3 +49,13 @@ function addPointsToCourse(course_id, exercise, points){
     headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
   });
 }
+
+function setGroup(code, firstname){
+  console.log("code: " + code + " firstname: " + firstname);
+  $.ajax({
+    url: "/set_group",
+    method: 'POST',
+    data: { code: code, firstname: firstname},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+  });
+}
