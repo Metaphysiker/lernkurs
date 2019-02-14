@@ -15,6 +15,7 @@
   duration: "15 Minuten",
   language: "de",
   order: 1,
+  modul: "Einführungsmodul",
   name_of_picture: "landscape.jpg",
   slides: [
     'kompetenzen',
@@ -56,6 +57,7 @@ Course.create(
  duration: "20 Minuten",
  language: "de",
  order: 2,
+ modul: "Vertiefungsmodul",
  name_of_picture: "domino.jpg",
  slides: [
    'kompetenzen',
@@ -103,6 +105,7 @@ Course.create(
  duration: "15 Minuten",
  language: "de",
  order: 3,
+ modul: "Vertiefungsmodul",
  name_of_picture: "kant.jpg",
  slides: [
    'deontologie',
@@ -133,6 +136,7 @@ Course.create(
  duration: "15 Minuten",
  language: "de",
  order: 4,
+ modul: "Vertiefungsmodul",
  name_of_picture: "aristotle.jpg",
  slides: [
    'tugendethik',
