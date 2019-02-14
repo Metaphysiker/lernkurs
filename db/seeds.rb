@@ -69,6 +69,8 @@ Course.create(
    'utilitarismus1',
    'nutzen',
    'nutzen1',
+   'nutzen2intro',
+   'nutzen2intro1',
    'nutzen2',
    'nutzen3',
    'nutzen4',
