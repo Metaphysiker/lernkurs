@@ -18,6 +18,8 @@
   modul: "Einführungsmodul",
   name_of_picture: "landscape.jpg",
   slides: [
+    'why',
+    'why1',
     'kompetenzen',
     'introduction',
     'introduction1',
