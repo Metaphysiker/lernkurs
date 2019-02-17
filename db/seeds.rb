@@ -144,6 +144,8 @@ Course.create(
  modul: "Vertiefungsmodul",
  name_of_picture: "aristotle.jpg",
  slides: [
+   'why',
+   'kompetenzen',
    'tugendethik',
    'aristoteles',
    'aristoteles1',
