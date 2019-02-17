@@ -111,6 +111,8 @@ Course.create(
  modul: "Vertiefungsmodul",
  name_of_picture: "kant.jpg",
  slides: [
+   'why',
+   'kompetenzen',
    'deontologie',
    'kantianismus',
    'dlugen',
