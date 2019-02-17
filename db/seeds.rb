@@ -62,7 +62,7 @@ Course.create(
  modul: "Vertiefungsmodul",
  name_of_picture: "domino.jpg",
  slides: [
-   'why', 
+   'why',
    'kompetenzen',
    'konsequentialismus',
    'konsequentialismus1',
@@ -80,6 +80,9 @@ Course.create(
    'nutzen3',
    'nutzen4',
    'reichweite',
+   'reichweite1',
+   'utilubung5',
+   'herausforderung',
    'reformers',
    'utilubung1',
    'utilubung2',
