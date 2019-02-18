@@ -16,13 +16,13 @@ class StaticPagesController < ApplicationController
   def textversion
 
     @course = Course.find(params[:id])
-
+    =begin
     send_data render_to_string(pdf: "#{@course.title.parameterize}",
                               template: "/static_pages/textversion.html.erb",
                               layout: "/layouts/pdf_layout.html.erb",
                               dpi: 75),
                               filename: "#{@course.title.parameterize}.pdf"
-
+    =end
   end
 
   def test
