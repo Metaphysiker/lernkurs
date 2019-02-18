@@ -83,6 +83,7 @@ production:
   database: lernkursphilosophiech001
   username: lernkursphilosophiech
   password: <%= ENV['LERNKURS_DATABASE_PASSWORD'] %>
+  host: onhp-db1.iron.bsa.oriented.ch
 
 #old - worked with heroku
 #production:
