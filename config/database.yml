@@ -80,6 +80,13 @@ test:
 #
 production:
   <<: *default
-  database: lernkurs_production
-  username: lernkurs
+  database: lernkursphilosophiech001
+  username: lernkursphilosophiech
   password: <%= ENV['LERNKURS_DATABASE_PASSWORD'] %>
+
+#old - worked with heroku
+#production:
+#  <<: *default
+#  database: lernkurs_production
+#  username: lernkurs
+#  password: <%= ENV['LERNKURS_DATABASE_PASSWORD'] %>
