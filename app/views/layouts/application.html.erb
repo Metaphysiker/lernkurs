@@ -7,7 +7,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag asset_path("logo_thumb.png") %>
+    <%#= favicon_link_tag asset_path("logo_thumb.png") %>
+    <%= render 'layouts/favicon' %>
     <script
 			  src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
 			  integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
