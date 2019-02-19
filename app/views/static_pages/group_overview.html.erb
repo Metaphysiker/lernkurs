@@ -1,7 +1,7 @@
 <div class="container">
   <h3 class="text-center">Übersicht</h3>
   <p>
-    Code: 
+    Code:
   </p>
   <hr />
   <% @accounts.each do |account| %>
@@ -11,7 +11,7 @@
         <h6 class="card-subtitle mb-2 text-muted">Punktestand: <%= account.total_score %></h6>
           <hr />
         <p class="card-text">
-          <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title %></b>
+          <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title unless Course.where(id: account.current_course_id).empty? %></b>
         </p>
         <p class="card_text">
           Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>

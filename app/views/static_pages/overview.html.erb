@@ -1,23 +1,20 @@
 <div class="container">
-  <h3>Übersicht</h3>
-  <p>
-    <b>Accounts:</b> <%= @accounts.count %>
-  </p>
+  <h3 class="text-center">Übersicht</h3>
   <hr />
   <% @accounts.each do |account| %>
-    <b>ID: </b> <%= account.id %>
-    <br />
-    <b>Attendances: </b> <%= account.attendances.count %>
-    <br />
-    Total Score: <b><%= account.total_score %></b>
-    <hr />
-    <% account.attendances.each do |attendance| %>
-      Course: <%= attendance.course.title %>
-      <hr />
-      Points: <%= attendance.points %>
-      <hr />
-      Current Slide: <%= attendance.current_slide %>
-      <hr />
-    <% end %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%=account.id%>: <%= account.firstname %></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Punktestand: <%= account.total_score %></h6>
+          <hr />
+        <p class="card-text">
+          <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title unless Course.where(id: account.current_course_id).empty? %></b>
+        </p>
+        <p class="card_text">
+          Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
+        </p>
+        <a href="#" class="card-link">Zum Profil</a>
+      </div>
+    </div>
   <% end %>
 </div>
