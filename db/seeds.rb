@@ -84,7 +84,7 @@ Course.create(
    'utilubung1',
    'utilubung2',
    'herausforderung',
-   'reformers',
+   'herausforderung1', 
    'kstaerken',
    'kstaerkenutzen',
    'kstaerkewissenschaft',
