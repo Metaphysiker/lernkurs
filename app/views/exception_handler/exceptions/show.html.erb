@@ -1,6 +1,18 @@
 <%= render "layouts/navigation" %>
-<%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status.to_s.first == "5" && Rails.application.routes.recognize_path("/")) do %>
-  <%= content_tag :span, @exception.description.html_safe %>
-<% end %>
-Texxxt???
+<div class="container">
+  <div class="jumbotron">
+  <h1 class="display-4">Irgendwas ist schief gelaufen ...</h1>
+  <hr class="my-4">
+  <p>
+    Hier kehrst du auf die Startseite zurück.
+  </p>
+  <p>
+    Hier kannst du dem Webmaster eine Mail schreiben
+  </p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+  <%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status.to_s.first == "5" && Rails.application.routes.recognize_path("/")) do %>
+    <%= content_tag :span, @exception.description.html_safe %>
+  <% end %>
+</div>
 <%= render "layouts/footer" %>
