@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88013822-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-88013822-3');
+    </script>
     <title><%= @pagetitle || "Was ist Ethik? - Finde es heraus!"%></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
