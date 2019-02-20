@@ -1,19 +1,24 @@
 <%= render "layouts/navigation" %>
-<div class="container">
-  <div class="jumbotron">
-  <h1 class="display-4">Irgendwas ist schief gelaufen ...</h1>
-  <hr class="my-4">
-  <p>
-    <%= link_to root_path do %>
-      <button class="btn btn-dark ml-1">Zurück zur Startseite</button>
-    <% end %>
-  </p>
-  <p>
-    Webmaster eine Mail schreiben: <%= mail_to "sandro.raess@philosophie.ch", "e-Mail" %>
-  </p>
+
+  <div class="container">
+    <div class="jumbotron text-center">
+    <h1 class="display-4">Irgendwas ist schief gelaufen ...</h1>
+    <hr class="my-4">
+    <p>
+      <%= link_to root_path do %>
+        <button class="btn btn-dark ml-1">Zurück zur Startseite</button>
+      <% end %>
+    </p>
+    <p>
+      Webmaster eine Mail schreiben: <%= mail_to "sandro.raess@philosophie.ch", "e-Mail" %>
+    </p>
+    <p>
+      <h3>Fehlermeldung: </h3>
+      <%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status.to_s.first == "5" && Rails.application.routes.recognize_path("/")) do %>
+        <%= content_tag :span, @exception.description.html_safe %>
+      <% end %>
+    </p>
+  </div>
 </div>
-  <%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status.to_s.first == "5" && Rails.application.routes.recognize_path("/")) do %>
-    <%= content_tag :span, @exception.description.html_safe %>
-  <% end %>
-</div>
+
 <%= render "layouts/footer" %>
