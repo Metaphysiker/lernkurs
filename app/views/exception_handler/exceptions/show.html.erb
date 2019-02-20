@@ -4,12 +4,13 @@
   <h1 class="display-4">Irgendwas ist schief gelaufen ...</h1>
   <hr class="my-4">
   <p>
-    Hier kehrst du auf die Startseite zurück.
+    <%= link_to root_path do %>
+      <button class="btn btn-dark ml-1">Zurück zur Startseite</button>
+    <% end %>
   </p>
   <p>
-    Hier kannst du dem Webmaster eine Mail schreiben
+    Webmaster eine Mail schreiben: <%= mail_to "sandro.raess@philosophie.ch", "e-Mail" %>
   </p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
   <%= content_tag :div, class: "exception", data: { status: @exception.status, response: @exception.response.to_s.humanize, rails: Rails.version }, onclick: ("location.href=\"#{root_url}\";" if @exception.status.to_s.first == "5" && Rails.application.routes.recognize_path("/")) do %>
     <%= content_tag :span, @exception.description.html_safe %>
