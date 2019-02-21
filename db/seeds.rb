@@ -119,6 +119,7 @@ Course.create(
    'why',
    'kompetenzen',
    'deontologie',
+   'deontologischetheorien',
    'kantianismus',
    'dlugen',
    'dlugen1',
