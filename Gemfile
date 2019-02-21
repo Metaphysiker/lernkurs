@@ -15,6 +15,7 @@ gem 'friendly_id', '~> 5.2.4'
 #gem 'wicked_pdf'
 #gem 'wkhtmltopdf-binary'
 gem 'exception_handler', '~> 0.8.0.0'
+gem 'meta-tags'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

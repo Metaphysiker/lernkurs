@@ -11,7 +11,9 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @pagetitle = @course.title
+    @page_title = @course.title
+    @page_description = @course.description
+    @page_keywords    = @course.keywords
 
     if @attendance.current_slide > @course.slides.count
       @current_slide = 0

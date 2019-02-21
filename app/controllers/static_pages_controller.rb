@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
   def welcome
+    @page_title = "Was ist Ethik? Finde es heraus in diesem interaktiven Lernkurs!"
+    @page_description = "Was ist Ethik? Finde es heraus in diesem interaktiven Lernkurs! "
+    @page_keywords    = "Lernkurs, Online-Kurs, Ethik, Einführung, Lernmaterial, Unterrichtsmaterial"
+
     @courses = Course.all.order(:order)
     cookies.signed[:user_id] = 10
     cookies[:progress] = "Epic!"
@@ -30,11 +34,14 @@ class StaticPagesController < ApplicationController
   end
 
   def why_ethics
-    @pagetitle = "Warum sich mit Ethik befassen?"
+    @page_title = "Warum sich mit Ethik befassen?"
+    @page_description = "Warum sollte man sich mit Ethik befassen?"
+    @page_keywords    = "Ethik, Einführung, Notwendigkeit, Warum, Wieso"
+
   end
 
   def structure
-    @pagetitle = "Wie ist der Kurs aufgebaut?"
+    @page_title = "Wie ist der Kurs aufgebaut?"
   end
 
   def set_group

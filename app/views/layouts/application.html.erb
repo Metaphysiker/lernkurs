@@ -10,13 +10,14 @@
 
       gtag('config', 'UA-88013822-3');
     </script>
-    <title><%= @pagetitle || "Was ist Ethik? - Finde es heraus!"%></title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%#= favicon_link_tag asset_path("logo_thumb.png") %>
+    <%= display_meta_tags site: '' %>
     <%= render 'layouts/favicon' %>
     <script
 			  src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"

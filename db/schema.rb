@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_01_27_185318) do
     t.string "title", default: ""
     t.string "language", default: ""
     t.text "description", default: ""
+    t.string "keywords", default: ""
     t.string "modul", default: ""
     t.string "slug", default: ""
     t.string "topic", default: ""

@@ -16,10 +16,10 @@
             <br />
             <br />
             <%= link_to why_ethics_path do %>
-              <button class="btn btn-dark ml-1 mb-2">Warum sich mit Ethik befassen?</button>
+              <button class="btn btn-dark mb-2 ml-1">Warum sich mit Ethik befassen?</button>
             <% end %>
             <%= link_to structure_path do %>
-              <button class="btn btn-dark ml-1 mb-2">Wie ist der Kurs aufgebaut?</button>
+              <button class="btn btn-dark ml-1">Wie ist der Kurs aufgebaut?</button>
             <% end %>
           </div>
           <% else %>
@@ -29,12 +29,12 @@
           </p>
           <div align="center">
             <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
-              <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
+              <button class="pulse-button rounded text-white">Mit Kurs anfangen!</button>
             <% end %>
             <br />
             <br />
             <%= link_to why_ethics_path do %>
-              <button class="btn btn-dark ml-1">Warum sich mit Ethik befassen?</button>
+              <button class="btn btn-dark mb-2 ml-1">Warum sich mit Ethik befassen?</button>
             <% end %>
             <%= link_to structure_path do %>
               <button class="btn btn-dark ml-1">Wie ist der Kurs aufgebaut?</button>

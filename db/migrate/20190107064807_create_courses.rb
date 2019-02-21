@@ -4,6 +4,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :title, default: ""
       t.string :language, default: ""
       t.text :description, default: ""
+      t.string :keywords, default: ""
       t.string :modul, default: ""
       t.string :slug, default: "", unique: true
       t.string :topic, default: ""
