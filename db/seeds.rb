@@ -124,6 +124,7 @@ Course.create(
    'dlugen',
    'dlugen1',
    'dlugen2',
+   'dlugen3',
   'dschwarzfahren',
   'deontologists',
   'deonubung',
