@@ -1,0 +1,93 @@
+<p>
+  Jasmin versucht, den kategorischen Imperativ anzuwenden.
+  Versuche, die <b>richtige Reihenfolge</b> zu bestimmen!
+</p>
+<hr />
+<p>
+  <b>Jasmin</b> leitet ein Architektenbüro und
+  hat eine <b>Arbeitsstelle</b> zu vergeben.
+</p>
+<p>
+  Ihre Freundin <b>Nadja</b> bewirbt sich für diese Stelle.
+</p>
+<p>
+  Weil Nadja Schwierigkeiten hat, eine Arbeitsstelle zu finden,
+  bittet sie Jasmin darum, <b>ihr die Stelle zu geben</b>,
+  auch wenn sie nicht die beste Kandidatin ist.
+</p>
+<p>
+  Jasmin fragt sich: "Darf ich meine Freundin gegenüber besseren Kandidierenden bevorzugen?"
+</p>
+<p>
+  Jasmin überlegt sich, wie eine Welt aussehen würde,
+  in der Arbeitsstellen immer nur Bekannten oder Freunden gegeben werden,
+  statt dem besten Kandidierenden.
+</p>
+<p>
+
+</p>
+<p>
+  Nadja denkt,
+  dass eine Welt, in der Freunde oder Bekannte bevorzugt werden,
+  nicht wünschenswert ist,
+  weil Arbeitsstellen nicht an die
+</p>
+<p>
+  Ihr Freundin <b>Nadja</b> hat Schwierigkeiten,
+  eine Arbeit zu finden. Sie bittet Jasmin darum,
+  dass sie bei der Bewerbung bevorzugt wird,
+  auch wenn sie nicht die beste Kandidatin für die Stelle ist
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="deonubung5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("deonubung5 loaded!");
+
+    var points = 100;
+
+    $( ".litteringf" ).click(function() {
+
+      if($(this).attr("value") === "litteringf"){
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        addPointsToCourse(3, "deonubung5", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#deonubung5').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
+      }
+    });
+
+  });
+</script>
