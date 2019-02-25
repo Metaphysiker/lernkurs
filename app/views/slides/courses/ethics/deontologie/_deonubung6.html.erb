@@ -1,0 +1,103 @@
+<p>
+  In den vorigen Folien hast du die <b>drei Grundmerkmale</b> des Kantianismus kennen gelernt.
+</p>
+<p>
+  <b>Kreuze</b> nun diese Grundmerkmale an!
+</p>
+<hr />
+<ul class="form-check rounded">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="0">
+      Der Kantianismus bewertet Handlungen danach, ob man sie auch dann wollen kann, wenn alle sie tun würden.
+    </label>
+    <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="1">
+      Der Kantianismus stellt Regeln oder Pflichten auf, die jeder immer und in jeder Situation befolgen muss.
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="2">
+        Der Kantianismus beurteilt eine Handlung an sich.
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="3">
+      Der Kantianismus stellt Regeln und Pflichten auf,
+      die man befolgen kann, wenn man grad Lust drauf hat.
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="4">
+       Der Kantianismus beurteilt nicht Handlungen, sondern Charaktereigenschaften.
+    </label>
+        <hr />
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="theories" value="5">
+      Der Kantianismus bewertet Handlungen im Bezug auf ihre Folgen oder Konsequenzen.
+    </label>
+        <hr />
+</ul>
+<p>
+  <button type="button" id="deonubung6" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="deonubung6m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("deonubung6 loaded!");
+
+    var points = 100;
+    var score = 0;
+
+    $("#deonubung6").click(function(event){
+        event.preventDefault();
+        result1 = ($("input[name=theories]:checked").map(function() {
+            return this.value;
+        }).get().join(","));
+        console.log(result1);
+        if(result1.toString() == "0,1,2"){
+          $(".form-check").animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
+          addPointsToCourse(3, "deonubung6", points);
+          $(".modal-body").empty().append(
+            `
+            <p>
+                Du hast ${points} Punkte erhalten!
+              </p>
+            `
+          );
+          $('#deonubung6m').modal('show');
+        } else {
+          console.log("falsch");
+          $(".form-check").animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200).delay(400).animate({backgroundColor: "#FFFFFF", color: "#000000" }, 200);
+          $('input[name=theories]').prop('checked', false);
+          if(points > 0){
+            points = points - 50;
+          }
+        };
+    });
+
+  });
+</script>
