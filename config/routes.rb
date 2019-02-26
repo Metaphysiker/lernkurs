@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :courses
+  resources :accounts
 
   root 'static_pages#welcome'
 

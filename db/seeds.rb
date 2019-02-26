@@ -132,7 +132,7 @@ Course.create(
   'dstaerken',
   'dstaerkeanwendbar',
   'dstaerkeintuition',
-  'dstaerkevorhersehbar',
+  'dstaerkevernunft',
   'deonubung',
   'deonubung1',
   'deonubung5',

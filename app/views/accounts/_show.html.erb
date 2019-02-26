@@ -1,0 +1,32 @@
+<% noindex %>
+<div class="container">
+  <h3 class="text-center">Übersicht</h3>
+
+  <div class="card m-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= account.firstname %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Punktestand: <%= account.total_score %></h6>
+        <hr />
+      <p class="card-text">
+        <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title unless Course.where(id: account.current_course_id).empty? %></b>
+      </p>
+      <p class="card_text">
+        Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
+      </p>
+    </div>
+  </div>
+
+  <% account.attendances.each do |attendance| %>
+  <div class="card m-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= attendance.course.title %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Gesammelte Punkte: <%= attendance.points %></h6>
+        <hr />
+      <p class="card-text">
+        Orden erhalten?
+      </p>
+    </div>
+  </div>
+  <% end %>
+
+</div>
