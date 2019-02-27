@@ -1,0 +1,97 @@
+<p>
+  Versuche, die <b>richtige Reihenfolge der Schritte</b> zu bestimmen!
+</p>
+
+<% steps = [
+  "Jasmin leitet die folgende Regel ab: \"Du sollst nicht Bekannte bei der Stellenvergabe bevorzugen!\"",
+  "Jasmin denkt sich, dass eine Welt, in der immer nur Bekannte bevorzugt werden, nicht wünschenswert ist.",
+  "Jasmin fragt sich: \"Darf ich meine Freundin gegenüber besseren Kandidierenden bevorzugen?\"",
+  "Jasmin überlegt sich, wie eine Welt aussehen würde,
+    in der Stellen immer nur Bekannten gegeben werden."
+  ] %>
+
+
+<% steps.each_with_index do |step, i| %>
+  <div class="border rounded mb-3">
+    <div class="row">
+      <div class="col-3 border-right">
+        <label>Schritt:</label>
+        <select class="form-control" id="select-<%=i%>" name="value">
+          <% (1..4).each do |i| %>
+              <option value="<%= i %>">
+                <%= i %>
+              </option>
+          <% end %>
+        </select>
+      </div>
+      <div class="col-9">
+        <%= step %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<p>
+  <button type="button" id="deonubung5b" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="deonubung5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("deonubung5 loaded!");
+
+    var points = 100;
+
+    $( "#deonubung5b" ).click(function() {
+
+
+      var select0 = $('#select-0 :selected').val();
+      var select1 = $('#select-1 :selected').val();
+      var select2 = $('#select-2 :selected').val();
+      var select3 = $('#select-3 :selected').val();
+      var selectall = select0 + select1 + select2 + select3;
+      console.log(selectall);
+      if(selectall === "4312")
+
+      {
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        addPointsToCourse(3, "deonubung5", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#deonubung5').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
+      }
+    });
+
+  });
+</script>
