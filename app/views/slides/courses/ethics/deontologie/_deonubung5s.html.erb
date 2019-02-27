@@ -10,7 +10,7 @@
     in der Stellen immer nur Bekannten gegeben werden."
   ] %>
 
-
+<div class="rounded" id="stepsbox">
 <% steps.each_with_index do |step, i| %>
   <div class="border rounded mb-3">
     <div class="row">
@@ -30,6 +30,7 @@
     </div>
   </div>
 <% end %>
+</div>
 <p>
   <button type="button" id="deonubung5b" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
 </p>
@@ -82,14 +83,16 @@
           `
         );
         addPointsToCourse(3, "deonubung5", points);
-        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+        $("#stepsbox").animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
               $('#deonubung5').modal('show');
             }, 600);
         });
       } else {
-        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
-        points = points - 50;
+        $("#stepsbox").animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200).delay(500).animate({backgroundColor: "#FFFFFF", color: "#000000" }, 200);
+        if(points>0){
+          points = points - 50;
+        }
       }
     });
 
