@@ -140,7 +140,7 @@ Course.create(
   'dproblems',
    'dkritikkonflikt',
    'dkritiktragik',
-   'dkritikflexibel',
+   'dkritikgefuhl',
   'deonubung3',
    'deonubung4',
    'universalisiererintro',
