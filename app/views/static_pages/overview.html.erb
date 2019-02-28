@@ -8,12 +8,16 @@
         <h6 class="card-subtitle mb-2 text-muted">Punktestand: <%= account.total_score %></h6>
           <hr />
         <p class="card-text">
-          <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title unless Course.where(id: account.current_course_id).empty? %></b>
+          <% if Course.where(id: account.current_course_id).empty? %>
+            <%= account.firstname %> hat noch keinen Kurs angefangen.
+          <% else %>
+            <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title %></b>
+          <% end %>
         </p>
         <p class="card_text">
           Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
         </p>
-        <a href="#" class="card-link">Zum Profil</a>
+        <%= link_to "Zum Profil", account_path(account), class: "card-link" %>
       </div>
     </div>
   <% end %>
