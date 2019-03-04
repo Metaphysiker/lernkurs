@@ -1,8 +1,7 @@
-<h4 class="text-center">Welches Problem?</h4>
-<hr />
 <p>
-  Welches Problem für die Deontologie wird hier beschrieben?
+  <b>Welche Schwäche</b> des Kantianismus kommt hier zum Ausdruck?
 </p>
+<hr />
 <p>
   "Wie viele andere, bekomme auch ich ein schlechtes Bauchgefühl,
   wenn ich daran denke, Menschen foltern zu müssen.
@@ -10,33 +9,25 @@
   weil wir nur so in gewissen Fällen das Leben von 1'000 oder gar 10'000 Unschuldigen retten können."
 </p>
 <p>
-  <div class="input-group input-group-lg mb-3">
-    <div class="input-group-prepend">
-    <span class="input-group-text">Das </span>
-  </div>
-  <input type="text" name="aggregations" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <span class="input-group-text" id="basic-addon2">-problem</span>
-  </div>
-</div>
-</p>
-
-<p>
-  <button type="button" id="deonubung3" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Kantianismus kann zu einem Konflikt zwischen zwei oder mehreren Pflichten führen.</button>
+  <button type="button" value="zuschwierig" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Kantianismus ist nicht für Extremfälle geeignet.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Kantianismus vernachlässigt Gefühle und Neigungen. </button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="aggregationsm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deonubung3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+          <h5 class="modal-title text-center" id="exampleModalLabel">Übung abgeschlossen!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+        <p>
 
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
@@ -51,30 +42,26 @@
     console.log("deonubung3 loaded!");
 
     var points = 100;
-    var score = 0;
 
-    $( "#deonubung3" ).click(function() {
-      var element = $('input[name="aggregations"]');
+    $( ".zuschwierig" ).click(function() {
 
-      if (['aggregations', 'aggregation'].indexOf(element.val().toLowerCase()) >= 0) {
-        addPointsToCourse(3, "deonubung3", points);
-        element.removeClass("is-invalid").addClass("is-valid");
-        $(".modal-body").empty().append(
-          `
-          <p>
+      if($(this).attr("value") === "zuschwierig"){
+        $(".modal-body").append(
+          `<p class="text-center lead">
               Du hast ${points} Punkte erhalten!
             </p>
           `
         );
-        $('#aggregationsm').modal('show')
+        addPointsToCourse(3, "deonubung3", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#deonubung3').modal('show');
+            }, 600);
+        });
       } else {
-        element.removeClass("is-valid").addClass("is-invalid");
-        if(points > 0){
-          points = points - 50;
-        }
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
       }
-
     });
-
   });
 </script>
