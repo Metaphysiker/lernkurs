@@ -21,11 +21,11 @@ class StaticPagesController < ApplicationController
 
     @course = Course.find(params[:id])
 
-    #send_data render_to_string(pdf: "#{@course.title.parameterize}",
-    #                          template: "/static_pages/textversion.html.erb",
-    #                          layout: "/layouts/pdf_layout.html.erb",
-    #                          dpi: 75),
-    #                          filename: "#{@course.title.parameterize}.pdf"
+    send_data render_to_string(pdf: "#{@course.title.parameterize}",
+                              template: "/static_pages/textversion.html.erb",
+                              layout: "/layouts/pdf_layout.html.erb",
+                              dpi: 75),
+                              filename: "#{@course.title.parameterize}.pdf"
 
   end
 
