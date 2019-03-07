@@ -61,4 +61,7 @@ class StaticPagesController < ApplicationController
   def register
 
   end
+
+  def feedback
+  end
 end

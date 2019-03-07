@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= account.firstname %></h5>
+      <h6 class="card-subtitle mb-2 text-muted">Dein Punktestand: <%= account.total_score %></h6>
+        <hr />
+
+      <p class="card_text">
+        Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
+      </p>
+      <hr />
+      <div class="row">
+        <div class="col-2 align-self-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <%= fa_icon "question-circle" %>
+          </div>
+        </div>
+        <div class="col-10">
+          <p class="card-text">
+            Hast du Fragen? Brauchst du Hilfe?
+
+          </p>
+          <p class="card-text">
+            <%= mail_to "sandro.raess@philosophie.ch", "Schreibe eine Mail!" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

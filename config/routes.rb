@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get '/why_ethics', to: 'static_pages#why_ethics', as: 'why_ethics'
   get '/structure', to: 'static_pages#structure', as: 'structure'
+  get '/feedback', to: 'static_pages#feedback', as: 'feedback'
 
   #RENDER
   post '/render_slide', to: 'courses#render_slide', as: 'render_slide'
