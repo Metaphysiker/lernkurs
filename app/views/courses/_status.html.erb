@@ -1,26 +1,58 @@
 <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><%= account.firstname %></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Dein Punktestand: <%= account.total_score %></h6>
-        <hr />
-
-      <p class="card_text">
-        Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
-      </p>
-      <hr />
       <div class="row">
-        <div class="col-2 align-self-center">
+        <div class="col-2 align-self-center border-right">
           <div class="d-flex justify-content-center align-items-center">
-            <%= fa_icon "question-circle" %>
+            <%= fa_icon "map-marker", class: "fa-3x" %>
           </div>
         </div>
         <div class="col-10">
           <p class="card-text">
-            Hast du Fragen? Brauchst du Hilfe?
+            Gegenwärtiger Kurs: <b><%= course.title %></b>
+
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-2 align-self-center border-right">
+          <div class="d-flex justify-content-center align-items-center">
+            <%= fa_icon "star", class: "fa-3x" %>
+          </div>
+        </div>
+        <div class="col-10">
+          <p class="card-text">
+            Dein Punktestand: <b><%= account.total_score %></b>
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-2 align-self-center border-right">
+          <div class="d-flex justify-content-center align-items-center">
+            <%= fa_icon "question", class: "fa-3x" %>
+          </div>
+        </div>
+        <div class="col-10">
+          <p class="card-text">
+            Hast du Fragen? Brauchst du Hilfe? Funktioniert etwas nicht?
 
           </p>
           <p class="card-text">
             <%= mail_to "sandro.raess@philosophie.ch", "Schreibe eine Mail!" %>
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-2 align-self-center border-right">
+          <div class="d-flex justify-content-center align-items-center">
+            <%= fa_icon "bars", class: "fa-3x" %>
+          </div>
+        </div>
+        <div class="col-10">
+          <p class="card-text">
+            <%= link_to 'Zum Kurs-Überblick zurückkehren', courses_path, class: "btn btn-info text-white" %>
           </p>
         </div>
       </div>
