@@ -83,6 +83,7 @@
 
     //keys
     $( document ).keydown(function(event) {
+      $('.modal').modal('hide');
       if ( event.which == 37 ) {
         getPreviousSlide();
       } else if ( event.which == 39 ) {

@@ -101,6 +101,7 @@ Course.create(
    'porgintro',
    'porg',
    'abschluss',
+   'sources'
  ]
 )
 
@@ -148,6 +149,7 @@ Course.create(
    'universalisiererintro',
    'universalisierer',
    'abschluss',
+   'sources'
  ]
 )
 
@@ -175,20 +177,22 @@ Course.create(
    'krieg',
    'spenden',
    'besonnenheit',
-   'erwerb',
-   'erwerb1',
-   'erwerb2',
    'vubung',
    'vubung1',
    'vubung2',
+   'erwerb',
+   'erwerb1',
+   'erwerb2',
+   'grundmerkmalevubung',
    'staerken',
    'motivation',
-   'komplexitaet', 
-    'vproblems',
+   'komplexitaet',
+  'vproblems',
    'vkritikvagheit',
    'vkritikorientierung',
    'vubung3',
     'abschluss',
+    'sources'
  ]
 )
 
