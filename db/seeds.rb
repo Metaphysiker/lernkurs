@@ -180,6 +180,7 @@ Course.create(
    'vubung',
    'vubung1',
    'vubung2',
+   'vubung4',
    'erwerb',
    'erwerb1',
    'erwerb2',
