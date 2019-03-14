@@ -193,7 +193,11 @@ Course.create(
    'vkritikvagheit',
   'vkritikrelativismus',
    'vkritikorientierung',
+    'vubung5',
    'vubung3',
+   'vubung6intro',
+   'vubung6',
+   'vubung7',
     'abschluss',
     'sources'
  ]
