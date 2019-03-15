@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def overview
-    @accounts = Account.all
+    @accounts = Account.all.order(:created_at)
   end
 
   def course_overview

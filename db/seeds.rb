@@ -98,8 +98,6 @@ Course.create(
    'kkritikfreundschaft',
    'utilubung3',
    'utilubung4',
-   'porgintro',
-   'porg',
    'abschluss',
    'sources'
  ]
