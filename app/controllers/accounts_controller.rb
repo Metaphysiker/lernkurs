@@ -10,10 +10,7 @@ class AccountsController < ApplicationController
     @account = Account.create
     cookies.permanent["philosophie-lernkurs-cookie-id"] = @account.id
 
-    respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Account wurde gelöscht!' }
-      format.json { head :no_content }
-    end
+    redirect_to root_path
   end
 
   private
