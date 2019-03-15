@@ -31,7 +31,22 @@
 
   <div class="card m-3">
     <div class="card-body">
-      <%= link_to 'Profil löschen?', account_path(account.id), method: :delete, data: {confirm: "Bist du sicher?"}, class: "btn btn-danger" %>
+      <button type="button" id="delete-account" class="btn btn-danger">Profil löschen?</button>
+      <%#= link_to 'Profil löschen?', account_path(account.id), method: :delete, data: {confirm: "Bist du sicher?"}, class: "btn btn-danger" %>
     </div>
   </div>
 </div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("account loaded!");
+    var account_id = "<%= @account.id %>";
+    console.log("account_id");
+
+    $( "#delete-account" ).click(function() {
+      console.log("Pressed!");
+
+      deleteAccount(account_id);
+    });
+  });
+</script>

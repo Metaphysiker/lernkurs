@@ -59,3 +59,13 @@ function setGroup(code, firstname){
     headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
   });
 }
+
+function deleteAccount(account_id){
+  console.log("deleteAccount: " + account_id);
+  $.ajax({
+    url: "/accounts/" + account_id,
+    method: 'DELETE',
+    data: { id: account_id},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+  });
+}
