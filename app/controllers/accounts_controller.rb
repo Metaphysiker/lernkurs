@@ -5,6 +5,14 @@ class AccountsController < ApplicationController
 
   end
 
+  def destroy
+    @account.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Account wurde gelöscht!' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_account
