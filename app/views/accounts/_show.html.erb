@@ -31,8 +31,20 @@
 
   <div class="card m-3">
     <div class="card-body">
-<%= link_to 'Profil löschen?', account_path(account.id), method: :delete, data: {confirm: "Bist du sicher?"}, class: "btn btn-danger" %>
+      <%= link_to 'Profil löschen?', account_path(account.id), method: :delete, data: {confirm: "Bist du sicher?"}, class: "btn btn-danger" %>
     </div>
   </div>
+
+  <div class="card m-3">
+    <div class="card-body">
+      <% if cookies["philosophie-lernkurs-cookie-id"].present? %>
+        <%= cookies["philosophie-lernkurs-cookie-id"] %>
+        <% else %>
+        Nope
+      <% end %>
+    </div>
+  </div>
+
+
 
 </div>
