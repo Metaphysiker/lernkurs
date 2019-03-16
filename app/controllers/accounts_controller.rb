@@ -16,7 +16,11 @@ class AccountsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_account
-      @account = Account.find(params[:id])
+      if Account.where(id: params[:id]).empty?
+        @account = Account.create
+      else
+        @account = Account.find(params[:id])
+      end
       #@course = Course.find_by_slug(params[:slug])
     end
 end
