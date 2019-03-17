@@ -1,6 +1,7 @@
 <% noindex %>
-<div class="container">
-  <h3 class="text-center">Übersicht</h3>
+<%= render "layouts/navigation" %>
+<div class="container mt-4">
+  <h3 class="text-center">Mein Profil</h3>
 
   <div class="card m-3">
     <div class="card-body">
@@ -36,6 +37,8 @@
     </div>
   </div>
 </div>
+
+<%= render "layouts/footer" %>
 
 <script>
   $( document ).ready(function() {

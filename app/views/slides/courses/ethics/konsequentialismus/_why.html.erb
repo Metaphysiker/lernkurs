@@ -1,11 +1,13 @@
 <h6 class="text-center">Warum sich mit Konsequentialismus befassen?</h6>
 <hr>
-<p>
-  <em>
-    Dies ist ein Vertiefungskurs und setzt ein gewisses Vorwissen voraus.
-    Den Einführungskurs findest du <%=  link_to 'hier', course_path(Course.find(1)) %>.
-  </em>
-</p>
+<% if @account.courses.where(id: 1).empty? %>
+  <p>
+    <em>
+      Dies ist ein Vertiefungskurs und setzt ein gewisses Vorwissen voraus.
+      Den Einführungskurs findest du <%=  link_to 'hier', course_path(Course.find(1)) %>.
+    </em>
+  </p>
+<% end %>
 <p>
   Es lohnt sich mit dem Konsequentialismus zu befassen,
   weil konsequentialistische Begründungen oder Argumente
