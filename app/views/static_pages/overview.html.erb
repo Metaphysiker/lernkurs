@@ -14,6 +14,9 @@
             <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title %></b>
           <% end %>
         </p>
+        <p class="card-text">
+          Anzahl besuchte Kurse: <b><%= account.attendances.count %></b>
+        </p>
         <p class="card_text">
           Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
         </p>
