@@ -12,34 +12,35 @@
       </p>
       <p class="lead text-justify">
         Doch der Philosoph <b>Sokrates</b> war kein solcher Mensch.
-        Nach ihm sollen wir nicht einfach alles glauben,
-        was andere uns sagen, sondern <b>wir müssen für uns selber denken</b>.
+        Er sagte, dass wir nicht einfach alles glauben sollen,
+        was andere uns sagen, sondern, dass <b>wir immer alles hinterfragen müssen</b>.
       </p>
       <p class="lead text-justify">
-        Für sich selber zu denken ist aber anstrengend, mühsam und frustrierend.
-        Wäre das Leben nicht bedeutsam einfacher und schöner,
-        wenn wir uns nicht grossen und schwierigen Fragen hingeben würden?
+        Alles zu hinterfragen ist aber anstrengend und mühsam.
+        Wäre das Leben nicht viel einfacher,
+        wenn wir nicht alles hinterfragen würden?
       </p>
 
       <p class="lead text-justify">
         Doch für Sokrates ist ein einfaches Leben kein gutes Leben.
-        Er sagte sogar, dass das <b>unerforschte Leben nicht lebenswert sei</b>.
+        Er meinte, dass das ein gutes Leben darin bestehe, <b>das Leben</b> und <b>sich selber zu erforschen</b>.
       </p>
       <p class="lead text-justify">
         <b>Stimmst du Sokrates zu?</b>
-        Findest du auch, dass wir für uns selber denken müssen?
+        Findest du auch, dass wir alles hinterfragen sollten?
         Und bist du damit einverstanden, dass ein gutes Leben darin besteht,
-        sich selber und das Leben zu erforschen?
+        das Leben und sich selber zu erforschen?
       </p>
       <hr />
       <p class="lead text-justify">
+        Die <b>Ethik</b> ist die Wissenschaft,
+        die herauszufinden versucht, <b>was das gute Leben ist</b> oder <b>worin das gute Leben besteht</b>.
+      </p>
+      <p class="lead text-justify">
         Die Ethik ist ein <b>Teilgebiet der Philosophie</b>
-        und ihre zentrale Frage lautet: <b>"Was ist das gute Leben?"</b>
+        und sie beschäftigt sich auch mit Fragen wie:
       </p>
-      <p class="lead text-justify">
-        Sie beschäftigt sich auch mit Fragen wie:
-      </p>
-      <p class="lead text-justify">
+      <p class="lead text-center">
 
         <b> - Was ist Gerechtigkeit?</b>
         <br />
@@ -58,11 +59,12 @@
         Nebenbei erwirbst du <b>analytische Fähigkeiten</b> und ein <b>kritisches Denkvermögen</b>,
         die dir im Beruf sowie im alltäglichen Leben nützlich sein werden.
       </p>
+      <br />
 
     </div>
-    <div align="center" class="m-2">
-      <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
-        <button class="pulse-button rounded text-white">Mit Kurs anfangen</button>
+    <div align="center" class="m-3">
+      <%= link_to course_path(Course.find(1)) do %>
+        <button class="pulse-button rounded text-white">Mit Kurs anfangen!</button>
       <% end %>
     </div>
   </section>
