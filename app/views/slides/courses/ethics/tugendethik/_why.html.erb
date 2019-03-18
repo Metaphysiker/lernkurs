@@ -1,11 +1,13 @@
 <h6 class="text-center">Warum sich mit Tugendethik befassen?</h6>
 <hr>
-<p>
-  <em>
-    Dies ist ein Vertiefungskurs und setzt ein gewisses Vorwissen voraus.
-    Den Einführungskurs findest du <%=  link_to 'hier', course_path(Course.find(1)) %>.
-  </em>
-</p>
+<% if @account.courses.where(id: 1).empty? %>
+  <p>
+    <em>
+      Dies ist ein Vertiefungskurs und setzt ein gewisses Vorwissen voraus.
+      Den Einführungskurs findest du <%=  link_to 'hier', course_path(Course.find(1)) %>.
+    </em>
+  </p>
+<% end %>
 <p>
   Die Tugendethik ist eine spannende Ethik,
   weil sie sich mit <b>Charaktereigenschaften</b> auseinandersetzt.
@@ -13,7 +15,6 @@
 <p>
   Sie fragt nicht nur, wie wir uns gegenüber anderen verhalten sollen, sondern auch,
   wie <b>wir</b> uns persönlich <b>verbessern</b> und <b>entwickeln</b> können.
-
 </p>
 <p>
   Das Studium der Tugendethik hilft dir,
@@ -21,7 +22,7 @@
   zu <b>analysieren</b> und zu <b>kritisieren</b>.
 </p>
 <p>
-  Indem du die <b>Stärken</b> und <b>Schwächen</b> der Tugendethik kennst,
-  kannst du bessere <b>Entscheidungen treffen</b> und andere beraten,
+  Indem du über die <b>Stärken</b> und <b>Schwächen</b> der Tugendethik nachdenkst,
+  lernst du, bessere <b>Entscheidungen zu treffen</b> und kannst andere beraten,
   wie sie sich entscheiden <b>sollen</b>.
 </p>
