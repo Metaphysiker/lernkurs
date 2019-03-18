@@ -94,5 +94,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #Idea to fix unprocessable_entity error
-  #config.force_ssl = true
+  config.force_ssl = true
 end

@@ -1,0 +1,73 @@
+<p>
+  Überlege dir, <b>welche</b> Bewertung <b>utilitaristisch</b> ist!
+</p>
+<hr />
+<p>
+    "Was Toni getan hat, war <b>falsch!</b>
+</p>
+<p>
+  Tonis Falschinformation führte dazu, dass Lara ihre Stelle verlor, der Kunde verärgert und Geld verschwendet wurde.
+</p>
+<p>
+  Hätte Toni diese Falschinformation nicht gegeben,
+  dann wäre das alles nicht passiert, was besser gewesen wäre."
+</p>
+<hr />
+<p>
+  <button type="button" value="kbewertung" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">Konsequentialismus</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">Deontologie</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">Tugendethik</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="utilubung7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("utilubung7 loaded!");
+
+    var points = 100;
+
+    $( ".kbewertung" ).click(function() {
+
+      if($(this).attr("value") === "kbewertung"){
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+        addPointsToCourse(2, "utilubung7", points);
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              $('#utilubung7').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+        points = points - 50;
+      }
+    });
+
+  });
+</script>

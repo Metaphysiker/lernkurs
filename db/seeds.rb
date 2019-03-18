@@ -98,6 +98,7 @@ Course.create(
    'kkritikfreundschaft',
    'utilubung3',
    'utilubung4',
+   'utilubung6',
    'abschluss',
    'sources'
  ]
