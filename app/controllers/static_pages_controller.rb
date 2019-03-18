@@ -72,7 +72,7 @@ class StaticPagesController < ApplicationController
       ["Muss man sich für diesen Kurs registrieren oder anmelden?",
       "Nein, man muss sich weder registrieren noch anmelden."],
       ["An wen richtet sich dieser Kurs?",
-      "Dieser Kurs richtet sich an alle, die sich noch nie mit Ethik beschäftigt haben."],
+      "Dieser Kurs richtet sich an alle, die sich zum ersten Mal mit Ethik beschäftigen."],
       ["Ich bin eine Lehrperson. Kann ich den Kurs für meine Schulkinder brauchen?",
         "Ja. Mit Hilfe der Klassenfunktion kann man den Fortschritt und Punktestand der Schulkinder beobachten.
         Weitere Informationen: Link"

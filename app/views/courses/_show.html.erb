@@ -18,7 +18,8 @@
 </div>
 
 <script>
-  $(document).on('ready turbolinks:load', function() {
+  //$(document).on('ready turbolinks:load', function() {
+  $( document ).ready(function() {
     console.log("Course loaded!");
     var course_id = "<%= course.id %>";
     console.log("Course_id: " + course_id);
