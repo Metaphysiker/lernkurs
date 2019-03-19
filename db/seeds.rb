@@ -99,9 +99,7 @@ Course.create(
    'utilubung3',
    'utilubung4',
    'geldausleihe',
-   'geldausleihe1',
    'utilubung6',
-   'utilubung7',
    'abschluss',
    'sources'
  ]
@@ -318,8 +316,8 @@ Course.create(
 
 Course.create(
  id: 9,
- title: "Metaethik",
- description: "Ist Ethik eine Wissenschaft? Kann man ethische Fragen jemals wirklich beantworten? Was machen wir, wenn wir ethische Urteile fällen?",
+ title: "Abschlussprüfung",
+ description: "Prüfe dein Wissen! Nach Bestehen dieser Prüfung erhältst du ein Diplom!",
  topic: "ethics",
  duration: "15 Minuten",
  language: "de",

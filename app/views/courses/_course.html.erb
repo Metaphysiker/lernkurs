@@ -15,7 +15,7 @@
         <p class="card-text">
           <b>Erhaltener Orden: </b>
         </p>
-        <div class="text-center rounded border philosopiech-background p-2 my-3">
+        <div class="text-center rounded border bg-white p-2 my-3">
           <%= image_tag(@account.attendances.where(course_id: course.id).first.orden, class: "img-fluid") %>
         </div>
         <% else %>

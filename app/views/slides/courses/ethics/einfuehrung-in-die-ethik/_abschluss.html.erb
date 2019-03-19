@@ -3,14 +3,13 @@
 <p>
   <b><%= @account.attendances.where(course_id: course.id).first.points %></b> Punkte gesammelt!
 </p>
-<% unless @account.attendances.where(course_id: course.id).first.orden.blank? %>
-  <p>
-    <b>Du hast einen Orden erhalten!</b>
-  </p>
-  <div class="text-center rounded border philosopiech-background p-2 my-3 animated infinite pulse">
-    <%= image_tag(@account.attendances.where(course_id: course.id).first.orden, class: "img-fluid") %>
-  </div>
-<% end %>
+
+<p>
+  <b>Du hast einen Orden erhalten!</b>
+</p>
+<div class="text-center rounded border p-2 m-4 animated infinite pulse">
+  <%= image_tag("ethik-badge.png", class: "img-fluid") %>
+</div>
 <p>
   Schau dir noch die anderen Kurse an!
 </p>
@@ -22,5 +21,6 @@
   $( document ).ready(function() {
     console.log("abschluss loaded!");
     setStatus(1, "COMPLETED");
+    setOrden(1, "ethik-badge.png");
   });
 </script>

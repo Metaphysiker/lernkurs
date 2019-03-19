@@ -1,27 +1,27 @@
-<h3 class="text-center">Der vergessliche Freund</h3>
-<hr />
 <p>
-  <b>Warum</b> würde eine utilitaristische Person in diesem Fall das Geld spenden?
+  <b>Welche Kritik</b> am Utilitarismus wird hier ausgedrückt?
 </p>
 <hr />
 <p>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">
-    Weil utilitaristische Personen gerne Versprechen brechen
-  </button>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">
-    Weil man die Spenden von der
-  </button>
-  <button type="button" value="kbewertung" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kbewertung">
-    Weil das Spenden mehr Menschen nützt als es Menschen schadet.
-  </button>
+  "Nicht alle Menschen
+</p>
+<p>
+  Wenn es zu schwierig wäre, die Konsequenzen unserer Handlungen abzuschätzen,
+  müssten wir dann nicht auch demokratische Abstimmungen abschaffen?"
+</p>
+<hr />
+<p>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Es ist zu schwierig, den Gesamtnutzen zu errechnen.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus kann zu Ungleichbehandlung von Menschen führen.</button>
+  <button type="button" value="zuschwierig" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Utilitaristisches Verhalten kann persönliche Beziehungen und Freundschaften ruinieren.</button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="utilubung7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="utilubung8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+          <h5 class="modal-title text-center" id="exampleModalLabel">Übung abgeschlossen!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -41,23 +41,23 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("utilubung7 loaded!");
+    console.log("utilubung8 loaded!");
 
     var points = 100;
 
-    $( ".kbewertung" ).click(function() {
+    $( ".zuschwierig" ).click(function() {
 
-      if($(this).attr("value") === "kbewertung"){
+      if($(this).attr("value") === "zuschwierig"){
         $(".modal-body").append(
           `<p class="text-center lead">
               Du hast ${points} Punkte erhalten!
             </p>
           `
         );
-        addPointsToCourse(2, "utilubung7", points);
+        addPointsToCourse(2, "utilubung8", points);
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
-              $('#utilubung7').modal('show');
+              $('#utilubung8').modal('show');
             }, 600);
         });
       } else {
@@ -65,6 +65,5 @@
         points = points - 50;
       }
     });
-
   });
 </script>
