@@ -15,7 +15,10 @@ class CoursesController < ApplicationController
     @page_description = @course.description
     @page_keywords    = @course.keywords
 
-    if @attendance.current_slide > @course.slides.count
+    if params[:slide].present?
+      @current_slide = params[:slide].to_i
+      @attendance.update(status: "")
+    elsif @attendance.current_slide > @course.slides.count
       @current_slide = 0
     elsif -1 > @attendance.current_slide
       @current_slide = 0
