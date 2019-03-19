@@ -3,14 +3,12 @@
 <p>
   <b><%= @account.attendances.where(course_id: course.id).first.points %></b> Punkte gesammelt!
 </p>
-<% unless @account.attendances.where(course_id: course.id).first.orden.blank? %>
 <p>
   <b>Du hast einen Orden erhalten!</b>
 </p>
-<div class="text-center rounded border philosopiech-background p-2 my-3 animated infinite pulse">
-  <%= image_tag("universalisierer-badge.png", class: "img-fluid") %>
+<div class="text-center rounded border p-2 my-3 animated infinite pulse">
+  <%= image_tag("deontologie-badge.png", class: "img-fluid") %>
 </div>
-<% end %>
 <p>
   Schau dir noch die anderen Kurse an!
 </p>
@@ -22,5 +20,6 @@
   $( document ).ready(function() {
     console.log("abschluss loaded!");
     setStatus(3, "COMPLETED");
+    setOrden(3, "deontologie-badge.png");
   });
 </script>
