@@ -27,5 +27,81 @@
 </p>
 <hr />
 <p>
-  <button type="button" id="deonubung" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  <button type="button" id="deonubung7s" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
 </p>
+
+<!-- Modal -->
+<div class="modal fade" id="deonubung7sm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("deonubung7s loaded!");
+
+    var points = 100;
+    var wollen = false;
+    var alle = false;
+
+    $( "#deonubung7s" ).click(function() {
+
+      if (['wollen', 'willen', 'will', 'woll'].indexOf($('input[name="wollen"]').val().toLowerCase()) >= 0) {
+        $('input[name="wollen"]').removeClass("is-invalid");
+        $('input[name="wollen"]').addClass("is-valid");
+        wollen = true;
+      } else {
+        $('input[name="wollen"]').removeClass("is-valid");
+        $('input[name="wollen"]').addClass("is-invalid");
+        if(points > 0){
+          points = points - 50;
+        }
+      }
+
+      if (['alle', 'all'].indexOf($('input[name="alle"]').val().toLowerCase()) >= 0) {
+          $('input[name="alle"]').removeClass("is-invalid");
+          $('input[name="alle"]').addClass("is-valid");
+          alle = true;
+      } else {
+        $('input[name="alle"]').removeClass("is-valid");
+        $('input[name="alle"]').addClass("is-invalid");
+        if(points > 0){
+          points = points - 50;
+        }
+      }
+
+      if(alle && wollen){
+        $(".modal-body").append(
+          `<p class="text-center lead">
+              Du hast ${points} Punkte erhalten!
+            </p>
+          `
+        );
+
+        addPointsToCourse(3, "deonubung7s", points);
+        setTimeout(function(){
+            $('#deonubung7sm').modal('show');
+          }, 300);
+      }
+
+    });
+
+  });
+</script>
