@@ -96,6 +96,7 @@ Course.create(
    'kkritikanwendbarkeit',
    'kkritikungleichheit',
    'kkritikfreundschaft',
+   'utilubung8',
    'utilubung3',
    'utilubung4',
    'geldausleihe',

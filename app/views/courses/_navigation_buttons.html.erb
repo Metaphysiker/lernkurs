@@ -1,7 +1,15 @@
 <div class="text-center">
-  <button type="button" id="get-previous-slide" class="previous-next-button get-slide-button <%= "invisible" if current_slide <= 0 %> mx-2" slide="<%= current_slide - 1 %>">Zurück</button>
+  <% if current_slide <= 0 %>
+    <button type="button" class="previous-next-button get-slide-button disabled mx-2" disabled>Zurück</button>
+  <% else %>
+    <button type="button" id="get-previous-slide" class="previous-next-button get-slide-button mx-2" slide="<%= current_slide - 1 %>">Zurück</button>
+  <% end %>
   <%= current_slide + 1 %> / <%= course.slides.count %>
-  <button type="button" id="get-next-slide" class="previous-next-button get-slide-button <%= "invisible" if current_slide == course.slides.count-1 %> mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+  <% if current_slide == course.slides.count-1 %>
+    <button type="button" class="previous-next-button get-slide-button disabled mx-2" disabled>Weiter</button>
+  <% else %>
+    <button type="button" id="get-next-slide" class="previous-next-button get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+  <% end %>
   |
   <button type="button" class="ml-1 btn btn-info" data-toggle="modal" data-target="#statusModal">
     <%= fa_icon "user-circle" %>
