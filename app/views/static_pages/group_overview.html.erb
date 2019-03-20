@@ -3,11 +3,51 @@
 <% noindex %>
 <div class="container my-3">
   <h3 class="text-center">Übersicht</h3>
-  <hr />
-  <h5 class="text-center">Klasse: <%= @code %></h5>
-  <hr />
+  <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-2 align-self-center border-right">
+            <div class="d-flex justify-content-center align-items-center">
+              <%= fa_icon "graduation-cap", class: "fa-3x" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <p class="card-text">
+              Name der Klasse: <b><%= @code %></b>
+
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-2 align-self-center border-right">
+            <div class="d-flex justify-content-center align-items-center">
+              <%= fa_icon "users", class: "fa-3x" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <p class="card-text">
+              Anzahl Teilnehmende: <b><%= @accounts.count %></b>
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-2 align-self-center border-right">
+            <div class="d-flex justify-content-center align-items-center">
+              <%= fa_icon "info", class: "fa-3x" %>
+            </div>
+          </div>
+          <div class="col-10">
+            <p class="card-text">
+              Bei Fragen oder Schwierigkeiten können Sie jederzeit eine Mail an <%= mail_to "sandro.raess@philosophie.ch", "Sandro Räss" %> schreiben.
+          </div>
+        </div>
+      </div>
+    </div>
+
   <% @accounts.each do |account| %>
-    <div class="card">
+    <div class="card my-4">
       <div class="card-body">
         <h5 class="card-title"><%= account.firstname %></h5>
         <h6 class="card-subtitle mb-2 text-muted">Punktestand: <%= account.total_score %></h6>
@@ -19,9 +59,20 @@
             <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title %></b>
           <% end %>
         </p>
-        <p class="card_text">
-          Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
+        <% unless Course.where(id: account.current_course_id).empty? %>
+        <hr />
+        <p>
+          <%= account.firstname %> hat folgende Kurse besucht:
+          <ul>
+            <% account.attendances.each do |attendance| %>
+              <li>
+                <b><%= attendance.course.title %></b><br />  - <%= attendance.points %> Punkte gesammelt<br /><br />
+              </li>
+            <% end %>
+          </ul>
         </p>
+        <% end %>
+        <hr />
         <%= link_to "Zum Profil", account_path(account), class: "card-link" %>
       </div>
     </div>

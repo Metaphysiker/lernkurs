@@ -2,7 +2,7 @@
 <%= render "layouts/navigation" %>
 <div class="container mt-4">
   <h3 class="text-center">
-    Mein Profil
+    Profil
   </h3>
 
   <div class="card m-3">
@@ -13,21 +13,32 @@
       <p class="card-text">
         <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title unless Course.where(id: account.current_course_id).empty? %></b>
       </p>
+      <hr />
+      <p class="card_text">
+        Anzahl besuchter Kurse: <b><%= account.attendances.count %></b>
+      </p>
+      <hr />
       <p class="card_text">
         Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
       </p>
     </div>
   </div>
 
-  <% account.attendances.each do |attendance| %>
+  <% account.attendances.order(:created_at).each do |attendance| %>
   <div class="card m-3">
     <div class="card-body">
       <h5 class="card-title"><%= attendance.course.title %></h5>
       <h6 class="card-subtitle mb-2 text-muted">Gesammelte Punkte: <%= attendance.points %></h6>
         <hr />
-      <p class="card-text">
-        Orden erhalten?
-      </p>
+        <p class="card-text">
+          Gegenwärtige Folie: <b><%= attendance.current_slide + 1 %></b>
+        </p>
+        <% unless attendance.orden.blank? %>
+        <hr />
+        <div class="text-center rounded border bg-white p-2 my-3">
+          <%= image_tag(attendance.orden, class: "img-fluid") %>
+        </div>
+        <% end %>
     </div>
   </div>
   <% end %>
