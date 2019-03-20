@@ -62,7 +62,12 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def klasse
+
+  end
+
   def feedback
+
   end
 
   def faq
