@@ -60,6 +60,21 @@ function setGroup(code, firstname){
   });
 }
 
+function checkGroup(code){
+  console.log("code: " + code);
+  $.ajax({
+    url: "/check_group",
+    method: 'GET',
+    data: { code: code},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+    success: function (data) {
+      console.log("SUCCESS");
+      return data;
+    },
+    error: function () { return "true"; }
+  });
+}
+
 function deleteAccount(account_id){
   console.log("deleteAccount: " + account_id);
   $.ajax({

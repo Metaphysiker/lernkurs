@@ -31,4 +31,5 @@ Rails.application.routes.draw do
   post '/set_result1', to: 'courses#set_result1', as: 'set_result1'
   post '/set_orden', to: 'courses#set_orden', as: 'set_orden'
   post '/set_group', to: 'static_pages#set_group', as: 'set_group'
+  get '/check_group', to: 'static_pages#check_group', as: 'check_group'
 end

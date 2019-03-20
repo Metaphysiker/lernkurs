@@ -4,9 +4,9 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Für Lehrpersonen</h1>
+          <h1 class="jumbotron-heading">Informationen für Lehrpersonen</h1>
           <p class="lead text-muted">
-            Sehen Sie den Punktestand und Fortschritt Ihrer Schulkinder oder Studierenden
+            Möchten Sie den Lernkurs für Ihre Klasse verwenden? So geht's!
           </p>
         </div>
       </section>
@@ -14,15 +14,96 @@
 
     <div class="album py-5 philosopiech-background">
       <div class="container">
-        <div class="card">
+
+        <div class="card my-2">
           <div class="card-body">
             <p class="card-text">
-              Befolgen Sie diese Anleitung,
-              wenn Sie den Punktestand und Fortschritt Ihrer Klasse sehen möchten.
+              Mit dieser Anleitung können Sie den <b>Punktestand</b> und <b>Fortschritt</b> Ihrer Schulkinder oder Ihrer Studierenden sehen.
             </p>
           </div>
         </div>
+
+        <div class="card my-2">
+          <div class="card-body">
+            <h5 class="card-title">1. Eine Abkürzung wählen</h5>
+            <p class="card-text">
+              <b>Zum Beispiel: </b>
+            </p>
+            <p class="card-text">
+              "<b>K</b>anton<b>s</b>schule <b>K</b>reuzlingen, Klasse <b>3B</b> <b>2019</b>"
+            </p>
+            <%= fa_icon "arrow-right" %> <b>"ksk3b2019"</b>
+          </div>
+        </div>
+
+        <div class="card my-2">
+          <div class="card-body">
+            <h5 class="card-title">2. Überprüfen, ob die Abkürzung bereits vergeben ist</h5>
+            <p>
+              <div class="input-group input-group-lg mb-3">
+                <input type="text" name="abbreviation" class="form-control" placeholder="Hier Abkürzung eingeben" aria-label="..." aria-describedby="basic-addon2">
+              </div>
+            </p>
+            <p id="result-of-check" class="rounded p-3">
+
+            </p>
+            <p>
+              <button type="button" id="checkabbreviation" class="btn btn-info btn-lg my-3">Vorhandensein prüfen!</button>
+            </p>
+          </div>
+        </div>
+
+        <div class="card my-2">
+          <div class="card-body">
+            <h5 class="card-title">3. Schicken Sie den untenstehenden Link an Ihre Schulkinder oder an Ihre Studierenden</h5>
+            <p id="link-to-send" class="rounded border p-3">
+
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
 
 <%= render "layouts/footer" %>
+
+<script>
+  $( document ).ready(function() {
+    console.log("klasse loaded!");
+
+    $( "#checkabbreviation" ).click(function() {
+      var abbreviation = $('input[name="abbreviation"]').val().toLowerCase();
+      console.log(abbreviation);
+
+      $.ajax({
+        url: "/check_group",
+        method: 'GET',
+        data: { code: abbreviation},
+        headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+      }).done(function(data) {
+        if(data === true){
+          $("#result-of-check")
+            .text("Abkürzung ist leider schon vergeben!")
+            .animate({
+              color: "white",
+              backgroundColor: "red"
+            });
+        } else {
+          $("#result-of-check")
+          .text("Abkürzung ist noch frei!")
+          .animate({
+            color: "white",
+            backgroundColor: "green"
+          });
+
+          $("#link-to-send")
+          .text("www.lernkurs.philosophie.ch/klasse/" + abbreviation);
+        }
+
+      });
+
+
+    });
+
+  });
+</script>

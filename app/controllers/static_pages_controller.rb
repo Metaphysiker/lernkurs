@@ -52,6 +52,16 @@ class StaticPagesController < ApplicationController
     head :ok
   end
 
+  def check_group
+    code = params[:code].to_s
+
+    taken_abbreviations = Account.all.pluck(:code).uniq
+
+    data = taken_abbreviations.include?(code).to_s
+
+    render :json => data, :status => :ok
+  end
+
   def group_overview
     code = params[:code].to_s
 
