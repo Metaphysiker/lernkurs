@@ -6,8 +6,11 @@ class AccountsController < ApplicationController
   end
 
   def destroy
+    puts "destroy"
+    puts @account.id
     @account.destroy
     @account = Account.create
+    puts @account.id
     cookies.permanent["philosophie-lernkurs-cookie-id"] = @account.id
 
     redirect_to root_path
