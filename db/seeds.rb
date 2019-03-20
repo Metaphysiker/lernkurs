@@ -230,6 +230,8 @@ Course.create(
    "ktproblems",
    "ktkritikmoralvsinteresse",
    "ktkritikpartnersincrime",
+   'abschluss',
+   'sources'
  ]
 )
 
@@ -255,6 +257,8 @@ Course.create(
    "benachteiligung8",
    "benachteiligung9",
    "benachteiligung10",
+   'abschluss',
+   'sources'
  ]
 )
 
@@ -285,6 +289,8 @@ Course.create(
    "singer1",
    "singer2",
    "anthropologischedifferenz3",
+   'abschluss',
+   'sources'
  ]
 )
 
@@ -312,6 +318,8 @@ Course.create(
    "sterbehilfe1",
    "sterbehilfe2",
    "sterbehilfe3",
+   'abschluss',
+   'sources'
   ]
 )
 
@@ -326,6 +334,8 @@ Course.create(
  name_of_picture: "organization.jpg",
  slides: [
    "metaethik",
+   'abschluss',
+   'sources'
  ]
 )
 
