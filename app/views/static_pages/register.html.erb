@@ -1,27 +1,29 @@
-<% noindex %>
-<div class="container">
-  <h3 class="text-center">Anmelde-Seite</h3>
-  <hr />
-  <p>
-    Gib hier den <b>Code</b> ein!
-  </p>
-  <p>
-    <div class="input-group input-group-lg mb-3">
-    <input type="text" name="code" class="form-control" placeholder="Code hier eingeben" aria-label="..." aria-describedby="basic-addon2">
-  </div>
-  </p>
-  <p>
-    Gib hier deinen <b>Vornamen</b> ein!
-  </p>
-  <p>
-    <div class="input-group input-group-lg mb-3">
-    <input type="text" name="firstname" class="form-control" placeholder="Vornamen hier eingeben" aria-label="..." aria-describedby="basic-addon2">
-  </div>
-  </p>
+<%= render "layouts/navigation" %>
 
-  <p>
-    <button type="button" id="send" class="btn btn-info btn-lg my-3">Senden!</button>
-  </p>
+<% noindex %>
+<div class="container my-3">
+  <h3 class="text-center">Registrierung</h3>
+  <div class="card">
+    <div class="card-body">
+      <p>
+        Registrierung für die Klasse: <b><%= @code %></b>
+      </p>
+      <hr />
+      <p>
+        Bitte gib hier deinen <b>Vornamen</b> ein!
+      </p>
+      <p>
+        <div class="input-group input-group-lg mb-3">
+        <input type="text" name="firstname" class="form-control" placeholder="Vornamen hier eingeben" aria-label="..." aria-describedby="basic-addon2">
+      </div>
+      </p>
+      <p>
+        <button type="button" id="send" class="btn btn-info btn-lg my-3">Registrieren!</button>
+      </p>
+    </div>
+  </div>
+
+
 
   <!-- Modal -->
   <div class="modal fade animated tada" id="utilubungm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -52,7 +54,9 @@
 
 
     $( "#send" ).click(function() {
-      var code = $('input[name="code"]').val();
+      //var code = $('input[name="code"]').val();
+      var code = "<%= @code %>";
+      console.log(code);
       var firstname = $('input[name="firstname"]').val();
       setGroup(code, firstname);
       $('input[name="code"]').addClass("is-valid");

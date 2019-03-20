@@ -21,9 +21,10 @@ Rails.application.routes.draw do
   get "/textversion/:id", to: "static_pages#textversion", as: 'textversion'
   get "/test", to: "static_pages#test", as: 'test'
   get "/overview", to: "static_pages#overview", as: 'overview'
-  get "/register", to: "static_pages#register", as: 'register'
+  get "klasse/register/:code", to: "static_pages#register", as: 'register'
   get "/klasse", to: "static_pages#klasse", as: 'klasse'
-  get "/group_overview/:code", to: "static_pages#group_overview", as: 'group_overview'
+  get "/klasse/:code", to: "static_pages#group_overview", as: 'group_overview'
+  #get "/group_overview/:code", to: "static_pages#group_overview", as: 'group_overview'
 
   post '/set_current_slide', to: 'courses#set_current_slide', as: 'set_current_slide'
   post '/add_points_to_course', to: 'courses#add_points_to_course', as: 'add_points_to_course'

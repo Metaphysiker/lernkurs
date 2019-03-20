@@ -63,13 +63,13 @@ class StaticPagesController < ApplicationController
   end
 
   def group_overview
-    code = params[:code].to_s
+    @code = params[:code]
 
-    @accounts = Account.where(code: code)
+    @accounts = Account.where(code: @code)
   end
 
   def register
-
+    @code = params[:code]
   end
 
   def klasse

@@ -1,9 +1,10 @@
+<%= render "layouts/navigation" %>
+
 <% noindex %>
-<div class="container">
+<div class="container my-3">
   <h3 class="text-center">Übersicht</h3>
-  <p>
-    Code:
-  </p>
+  <hr />
+  <h5 class="text-center">Klasse: <%= @code %></h5>
   <hr />
   <% @accounts.each do |account| %>
     <div class="card">
