@@ -336,8 +336,10 @@ Course.create(
    "introduction",
    "grundbegriffe",
    "grundbegriffe1",
-   "kvsd",
-   "kvsd1",
+   "brand1",
+   "brand2",
+   "brand3",
+   "brand4",
    'abschluss',
    'sources'
  ]
