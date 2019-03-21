@@ -1,0 +1,134 @@
+<h5 class="text-center">Wie würdest du dich entscheiden?</h5>
+<hr />
+
+<div id="option" class="text-center mb-4">
+  <div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
+</div>
+
+<div id="first" class="text-center mb-4">
+
+</div>
+
+<div id="second" class="text-center mb-4">
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="dork" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  var options =
+    [
+        ["Würdest du einen Menschen umbringen, um 5 Menschen das Leben zu retten?", "Ja, ich würde dafür einen Menschen umbringen.", "Nein, ich würde dafür keinen Menschen umbringen.",[0,1]],
+        ["Würdest du lügen, um einen Streit zwischen deinen Freunden zu vermeiden?", "Ja, ich würde dafür lügen.", "Nein, ich würde meinen Freunden die Wahrheit sagen.",[0,1]],
+        ["Du hast 200 Franken von einem reichen Freund geliehen. Er ist sehr vergesslich. Er hat bereits vergessen, dass er dir 200 Franken geliehen hat. Würdest du ihm das Geld wie versprochen zurückgeben oder würdest du es für einen guten Zweck spenden?", "Ich würde das Geld für einen guten Zweck spenden.", "Ich würde das Geld wie versprochen zurückgeben.",[0,1]],
+        ["Du kennst einen Politiker, der korrupt ist. Leider hast du nicht genügend Beweise, um ihn auf normalen Wegen hinters Licht zu führen. Würdest du einen Richter bestechen, so dass der korrupte Politiker dennoch eingesperrt wird?", "Ja, ich würde dafür den Richter bestechen.", "Nein, ich würde dafür keinen Richter bestechen.", [0,1]],
+        ["Du bist Arzt. Du hast einen kranken Patienten und du weisst, dass keine deiner Medikamente ihm helfen können. Würdest du dem Patienten ein Placebo verabreichen und ihm sagen, dass ihm dieses Medikament helfen kann?", "Ja, ich würde dem Patienten ein Placebo geben.", "Nein, ich würde dem Patienten sagen, dass ich keine Medikamente für ihn habe.", [0,1]],
+        ["Ein Terrorist hat eine Bombe in der Stadt versteckt, die Tausenden von Menschen das Leben kosten wird. Würdest du den Terroristen foltern, um den Ort der Bombe herauszufinden?", "Ja, ich würde den Terroristen foltern.", "Nein, ich würde den Terroristen nicht foltern.", [0,1]],
+        ["Die örtliche Feuerwehr ist seit Jahren unterbezahlt und leidet an Personalmangel. Die Behörden weigern sich vehement, in die Feuerwehr zu investieren. Würdest du ein unbewohntes Haus anzünden, um die Behörden zum Umdenken zu zwingen?", "Ja, ich würde deswegen ein unbewohntes Haus anzünden.", "Nein, ich würde deswegen kein unbewohntes Haus anzünden.", [0,1]],
+        ["Du bist Chirurg und ein Experte für Transplantationschirurgie. Du hast 4 Patienten, die dringend neue Organe benötigen. Zufälligerweise sitzt eine Person im Wartesaal, dessen Organe allen 4 Patienten das Leben retten könnten. Würdest du diese Person im Wartesaal für die anderen 4 Patienten opfern?", "Ja, ich würde diese Person für die anderen 4 opfern.", "Nein, ich würde diese Person nicht opfern.", [0,1]],
+        ["Terroristen haben eine Geisel genommen und fordern Lösegeld. Die fordernden Terroristen sind bekannt dafür, dass sie ihr Wort halten und die Geiseln nach Erhalt des Lösegelds freilassen. Würdest du mit diesen Terroristen verhandeln und das Lösegeld zahlen?", "Ja, ich würde mit den Terroristen verhandeln.", "Nein, ich würde nicht mit den Terroristen verhandeln.", [0,1]],
+        ["", "", "", [0,0]],
+    ];
+
+    var score = 0;
+    var currentnumber = 0;
+
+  $( document ).ready(function() {
+
+  console.log("Dork loaded!");
+  console.log(score);
+
+  getNextOption(0);
+
+    function getNextOption(number) {
+      //option
+      $("#option").fadeOut("fast", function(){
+        $("#option").empty().append(
+          `<b>
+            ${options[number][0]}
+          </b>`
+        ).fadeIn("fast");
+      });
+
+      //first
+      $("#first").fadeOut("fast", function(){
+        $("#first").empty().append(
+          `<button type="button" text="${options[number][1]}" value="${options[number][3][0]}" class="btn btn-light border multilinebutton btn-block p-3 mb-4 answer">${options[number][1]}</button>`
+        ).fadeIn("fast");
+      });
+
+      //second
+      $("#second").fadeOut("fast", function(){
+        $("#second").empty().append(
+        `<button type="button" text="${options[number][2]}" value="${options[number][3][1]}" class="btn btn-light border multilinebutton btn-block p-3 mb-4 answer">${options[number][2]}</button>`
+        ).fadeIn("fast");
+      });
+    }
+
+    $("body").on("click", ".answer", function(e) {
+      e.stopImmediatePropagation();
+      currentnumber = currentnumber + 1;
+      score = score + parseInt($(this).attr("value"));
+      console.log(currentnumber);
+      if (currentnumber === 9){
+        if(score >= 5){
+          $(".modal-title").empty().append(
+            `<b>Du bist ein Deontologe!</b>`
+          );
+          $(".modal-body").empty().append(
+            `<p>
+                Du tendierst dazu, deinen Pflichten nachzugehen, selbst wenn sie unschöne Folgen nach sich ziehen!
+              </p>
+            `
+          );
+          setOrden(1, "deontologie-badge.png");
+        } else {
+          $(".modal-title").empty().append(
+            `<b>Du bist ein Konsequentialist!</b>`
+          );
+          $(".modal-body").empty().append(
+            `<p>
+                Du tendierst dazu, fragwürdige Handlungen zu begehen, um ein grösseres Gut zu erreichen!
+              </p>
+            `
+          );
+          setOrden(1, "konsequentialismus-badge.png");
+        }
+
+        $('#dork').modal('show');
+      } else {
+        getNextOption(currentnumber);
+      };
+    });
+
+
+
+
+});
+</script>
