@@ -333,7 +333,11 @@ Course.create(
  order: 9,
  name_of_picture: "organization.jpg",
  slides: [
-   "metaethik",
+   "introduction",
+   "grundbegriffe",
+   "grundbegriffe1",
+   "kvsd",
+   "kvsd1",
    'abschluss',
    'sources'
  ]
