@@ -14,6 +14,24 @@
         </div>
       </div>
       <% end %>
+
+      <div class="card my-4">
+        <div class="card-body">
+          <h5 class="card-title">Ich bin eine Lehrperson. Kann ich den Kurs für meine Schulkinder oder für meine Studierenden brauchen?</h5>
+          <hr />
+          <p class="card-text">Ja! Sie können den Punktestand und Fortschritt Ihrer Schulkinder oder Studierenden sehen, wenn sie eine Klasse erstellen.</p>
+          <p class="card-text">Weitere Informationen finden Sie hier: <%= link_to "Informationen für Lehrpersonen", klasse_path %></p>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-body">
+          <h5 class="card-title">Ich habe Schwierigkeiten. Wo bekomme ich Hilfe?</h5>
+          <hr />
+          <p class="card-text">Sie können eine Mail an Sandro Räss schreiben: <%= mail_to "sandro.raess@philosophie.ch", "e-Mail" %></p>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
