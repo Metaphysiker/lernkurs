@@ -73,6 +73,15 @@ class StaticPagesController < ApplicationController
   end
 
   def klasse
+    code = 12345
+
+    taken_codes = Account.all.pluck(:code).uniq
+
+    if taken_codes.include?(code).to_s
+
+    end
+
+    @code = 12345
 
   end
 

@@ -18,6 +18,49 @@
         <div class="card my-2">
           <div class="card-body">
             <p class="card-text">
+              Dieser Lernkurs für Ethik richtet sich an alle,
+              die sich <b>zum ersten Mal</b> mit Ethik beschäftigen.
+            </p>
+            <p class="card-text">
+              Er vermittelt Grundtheorien. auf interaktivem Weg.
+            </p>
+            <p class="card-text">
+              Es ist <b>keine</b> Registrierung oder Anmeldung nötig.
+              Es müssen <b>keine</b> e-Mail-Adressen oder Telefon-Nummern angegeben werden.
+            </p>
+            <p class="card-text">
+              Der Lernkurs besteht aus mehreren <b>Teilkursen</b>.
+              Für
+            </p>
+            <p class="card-text">
+              Für diesen Lernkurs braucht man:
+              <ul>
+                <li>
+                  Ein <b>Smartphone</b> oder ein <b>Tablet</b> mit Internetzugang.
+                </li>
+                <li>
+                  Eine <b>Internetverbindung</b>.
+                </li>
+              </ul>
+            </p>
+            <p class="card-text">
+              Dieser Lernkurs ist so konzipiert,
+              das er mit einem <b>Smartphone</b> oder mit einem <b>Tablet</b>
+              absolviert werden kann.
+            </p>
+            <p class="card-text">
+              Während dem Lernkurs gibt es <b>interaktive Übungen</b>.
+            </p>
+            <p class="card-text">
+              Wenn diese interaktive Übungen gelöst werden,
+              erhaltet man Punkte.
+            </p>
+          </div>
+        </div>
+
+        <div class="card my-2">
+          <div class="card-body">
+            <p class="card-text">
               Mit dieser Anleitung können Sie den <b>Punktestand</b> und <b>Fortschritt</b> Ihrer Schulkinder oder Ihrer Studierenden sehen.
             </p>
           </div>
@@ -25,39 +68,9 @@
 
         <div class="card my-2">
           <div class="card-body">
-            <h5 class="card-title">1. Eine Abkürzung wählen</h5>
-            <p class="card-text">
-              <b>Zum Beispiel: </b>
-            </p>
-            <p class="card-text">
-              "<b>K</b>anton<b>s</b>schule <b>K</b>reuzlingen, Klasse <b>3B</b> <b>2019</b>"
-            </p>
-            <%= fa_icon "arrow-right" %> <b>"ksk3b2019"</b>
-          </div>
-        </div>
-
-        <div class="card my-2">
-          <div class="card-body">
-            <h5 class="card-title">2. Überprüfen, ob die Abkürzung bereits vergeben ist</h5>
-            <p>
-              <div class="input-group input-group-lg mb-3">
-                <input type="text" name="abbreviation" class="form-control" placeholder="Hier Abkürzung eingeben" aria-label="..." aria-describedby="basic-addon2">
-              </div>
-            </p>
-            <p id="result-of-check" class="rounded p-3">
-
-            </p>
-            <p>
-              <button type="button" id="checkabbreviation" class="btn btn-info btn-lg my-3">Vorhandensein prüfen!</button>
-            </p>
-          </div>
-        </div>
-
-        <div class="card my-2">
-          <div class="card-body">
-            <h5 class="card-title">3. Schreiben Sie sich den untenstehenden Link auf</h5>
+            <h5 class="card-title">1. Schreiben Sie sich den untenstehenden Link auf</h5>
             <p id="link-to-remember" class="rounded border p-3">
-
+              <%= link_to "www.lernkurs.philosophie.ch/klasse/#{@code}", group_overview_path(code: @code) %>
             </p>
             <p>
               Mit diesem Link gelangen Sie zur <b>Übersichtsseite</b>,
@@ -69,13 +82,13 @@
 
         <div class="card my-2">
           <div class="card-body">
-            <h5 class="card-title">4. Schicken Sie den untenstehenden Link an Ihre Schulkinder oder an Ihre Studierenden</h5>
+            <h5 class="card-title">2. Schicken Sie den untenstehenden Link an Ihre Schulkinder oder an Ihre Studierenden</h5>
             <p id="link-to-send" class="rounded border p-3">
-
+              <%= link_to "www.lernkurs.philosophie.ch/register/#{@code}", register_path(code: @code) %>
             </p>
             <p>
               Auf dieser Seite werden die Schulkinder oder Studierenden aufgefordert,
-              ihre Vornamen einzugeben. <b>Sobald sie ihren Vornamen eingegeben haben,
+              ihre Vornamen einzugeben. <b>Sobald sie ihre Vornamen eingegeben haben,
               wurden ihre Geräte registriert und werden auf der Übersichtsseite sichtbar.</b>
             </p>
           </div>
@@ -83,9 +96,11 @@
 
         <div class="card my-2">
           <div class="card-body">
-            <h5 class="card-title">5. Mit Lernkurs beginnen!</h5>
+            <h5 class="card-title">3. Mit Lernkurs beginnen!</h5>
             <p>
-
+              Nachdem sich die Schulkinder oder Studierenden angemeldet haben,
+              sind sie auf der <%= link_to "Startseite", root_path %>. Von dort aus können sie einen Kurs starten,
+              wenn sie bei einem Kurs auf "Mit Kurs anfangen" klicken.
             </p>
           </div>
         </div>
@@ -128,7 +143,7 @@
           .text("www.lernkurs.philosophie.ch/klasse/" + abbreviation);
 
           $("#link-to-send")
-          .text("www.lernkurs.philosophie.ch/klasse/register/" + abbreviation);
+          .text("www.lernkurs.philosophie.ch/register/" + abbreviation);
         }
 
       });

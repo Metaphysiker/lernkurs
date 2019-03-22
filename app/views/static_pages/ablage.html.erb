@@ -1,0 +1,29 @@
+<div class="card my-2">
+  <div class="card-body">
+    <h5 class="card-title">1. Eine Abkürzung wählen</h5>
+    <p class="card-text">
+      <b>Zum Beispiel: </b>
+    </p>
+    <p class="card-text">
+      "<b>K</b>anton<b>s</b>schule <b>K</b>reuzlingen, Klasse <b>3B</b> <b>2019</b>"
+    </p>
+    <%= fa_icon "arrow-right" %> <b>"ksk3b2019"</b>
+  </div>
+</div>
+
+<div class="card my-2">
+  <div class="card-body">
+    <h5 class="card-title">2. Überprüfen, ob die Abkürzung bereits vergeben ist</h5>
+    <p>
+      <div class="input-group input-group-lg mb-3">
+        <input type="text" name="abbreviation" class="form-control" placeholder="Hier Abkürzung eingeben" aria-label="..." aria-describedby="basic-addon2">
+      </div>
+    </p>
+    <p id="result-of-check" class="rounded p-3">
+
+    </p>
+    <p>
+      <button type="button" id="checkabbreviation" class="btn btn-info btn-lg my-3">Vorhandensein prüfen!</button>
+    </p>
+  </div>
+</div>
