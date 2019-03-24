@@ -110,7 +110,7 @@ Course.create(
 
 Course.create(
  id: 3,
- title: "Deontologie",
+ title: "Pflichtenethik / Deontologie",
  description: "Soll man seine Versprechen immer halten? Ist Lügen auch dann schlecht, wenn man gute Absichten hat? Gibt es Regeln, die wir immer befolgen sollten?",
  keywords: "Deontologie, Pflichtethik, Kantianismus, Kant, Immanuel Kant, Pflicht, kategorischer Imperativ",
  topic: "ethics",
