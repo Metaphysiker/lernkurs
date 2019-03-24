@@ -3,7 +3,7 @@
 </p>
 <hr />
 
-<div id="definition" class="text-center mt-1 mb-4">
+<div id="definitionet3" class="text-center mt-1 mb-4">
   <div class="spinner">
     <div class="rect1"></div>
     <div class="rect2"></div>
@@ -36,34 +36,15 @@
 
 <script>
 
-var concepts = [
+var concepts3et = [
     ["an alle", 1],
     ["verhalten", 2],
     ["müssen", 3],
 ]
 
-var definitions1 = [
-  ["Eine ethische Theorie sagt uns, wie das Wetter morgen wird.", 7],
-  ["Eine ethische Theorie erklärt uns, warum es Sterne am Himmel gibt.", 4],
-  ["Eine ethische Theorie sagt uns, wie wir uns in einer bestimmten Situation verhalten sollen.", 1],
-]
-
-var definitions2 = [
-  ["Eine ethische Theorie fordert, dass wir so handeln müssen, wie sie uns vorgibt, zu handeln.", 2],
-  ["Eine ethische Theorie sagt uns, dass jeder selber entscheiden kann, wie man handeln soll.", 5],
-  ["Eine ethische Theorie sagt uns, dass es kein richtiges oder falsches Handeln gibt.", 8],
-]
-
-
-var definitions3 = [
-  ["Eine ethische Theorie gilt nur für religiösen Menschen.", 3],
-  ["Eine ethische Theorie gilt nur für Frauen, nicht aber für Männer.", 6],
-  ["Eine ethische Theorie gilt für alle.", 9],
-]
-
 var definitions = [
   [
-    ["Eine ethische Theorie sagt uns, wie das Wetter morgen wird.", 7],
+    ["Eine ethische Theorie sagt uns, wie morgen das Wetter sein wird.", 7],
     ["Eine ethische Theorie erklärt uns, warum es Sterne am Himmel gibt.", 4],
     ["Eine ethische Theorie sagt uns, wie wir uns in einer bestimmten Situation verhalten sollen.", 1],
   ],
@@ -85,10 +66,10 @@ var definitions = [
 
   $( document ).ready(function() {
 
-  console.log("Allocate Concepts loaded!");
+  console.log("ethicaltheories3 loaded!");
   getNextRound(currentnumber);
 
-  $("body").on("click", ".acanswer", function(e) {
+  $("body").on("click", ".acanswer3et", function(e) {
     e.stopImmediatePropagation();
 
     var value = parseInt($(this).attr("value"));
@@ -98,12 +79,12 @@ var definitions = [
     console.log(points);
 
 
-    if(value === concepts[currentnumber][1]){
+    if(value === concepts3et[currentnumber][1]){
       score = score + points;
       currentnumber = currentnumber + 1;
       points = 100;
 
-      if(currentnumber === concepts.length){
+      if(currentnumber === concepts3et.length){
 
         addPointsToCourse(1, "ethicaltheories3", score);
 
@@ -146,21 +127,21 @@ var definitions = [
     $("#concept").fadeOut("fast", function(){
       $("#concept").empty().append(
         `<div class="bg-light rounded border p-1">
-          <h2>${concepts[number][0]}</h2>
+          <h2>${concepts3et[number][0]}</h2>
         </div>`
       ).fadeIn("fast");
     });
     */
 
     //definition
-    $("#definition").fadeOut("fast", function(){
+    $("#definitionet3").fadeOut("fast", function(){
 
       var current_array = definitions[number]
 
-      $("#definition").empty().append(
-        `<button type="button" value="${current_array[0][1]}" class="btn btn-light border multilinebutton btn-block acanswer p-3 mb-4">${current_array[0][0]}</button>
-        <button type="button" value="${current_array[1][1]}" class="btn btn-light border multilinebutton btn-block acanswer p-3 mb-4">${current_array[1][0]}</button>
-        <button type="button" value="${current_array[2][1]}" class="btn btn-light border multilinebutton btn-block acanswer p-3 mb-4">${current_array[2][0]}</button>`
+      $("#definitionet3").empty().append(
+        `<button type="button" value="${current_array[0][1]}" class="btn btn-light border multilinebutton btn-block acanswer3et p-3 mb-4">${current_array[0][0]}</button>
+        <button type="button" value="${current_array[1][1]}" class="btn btn-light border multilinebutton btn-block acanswer3et p-3 mb-4">${current_array[1][0]}</button>
+        <button type="button" value="${current_array[2][1]}" class="btn btn-light border multilinebutton btn-block acanswer3et p-3 mb-4">${current_array[2][0]}</button>`
       ).fadeIn("fast");
     });
   }
