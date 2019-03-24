@@ -26,6 +26,8 @@
     'introduction1',
     'ethicaltheories',
     'ethicaltheories1',
+    'ethicaltheories3intro',
+    'ethicaltheories3',
     'ethicaltheories2',
     'kintroduction',
     'kintroduction1',

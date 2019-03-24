@@ -1,0 +1,168 @@
+<p class="text-center">
+  <b>Welches</b> der folgenden Merkmale ist ein Merkmal einer <b>ethischen Theorie</b>?
+</p>
+<hr />
+
+<div id="definition" class="text-center mt-1 mb-4">
+  <div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade animated tada" id="ethicaltheories3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Übung abgeschlossen!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+var concepts = [
+    ["an alle", 1],
+    ["verhalten", 2],
+    ["müssen", 3],
+]
+
+var definitions1 = [
+  ["Eine ethische Theorie sagt uns, wie das Wetter morgen wird.", 7],
+  ["Eine ethische Theorie erklärt uns, warum es Sterne am Himmel gibt.", 4],
+  ["Eine ethische Theorie sagt uns, wie wir uns in einer bestimmten Situation verhalten sollen.", 1],
+]
+
+var definitions2 = [
+  ["Eine ethische Theorie fordert, dass wir so handeln müssen, wie sie uns vorgibt, zu handeln.", 2],
+  ["Eine ethische Theorie sagt uns, dass jeder selber entscheiden kann, wie man handeln soll.", 5],
+  ["Eine ethische Theorie sagt uns, dass es kein richtiges oder falsches Handeln gibt.", 8],
+]
+
+
+var definitions3 = [
+  ["Eine ethische Theorie gilt nur für religiösen Menschen.", 3],
+  ["Eine ethische Theorie gilt nur für Frauen, nicht aber für Männer.", 6],
+  ["Eine ethische Theorie gilt für alle.", 9],
+]
+
+var definitions = [
+  [
+    ["Eine ethische Theorie sagt uns, wie das Wetter morgen wird.", 7],
+    ["Eine ethische Theorie erklärt uns, warum es Sterne am Himmel gibt.", 4],
+    ["Eine ethische Theorie sagt uns, wie wir uns in einer bestimmten Situation verhalten sollen.", 1],
+  ],
+  [
+    ["Eine ethische Theorie sagt uns, dass jeder selber entscheiden kann, wie man handeln soll.", 5],
+    ["Eine ethische Theorie fordert, dass wir so handeln müssen, wie sie uns vorgibt, zu handeln. ", 2],
+    ["Eine ethische Theorie sagt uns, dass es kein richtiges oder falsches Handeln gibt.", 8],
+  ],
+  [
+    ["Eine ethische Theorie gilt für alle.", 3],
+    ["Eine ethische Theorie gilt nur für religiösen Menschen.", 9],
+    ["Eine ethische Theorie gilt nur für Frauen, nicht aber für Männer.", 6],
+  ]
+]
+
+    var score = 0;
+    var currentnumber = 0;
+    var points = 100;
+
+  $( document ).ready(function() {
+
+  console.log("Allocate Concepts loaded!");
+  getNextRound(currentnumber);
+
+  $("body").on("click", ".acanswer", function(e) {
+    e.stopImmediatePropagation();
+
+    var value = parseInt($(this).attr("value"));
+
+    console.log("RESULTS!");
+    console.log(score);
+    console.log(points);
+
+
+    if(value === concepts[currentnumber][1]){
+      score = score + points;
+      currentnumber = currentnumber + 1;
+      points = 100;
+
+      if(currentnumber === concepts.length){
+
+        addPointsToCourse(1, "ethicaltheories3", score);
+
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          $(".modal-body").empty().append(
+            `<p class="text-center lead">
+                Du hast
+              </p>
+                  <div class="text-center lead animated infinite pulse">${score} Punkte</div>
+            <p class="text-center lead">
+                  <br />
+                 erhalten!
+            </p>
+            `
+          );
+          setTimeout(function(){
+              $('#ethicaltheories3').modal('show');
+            }, 600);
+        });
+      } else {
+        $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
+          setTimeout(function(){
+              getNextRound(currentnumber);
+            }, 600);
+        });
+      }
+
+    } else {
+      points = points - 50;
+      $(this).animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200);
+    }
+
+  });
+
+
+  function getNextRound(number) {
+    console.log(number);
+    //concept
+    /*
+    $("#concept").fadeOut("fast", function(){
+      $("#concept").empty().append(
+        `<div class="bg-light rounded border p-1">
+          <h2>${concepts[number][0]}</h2>
+        </div>`
+      ).fadeIn("fast");
+    });
+    */
+
+    //definition
+    $("#definition").fadeOut("fast", function(){
+
+      var current_array = definitions[number]
+
+      $("#definition").empty().append(
+        `<button type="button" value="${current_array[0][1]}" class="btn btn-light border multilinebutton btn-block acanswer p-3 mb-4">${current_array[0][0]}</button>
+        <button type="button" value="${current_array[1][1]}" class="btn btn-light border multilinebutton btn-block acanswer p-3 mb-4">${current_array[1][0]}</button>
+        <button type="button" value="${current_array[2][1]}" class="btn btn-light border multilinebutton btn-block acanswer p-3 mb-4">${current_array[2][0]}</button>`
+      ).fadeIn("fast");
+    });
+  }
+});
+</script>
