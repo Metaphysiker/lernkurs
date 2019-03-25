@@ -206,7 +206,7 @@ Course.create(
   'vproblems',
    'vkritikvagheit',
   'vkritikrelativismus',
-   'vkritikorientierung',
+  'vkritikgutesleben',
     'vubung5',
    'vubung3',
    'vubung6intro',
