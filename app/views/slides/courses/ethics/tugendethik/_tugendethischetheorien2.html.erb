@@ -1,29 +1,38 @@
 <p class="text-center">
-  <b>Überlege dir</b>, ob die folgende Theorie <b>deontologisch</b> ist!
+  <b>Warum</b> ist diese Theorie nicht tugendethisch?
 </p>
 <hr />
 <p>
-  "Ob eine Handlung gut oder schlecht ist,
-  hängt davon ab, <b>mit welcher Absicht</b> man sie ausführt.
+  "Eine Handlung ist gut, wenn sie Armut vermindert
+  und eine Handlung ist schlecht, wenn sie Armut verursacht.
 </p>
 <p>
   <b>Zum Beispiel: </b>
 </p>
 <p>
-  Wenn man böse Absichten hat,
-  dann ist es <b>falsch</b>, zu lügen.
+  Es ist <b>falsch</b>, von armen Menschen Geld zu stehlen.
 </p>
 <p>
-  Wenn man hingegen gute Absichten hat, dann ist es <b>richtig</b>, zu lügen."
+  Hingegen ist es <b>richtig</b>, von reichen Menschen zu stehlen und das Geld den Armen zu geben."
 </p>
 <hr />
 <p>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kdeontologischetheorien3">Diese Theorie ist deontologisch</button>
-  <button type="button" value="kdeontologischetheorien3" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kdeontologischetheorien3">Diese Theorie ist <u>nicht</u> deontologisch</button>
+  Weil ...
+</p>
+<p>
+  <button type="button" value="ktugendethischetheorien2" class="btn btn-light border multilinebutton btn-block p-3 mb-4 ktugendethischetheorien2">
+    ... keine Charaktereigenschaften beurteilt werden.
+  </button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 ktugendethischetheorien2">
+    ... das Wort "Tugend" nirgends vorkommt.
+  </button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 ktugendethischetheorien2">
+    ... Handlungen nicht als solche beurteilt werden.
+  </button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="deontologischetheorien3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tugendethischetheorien2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -47,23 +56,23 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("deontologischetheorien3 loaded!");
+    console.log("tugendethischetheorien2 loaded!");
 
     var points = 100;
 
-    $( ".kdeontologischetheorien3" ).click(function() {
+    $( ".ktugendethischetheorien2" ).click(function() {
 
-      if($(this).attr("value") === "kdeontologischetheorien3"){
+      if($(this).attr("value") === "ktugendethischetheorien2"){
         $(".modal-body").append(
           `<p class="text-center lead">
               Du hast ${points} Punkte erhalten!
             </p>
           `
         );
-        addPointsToCourse(3, "deontologischetheorien3", points);
+        addPointsToCourse(4, "tugendethischetheorien21s", points);
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
-              $('#deontologischetheorien3').modal('show');
+              $('#tugendethischetheorien2').modal('show');
             }, 600);
         });
       } else {

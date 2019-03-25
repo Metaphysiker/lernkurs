@@ -1,29 +1,27 @@
 <p class="text-center">
-  <b>Überlege dir</b>, ob die folgende Theorie <b>deontologisch</b> ist!
+  <b>Überlege dir</b>, ob die folgende Theorie <b>tugendethisch</b> ist!
 </p>
 <hr />
 <p>
-  "Ob eine Handlung gut oder schlecht ist,
-  hängt davon ab, <b>mit welcher Absicht</b> man sie ausführt.
+  "Gute Charaktereigenschaften sind <b>Freundlichkeit</b> und <b>Ehrlichkeit</b>.
 </p>
 <p>
   <b>Zum Beispiel: </b>
 </p>
 <p>
-  Wenn man böse Absichten hat,
-  dann ist es <b>falsch</b>, zu lügen.
+  Eine gute Person macht keine falschen Komplimente, weil sie <b>ehrlich</b> ist.
 </p>
 <p>
-  Wenn man hingegen gute Absichten hat, dann ist es <b>richtig</b>, zu lügen."
+  Eine schlechte Person hingegen macht viele falsche Komplimente, <b>weil sie sich einschleimen will</b>."
 </p>
 <hr />
 <p>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kdeontologischetheorien3">Diese Theorie ist deontologisch</button>
-  <button type="button" value="kdeontologischetheorien3" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kdeontologischetheorien3">Diese Theorie ist <u>nicht</u> deontologisch</button>
+  <button type="button" value="ktugendethischetheorien3" class="btn btn-light border multilinebutton btn-block p-3 mb-4 ktugendethischetheorien3">Diese Theorie ist tugendethisch</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 ktugendethischetheorien3">Diese Theorie ist <u>nicht</u> tugendethisch</button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="deontologischetheorien3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tugendethischetheorien3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -47,23 +45,23 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("deontologischetheorien3 loaded!");
+    console.log("tugendethischetheorien3 loaded!");
 
     var points = 100;
 
-    $( ".kdeontologischetheorien3" ).click(function() {
+    $( ".ktugendethischetheorien3" ).click(function() {
 
-      if($(this).attr("value") === "kdeontologischetheorien3"){
+      if($(this).attr("value") === "ktugendethischetheorien3"){
         $(".modal-body").append(
           `<p class="text-center lead">
               Du hast ${points} Punkte erhalten!
             </p>
           `
         );
-        addPointsToCourse(3, "deontologischetheorien3", points);
+        addPointsToCourse(4, "tugendethischetheorien3", points);
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
-              $('#deontologischetheorien3').modal('show');
+              $('#tugendethischetheorien3').modal('show');
             }, 600);
         });
       } else {

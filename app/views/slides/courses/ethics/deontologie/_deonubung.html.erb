@@ -45,7 +45,7 @@
 
     $( "#deonubung" ).click(function() {
 
-      if (['kategorischer imperativ'].indexOf($('input[name="verfahren"]').val().toLowerCase()) >= 0) {
+      if (['kategorische imperativ', 'kategorischer imperativ'].indexOf($('input[name="verfahren"]').val().toLowerCase()) >= 0) {
         addPointsToCourse(3, "deonubung", points);
         $('input[name="verfahren"]').removeClass("is-invalid");
         $('input[name="verfahren"]').addClass("is-valid");
