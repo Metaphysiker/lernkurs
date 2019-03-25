@@ -10,6 +10,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :topic, default: ""
       t.string :duration, default: ""
       t.string :name_of_picture, default: ""
+      t.integer :max_points, default: 0
       t.integer :order
       t.text :slides, array: true, default: []
 

@@ -1,49 +1,52 @@
 <p class="text-center">
-  In den vorigen Folien hast du die <b>drei Grundmerkmale</b> des Utilitarismus kennen gelernt.
+  <b>Welche drei Eigenschaften</b> muss eine brauchbare Definition von Glück haben?
 </p>
 <p class="text-center">
-  <b>Kreuze</b> nun diese Grundmerkmale an!
+  <b>Kreuze</b> die richtigen Eigenschaften an!
+</p>
+<hr />
+<p>
+  Eine <b>brauchbare Definition von Glück</b> ...
 </p>
 <hr />
 <ul class="form-check rounded">
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="theories" value="0">
-      Der Utilitarismus bewertet die Folgen oder Konsequenzen danach,
-      wie viel Geld oder Reichtum sie bringen.
+      ... muss so lange und so kompliziert wie nur möglich sein.
     </label>
     <hr />
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="theories" value="1">
-      Der Utilitarismus bewertet Handlungen im Bezug auf die Person, die die Handlungen vollzieht.
+      ... muss angeben, was Glück und was das Gegenteil von Glück ist.
     </label>
         <hr />
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="theories" value="2">
-            Der Utilitarismus achtet auf den Gesamtnutzen.
+        ... muss erklären, wie man Glück messen kann.
     </label>
         <hr />
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="theories" value="3">
-      Der Utilitarismus achtet auf den Nutzen aller Männer, die älter als 30 sind.
+      ... muss mindestens drei Fremdwörter beinhalten.
     </label>
         <hr />
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="theories" value="4">
-       Der Utilitarismus bewertet die Folgen oder Konsequenzen danach, wie viel Nutzen sie bringen.
+       ... muss angeben, was glücklich und was unglücklich macht.
     </label>
         <hr />
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" name="theories" value="5">
-      Der Utilitarismus bewertet Handlungen im Bezug auf ihre Folgen oder Konsequenzen.
+      ... muss Bilder von glücklichen Menschen zeigen.
     </label>
         <hr />
 </ul>
 <p>
-  <button type="button" id="utilubung5" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  <button type="button" id="utilubung9" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="utilubung5m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="utilubung9m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -67,20 +70,20 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("utilubung5 loaded!");
+    console.log("utilubung9 loaded!");
 
     var points = 100;
     var score = 0;
 
-    $("#utilubung5").click(function(event){
+    $("#utilubung9").click(function(event){
         event.preventDefault();
         result1 = ($("input[name=theories]:checked").map(function() {
             return this.value;
         }).get().join(","));
         console.log(result1);
-        if(result1.toString() == "2,4,5"){
+        if(result1.toString() == "1,2,4"){
           $(".form-check").animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200);
-          addPointsToCourse(1, "utilubung5", points);
+          addPointsToCourse(1, "utilubung9", points);
           $(".modal-body").empty().append(
             `
             <p>
@@ -88,7 +91,7 @@
               </p>
             `
           );
-          $('#utilubung5m').modal('show');
+          $('#utilubung9m').modal('show');
         } else {
           console.log("falsch");
           $(".form-check").animate({backgroundColor: "#DC143C", color: "#FFFFFF" }, 200).delay(400).animate({backgroundColor: "#FFFFFF", color: "#000000" }, 200);

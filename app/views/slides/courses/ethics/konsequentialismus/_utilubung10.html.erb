@@ -1,0 +1,93 @@
+<p>
+  Angenommen, <b>die Einführung der Todesstrafe</b> hätte folgende Konsequenzen:
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Weniger Kriminalität durch Abschreckung</td>
+          <td>+20</td>
+        </tr>
+        <tr>
+          <td>Weniger Gefängniskosten</td>
+          <td>+9</td>
+        </tr>
+        <tr>
+          <td>Sorge um mögliche Fehlprozesse</td>
+          <td>-7</td>
+        </tr>
+        <tr>
+          <td>Angst davor, selber die Todesstrafe zu bekommen</td>
+          <td>-4</td>
+        </tr>
+        <tr>
+          <td>Keine Angst mehr vor Wiederholungstätern</td>
+          <td>+11</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <b>Würde eine Utilitaristin die Einführung der Todesstrafe befürworten?</b>
+</p>
+<p class="text-center">
+  <button type="button" id="kosten1" class="btn btn-success mr-4">Ja</button>
+  <button type="button" id="kosten2" class="btn btn-danger">Nein</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="utilubung10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Eine Utilitaristin würde in diesem Fall die Einführung der Todesstrafe befürworten.
+        </p>
+        <p>
+          Der Gesamtnutzen beträgt: <b>+29</b>.
+        </p>
+        <p>
+          Damit überwiegt der Nutzen den Schaden, der bei der Einführung der Todesstrafe entsteht!
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("utilubung10 loaded!");
+
+    var points = 100;
+
+    $( "#kosten1" ).click(function() {
+      $(".modal-body").append(
+        `<p class="text-center lead">
+            Du hast ${points} Punkte erhalten!
+          </p>
+        `
+      );
+      addPointsToCourse(2, "utilubung10", points);
+      $('#utilubung10').modal('show');
+    });
+
+    $( "#kosten2" ).click(function() {
+       points = 0;
+      $(".modal-title").empty().append(
+        `Falsch!
+        `
+      );
+      addPointsToCourse(2, "utilubung10", points);
+      $('#utilubung10').modal('show');
+    });
+
+  });
+</script>

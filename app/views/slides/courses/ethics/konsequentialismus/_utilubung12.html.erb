@@ -1,29 +1,29 @@
 <p class="text-center">
-  <b>Überlege dir</b>, ob die folgende Theorie <b>konsequentialistisch</b> ist!
+  <b>Welche Stärke</b> des Utilitarismus kommt hier zum Ausdruck?
 </p>
 <hr />
 <p>
-  "Eine Handlung ist dann gut, wenn sie von <b>Gott gewollt</b> ist.
+ "Ist es nicht <b>offensichtlich</b>,
+ dass eine Welt, in der mehr Lebewesen glücklich sind,
+ <b>besser ist</b>, als eine Welt, in der weniger glücklich sind?
 </p>
 <p>
-  <b>Zum Beispiel: </b>
+  Wer könnte ernsthaft etwas dagegen haben, mehr Glück als Leid zu in die Welt bringen zu wollen?"
 </p>
-<p>
-  Wenn Gott nicht will, dass Menschen töten,
-  dann ist Töten <b>immer falsch</b>!"
-</p>
+
 <hr />
 <p>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kkonstheorie">Diese Theorie ist konsequentialistisch</button>
-  <button type="button" value="kkonstheorie" class="btn btn-light border multilinebutton btn-block p-3 mb-4 kkonstheorie">Diese Theorie ist <u>nicht</u> konsequentialistisch</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus ist einfach anwendbar.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus ist pragmatisch und zielorientiert. </button>
+  <button type="button" value="zuschwierig" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus fördert Glück, ein Gut, das sowieso alle wollen.</button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="konstheorie" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="utilubung12" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+          <h5 class="modal-title text-center" id="exampleModalLabel">Übung abgeschlossen!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -43,23 +43,23 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("konstheorie loaded!");
+    console.log("utilubung12 loaded!");
 
     var points = 100;
 
-    $( ".kkonstheorie" ).click(function() {
+    $( ".zuschwierig" ).click(function() {
 
-      if($(this).attr("value") === "kkonstheorie"){
+      if($(this).attr("value") === "zuschwierig"){
         $(".modal-body").append(
           `<p class="text-center lead">
               Du hast ${points} Punkte erhalten!
             </p>
           `
         );
-        addPointsToCourse(2, "konstheorie", points);
+        addPointsToCourse(2, "utilubung12", points);
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
-              $('#konstheorie').modal('show');
+              $('#utilubung12').modal('show');
             }, 600);
         });
       } else {
@@ -67,6 +67,5 @@
         points = points - 50;
       }
     });
-
   });
 </script>

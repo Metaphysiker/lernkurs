@@ -1,24 +1,27 @@
 <p class="text-center">
-  <b>Welche Kritik</b> am Utilitarismus wird hier hinterfragt?
+  <b>Welche Stärke</b> des Utilitarismus kommt hier zum Ausdruck?
 </p>
 <hr />
 <p>
-    "In einer Demokratie stimmen Personen über Gesetze ab,
-    die Konsequenzen für das Zusammenleben der Menschen haben.
+  "Robin Hood ist ein <b>Held des Volkes</b>!
 </p>
 <p>
-  Wenn es zu schwierig wäre, die Konsequenzen unserer Handlungen abzuschätzen,
-  müssten wir dann nicht auch demokratische Abstimmungen abschaffen?"
+  Er <b>raubt</b> reiche Menschen aus und <b>verteilt seine Beute</b> unter den Armen und Schwachen.
+</p>
+<p>
+  Würde Robin Hood sein Geld auf ehrliche Weise verdienen,
+  dann könnte er niemals so vielen Armen und Schwachen helfen,
+  als mit Raub, Diebstahl oder Plünderung."
 </p>
 <hr />
 <p>
-  <button type="button" value="zuschwierig" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Es ist zu schwierig, den Gesamtnutzen zu errechnen.</button>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus kann zu Ungleichbehandlung von Menschen führen.</button>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Utilitaristisches Verhalten kann persönliche Beziehungen und Freundschaften ruinieren.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus ist einfach anwendbar.</button>
+  <button type="button" value="zuschwierig" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus ist pragmatisch und zielorientiert. </button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 zuschwierig">Der Utilitarismus fördert Glück, ein Gut, das sowieso alle wollen.</button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="utilubung3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="utilubung11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -42,7 +45,7 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("utilubung3 loaded!");
+    console.log("utilubung11 loaded!");
 
     var points = 100;
 
@@ -55,10 +58,10 @@
             </p>
           `
         );
-        addPointsToCourse(2, "utilubung3", points);
+        addPointsToCourse(2, "utilubung11", points);
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
-              $('#utilubung3').modal('show');
+              $('#utilubung11').modal('show');
             }, 600);
         });
       } else {
