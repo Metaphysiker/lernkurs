@@ -6,7 +6,7 @@
   <% end %>
   <%= current_slide + 1 %> / <%= course.slides.count %>
   <% if current_slide == course.slides.count-1 %>
-    <button type="button" class="previous-next-button get-slide-button disabled mx-2" disabled>Weiter</button>
+    <%= link_to 'Weiter', root_path, id: "get-next-slide", class: "btn btn-dark get-slide-button mx-2" %>
   <% else %>
     <button type="button" id="get-next-slide" class="previous-next-button get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
   <% end %>
