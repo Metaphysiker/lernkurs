@@ -18,28 +18,43 @@
         <div class="card my-2">
           <div class="card-body">
             <p class="card-text">
-              Dieser interaktive Lernkurs für Ethik richtet sich an alle,
-              die sich <b>zum ersten Mal</b> mit Ethik beschäftigen.
+              Dieser interaktive Lernkurs führt in die <b>grundlegenden Begriffe</b> und <b>Theorien der Ethik</b> ein
+              und vermittelt <b>basale Kompetenzen</b> und <b>Fähigkeiten</b>.
             </p>
             <p class="card-text">
-              Der Lernkurs führt in die <b>grundlegenden Begriffe</b> und <b>Theorien</b> der Ethik ein
-              und vermittelt basale Kompetenzen.
-            </p>
-            <p class="card-text">
-              Neben
+              Der Lernkurs für Ethik richtet sich an alle,
+              die sich <b>zum ersten Mal</b> mit Ethik beschäftigen
+              und eignet sich für Schulkinder und Studierenden.
             </p>
             <hr />
             <p class="card-text">
-              Um diesen Kurs zu absolvieren ist <b>keine</b> Registrierung oder Anmeldung nötig.
-              Auch muss <b>keine</b> e-Mail-Adresse oder Telefon-Nummer angegeben werden.
+              Dieser Lernkurs ist <b>komplett kostenlos</b>.
             </p>
+            <p class="card-text">
+              Um diesen Kurs zu absolvieren ist auch <b>keine Registrierung oder Anmeldung nötig</b>.
+              Auch muss <b>keine e-Mail-Adresse oder Telefon-Nummer angegeben werden</b>.
+            </p>
+            <hr />
             <p class="card-text">
               Der Lernkurs besteht aus mehreren <b>Teilkursen</b>.
-              Für
+              Für die Absolvierung eines Teilkurses braucht man zwischen <b>10</b> und <b>20 Minuten</b>.
             </p>
             <p class="card-text">
-              Für diesen Lernkurs braucht man:
-              <ul>
+              Der erste Kurs ist die <%=  link_to '"Einführung in die Ethik"', course_path(Course.find(1)) %>
+              und führt ganz allgemein in die wichtigsten Begriffen und Theorien der Ethik ein.
+              Es empfiehlt sich, mit diesem Kurs anzufangen.
+            </p>
+            <p class="card-text">
+              Die Kurse
+              <%=  link_to '"Konsequentialismus"', course_path(Course.find(2)) %>,
+              <%=  link_to '"Deontologie"', course_path(Course.find(3)) %>,
+              <%=  link_to '"Tugendethik', course_path(Course.find(4)) %>,
+              sind Vertiefungskurse und widmen sich speziell einer ethischen Theorie.
+            </p>
+            <hr />
+            <p class="card-text">
+              Um diesen Lernkurs zu absolvieren braucht man:
+              <ul class="space-between-li-20">
                 <li>
                   Ein <b>Smartphone</b> oder ein <b>Tablet</b> mit Internetzugang.
                 </li>
@@ -49,24 +64,45 @@
               </ul>
             </p>
             <p class="card-text">
-              Dieser Lernkurs ist so konzipiert,
-              das er mit einem <b>Smartphone</b> oder mit einem <b>Tablet</b>
-              absolviert werden kann.
+              Schulkinder und Studierende können zum Beispiel diesen Kurs
+              mit <b>ihren eigenen Smartphones</b> oder <b>Tablets</b> besuchen gehen.
             </p>
+            <p>
+              Alternativ kann man den Kurs auch über einen Computer oder Laptop absolvieren.
+            </p>
+            <hr />
             <p class="card-text">
               Während dem Lernkurs gibt es <b>interaktive Übungen</b>.
             </p>
-            <p class="card-text">
-              Wenn diese interaktive Übungen gelöst werden,
-              erhaltet man Punkte.
+            <p>
+              <b>Zum Beispiel: </b>
+              Man bekommt eine Frage gestellt und man muss die passende Antwort dazu auswählen.
+            </p>
+            <p>
+              Wenn man diese Übungen richtig löst, dann bekommt man <b>Punkte</b>.
+            </p>
+            <p>
+              Wenn man die Übungen gleich beim ersten Mal richtig löst,
+              dann erhält man <b>die volle Punktzahl</b>.
+            </p>
+            <p>
+              Wenn man aber zuerst Fehler gemacht hat,
+              dann erhält man bei der richtigen Antwort <b>weniger Punkte</b>.
             </p>
           </div>
         </div>
 
         <div class="card my-2">
           <div class="card-body">
+            <p>
+              Wenn Sie möchten,
+              dann können Sie den <b>Punktestand</b> und <b>Fortschritt</b> Ihrer Schulkinder oder Ihrer Studierenden überwachen.
+            </p>
+            <p>
+              Die Schulkinder und Studierenden müssen hierzu <b>eine Seite besuchen</b> und <b>ihre Vornamen eingeben</b>.
+            </p>
             <p class="card-text">
-              Mit dieser Anleitung können Sie den <b>Punktestand</b> und <b>Fortschritt</b> Ihrer Schulkinder oder Ihrer Studierenden sehen.
+              Mit der folgenden Anleitung können Sie den <b>Punktestand</b> und <b>Fortschritt</b> Ihrer Schulkinder oder Ihrer Studierenden sehen:
             </p>
           </div>
         </div>
@@ -93,7 +129,10 @@
             </p>
             <p>
               Auf dieser Seite werden die Schulkinder oder Studierenden aufgefordert,
-              ihre Vornamen einzugeben. <b>Sobald sie ihre Vornamen eingegeben haben,
+              ihre Vornamen einzugeben.
+            </p>
+            <p>
+              <b>Sobald sie ihre Vornamen eingegeben haben,
               wurden ihre Geräte registriert und werden auf der Übersichtsseite sichtbar.</b>
             </p>
           </div>
@@ -103,9 +142,12 @@
           <div class="card-body">
             <h5 class="card-title">3. Mit Lernkurs beginnen!</h5>
             <p>
-              Nachdem sich die Schulkinder oder Studierenden angemeldet haben,
-              sind sie auf der <%= link_to "Startseite", root_path %>. Von dort aus können sie einen Kurs starten,
-              wenn sie bei einem Kurs auf "Mit Kurs anfangen" klicken.
+              Nachdem sich die Schulkinder oder Studierenden erfolgreich angemeldet haben,
+              sind sie auf der <%= link_to "Startseite", root_path %>.
+            </p>
+            <p>
+              Von dort aus können sie einen Kurs starten,
+              wenn sie bei einem Kurs auf <b>"Mit Kurs anfangen"</b> klicken.
             </p>
           </div>
         </div>

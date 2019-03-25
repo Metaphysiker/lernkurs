@@ -73,15 +73,16 @@ class StaticPagesController < ApplicationController
   end
 
   def klasse
-    code = 12345
+    code = rand(100000..999999)
 
     taken_codes = Account.all.pluck(:code).uniq
 
-    if taken_codes.include?(code).to_s
-
+    loop do
+        break if !taken_codes.include?(code)
+        code = rand(100000..999999)
     end
 
-    @code = 12345
+    @code = code
 
   end
 
