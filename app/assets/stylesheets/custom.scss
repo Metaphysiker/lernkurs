@@ -78,19 +78,19 @@ html, body {
 }
 
 .bg-image-landscape {
-
   background-image: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url(asset_path("landscape.jpg"));
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bg-image-kant {
-
   background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url(asset_path("kant.jpg"));
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bg-image-domino {
@@ -98,6 +98,7 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bg-image-aristotle {
@@ -105,4 +106,5 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
