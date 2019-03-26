@@ -1,4 +1,4 @@
-<div class="container-fluid p-3 bg-image-<%= @course.name_of_picture.split('.').first %> vh-100 canbedeleteds" >
+<div class="container-fluid p-3 bg-image-<%= @course.name_of_picture.split('.').first %> min-vh-100" >
   <div class="row">
     <div class="offset-md-2">
 
@@ -8,7 +8,7 @@
     </div>
 
     <div class="col-12 col-md-8 col-lg-6">
-      <div class="slide faster bg-white p-1">
+      <div class="slide faster p-1">
         <%= render "slide", current_slide: @current_slide, course: @course %>
       </div>
     </div>
