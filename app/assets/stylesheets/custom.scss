@@ -73,6 +73,10 @@ html, body {
   }
 }
 
+.slide-opacity{
+  opacity: 0.5;
+}
+
 .bg-image-landscape {
 
   background-image: linear-gradient(rgba(255,255,255,0.91), rgba(255,255,255,0.91)), url(asset_path("landscape.jpg"));
