@@ -80,39 +80,28 @@ html, body {
 .bg-image-landscape {
 
   background-image: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url(asset_path("landscape.jpg"));
-  //height: 100%;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
-  //background-attachment: fixed;
   background-size: cover;
 }
 
 .bg-image-kant {
 
-  background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), image-url("kant");
-  height: 100%;
-  /* Center and scale the image nicely */
-  background-position: left top;
+  background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url(asset_path("kant.jpg"));
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-image-domino {
-
-  background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), image-url("domino");
-  height: 100%;
-  /* Center and scale the image nicely */
-  background-position: center top;
+  background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url(asset_path("domino.jpg"));
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-image-aristotle {
-
-  background-image: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), image-url("aristotle");
-  height: 100%;
-  /* Center and  scale the image nicely */
+  background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url(asset_path("aristotle.jpg"));
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
