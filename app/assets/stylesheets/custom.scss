@@ -75,7 +75,7 @@ html, body {
 
 .bg-image-landscape {
 
-  background-image: linear-gradient(rgba(255,255,255,0.91), rgba(255,255,255,0.91)), image-url("landscape");
+  background-image: linear-gradient(rgba(255,255,255,0.91), rgba(255,255,255,0.91)), url(asset_path("landscape.jpg"));
   height: 100%;
   /* Center and scale the image nicely */
   background-position: center;
@@ -87,7 +87,7 @@ html, body {
 
   background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), image-url("kant");
   height: 100%;
-  /* Center and scale the image nicely */ 
+  /* Center and scale the image nicely */
   background-position: left top;
   background-repeat: no-repeat;
   background-size: cover;

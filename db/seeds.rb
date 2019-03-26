@@ -17,7 +17,7 @@
   language: "de",
   order: 1,
   modul: "Einführungsmodul",
-  name_of_picture: "landscape",
+  name_of_picture: "landscape.jpg",
   slides: [
     'why',
     'why1',
@@ -64,7 +64,7 @@ Course.create(
  language: "de",
  order: 2,
  modul: "Vertiefungsmodul",
- name_of_picture: "domino",
+ name_of_picture: "domino.jpg",
  slides: [
    'why',
    'kompetenzen',
@@ -121,7 +121,7 @@ Course.create(
  language: "de",
  order: 3,
  modul: "Vertiefungsmodul",
- name_of_picture: "kant",
+ name_of_picture: "kant.jpg",
  slides: [
    'why',
    'kompetenzen',
@@ -172,7 +172,7 @@ Course.create(
  language: "de",
  order: 4,
  modul: "Vertiefungsmodul",
- name_of_picture: "aristotle",
+ name_of_picture: "aristotle.jpg",
  slides: [
    'why',
    'kompetenzen',
