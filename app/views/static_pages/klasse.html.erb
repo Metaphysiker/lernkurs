@@ -1,203 +1,177 @@
 <%= render "layouts/navigation" %>
 
 <main role="main">
-
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Informationen für Lehrpersonen</h1>
-          <p class="lead text-muted">
-            Möchten Sie den Lernkurs für Ihre Klasse verwenden? So geht's!
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Informationen für Lehrpersonen</h1>
+      <hr />
+      <div class="card mb-4 text-justify">
+        <div class="card-body">
+          <p class="card-text">
+            Dieser interaktive Lernkurs führt in die <b>grundlegenden Begriffe</b> und <b>Theorien der Ethik</b> ein
+            und vermittelt <b>basale Kompetenzen</b> und <b>Fähigkeiten</b>.
+          </p>
+          <hr />
+          <p class="card-text">
+            Der Lernkurs für Ethik richtet sich an alle,
+            die sich <b>zum ersten Mal</b> mit Ethik beschäftigen
+            und eignet sich für <b>Schülerinnen und Schüler</b> oder für <b>Studierenden</b>.
           </p>
         </div>
-      </section>
-    </main>
-
-    <div class="album py-5 philosopiech-background">
-      <div class="container">
-
-        <div class="card my-2">
-          <div class="card-body">
-            <p class="card-text">
-              Dieser interaktive Lernkurs führt in die <b>grundlegenden Begriffe</b> und <b>Theorien der Ethik</b> ein
-              und vermittelt <b>basale Kompetenzen</b> und <b>Fähigkeiten</b>.
-            </p>
-            <p class="card-text">
-              Der Lernkurs für Ethik richtet sich an alle,
-              die sich <b>zum ersten Mal</b> mit Ethik beschäftigen
-              und eignet sich für Schülerinnen und Schüler oder Studierenden.
-            </p>
-            <hr />
-            <p class="card-text">
-              Dieser Lernkurs ist <b>komplett kostenlos</b>.
-            </p>
-            <p class="card-text">
-              Um diesen Kurs zu absolvieren ist auch <b>keine Registrierung oder Anmeldung nötig</b>.
-              Auch muss <b>keine e-Mail-Adresse oder Telefon-Nummer angegeben werden</b>.
-            </p>
-            <hr />
-            <p class="card-text">
-              Der Lernkurs besteht aus mehreren <b>Teilkursen</b>.
-              Für die Absolvierung eines Teilkurses braucht man zwischen <b>10</b> und <b>20 Minuten</b>.
-            </p>
-            <p class="card-text">
-              Der erste Kurs ist die <%=  link_to '"Einführung in die Ethik"', course_path(Course.find(1)) %>
-              und führt ganz allgemein in die wichtigsten Begriffen und Theorien der Ethik ein.
-              Es empfiehlt sich, mit diesem Kurs anzufangen.
-            </p>
-            <p class="card-text">
-              Die Kurse
-              <%=  link_to '"Konsequentialismus"', course_path(Course.find(2)) %>,
-              <%=  link_to '"Deontologie"', course_path(Course.find(3)) %>,
-              <%=  link_to '"Tugendethik', course_path(Course.find(4)) %>,
-              sind Vertiefungskurse und widmen sich speziell einer ethischen Theorie.
-            </p>
-            <hr />
-            <p class="card-text">
-              Um diesen Lernkurs zu absolvieren braucht man:
-              <ul class="space-between-li-20">
-                <li>
-                  Ein <b>Smartphone</b> oder ein <b>Tablet</b> mit Internetzugang.
-                </li>
-                <li>
-                  Eine <b>Internetverbindung</b>.
-                </li>
-              </ul>
-            </p>
-            <p class="card-text">
-              Schülerinnen und Schüler oder Studierende können zum Beispiel diesen Kurs
-              mit <b>ihren eigenen Smartphones</b> oder <b>Tablets</b> besuchen gehen.
-            </p>
-            <p>
-              Alternativ kann man den Kurs auch über einen Computer oder Laptop absolvieren.
-            </p>
-            <hr />
-            <p class="card-text">
-              Während dem Lernkurs gibt es <b>interaktive Übungen</b>.
-            </p>
-            <p>
-              <b>Zum Beispiel: </b>
-              Man bekommt eine Frage gestellt und man muss die passende Antwort dazu auswählen.
-            </p>
-            <p>
-              Wenn man diese Übungen richtig löst, dann bekommt man <b>Punkte</b>.
-            </p>
-            <p>
-              Wenn man die Übungen gleich beim ersten Mal richtig löst,
-              dann erhält man <b>die volle Punktzahl</b>.
-            </p>
-            <p>
-              Wenn man aber zuerst Fehler gemacht hat,
-              dann erhält man bei der richtigen Antwort <b>weniger Punkte</b>.
-            </p>
-          </div>
-        </div>
-
-        <div class="card my-2">
-          <div class="card-body">
-            <p>
-              Wenn Sie möchten,
-              dann können Sie den <b>Punktestand</b> und <b>Fortschritt</b>
-              Ihrer Schülerinnen und Schüler oder Ihrer Studierenden überwachen.
-            </p>
-            <p>
-              Die Schülerinnen und Schüler und Studierenden müssen hierzu <b>eine Seite besuchen</b> und dort <b>ihre Vornamen eingeben</b>.
-            </p>
-            <p class="card-text">
-              <b>Anleitung:</b>
-            </p>
-          </div>
-        </div>
-
-        <div class="card my-2">
-          <div class="card-body">
-            <h5 class="card-title">1. Schreiben Sie sich den untenstehenden Link auf</h5>
-            <p id="link-to-remember" class="rounded border p-3">
-              <%= link_to "www.lernkurs.philosophie.ch/klasse/#{@code}", group_overview_path(code: @code) %>
-            </p>
-            <p>
-              Mit diesem Link gelangen Sie zur <b>Übersichtsseite</b>,
-              auf der Sie den <b>Punktestand</b> und <b>Fortschritt</b>
-              Ihrer Klasse sehen können.
-            </p>
-          </div>
-        </div>
-
-        <div class="card my-2">
-          <div class="card-body">
-            <h5 class="card-title">2. Schicken Sie den untenstehenden Link an Ihre Schülerinnen und Schüler oder an Ihre Studierenden</h5>
-            <p id="link-to-send" class="rounded border p-3">
-              <%= link_to "www.lernkurs.philosophie.ch/register/#{@code}", register_path(code: @code) %>
-            </p>
-            <p>
-              Auf dieser Seite werden die Schülerinnen und Schüler oder Studierenden aufgefordert,
-              ihre Vornamen einzugeben.
-            </p>
-            <p>
-              <b>Sobald sie ihre Vornamen eingegeben haben,
-              wurden ihre Geräte registriert und werden auf der Übersichtsseite sichtbar.</b>
-            </p>
-          </div>
-        </div>
-
-        <div class="card my-2">
-          <div class="card-body">
-            <h5 class="card-title">3. Mit Lernkurs beginnen!</h5>
-            <p>
-              Nachdem sich die Schülerinnen und Schüler oder Studierenden erfolgreich angemeldet haben,
-              sind sie auf der <%= link_to "Startseite", root_path %>.
-            </p>
-            <p>
-              Von dort aus können sie einen Kurs starten,
-              wenn sie bei einem Kurs auf <b>"Mit Kurs anfangen"</b> klicken.
-            </p>
-          </div>
-        </div>
-
       </div>
+      <div class="card mb-4 text-justify">
+        <div class="card-body">
+          <p class="card-text">
+            Dieser Lernkurs ist <b>komplett kostenlos</b>.
+          </p>
+          <hr />
+          <p class="card-text">
+            Um diesen Kurs zu absolvieren ist auch <b>keine Registrierung oder Anmeldung nötig</b>.
+            Auch muss <b>keine e-Mail-Adresse oder Telefon-Nummer angegeben werden</b>.
+          </p>
+        </div>
+      </div>
+      <div class="card mb-4 text-justify">
+        <div class="card-body">
+          <p class="card-text">
+            Der Lernkurs besteht aus mehreren <b>Teilkursen</b>.
+            Für die Absolvierung eines Teilkurses braucht man so zwischen <b>10</b> und <b>20 Minuten</b>.
+          </p>
+          <hr />
+          <p class="card-text">
+            Der erste Kurs ist die <%=  link_to '"Einführung in die Ethik"', course_path(Course.find(1)) %>
+            und führt ganz allgemein in die wichtigsten Begriffen und Theorien der Ethik ein.
+            Es empfiehlt sich, mit diesem Kurs anzufangen.
+          </p>
+          <hr />
+          <p class="card-text">
+            Die Kurse
+            <%=  link_to '"Konsequentialismus"', course_path(Course.find(2)) %>,
+            <%=  link_to '"Deontologie"', course_path(Course.find(3)) %>,
+            <%=  link_to '"Tugendethik', course_path(Course.find(4)) %>,
+            sind Vertiefungskurse und widmen sich speziell einer ethischen Theorie.
+          </p>
+        </div>
+      </div>
+      <div class="card mb-4 text-justify">
+        <div class="card-body">
+          <p class="card-text">
+            Um diesen Lernkurs zu absolvieren braucht man:
+            <ul class="space-between-li-10">
+              <li>
+                Ein <b>Smartphone</b> oder ein <b>Tablet</b> mit Internetzugang.
+              </li>
+              <li>
+                Eine <b>Internetverbindung</b>.
+              </li>
+            </ul>
+          </p>
+          <hr />
+          <p class="card-text">
+            Schülerinnen und Schüler oder Studierende können zum Beispiel diesen Kurs
+            mit <b>ihren eigenen Smartphones</b> oder <b>Tablets</b> besuchen gehen.
+          </p>
+          <hr />
+          <p>
+            Alternativ kann man den Kurs auch über einen Computer oder Laptop absolvieren.
+          </p>
+        </div>
+      </div>
+      <div class="card mb-4 text-justify">
+        <div class="card-body">
+          <p class="card-text">
+            Während dem Lernkurs gibt es <b>interaktive Übungen</b>.
+          </p>
+          <hr />
+          <p>
+            <b>Zum Beispiel: </b>
+            Man bekommt eine Frage gestellt und man muss die passende Antwort dazu auswählen.
+          </p>
+          <hr />
+          <p>
+            Wenn man diese Übungen richtig löst, dann bekommt man <b>Punkte</b>.
+          </p>
+          <hr />
+          <p>
+            Wenn man die Übungen gleich beim ersten Mal richtig löst,
+            dann erhält man <b>die volle Punktzahl</b>.
+          </p>
+          <hr />
+          <p>
+            Wenn man aber zuerst Fehler gemacht hat,
+            dann erhält man bei der richtigen Antwort <b>weniger Punkte</b>.
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-4 text-justify">
+        <div class="card-body">
+          <p>
+            Wenn Sie möchten,
+            dann können Sie den <b>Punktestand</b> und <b>Fortschritt</b>
+            Ihrer Schülerinnen und Schüler oder Ihrer Studierenden überwachen.
+          </p>
+          <hr />
+          <p>
+            Die Schülerinnen und Schüler und Studierenden müssen hierzu
+            <b>eine bestimmte Seite besuchen</b> und dort <b>ihre Vornamen eingeben</b>.
+            (Siehe Anleitung unten).
+          </p>
+        </div>
+      </div>
+
+      <div class="card my-2">
+        <div class="card-body">
+          <h3 class="card-title">Anleitung:</h3>
+          <hr />
+          <h5 class="card-title">1. Schreiben Sie sich den untenstehenden Link auf!</h5>
+          <p>
+            <%= link_to "www.lernkurs.philosophie.ch/klasse/#{@code}", group_overview_path(code: @code) %>
+          </p>
+          <hr />
+          <p class="text-justify">
+            Mit diesem Link gelangen Sie zur <b>Übersichtsseite</b>,
+            auf der Sie den <b>Punktestand</b> und <b>Fortschritt</b>
+            Ihrer Klasse sehen können.
+          </p>
+        </div>
+      </div>
+
+      <div class="card my-2">
+        <div class="card-body">
+          <h5 class="card-title">2. Schicken Sie den untenstehenden Link an Ihre Schülerinnen und Schüler oder an Ihre Studierenden!</h5>
+          <p>
+            <%= link_to "www.lernkurs.philosophie.ch/register/#{@code}", register_path(code: @code) %>
+          </p>
+          <hr />
+          <p class="text-justify">
+            Auf dieser Seite werden die Schülerinnen und Schüler oder Studierenden aufgefordert,
+            ihre Vornamen einzugeben.
+          </p>
+          <p class="text-justify">
+            <b>Sobald sie ihre Vornamen eingegeben haben,
+            wurden ihre Geräte registriert und werden auf der Übersichtsseite sichtbar.</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="card my-2">
+        <div class="card-body">
+          <h5 class="card-title">3. Mit Lernkurs beginnen!</h5>
+          <p class="text-justify">
+            Nachdem sich die Schülerinnen und Schüler oder Studierenden erfolgreich angemeldet haben,
+            sind sie auf der <%= link_to "Startseite", root_path %>.
+          </p>
+          <p class="text-justify">
+            Von dort aus können sie einen Kurs starten,
+            wenn sie bei einem Kurs auf den Knopf <b>"Mit Kurs anfangen"</b> klicken.
+          </p>
+        </div>
+      </div>
+
     </div>
+  </section>
+</main>
+
 
 <%= render "layouts/footer" %>
-
-<script>
-  $( document ).ready(function() {
-    console.log("klasse loaded!");
-
-    $( "#checkabbreviation" ).click(function() {
-      var abbreviation = $('input[name="abbreviation"]').val().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
-      console.log(abbreviation);
-
-      $.ajax({
-        url: "/check_group",
-        method: 'GET',
-        data: { code: abbreviation},
-        headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
-      }).done(function(data) {
-        if(data === true){
-          $("#result-of-check")
-            .text("Abkürzung ist leider schon vergeben!")
-            .animate({
-              color: "white",
-              backgroundColor: "red"
-            });
-        } else {
-          $("#result-of-check")
-          .text("Abkürzung ist noch frei!")
-          .animate({
-            color: "white",
-            backgroundColor: "green"
-          });
-
-          $("#link-to-remember")
-          .text("www.lernkurs.philosophie.ch/klasse/" + abbreviation);
-
-          $("#link-to-send")
-          .text("www.lernkurs.philosophie.ch/register/" + abbreviation);
-        }
-
-      });
-
-
-    });
-
-  });
-</script>

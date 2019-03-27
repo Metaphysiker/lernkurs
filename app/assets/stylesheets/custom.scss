@@ -86,8 +86,8 @@ html, body {
 }
 
 .bg-image-kant {
-  background-image: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)), url(asset_path("kant.jpg"));
-  background-position: center;
+  background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url(asset_path("kant.jpg"));
+  background-position: center left;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
