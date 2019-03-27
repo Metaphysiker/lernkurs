@@ -106,6 +106,7 @@ Course.create(
    'utilubung4',
    'geldausleihe',
    'utilubung6',
+   'utilubung13',
    'abschluss',
    'sources'
  ]

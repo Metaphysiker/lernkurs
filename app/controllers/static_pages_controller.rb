@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def welcome
     @page_title = "Was ist Ethik? Finde es heraus in diesem interaktiven Lernkurs!"
     @page_description = "Was ist Ethik? Finde es heraus in diesem interaktiven Lernkurs! "
-    @page_keywords    = "Lernkurs, Online-Kurs, Kurs, Ethik, Einführung, Lernmaterial, Unterrichtsmaterial"
+    @page_keywords    = "Lernkurs, Online-Kurs, Kurs, Ethik, Einführung, Lernmaterial, Unterrichtsmaterial, Philosophie"
 
     @courses = Course.all.order(:order)
     cookies.signed[:user_id] = 10

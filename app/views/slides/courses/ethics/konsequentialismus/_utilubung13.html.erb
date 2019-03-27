@@ -1,0 +1,93 @@
+<p class="text-center">
+  Angenommen, die <b>Abschaffung der Demokratie</b> und die <b>Einführung einer Diktatur</b> hätte folgende Konsequenzen:
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Die Bevölkerung fühlt sich machtlos, weil sie sich nicht mehr politisch beteiligen kann.</td>
+          <td>-20</td>
+        </tr>
+        <tr>
+          <td>Die Steuern senken sich, weil die Kosten für Abstimmungen und Bürokratie wegfallen.</td>
+          <td>+9</td>
+        </tr>
+        <tr>
+          <td>Eine Diktatur kann langfristig planen und somit besser für alle wirtschaften.</td>
+          <td>+5</td>
+        </tr>
+        <tr>
+          <td>Die Bevölkerung hat mehr Freizeit, weil sie sich nicht mehr politisch engagieren muss.</td>
+          <td>+7</td>
+        </tr>
+        <tr>
+          <td>Eine Diktatur kann unbeliebte Gesetze einführen.</td>
+          <td>-3</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <b>Würde ein Utilitarist die Einführung einer Diktatur befürworten?</b>
+</p>
+<p class="text-center">
+  <button type="button" id="kosten1" class="btn btn-success mr-4">Ja</button>
+  <button type="button" id="kosten2" class="btn btn-danger">Nein</button>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="utilubung13" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Ein Utilitarist würde in diesem Fall die Einführung einer Diktatur <u>nicht</u> befürworten.
+        </p>
+        <p>
+          Der Gesamtnutzen beträgt: <b>-2</b>.
+        </p>
+        <p>
+          Damit überwiegt der Schaden den Nutzen, der bei der Einführung der Diktatur entsteht!
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("utilubung13 loaded!");
+
+    var points = 100;
+
+    $( "#kosten2" ).click(function() {
+      $(".modal-body").append(
+        `<p class="text-center lead">
+            Du hast ${points} Punkte erhalten!
+          </p>
+        `
+      );
+      addPointsToCourse(2, "utilubung13", points);
+      $('#utilubung13').modal('show');
+    });
+
+    $( "#kosten1" ).click(function() {
+       points = 0;
+      $(".modal-title").empty().append(
+        `Falsch!
+        `
+      );
+      addPointsToCourse(2, "utilubung13", points);
+      $('#utilubung13').modal('show');
+    });
+
+  });
+</script>
