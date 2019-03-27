@@ -1,23 +1,20 @@
 <h4 class="text-center">Die Kantische Antwort?</h4>
 <hr />
 <p>
-  <b>Littering</b> ist das unsachgemässe Wegwerfen von Müll in die Umwelt.
-</p>
-<p>
-  <b>Darf man Littering betreiben?</b>
+  <b>Soll man Gefundenes wieder zurückgeben</b>?
 </p>
 <p>
   Wähle die Antwort aus, die von einer kantischen Ethik stammen könnte!
 </p>
 <hr />
 <p>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Nein, weil zu viel Abfall in der Umwelt früher oder später zu Krankheiten und Seuchen führen.</button>
-  <button type="button" value="litteringf" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Nein, weil wenn jeder Littering betreiben würde, die Umwelt komplett zugemüllt wird.</button>
-  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Nein, weil nur faule Menschen Littering betreiben.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Ja, weil anständige Menschen Gefundenes zurückgeben.</button>
+  <button type="button" value="litteringf" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Ja, weil eine Welt, in der alle Gefundenes zurückgeben, eine wünschenswerte Welt ist.</button>
+  <button type="button" value="" class="btn btn-light border multilinebutton btn-block p-3 mb-4 litteringf">Ja, weil man wahrscheinlich einen Finderlohn bekommt.</button>
 </p>
 
 <!-- Modal -->
-<div class="modal fade" id="deonubung1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deonubung13" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,7 +38,7 @@
 
 <script>
   $( document ).ready(function() {
-    console.log("deonubung1 loaded!");
+    console.log("deonubung13 loaded!");
 
     var points = 100;
 
@@ -54,10 +51,10 @@
             </p>
           `
         );
-        addPointsToCourse(3, "deonubung1", points);
+        addPointsToCourse(3, "deonubung13", points);
         $(this).animate({backgroundColor: "#32CD32", color: "#FFFFFF" }, 200, function(){
           setTimeout(function(){
-              $('#deonubung1').modal('show');
+              $('#deonubung13').modal('show');
             }, 600);
         });
       } else {
