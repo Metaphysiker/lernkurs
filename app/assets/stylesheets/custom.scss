@@ -77,38 +77,33 @@ html, body {
   opacity: 0.8;
 }
 
+.bg-image-properties {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x:hidden;
+}
+
 .bg-image-landscape {
   background-image: linear-gradient(rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), url(asset_path("landscape.jpg"));
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
-  overflow-x:hidden;
+  @extend .bg-image-properties;
 }
 
 .bg-image-kant {
   background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url(asset_path("kant.jpg"));
   background-position: center left;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-x:hidden;
+  @extend .bg-image-properties;
 }
 
 .bg-image-domino {
   background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url(asset_path("domino.jpg"));
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-x:hidden;
+  @extend .bg-image-properties;
 }
 
 .bg-image-aristotle {
   background-image: linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)), url(asset_path("aristotle.jpg"));
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow-x:hidden;  
+  @extend .bg-image-properties;
 }

@@ -1,0 +1,206 @@
+<p class="text-center">
+  Welche Konsequenzen hätte das <b>Erlauben der Sterbehilfe</b>?
+  <div id="table-to-be-replaced">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Nutzen / Schaden</td>
+          <td>Wert</td>
+        </tr>
+        <tr>
+          <td><textarea class="form-control" rows="2" name="sterbehilfetext1" placeholder="Hier Nutzen oder Schaden eingeben"></textarea></td>
+          <td>
+            <select class="form-control" name="sterbehilfevalue1">
+              <% (-20..20).reverse_each do |i| %>
+                <% if i == 0 %>
+                  <option value="<%= i %>" selected>0</option>
+                <% else %>
+                  <option value="<%= i %>">
+                    <%= i %>
+                  </option>
+                <% end %>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><textarea class="form-control" rows="2" name="sterbehilfetext2" placeholder="Hier Nutzen oder Schaden eingeben"></textarea></td>
+          <td>
+            <select class="form-control" name="sterbehilfevalue2">
+              <% (-20..20).reverse_each do |i| %>
+                <% if i == 0 %>
+                  <option value="<%= i %>" selected>0</option>
+                <% else %>
+                  <option value="<%= i %>">
+                    <%= i %>
+                  </option>
+                <% end %>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><textarea class="form-control" rows="2" name="sterbehilfetext3" placeholder="Hier Nutzen oder Schaden eingeben"></textarea></td>
+          <td>
+          <select class="form-control" name="sterbehilfevalue3">
+              <% (-20..20).reverse_each do |i| %>
+                <% if i == 0 %>
+                  <option value="<%= i %>" selected>0</option>
+                <% else %>
+                  <option value="<%= i %>">
+                    <%= i %>
+                  </option>
+                <% end %>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><textarea class="form-control" rows="2" name="sterbehilfetext4" placeholder="Hier Nutzen oder Schaden eingeben"></textarea></td>
+          <td>
+            <select class="form-control" name="sterbehilfevalue4">
+              <% (-20..20).reverse_each do |i| %>
+                <% if i == 0 %>
+                  <option value="<%= i %>" selected>0</option>
+                <% else %>
+                  <option value="<%= i %>">
+                    <%= i %>
+                  </option>
+                <% end %>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><textarea class="form-control" rows="2" name="sterbehilfetext5" placeholder="Hier Nutzen oder Schaden eingeben"></textarea></td>
+          <td>
+            <select class="form-control" name="sterbehilfevalue5">
+              <% (-20..20).reverse_each do |i| %>
+                <% if i == 0 %>
+                  <option value="<%= i %>" selected>0</option>
+                <% else %>
+                  <option value="<%= i %>">
+                    <%= i %>
+                  </option>
+                <% end %>
+              <% end %>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <p>
+      <button type="button" id="alladded" class="btn btn-info btn-lg my-3">Fertig!</button>
+    </p>
+    </div>
+</p>
+
+<!-- Modal -->
+<div class="modal fade" id="utilubung14" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Richtig!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Nach deiner Analyse beträgt der Gesamtnutzen: <b><span id="sterbehilfesumbyuser"></span></b>.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Schliessen</button>
+        <button type="button" id="get-next-slide" data-dismiss="modal" class="btn btn-info get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    console.log("utilubung14 loaded!");
+
+    var points = 100;
+
+    $("#alladded").click(function(){
+      //get input values
+      var array1 = [$('[name="sterbehilfetext1"]').val(), parseInt($('[name="sterbehilfevalue1"]').val())];
+      var array2 = [$('[name="sterbehilfetext2"]').val(), parseInt($('[name="sterbehilfevalue2"]').val())];
+      var array3 = [$('[name="sterbehilfetext3"]').val(), parseInt($('[name="sterbehilfevalue3"]').val())];
+      var array4 = [$('[name="sterbehilfetext4"]').val(), parseInt($('[name="sterbehilfevalue4"]').val())];
+      var array5 = [$('[name="sterbehilfetext5"]').val(), parseInt($('[name="sterbehilfevalue5"]').val())];
+
+      var sum = array1[1] + array2[1] + array3[1] + array4[1] + array5[1];
+      $("#sterbehilfesumbyuser").text(sum);
+
+      if(sum === 0){
+        var answerarray = ["true", "true"];
+      } else if (sum > 0){
+        var answerarray = ["true", "false"];
+      } else {
+        var answerarray = ["false", "true"];
+      };
+
+        $("#table-to-be-replaced").empty().append(
+          `<table class="table">
+            <tbody>
+              <tr>
+                <td>${array1[0]}</td>
+                <td>${array1[1]}</td>
+              </tr>
+              <tr>
+                <td>${array2[0]}</td>
+                <td>${array2[1]}</td>
+              </tr>
+              <tr>
+                <td>${array3[0]}</td>
+                <td>${array3[1]}</td>
+              </tr>
+              <tr>
+                <td>${array4[0]}</td>
+                <td>${array4[1]}</td>
+              </tr>
+              <tr>
+                <td>${array5[0]}</td>
+                <td>${array5[1]}</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <p>
+          <b>Sollten wir nach deiner Analyse die Sterbehilfe erlauben?</b>
+          </p>
+          <p class="text-center">
+            <button type="button" value="${answerarray[0]}" class="btn btn-success mr-4 sterbehilfeanswer">Ja</button>
+            <button type="button" value="${answerarray[1]}" class="btn btn-danger sterbehilfeanswer">Nein</button>
+          </p>
+      `);
+
+      $(".sterbehilfeanswer").on("click", function() {
+          if($(this).val() === "true"){
+            $(".modal-body").append(
+              `<p class="text-center lead">
+                  Du hast ${points} Punkte erhalten!
+                </p>
+              `
+            );
+            addPointsToCourse(2, "utilubung14", points);
+            $('#utilubung14').modal('show');
+          } else{
+            points = 0;
+            addPointsToCourse(2, "utilubung14", points);
+            $(".modal-title").empty().append(
+              `Falsch!
+              `
+            );
+            $('#utilubung14').modal('show');
+          };
+      });
+
+    });
+
+  });
+</script>

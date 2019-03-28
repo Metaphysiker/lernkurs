@@ -13,15 +13,6 @@
             <%= link_to course_path(@account.current_course_id) do %>
               <button class="pulse-button rounded text-white">Kurs fortsetzen</button>
             <% end %>
-            <br />
-            <br />
-            <%= link_to why_ethics_path do %>
-              <button class="btn btn-dark mb-2 ml-1">Warum sich mit Ethik befassen?</button>
-            <% end %>
-            <%= link_to structure_path do %>
-              <button class="btn btn-dark mb-2 ml-1">Wie ist der Kurs aufgebaut?</button>
-            <% end %>
-            <a class="btn btn-dark mb-2 ml-1" href="https://findmind.ch/c/d3l1R2KpoE" role="button">Feedback geben!</a>
           </div>
           <% else %>
           <h1 class="jumbotron-heading">Was ist Ethik?</h1>
@@ -32,15 +23,6 @@
             <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
               <button class="pulse-button rounded text-white">Mit Kurs anfangen!</button>
             <% end %>
-            <br />
-            <br />
-            <%= link_to why_ethics_path do %>
-              <button class="btn btn-dark mb-2 ml-1">Warum sich mit Ethik befassen?</button>
-            <% end %>
-            <%= link_to structure_path do %>
-              <button class="btn btn-dark mb-2 ml-1">Wie ist der Kurs aufgebaut?</button>
-            <% end %>
-            <a class="btn btn-dark mb-2 ml-1" href="https://findmind.ch/c/d3l1R2KpoE" role="button">Feedback geben!</a>
           </div>
           <% end %>
         </div>
