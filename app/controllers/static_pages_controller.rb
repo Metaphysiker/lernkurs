@@ -96,8 +96,6 @@ class StaticPagesController < ApplicationController
       "Ja, dieser Kurs ist kostenlos."],
       ["Muss man sich für diesen Kurs registrieren oder anmelden?",
       "Nein, man muss sich weder registrieren noch anmelden."],
-      ["An wen richtet sich dieser Kurs?",
-      "Dieser Kurs richtet sich an alle, die sich zum ersten Mal mit Ethik beschäftigen."],
     ]
   end
 end
