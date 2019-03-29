@@ -1,6 +1,12 @@
 <div class="container">
   <h3 class="text-center">Übersicht</h3>
   <hr />
+  Gesamtzahl Accounts: <%= @accounts.count %>
+  <hr />
+  Accounts heute erstellt: <%= @accounts.where(created_at: Date.today.all_day).count %>
+  <hr />
+  Accounts heute aktualisiert: <%= @accounts.where(updated_at: Date.today.all_day).count %>
+  <hr />
   <% @accounts.each do |account| %>
     <div class="card m-3">
       <div class="card-body">
@@ -19,6 +25,9 @@
         </p>
         <p class="card_text">
           Anzahl abgeschlossener Kurse: <b><%= account.attendances.where(status: "COMPLETED").count %></b>
+        </p>
+        <p class="card_text">
+          Erstellt: <b><%= account.created_at.strftime("%d-%m-%Y") %></b>
         </p>
         <%= link_to "Zum Profil", account_path(account), class: "card-link" %>
       </div>
