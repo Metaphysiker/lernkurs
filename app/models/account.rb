@@ -9,4 +9,12 @@ class Account < ApplicationRecord
     end
     score
   end
+
+  def max_total_score
+    score = 0
+    self.courses.each do |course|
+      score = score + course.max_points
+    end
+    score
+  end
 end

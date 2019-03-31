@@ -8,7 +8,7 @@
   <div class="card m-3">
     <div class="card-body">
       <h5 class="card-title"><%= account.firstname %></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Punktestand: <%= account.total_score %></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Punktestand: <%= account.total_score %> / <%= account.max_total_score %></h6>
         <hr />
       <p class="card-text">
         <%= account.firstname %> ist aktuell im Kurs: <b><%= Course.find(account.current_course_id).title unless Course.where(id: account.current_course_id).empty? %></b>
@@ -28,7 +28,7 @@
   <div class="card m-3">
     <div class="card-body">
       <h5 class="card-title"><%= attendance.course.title %></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Gesammelte Punkte: <%= attendance.points %></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Gesammelte Punkte: <%= attendance.points %> / <%= attendance.course.max_points %></h6>
         <hr />
         <p class="card-text">
           Gegenwärtige Folie: <b><%= attendance.current_slide + 1 %></b>
