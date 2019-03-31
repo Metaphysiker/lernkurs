@@ -65,8 +65,10 @@
           <%= account.firstname %> hat folgende Kurse besucht:
           <ul>
             <% account.attendances.each do |attendance| %>
-              <li>
-                <b><%= attendance.course.title %></b><br />  - <%= attendance.points %> / <%= attendance.course.max_points %> Punkte gesammelt<br /><br />
+              <li class="mb-3">
+                <b><%= attendance.course.title %></b><br />
+                - <%= attendance.points %> / <%= attendance.course.max_points %> Punkte gesammelt<br />
+                - Fortschritt: <b><%= attendance.current_slide + 1 %></b> / <b><%= attendance.course.slides.count %></b>
               </li>
             <% end %>
           </ul>

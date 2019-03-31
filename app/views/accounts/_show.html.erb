@@ -2,7 +2,13 @@
 <%= render "layouts/navigation" %>
 <div class="container mt-4">
   <h3 class="text-center">
-    Profil
+    <% if account.id == cookies["philosophie-lernkurs-cookie-id"].to_i %>
+      Mein Profil
+    <% elsif !account.firstname.blank? %>
+      Profil von <%= account.firstname %>
+    <% else %>
+      Profil von <%= account.id %>
+    <% end %>
   </h3>
 
   <div class="card m-3">
@@ -31,7 +37,7 @@
       <h6 class="card-subtitle mb-2 text-muted">Gesammelte Punkte: <%= attendance.points %> / <%= attendance.course.max_points %></h6>
         <hr />
         <p class="card-text">
-          Gegenwärtige Folie: <b><%= attendance.current_slide + 1 %></b>
+          Fortschritt: <b><%= attendance.current_slide + 1 %></b> / <b><%= attendance.course.slides.count %></b>
         </p>
         <% unless attendance.orden.blank? %>
         <hr />
