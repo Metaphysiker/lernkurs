@@ -67,8 +67,8 @@
             <% account.attendances.each do |attendance| %>
               <li class="mb-3">
                 <b><%= attendance.course.title %></b><br />
-                - <%= attendance.points %> / <%= attendance.course.max_points %> Punkte gesammelt<br />
-                - Fortschritt: <b><%= attendance.current_slide + 1 %></b> / <b><%= attendance.course.slides.count %></b>
+                - Punkte gesammelt: <b><%= attendance.points %></b> / <%= attendance.course.max_points %><br />
+                - Fortschritt: <b><%= attendance.current_slide + 1 %></b> von <%= attendance.course.slides.count %><br />
               </li>
             <% end %>
           </ul>
@@ -80,3 +80,5 @@
     </div>
   <% end %>
 </div>
+
+<%= render "layouts/footer" %>

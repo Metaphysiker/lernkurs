@@ -22,7 +22,7 @@
         </div>
         <div class="col-10">
           <p class="card-text">
-            Punktestand: <b><%= account.total_score %></b> / <b><%= course.max_points %></b>
+            Punktestand: <b><%= account.attendances.where(course_id: course.id).last.points %></b> / <b><%= course.max_points %></b>
           </p>
         </div>
       </div>

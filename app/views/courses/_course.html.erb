@@ -8,7 +8,7 @@
       <h5 class="card-title"><b><%= course.title %></b></h5>
       <hr />
       <p class="card-text">
-        <b>Gesammelte Punkte: </b> <%= @account.attendances.where(course_id: course.id).first.points %>
+        <b>Gesammelte Punkte: </b> <%= @account.attendances.where(course_id: course.id).first.points %> / <%= course.max_points %>
       </p>
       <hr />
       <% unless @account.attendances.where(course_id: course.id).first.orden.blank? %>
@@ -36,7 +36,7 @@
       <h5 class="card-title"><b><%= course.title %></b></h5>
       <hr />
       <p class="card-text">
-        <b>Gesammelte Punkte: </b> <%= @account.attendances.where(course_id: course.id).first.points %>
+        <b>Gesammelte Punkte: </b> <%= @account.attendances.where(course_id: course.id).first.points %> / <%= course.max_points %>
       </p>
       <hr />
       <p class="card-text"><%= course.description %></p>
