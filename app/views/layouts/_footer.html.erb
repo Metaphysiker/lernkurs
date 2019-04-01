@@ -10,11 +10,14 @@
                 <div class=""><%= image_tag("egweiss.png", class: "img-fluid") %></div>
             <% end %>
           </li>
+          <li><%= mail_to "sandro.raess@philosophie.ch", "e-Mail", class: "text-white" %></li>
+          <li><a href="https://www.philosophie.ch/ueber/kontakt-service/datenschutz" class="text-white" target="_blank">Impressum</a></li>
+          <hr class="bg-white">
           <li><%= link_to "Häufig gestellte Fragen", faq_path, class: "text-white" %></li>
           <li><%= link_to "Informationen für Lehrpersonen", klasse_path, class: "text-white" %></li>
-          <li><a href="https://findmind.ch/c/d3l1R2KpoE" class="text-white" target="_blank">Feedback geben!</a></li>
-          <li><a href="https://www.philosophie.ch/ueber/kontakt-service/datenschutz" class="text-white" target="_blank">Impressum</a></li>
-          <li><%= mail_to "sandro.raess@philosophie.ch", "e-Mail", class: "text-white" %></li>
+          <li><%= link_to "Warum sich mit Ethik befassen?", why_ethics_path, class: "text-white" %></li>
+          <li><%= link_to "Wie ist dieser Kurs aufgebaut?", structure_path, class: "text-white" %></li>
+          <li><a href="https://findmind.ch/c/d3l1R2KpoE" class="text-white" target="_blank">Feedback geben</a></li>
         </ul>
         <hr class="bg-white">
         <ul class="list-unstyled">
