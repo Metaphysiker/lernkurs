@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/structure', to: 'static_pages#structure', as: 'structure'
   get '/feedback', to: 'static_pages#feedback', as: 'feedback'
   get '/faq', to: 'static_pages#faq', as: 'faq'
+  get '/showcase', to: 'static_pages#showcase', as: 'showcase'
 
   #RENDER
   post '/render_slide', to: 'courses#render_slide', as: 'render_slide'

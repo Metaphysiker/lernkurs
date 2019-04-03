@@ -98,4 +98,7 @@ class StaticPagesController < ApplicationController
       "Nein, man muss sich weder registrieren noch anmelden."],
     ]
   end
+
+  def showcase 
+  end
 end
