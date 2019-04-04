@@ -5,8 +5,6 @@ class StaticPagesController < ApplicationController
     @page_keywords    = "Lernkurs, Online-Kurs, Kurs, Ethik, Einführung, Lernmaterial, Unterrichtsmaterial, Philosophie"
 
     @courses = Course.all.order(:order)
-    cookies.signed[:user_id] = 10
-    cookies[:progress] = "Epic!"
   end
 
   def overview
@@ -99,6 +97,6 @@ class StaticPagesController < ApplicationController
     ]
   end
 
-  def showcase 
+  def showcase
   end
 end
