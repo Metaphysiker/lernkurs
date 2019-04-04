@@ -3,47 +3,39 @@
 <main role="main">
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Informationen für Lehrpersonen</h1>
+      <h3 class="jumbotron-heading">Informationen für Lehrpersonen</h3>
       <hr />
-      <div class="card mb-4 text-justify">
-        <div class="card-body">
+      <div class="text-justify">
           <p class="card-text">
             Der Lernkurs zu Ethik ist ein interaktiver Online-Kurs. Er führt in die <b>grundlegenden Begriffe</b> und <b>Theorien der Ethik</b> ein
             und vermittelt <b>basale Kompetenzen</b> und <b>Fähigkeiten</b>.
           </p>
-          <hr />
           <p class="card-text">
-            Der Lernkurs für Ethik richtet sich an alle,
+            Dieser Lernkurs für Ethik richtet sich an alle,
             die sich <b>zum ersten Mal</b> mit Ethik beschäftigen
             und eignet sich für <b>Schülerinnen und Schüler</b> oder für <b>Studierenden</b>.
           </p>
-        </div>
-      </div>
-      <div class="card mb-4 text-justify">
-        <div class="card-body">
+
+          <hr />
           <p class="card-text">
             Dieser Lernkurs ist <b>komplett kostenlos</b>.
           </p>
-          <hr />
+
           <p class="card-text">
             Um diesen Kurs zu absolvieren ist auch <b>keine Registrierung oder Anmeldung nötig</b>.
             Auch muss <b>keine e-Mail-Adresse oder Telefon-Nummer angegeben werden</b>.
           </p>
-        </div>
-      </div>
-      <div class="card mb-4 text-justify">
-        <div class="card-body">
+
+          <hr />
           <p class="card-text">
             Der Lernkurs besteht aus mehreren <b>Teilkursen</b>.
-            Für die Absolvierung eines Teilkurses braucht man so zwischen <b>10</b> und <b>20 Minuten</b>.
+            Für die Absolvierung eines Teilkurses braucht man so zwischen <b>15</b> und <b>30 Minuten</b>.
           </p>
-          <hr />
           <p class="card-text">
             Der erste Kurs ist die <%=  link_to '"Einführung in die Ethik"', course_path(Course.find(1)) %>
             und führt ganz allgemein in die wichtigsten Begriffen und Theorien der Ethik ein.
             Es empfiehlt sich, mit diesem Kurs anzufangen.
           </p>
-          <hr />
           <p class="card-text">
             Die Kurse
             <%=  link_to '"Konsequentialismus"', course_path(Course.find(2)) %>,
@@ -51,10 +43,7 @@
             <%=  link_to '"Tugendethik', course_path(Course.find(4)) %>,
             sind Vertiefungskurse und widmen sich speziell einer ethischen Theorie.
           </p>
-        </div>
-      </div>
-      <div class="card mb-4 text-justify">
-        <div class="card-body">
+          <hr />
           <p class="card-text">
             Um diesen Lernkurs zu absolvieren braucht man:
             <ul class="space-between-li-10">
@@ -66,69 +55,53 @@
               </li>
             </ul>
           </p>
-          <hr />
           <p class="card-text">
             Schülerinnen und Schüler oder Studierende können zum Beispiel diesen Kurs
             mit <b>ihren eigenen Smartphones</b> oder <b>Tablets</b> besuchen gehen.
           </p>
-          <hr />
           <p>
             Alternativ kann man den Kurs auch über einen Computer oder Laptop absolvieren.
           </p>
-        </div>
-      </div>
-      <div class="card mb-4 text-justify">
-        <div class="card-body">
+          <hr />
           <p class="card-text">
             Während dem Lernkurs gibt es <b>interaktive Übungen</b>.
           </p>
-          <hr />
           <p>
             <b>Zum Beispiel: </b>
             Man bekommt eine Frage gestellt und man muss die passende Antwort dazu auswählen.
           </p>
-          <hr />
           <p>
             Wenn man diese Übungen richtig löst, dann bekommt man <b>Punkte</b>.
           </p>
-          <hr />
           <p>
             Wenn man die Übungen gleich beim ersten Mal richtig löst,
             dann erhält man <b>die volle Punktzahl</b>.
           </p>
-          <hr />
           <p>
             Wenn man aber zuerst Fehler gemacht hat,
             dann erhält man bei der richtigen Antwort <b>weniger Punkte</b>.
           </p>
-        </div>
-      </div>
-
-      <div class="card mb-4 text-justify">
-        <div class="card-body">
+          <hr />
           <p>
             Wenn Sie möchten,
             dann können Sie den <b>Punktestand</b> und <b>Fortschritt</b>
             Ihrer Schülerinnen und Schüler oder Ihrer Studierenden überwachen.
           </p>
-          <hr />
           <p>
             Die Schülerinnen und Schüler und Studierenden müssen hierzu
             <b>eine bestimmte Seite besuchen</b> und dort <b>ihre Vornamen eingeben</b>.
             (Siehe Anleitung unten).
           </p>
-        </div>
-      </div>
-
-      <div class="card my-2">
-        <div class="card-body">
-          <h3 class="card-title">Anleitung:</h3>
           <hr />
+          <br />
+          <h3 class="text-center">Anleitung:</h3>
+
+      <div class="card my-3">
+        <div class="card-body">
           <h5 class="card-title">1. Schreiben Sie sich den untenstehenden Link auf!</h5>
-          <p>
+          <p class="w-100 p-3 border rounded">
             <%= link_to "www.lernkurs.philosophie.ch/klasse/#{@code}", group_overview_path(code: @code) %>
           </p>
-          <hr />
           <p class="text-justify">
             Mit diesem Link gelangen Sie zur <b>Übersichtsseite</b>,
             auf der Sie den <b>Punktestand</b> und <b>Fortschritt</b>
@@ -137,13 +110,12 @@
         </div>
       </div>
 
-      <div class="card my-2">
+      <div class="card my-3">
         <div class="card-body">
           <h5 class="card-title">2. Schicken Sie den untenstehenden Link an Ihre Schülerinnen und Schüler oder an Ihre Studierenden!</h5>
-          <p>
+          <p class="w-100 p-3 border rounded">
             <%= link_to "www.lernkurs.philosophie.ch/register/#{@code}", register_path(code: @code) %>
           </p>
-          <hr />
           <p class="text-justify">
             Auf dieser Seite werden die Schülerinnen und Schüler oder Studierenden aufgefordert,
             ihre Vornamen einzugeben.
@@ -155,7 +127,7 @@
         </div>
       </div>
 
-      <div class="card my-2">
+      <div class="card my-3">
         <div class="card-body">
           <h5 class="card-title">3. Mit Lernkurs beginnen!</h5>
           <p class="text-justify">
@@ -169,6 +141,7 @@
         </div>
       </div>
 
+    </div>
     </div>
   </section>
 </main>
