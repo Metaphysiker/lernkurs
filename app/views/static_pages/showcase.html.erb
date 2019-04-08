@@ -26,6 +26,176 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">Philosophische Zitate</h2>
+        <p>
+          Weitere Ideen für Zitate sind weiter unten zu finden.
+        </p>
+        <hr />
+        <% sayings = [
+          ["I know that I know nothing.", "Socrates"],
+          ["The unexamined life is not worth living.", "Socrates"],
+          ["C'est dans le vide de la pensée que s'inscrit le mal.", "Hannah Arendt"],
+          ] %>
+
+        <% sayings.each do |saying| %>
+              <blockquote class="blockquote mb-0">
+                <p><%= saying[0]%></p>
+                <cite title="Source Title"><%= saying[1]%></cite>
+              </blockquote>
+              <hr />
+        <% end %>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <%= image_tag("iknownothing.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("unexaminedlife.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("hannaharendt.png", class:"img-fluid mx-auto") %>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">"Philosophische" Bilder</h2>
+        <p class="lead">
+          Eule, Owl of Athena
+        </p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Kralle, die philosophische Katze</h2>
+        <p class="lead">
+          Ausgewählte Bilder
+        </p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("sprachebild.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("kralleknowledge.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("cogito.png", class:"img-fluid mx-auto") %>
+        <hr />
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Logik</h2>
+        <p class="lead">
+          Wahrheitsbäume, Wahrheitstafel, Prädikatenlogik, Modallogik
+        </p>
+      </div>
+      <div class="col-md-5">
+        <h5><u>Transitivität</u></h5>
+        <%= image_tag("equation.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <h5><u>Modal-Logik</u></h5>
+        <%= image_tag("modallogic.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("truthtree.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("truthtable.png", class:"img-fluid mx-auto") %>
+        <hr />
+
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Büsten</h2>
+        <p class="lead">
+          Aristotle, Plato, Socrates, Denker
+        </p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("bust1.jpg", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("bust2.jpg", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("denker.jpg", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("denker1.jpg", class:"img-fluid mx-auto") %>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Das gute Leben</h2>
+        <p class="lead">
+          Gutes Leben, Eudaimonia
+        </p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Geschäft der Philosophen</h2>
+        <p class="lead">
+          Logik, Analyse, Begriffsklärung, Argumentation
+        </p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("logikanalyseargument.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("begriffsanalyse.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("analysenotig.png", class:"img-fluid mx-auto") %>
+        <hr />
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">"Schlagworte"</h2>
+        <p class="lead">
+          Erkenntnistheorie?
+          Philosophie.ch
+        </p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Logos</h2>
+        <p class="lead">
+          Auswahl von Logos
+        </p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("logoauswahl1.png", class:"img-fluid mx-auto")  %>
+        <hr />
+        <%= image_tag("logoauswahl2.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("logoauswahl3.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("logoauswahl4.png", class:"img-fluid mx-auto") %>
+        <hr />
+        <%= image_tag("logoauswahl5.png", class:"img-fluid mx-auto") %>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-12">
+        <h2 class="featurette-heading">Ausgewählte Zitate</h2>
         <hr />
         <p>
           Weitere Ideen für Zitate sind weiter unten zu finden.
@@ -53,110 +223,6 @@
               </blockquote>
               <hr />
         <% end %>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <%= image_tag("iknownothing.png", class:"img-fluid mx-auto") %>
-        <hr />
-        <%= image_tag("unexaminedlife.png", class:"img-fluid mx-auto") %>
-        <hr />
-        <%= image_tag("hannaharendt.png", class:"img-fluid mx-auto") %>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">"Philosophische" Bilder</h2>
-        <p class="lead">
-          Eule, Owl of Athena
-        </p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Kralle, die philosophische Katze</h2>
-        <p class="lead">
-          Ausgewählte Bilder
-        </p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Logik</h2>
-        <p class="lead">
-          Wahrheitsbäume, Wahrheitstafel, Prädikatenlogik, Modallogik
-        </p>
-      </div>
-      <div class="col-md-5">
-        <%= image_tag("truthtree.png", class:"img-fluid mx-auto") %>
-        <hr />
-        <%= image_tag("truthtable.png", class:"img-fluid mx-auto") %>
-      </div>
-    </div>
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Büsten</h2>
-        <p class="lead">
-          Aristotle, Plato, Socrates
-        </p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Das gute Leben</h2>
-        <p class="lead">
-          Gutes Leben
-        </p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">Geschäft der Philosophen</h2>
-        <p class="lead">
-          Logik, Analyse Philosophie.ch.
-          3-er
-        </p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">"Schlagworte"</h2>
-        <p class="lead">
-          Erkenntnistheorie?
-          Philosophie.ch
-        </p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
       </div>
     </div>
     <hr class="featurette-divider">
