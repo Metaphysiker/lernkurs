@@ -5,6 +5,11 @@
     <div class="container">
       <h3 class="jumbotron-heading">Ideen für Merchandise</h3>
 
+      <p>
+        Professionell:
+         <a href="https://the-philosophers-shirt.com/" target="_blank">https://the-philosophers-shirt.com/</a>
+      </p>
+
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
@@ -101,6 +106,13 @@
         <p>
           Gibt's auf Philosophie.ch
         </p>
+        <hr />
+        <p>
+          Think outside the box?
+        </p>
+        <p>
+          Philosophie.ch
+        </p>
       </div>
       <div class="col-md-5">
         <%= image_tag("logikanalyseargument.png", class:"img-fluid mx-auto") %>
@@ -121,6 +133,8 @@
         </p>
       </div>
       <div class="col-md-5">
+        <%= image_tag("athenshirt.png", class:"img-fluid mx-auto") %>
+        <hr />
         <%= image_tag("eudaimoniatree.png", class:"img-fluid mx-auto") %>
         <hr />
         <%= image_tag("logoauswahl2.png", class:"img-fluid mx-auto") %>
@@ -136,6 +150,8 @@
         <%= image_tag("pictoowl.png", class:"img-fluid mx-auto") %>
         <hr />
         <%= image_tag("logoauswahl1.png", class:"img-fluid mx-auto")  %>
+        <hr />
+        <%= image_tag("phi.png", class:"img-fluid mx-auto")  %>
       </div>
     </div>
     <hr class="featurette-divider">
@@ -179,6 +195,7 @@
         <%= image_tag("cogito.png", class:"img-fluid mx-auto") %>
         <hr />
     </div>
+  </div>
     <hr class="featurette-divider">
 
     <div class="row featurette">
@@ -189,6 +206,8 @@
         </p>
       </div>
       <div class="col-md-5">
+        <%= image_tag("shopishirt.png", class:"img-fluid mx-auto") %>
+        <hr />
         <%= image_tag("denker.jpg", class:"img-fluid mx-auto") %>
         <hr />
         <%= image_tag("denker1.jpg", class:"img-fluid mx-auto") %>
@@ -202,24 +221,10 @@
 
     <div class="row featurette pt-5">
       <div class="col-12">
-        <h2 class="featurette-heading">Ausgewählte Zitate</h2>
+        <h2 class="featurette-heading">Sonstiges</h2>
         <hr />
         <% sayings = [
-          ["I know that I know nothing.", "Socrates"],
-          ["The unexamined life is not worth living.", "Socrates"],
-          ["The whole is more than the sum of its parts.", "Aristotle"],
-          ["Cogito ergo sum.", "René Descartes"],
-          ["Wittgenstein", "Wittgenstein"],
-          ["Bertrand Russell", "Bertrand Russel"],
-          ["Nietzsche", "Nietzsche"],
-          ["Searle: If you can't explain it you don't know it", "Searle"],
-          ["maximum happiness", "Jeremy Bentham"],
-          ["Der Widerspruch hält den Philosophen am Leben.", "Ela M."],
-          ["La victoire sur soi est la plus grande des victoires.", "Platon"],
-          ["Il n'y a point de génie sans un grain de folie.", "Aristote"],
-          ["C'est dans le vide de la pensée que s'inscrit le mal.", "Hannah Arendt"],
-          ["Connais-toi toi-même.", "Socrate"],
-          ["Le faire est révélateur de l'être.", "Jean-Paul Sartre"]
+          ["What would Kant do?", "Philosophie.ch"],
           ] %>
 
         <% sayings.each do |saying| %>
@@ -233,7 +238,44 @@
     </div>
     <hr class="featurette-divider">
 
+    <div class="row featurette pt-5">
+      <div class="col-12">
+        <h2 class="featurette-heading">Ausgewählte Zitate</h2>
+        <hr />
+        <p>
+          Viele auf Freidenker-Galerie
+        </p>
+        <% sayings = [
+          ["I know that I know nothing.", "Socrates"],
+          ["The unexamined life is not worth living.", "Socrates"],
+          ["The whole is more than the sum of its parts.", "Aristotle"],
+          ["Cogito ergo sum.", "René Descartes"],
+          ["Sapere Aude", "Kant"],
+          ["Wittgenstein", "Wittgenstein"],
+          ["Bertrand Russell", "Bertrand Russel"],
+          ["Nietzsche", "Nietzsche"],
+          ["Searle: If you can't explain it you don't know it", "Searle"],
+          ["maximum happiness", "Jeremy Bentham"],
+          ["Der Widerspruch hält den Philosophen am Leben.", "Ela M."],
+          ["La victoire sur soi est la plus grande des victoires.", "Platon"],
+          ["Il n'y a point de génie sans un grain de folie.", "Aristote"],
+          ["C'est dans le vide de la pensée que s'inscrit le mal.", "Hannah Arendt"],
+          ["Connais-toi toi-même.", "Socrate"],
+          ["Le faire est révélateur de l'être.", "Jean-Paul Sartre"],
+          ["Gestern? Ich hätte das gestern machen sollen?", "Sandro Räss"]
+          ] %>
+
+        <% sayings.each do |saying| %>
+              <blockquote class="blockquote mb-0">
+                <p><%= saying[0]%></p>
+                <cite title="Source Title"><%= saying[1]%></cite>
+              </blockquote>
+              <hr />
+        <% end %>
+      </div>
     </div>
+    <hr class="featurette-divider">
+  </div>
   </section>
 </main>
 
