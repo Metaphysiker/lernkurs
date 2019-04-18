@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://www.lernkurs.philosophie.ch/"
+SitemapGenerator::Sitemap.default_host = "https://www.lernkurs.philosophie.ch"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -27,6 +27,7 @@ SitemapGenerator::Sitemap.create do
 
   add why_ethics_path
   add structure_path
+  add faq_path
 
   Course.all.each do |course|
     add course_path(course), :lastmod => course.updated_at
