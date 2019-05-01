@@ -18,7 +18,7 @@
   language: "de",
   order: 1,
   modul: "Einführungsmodul",
-  name_of_picture: "landscape.jpg",
+  name_of_picture: "hamster.jpg",
   slides: [
     'why',
     'why1',
@@ -133,7 +133,7 @@ Course.create(
  language: "de",
  order: 3,
  modul: "Vertiefungsmodul",
- name_of_picture: "kant.jpg",
+ name_of_picture: "stahl.jpg",
  slides: [
    'why',
    'kompetenzen',
@@ -190,7 +190,7 @@ Course.create(
  language: "de",
  order: 4,
  modul: "Vertiefungsmodul",
- name_of_picture: "aristotle.jpg",
+ name_of_picture: "badminton.jpg",
  slides: [
    'why',
    'kompetenzen',

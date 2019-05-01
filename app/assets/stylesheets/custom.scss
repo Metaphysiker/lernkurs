@@ -90,6 +90,24 @@ html, body {
   @extend .bg-image-properties;
 }
 
+.bg-image-hamster {
+  background-image: linear-gradient(rgba(255,255,255, 0.95), rgba(255,255,255, 0.95)), url(asset_path("hamster.jpg"));
+  background-position: top;
+  @extend .bg-image-properties;
+}
+
+.bg-image-stahl {
+  background-image: linear-gradient(rgba(255,255,255, 0.97), rgba(255,255,255, 0.97)), url(asset_path("stahl.jpg"));
+  background-position: top;
+  @extend .bg-image-properties;
+}
+
+.bg-image-badminton {
+  background-image: linear-gradient(rgba(255,255,255, 0.97), rgba(255,255,255, 0.97)), url(asset_path("badminton.jpg"));
+  background-position: top;
+  @extend .bg-image-properties;
+}
+
 .bg-image-kant {
   background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url(asset_path("kant.jpg"));
   background-position: center left;
