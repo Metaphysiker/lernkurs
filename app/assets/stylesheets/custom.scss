@@ -97,8 +97,8 @@ html, body {
 }
 
 .bg-image-stahl {
-  background-image: linear-gradient(rgba(255,255,255, 0.97), rgba(255,255,255, 0.97)), url(asset_path("stahl.jpg"));
-  background-position: top;
+  background-image: linear-gradient(rgba(255,255,255, 0.98), rgba(255,255,255, 0.98)), url(asset_path("stahl.jpg"));
+  background-position: center;
   @extend .bg-image-properties;
 }
 
