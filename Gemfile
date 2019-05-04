@@ -17,6 +17,7 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'exception_handler', '~> 0.8.0.0'
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
