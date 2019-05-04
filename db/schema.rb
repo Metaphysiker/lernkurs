@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_27_185318) do
+ActiveRecord::Schema.define(version: 2019_05_04_203929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -20,6 +20,24 @@ ActiveRecord::Schema.define(version: 2019_01_27_185318) do
     t.integer "current_course_id"
     t.string "firstname", default: ""
     t.string "code", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "applications", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "street"
+    t.string "city"
+    t.string "plz"
+    t.string "email"
+    t.string "telefon"
+    t.string "payment"
+    t.text "motivation"
+    t.text "expectation"
+    t.text "thoughts"
+    t.text "aboutme"
+    t.text "food"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

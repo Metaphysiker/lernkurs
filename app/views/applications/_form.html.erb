@@ -1,0 +1,40 @@
+
+<%= simple_form_for(application) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-6">
+        <%= f.input :firstname, placeholder: 'Max', required: true %>
+      </div>
+      <div class="col-6">
+        <%= f.input :lastname, placeholder: 'Mustermann', required: true %>
+      </div>
+    </div>
+    <hr />
+    <%= f.input :street, placeholder: 'Hauptstrasse 5', required: true %>
+    <div class="row">
+      <div class="col-6">
+        <%= f.input :city, placeholder: 'Zürich', required: true %>
+      </div>
+      <div class="col-6">
+        <%= f.input :plz, placeholder: '8000', required: true %>
+      </div>
+    </div>
+    <hr />
+    <%= f.input :email, placeholder: 'max@mustermann.ch', required: true %>
+    <%= f.input :telefon, placeholder: '0791234567', required: true %>
+    <hr />
+    <%= f.input :payment %>
+    <%= f.input :motivation %>
+    <%= f.input :expectation %>
+    <%= f.input :thoughts %>
+    <%= f.input :aboutme %>
+    <%= f.input :food %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-dark btn-lg" %>
+  </div>
+<% end %>
