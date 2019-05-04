@@ -101,4 +101,9 @@ class StaticPagesController < ApplicationController
 
   def showcase
   end
+
+  def application_form
+    response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
+    render
+  end
 end
