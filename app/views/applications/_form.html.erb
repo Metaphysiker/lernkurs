@@ -1,5 +1,4 @@
 <div id="application_form">
-  <a name="top"/>
   <%= simple_form_for(application, remote: true) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -43,16 +42,3 @@
     </div>
   <% end %>
 </div>
-
-<script>
-$( document ).ready(function() {
-  function scrollToAnchor(aid){
-    var aTag = $("a[name='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-  }
-
-  $(".scrolltop").click(function() {
-   scrollToAnchor('top');
-  });
-});
-</script>
