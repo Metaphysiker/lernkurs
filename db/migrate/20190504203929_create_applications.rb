@@ -11,6 +11,7 @@ class CreateApplications < ActiveRecord::Migration[5.2]
       t.string :payment
       t.text :motivation
       t.text :expectation
+      t.text :education
       t.text :thoughts
       t.text :aboutme
       t.text :food

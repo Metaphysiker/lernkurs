@@ -1,0 +1,21 @@
+de:
+  activerecord:
+    models:
+      application:
+        one: "Anmeldung"
+        other: "Anmeldungen"
+    attributes:
+      application:
+        firstname: "Vorname"
+        lastname: "Nachname"
+        street: "Strasse"
+        city: "Ort"
+        plz: "Postleitzahl"
+        email: "e-Mail-Adresse"
+        telefon: "Telefon"
+        payment: "Rechnung"
+        motivation: "Motivation"
+        expectation: "Erwartung"
+        thoughts: "Gedanken zum Thema"
+        aboutme: "Über mich"
+        food: "Essen"

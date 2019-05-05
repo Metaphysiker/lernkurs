@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_203929) do
     t.string "payment"
     t.text "motivation"
     t.text "expectation"
+    t.text "education"
     t.text "thoughts"
     t.text "aboutme"
     t.text "food"

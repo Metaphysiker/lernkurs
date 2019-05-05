@@ -26,12 +26,13 @@
     <%= f.input :email, placeholder: 'max@mustermann.ch', required: true %>
     <%= f.input :telefon, placeholder: '0791234567', required: true %>
     <hr />
-    <%= f.input :payment %>
-    <%= f.input :motivation %>
-    <%= f.input :expectation %>
-    <%= f.input :thoughts %>
-    <%= f.input :aboutme %>
-    <%= f.input :food %>
+    <%= f.input :payment, as: :radio_buttons, collection: [["Rechnung", "Rechnung"]], label_method: :second, value_method: :first, label: "Rechnungsart", required: true %>
+    <%= f.input :motivation, label: "Was motiviert mich für den Kurs?", required: true %>
+    <%= f.input :expectation, label: "Was erwarte ich vom Kurs?", required: true %>
+    <%= f.input :education, label: "Welche Vorbildung habe ich?", required: true %>
+    <%= f.input :thoughts, label: "Ich habe mir bereits folgende Gedanken zum Thema gemacht: " %>
+    <%= f.input :aboutme, label: "Über meine Person und meinen Werdegang: " %>
+    <%= f.input :food, label: "Essen: Unverträglichkeiten" %>
   </div>
 
   <div class="form-actions">
