@@ -42,3 +42,18 @@
     </div>
   <% end %>
 </div>
+
+<script>
+$( document ).ready(function() {
+  $('.scrolltop').on('click', function(e) {
+
+    $('html, body').animate(
+      {
+        scrollTop: $("#application_form").offset().top - 25
+      },
+      500,
+      'linear'
+    )
+  })
+});
+</script>
