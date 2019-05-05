@@ -47,6 +47,9 @@
 $( document ).ready(function() {
   $('.scrolltop').on('click', function(e) {
 
+     $("#application_form")[0].scrollIntoView({behavior: "smooth"});
+
+     /*
     $('html, body').animate(
       {
         scrollTop: $("#application_form").offset().top - 25
@@ -54,6 +57,7 @@ $( document ).ready(function() {
       500,
       'linear'
     )
+    */
   })
 });
 </script>
