@@ -1,0 +1,26 @@
+var errors = <%= raw @application.errors.full_messages %>;
+var parent_id = "#application_form"
+
+console.log(parent_id);
+console.log(errors);
+
+if (jQuery.isEmptyObject(errors)) {
+  console.log("keine Fehler");
+
+  content = `
+    <div>
+    <h3 class="text-success">Anmeldung erfolgreich!</h3>
+    </div>
+  `;
+  $( parent_id ).fadeOut( "slow", function() {
+    $(parent_id).empty().append(content).fadeIn("fast");
+  });
+
+} else {
+  console.log("Fehler vorhanden");
+
+  content = $("<%= escape_javascript( render "applications/form", Hash[@application.class.to_s.downcase.to_sym, @application] ) %>")
+    $( parent_id ).replaceWith(function(){
+      return $(content).hide().fadeIn("slow");
+    });
+}

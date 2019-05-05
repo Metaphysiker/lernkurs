@@ -30,9 +30,11 @@ class ApplicationsController < ApplicationController
       if @application.save
         format.html { redirect_to @application, notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @application.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -69,6 +71,6 @@ class ApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
-      params.require(:application).permit(:firstname, :lastname, :street, :city, :plz, :email, :telefon, :payment, :motivation, :expectation, :thoughts, :aboutme, :food)
+      params.require(:application).permit(:firstname, :lastname, :street, :city, :plz, :email, :telefon, :payment, :motivation, :expectation, :thoughts, :aboutme, :food, :education)
     end
 end
