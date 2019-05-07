@@ -4,6 +4,8 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
+      <%#= course %>
+      <%= f.input_field :course, as: :hidden, value: course %>
       <div class="row">
         <div class="col-6">
           <%= f.input :firstname, placeholder: 'Max', required: true %>

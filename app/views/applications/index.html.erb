@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>
+       Course
+      </th>
       <th>Firstname</th>
       <th>Lastname</th>
       <th>Street</th>
@@ -25,6 +28,7 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr>
+        <td><%= application.course %></td>
         <td><%= application.firstname %></td>
         <td><%= application.lastname %></td>
         <td><%= application.street %></td>

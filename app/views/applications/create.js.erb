@@ -25,7 +25,7 @@ if (jQuery.isEmptyObject(errors)) {
 } else {
   console.log("Fehler vorhanden");
 
-  content = $("<%= escape_javascript( render "applications/form", Hash[@application.class.to_s.downcase.to_sym, @application] ) %>")
+  content = $("<%= escape_javascript( render "applications/form", Hash[@application.class.to_s.downcase.to_sym, @application, "course".to_sym, @application.course] ) %>")
     $( parent_id ).replaceWith(function(){
       return $(content).hide().fadeIn("slow");
     });

@@ -2,9 +2,9 @@
 
   <div class="jumbotron philosopiech-background my-2">
   <h1 class="display-5">Anmeldeformular</h1>
-  <p class="lead">Philosophie.ch</p>
+  <p class="lead">Kurs: <b><%= @course %></b></p>
   <hr class="my-4">
-  <%= render 'applications/form', application: Application.new %>
+  <%= render 'applications/form', application: Application.new, course: @course %>
 </div>
 
 </div>
