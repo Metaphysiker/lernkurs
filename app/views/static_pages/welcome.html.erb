@@ -32,3 +32,28 @@
     </main>
 
 <%= render "layouts/footer" %>
+
+<%#= render 'cookies_eu/consent_banner', link: 'https://www.philosophie.ch/ueber/kontakt-service/datenschutz', target: '_blank' %>
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+  $( document ).ready(function() {
+    console.log("Cookie Consent");
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "#f1d600"
+        }
+      },
+      "content": {
+        "message": "Diese Webseite benutzt Cookies.",
+        "dismiss": "Verstanden",
+        "link": "Mehr dazu",
+        "href": "https://www.philosophie.ch/ueber/kontakt-service/datenschutz"
+      }
+    })});
+});
+</script>

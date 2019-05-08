@@ -18,7 +18,7 @@ gem 'exception_handler', '~> 0.8.0.0'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'simple_form'
-
+gem 'cookies_eu'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
