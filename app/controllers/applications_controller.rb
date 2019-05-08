@@ -42,25 +42,25 @@ class ApplicationsController < ApplicationController
   # PATCH/PUT /applications/1
   # PATCH/PUT /applications/1.json
   def update
-    respond_to do |format|
-      if @application.update(application_params)
-        format.html { redirect_to @application, notice: 'Application was successfully updated.' }
-        format.json { render :show, status: :ok, location: @application }
-      else
-        format.html { render :edit }
-        format.json { render json: @application.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @application.update(application_params)
+    #    format.html { redirect_to @application, notice: 'Application was successfully updated.' }
+    #    format.json { render :show, status: :ok, location: @application }
+    #  else
+    #    format.html { render :edit }
+    #    format.json { render json: @application.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /applications/1
   # DELETE /applications/1.json
   def destroy
-    @application.destroy
-    respond_to do |format|
-      format.html { redirect_to applications_url, notice: 'Application was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    #@application.destroy
+    #respond_to do |format|
+    #  format.html { redirect_to applications_url, notice: 'Application was successfully destroyed.' }
+    #  format.json { head :no_content }
+    #end
   end
 
   private
