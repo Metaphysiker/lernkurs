@@ -17,4 +17,16 @@ class Account < ApplicationRecord
     end
     score
   end
+
+  def self.with_points
+    array_with_ids = []
+    Account.all.each do |account|
+      if account.total_score > 0
+        array_with_ids << account.id
+      end
+    end
+    Account.where(id: array_with_ids)
+  end
+
+
 end
