@@ -36,4 +36,7 @@ Rails.application.routes.draw do
   post '/set_orden', to: 'courses#set_orden', as: 'set_orden'
   post '/set_group', to: 'static_pages#set_group', as: 'set_group'
   get '/check_group', to: 'static_pages#check_group', as: 'check_group'
+
+   #applications
+   get '/applications_to_csv', to: 'applications#applications_to_csv', as: 'applications_to_csv'
 end

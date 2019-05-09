@@ -1,3 +1,5 @@
+require 'csv'
+
 class ApplicationsController < ApplicationController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
 
@@ -5,6 +7,20 @@ class ApplicationsController < ApplicationController
   # GET /applications.json
   def index
     @applications = Application.all
+  end
+
+  def applications_to_csv
+    attributes = %w{id description}
+
+  csv = CSV.generate(headers: true) do |csv|
+      csv << Application.attribute_names
+
+      Application.all.each do |application|
+        csv << Application.attribute_names.map{ |attr| application.send(attr) }
+      end
+    end
+
+    send_data csv, filename: "applications.csv"
   end
 
   # GET /applications/1
