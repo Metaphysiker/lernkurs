@@ -10,7 +10,7 @@ class ApplicationsController < ApplicationController
   end
 
   def applications_to_csv
-    attributes = %w{id description}
+    #attributes = %w{id description}
 
   csv = CSV.generate(headers: true) do |csv|
       csv << Application.attribute_names
