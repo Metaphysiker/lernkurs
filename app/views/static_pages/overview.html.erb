@@ -5,7 +5,7 @@
   <hr />
   Accounts heute erstellt: <%= @accounts.where(created_at: Date.today.all_day).count %>
   <hr />
-  Accounts heute aktualisiert: <%= @accounts.where(updated_at: Date.today.all_day).count %>
+  Accounts heute aktualisiert: <%= @accounts.where(updated_at: Date.today.all_day).count - @accounts.where(created_at: Date.today.all_day).count %>
   <hr />
   Accounts mit mehr als 0 Punkten: <%= Account.with_points.count %>
   <hr />
