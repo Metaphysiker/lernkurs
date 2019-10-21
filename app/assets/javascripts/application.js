@@ -18,7 +18,6 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require cookies_eu
-//= celebrate
 //= animate
 //= ajax
 //= require_tree .

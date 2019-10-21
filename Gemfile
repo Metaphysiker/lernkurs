@@ -6,7 +6,8 @@ ruby '2.5.1'
 #new
 #gem 'compass-rails'
 gem "font-awesome-rails"
-gem 'bootstrap', '~> 4.2.1'
+#gem 'bootstrap', '~> 4.2.1'
+gem "bootstrap", ">= 4.3.1"
 gem 'rails-i18n', '~> 5.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

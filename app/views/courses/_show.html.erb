@@ -20,15 +20,12 @@
 <script>
   //$(document).on('ready turbolinks:load', function() {
   $( document ).ready(function() {
-    console.log("Course loaded!");
+
     var course_id = "<%= course.id %>";
-    console.log("Course_id: " + course_id);
 
     //get previous slide
     function getPreviousSlide(){
-      console.log("getPreviousSlide");
       var current_slide = $("#get-previous-slide").attr('slide');
-      console.log("course: " + course_id + " slide: " + current_slide);
       setCurrentSlide(course_id, current_slide);
 
       //get previous slide
@@ -46,9 +43,7 @@
     }
 
     function getNextSlide(){
-      console.log("getNextSlide");
       var current_slide = $("#get-next-slide").attr('slide');
-      console.log("course: " + course_id + " slide: " + current_slide);
       setCurrentSlide(course_id, current_slide);
 
       //get next slide
@@ -89,10 +84,5 @@
       getPreviousSlide();
     });
 
-    // Bind the swipeleftHandler callback function to the swipe event on div.box
-    /*
-    $( "body" ).on( "swiperight", getPreviousSlide );
-    $( "body" ).on( "swipeleft", getNextSlide );
-    */
   });
 </script>
