@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Counter1:</strong>
+  <%= @survey.counter1 %>
+</p>
+
+<p>
+  <strong>Counter2:</strong>
+  <%= @survey.counter2 %>
+</p>
+
+<p>
+  <strong>Question1:</strong>
+  <%= @survey.answer1 %>
+</p>
+
+<p>
+  <strong>Question2:</strong>
+  <%= @survey.answer2 %>
+</p>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>

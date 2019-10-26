@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_125654) do
+ActiveRecord::Schema.define(version: 2019_10_26_053719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -90,6 +90,15 @@ ActiveRecord::Schema.define(version: 2019_05_07_125654) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.integer "counter1", default: 0
+    t.integer "counter2", default: 0
+    t.string "answer1", default: ""
+    t.string "answer2", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

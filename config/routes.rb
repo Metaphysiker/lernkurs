@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :surveys
   resources :applications
   resources :courses
   resources :accounts
@@ -39,4 +40,7 @@ Rails.application.routes.draw do
 
    #applications
    get '/applications_to_csv', to: 'applications#applications_to_csv', as: 'applications_to_csv'
+
+   #survey
+   get '/interactive_survey/:id', to: 'static_pages#interactive_survey', as: 'interactive_survey'
 end
