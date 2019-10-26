@@ -1,0 +1,5 @@
+content = $("<%= escape_javascript( render 'surveys/survey_result', symbol: @symbol ) %>")
+
+  $( "#survey" ).replaceWith(function(){
+    return $(content).hide().fadeIn("slow");
+  });

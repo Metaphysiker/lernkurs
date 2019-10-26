@@ -61,6 +61,20 @@ class SurveysController < ApplicationController
     end
   end
 
+  def interactive_survey
+    @survey = Survey.find(params[:id])
+    response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
+    render
+  end
+
+  def update_counter_interactive_survey
+    @survey = Survey.find(params[:id])
+    response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey

@@ -108,10 +108,5 @@ class StaticPagesController < ApplicationController
     render
   end
 
-  def interactive_survey
-    @survey = Survey.find(params[:id])
-    response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
-    render
-  end
 
 end

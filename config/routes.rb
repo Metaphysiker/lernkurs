@@ -42,5 +42,6 @@ Rails.application.routes.draw do
    get '/applications_to_csv', to: 'applications#applications_to_csv', as: 'applications_to_csv'
 
    #survey
-   get '/interactive_survey/:id', to: 'static_pages#interactive_survey', as: 'interactive_survey'
+   get '/interactive_survey/:id', to: 'surveys#interactive_survey', as: 'interactive_survey'
+   get '/update_counter_interactive_survey/:id/:counter', to: 'surveys#update_counter_interactive_survey', as: 'update_counter_interactive_survey'
 end
