@@ -69,6 +69,13 @@ class SurveysController < ApplicationController
 
   def update_counter_interactive_survey
     @survey = Survey.find(params[:id])
+    if params[:counter].to_i == 1
+      counter = @survey.counter1 + 1
+      @survey.update(counter1: counter)
+    elsif params[:counter].to_i == 2
+      counter = @survey.counter2 + 1
+      @survey.update(counter2: counter)
+    end
     response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
     respond_to do |format|
       format.js

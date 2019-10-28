@@ -2,10 +2,10 @@
   <div id="survey">
     <div class="row">
         <div class="col-6">
-          <%= link_to @survey.answer1, update_counter_interactive_survey_path(@survey, 1), class: "add btn btn-primary btn-lg btn-block", remote: true %>
+          <%= link_to @survey.answer1, update_counter_interactive_survey_path(@survey, 1), class: "add btn btn-lg btn-block btn-info", remote: true %>
         </div>
         <div class="col-6">
-          <%= link_to @survey.answer2, update_counter_interactive_survey_path(@survey, 2), class: "add btn btn-primary btn-lg btn-block", remote: true %>
+          <%= link_to @survey.answer2, update_counter_interactive_survey_path(@survey, 2), class: "add btn btn-lg btn-block btn-warning", remote: true %>
         </div>
     </div>
   </div>
