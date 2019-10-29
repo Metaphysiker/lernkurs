@@ -2,10 +2,10 @@
 <% percentage = ((survey.counter1.to_f / max) * 100).to_i %>
 <% percentage1 = 100 - percentage %>
 <p>
-  <b><%= percentage %>% wählten:</b> <%= survey.answer1 %>
+  <b><%= survey.counter1 %> (<%= percentage %>%) Stimmen für:</b> <%= survey.answer1 %>
 </p>
 <p>
-  <b><%= percentage1 %>% wählten:</b> <%= survey.answer2 %>
+  <b><%= survey.counter2 %> (<%= percentage1 %>%) Stimmen für:</b> <%= survey.answer2 %>
 </p>
 <div class="progress" style="height: 30px;">
   <div class="progress-bar bg-info" role="progressbar" style="width: <%= percentage %>%" aria-valuenow="<%= percentage %>" aria-valuemin="0" aria-valuemax="100"><b><%= percentage %>%</b></div>
