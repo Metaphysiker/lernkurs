@@ -11,7 +11,7 @@
   <hr />
   Accounts heute erstellt mit mehr als 0 Punkten: <%= Account.with_points.where(created_at: Date.today.all_day).count %>
   <hr />
-  <% Account.with_points.each do |account| %>
+  <% Account.with_points.last(10).each do |account| %>
     <div class="card m-3">
       <div class="card-body">
         <h5 class="card-title"><%=account.id%>: <%= account.firstname %></h5>
