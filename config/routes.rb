@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/showcase', to: 'static_pages#showcase', as: 'showcase'
   get '/application_form/:course', to: 'static_pages#application_form', as: 'application_form'
 
+  get '/logic', to: 'static_pages#logic', as: 'logic'
+
   #RENDER
   post '/render_slide', to: 'courses#render_slide', as: 'render_slide'
   get '/slide/:id/:current_slide', to: 'courses#slide', as: 'slide'
