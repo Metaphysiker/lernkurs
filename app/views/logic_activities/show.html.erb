@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @logic_activity.exercise %>
+</p>
+
+<p>
+  <strong>Correctness:</strong>
+  <%= @logic_activity.correctness %>
+</p>
+
+<%= link_to 'Edit', edit_logic_activity_path(@logic_activity) %> |
+<%= link_to 'Back', logic_activities_path %>

@@ -1,0 +1,2 @@
+class LogicActivity < ApplicationRecord
+end

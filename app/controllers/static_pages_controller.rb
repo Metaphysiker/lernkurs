@@ -103,7 +103,8 @@ class StaticPagesController < ApplicationController
   end
 
   def logic
-
+    response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
+    render
   end
 
   def application_form

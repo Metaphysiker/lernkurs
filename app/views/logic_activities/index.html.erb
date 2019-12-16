@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Logic Activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise</th>
+      <th>Correctness</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logic_activities.each do |logic_activity| %>
+      <tr>
+        <td><%= logic_activity.exercise %></td>
+        <td><%= logic_activity.correctness %></td>
+        <td><%= link_to 'Show', logic_activity %></td>
+        <td><%= link_to 'Edit', edit_logic_activity_path(logic_activity) %></td>
+        <td><%= link_to 'Destroy', logic_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Logic Activity', new_logic_activity_path %>

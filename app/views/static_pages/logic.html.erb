@@ -547,7 +547,7 @@
       check_answer("exercise1_3", "q", "exercise1_score");
 
       if (exercise1_score === 3) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -561,7 +561,7 @@
       check_answer("exercise2_4", "f", "exercise2_score");
 
       if (exercise2_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -575,7 +575,7 @@
       check_answer("exercise3_4", "w", "exercise3_score");
 
       if (exercise3_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -589,7 +589,7 @@
       check_answer("exercise4_4", "f", "exercise4_score");
 
       if (exercise4_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -603,7 +603,7 @@
       check_answer("exercise5_4", "w", "exercise5_score");
 
       if (exercise5_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -630,7 +630,7 @@
       check_answer("exercise7_3", "-p", "exercise7_score");
 
       if (exercise7_score === 3) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -644,7 +644,7 @@
       check_answer("exercise8_4", "w", "exercise8_score");
 
       if (exercise8_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -658,7 +658,7 @@
       check_answer("exercise9_4", "w", "exercise9_score");
 
       if (exercise9_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -672,7 +672,7 @@
       check_answer("exercise10_4", "f", "exercise10_score");
 
       if (exercise10_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -686,7 +686,7 @@
       check_answer("exercise11_4", "w", "exercise11_score");
 
       if (exercise11_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -700,7 +700,7 @@
       check_answer("exercise12_4", "w", "exercise12_score");
 
       if (exercise12_score === 4) {
-        alert("Nice!");
+        //alert("Nice!");
       }
 
     });
@@ -727,10 +727,23 @@
 
         window[score]++;
 
+        addLogicActivity(exercise_name, "right");
+
       } else {
         input_field.removeClass("is-valid");
         input_field.addClass("is-invalid");
+
+        addLogicActivity(exercise_name, "wrong");
       }
+    }
+
+    function addLogicActivity(exercise, correctness){
+      $.ajax({
+        url: "/add_logic_activity",
+        method: 'POST',
+        data: { exercise: exercise, correctness: correctness},
+        headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+      });
     }
 
   });

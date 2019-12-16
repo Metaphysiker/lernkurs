@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :surveys
+
   resources :applications
   resources :courses
   resources :accounts
+  resources :logic_activities
+  resources :surveys
 
   root 'static_pages#welcome'
 
@@ -46,4 +48,7 @@ Rails.application.routes.draw do
    #survey
    get '/interactive_survey/:id', to: 'surveys#interactive_survey', as: 'interactive_survey'
    get '/update_counter_interactive_survey/:id/:counter', to: 'surveys#update_counter_interactive_survey', as: 'update_counter_interactive_survey'
+
+   #logic
+   post '/add_logic_activity', to: "logic_activities#add_logic_activity", as: 'add_logic_activity'
 end
