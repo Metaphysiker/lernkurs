@@ -1,5 +1,10 @@
 <div class="container">
   <h3 class="text-center">Übungen</h3>
+  <p class="text-center">
+    <strong>
+      Finde heraus, ob die folgenden Schlussfolgerungen gültig sind!
+    </strong>
+  </p>
   <div class="jumbotron bg-light">
 
   <h4>Formalisiere das folgende Argument!</h4>
@@ -23,18 +28,18 @@
     <hr class="my-4">
     <p>
       <div class="input-group mb-3">
-      1. <input type="text" name="exercise1_1" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ..." aria-label="..." aria-describedby="basic-addon2">
+      1. <input type="text" name="exercise1_1" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
       </div>
     </p>
     <p>
       <div class="input-group mb-3">
-      2. <input type="text" name="exercise1_2" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
+      2. <input type="text" name="exercise1_2" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ..." >
       </div>
     </p>
     <hr />
     <p>
       <div class="input-group mb-3">
-      3. <input type="text" name="exercise1_3" class="form-control" placeholder="" aria-label="..." aria-describedby="basic-addon2">
+      3. <input type="text" name="exercise1_3" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
       </div>
     </p>
 
@@ -44,7 +49,7 @@
 
     <hr />
 
-    <h4>Erstelle eine Wahrheitswerttabelle für dieses Argument!</h4>
+    <h4>Erstelle eine Wahrheitswerttabelle!</h4>
     <hr />
     <p>
       1. p V q
@@ -91,8 +96,442 @@
     <p>
       <button type="button" id="exercise2-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
     </p>
+
+
+    <hr />
+    <p>
+      2. -p
+    </p>
+    <table class="table table-striped table-bordered text-center">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 50%">p</th>
+          <th scope="col" style="width: 50%">-p</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>W</td>
+          <td>
+            <input type="text" name="exercise3_1" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>W</td>
+          <td>
+            <input type="text" name="exercise3_2" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>
+            <input type="text" name="exercise3_3" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>
+            <input type="text" name="exercise3_4" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <button type="button" id="exercise3-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+    </p>
+
+    <hr />
+    <p>
+      3. (p V q) & -p
+    </p>
+    <table class="table table-striped table-bordered text-center">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 25%">p V q</th>
+          <th scope="col" style="width: 25%">-p</th>
+          <th scope="col" style="width: 50%">(p V q) & -p</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>W</td>
+          <td>F</td>
+          <td>
+            <input type="text" name="exercise4_1" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>W</td>
+          <td>F</td>
+          <td>
+            <input type="text" name="exercise4_2" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>W</td>
+          <td>W</td>
+          <td>
+            <input type="text" name="exercise4_3" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>W</td>
+          <td>
+            <input type="text" name="exercise4_4" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <button type="button" id="exercise4-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+    </p>
+
+    <hr />
+    <p>
+      4. ((p V q) & -p) -> q
+    </p>
+    <table class="table table-striped table-bordered text-center">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 30%">(p V q) & -p</th>
+          <th scope="col" style="width: 20%">q</th>
+          <th scope="col" style="width: 50%">((p V q) & -p) -> q</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>F</td>
+          <td>W</td>
+          <td>
+            <input type="text" name="exercise5_1" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>F</td>
+          <td>
+            <input type="text" name="exercise5_2" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>W</td>
+          <td>W</td>
+          <td>
+            <input type="text" name="exercise5_3" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>F</td>
+          <td>
+            <input type="text" name="exercise5_4" class="form-control" placeholder="W, F">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <button type="button" id="exercise5-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+    </p>
+
+    <hr />
+
+    <h4>Ist die Schlussfolgerung gültig?</h4>
+
+    <p>
+      <br />
+      <button type="button" value="yes" class="btn btn-primary btn-lg btn-block my-2 exercise6-check-button">Ja</button>
+      <br />
+      <button type="button" value="no" class="btn btn-primary btn-lg btn-block my-2 exercise6-check-button">Nein</button>
+    </p>
 </div>
+
+
+<div class="jumbotron bg-light my-5">
+
+<h4>Formalisiere das folgende Argument!</h4>
+<hr class="my-4">
+<p>
+1. Wenn Gott existiert, dann gibt es kein Leid auf der Erde.
+</p>
+<p>
+2. Es gibt Leid auf der Erde.
+</p>
+<p>
+  3. <b>Folglich existiert Gott nicht.</b>
+</p>
+
   <hr class="my-4">
+  <p>
+    p: Gott existiert
+    <br />
+    q: Es gibt Leid auf der Erde
+  </p>
+  <hr class="my-4">
+  <p>
+    <div class="input-group mb-3">
+    1. <input type="text" name="exercise7_1" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+    </div>
+  </p>
+  <p>
+    <div class="input-group mb-3">
+    2. <input type="text" name="exercise7_2" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ..." >
+    </div>
+  </p>
+  <hr />
+  <p>
+    <div class="input-group mb-3">
+    3. <input type="text" name="exercise7_3" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+    </div>
+  </p>
+
+  <p>
+    <button type="button" id="exercise7-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  </p>
+
+  <hr />
+
+  <h4>Erstelle eine Wahrheitswerttabelle!</h4>
+  <hr />
+  <p>
+    1. -q
+  </p>
+  <table class="table table-striped table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 50%">q</th>
+        <th scope="col" style="width: 50%">-q</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise8_1" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise8_2" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise8_3" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise8_4" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <button type="button" id="exercise8-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  </p>
+
+
+  <hr />
+  <p>
+    2. p -> -q
+  </p>
+  <table class="table table-striped table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 25%">p</th>
+        <th scope="col" style="width: 25%">-q</th>
+        <th scope="col" style="width: 50%">p -> -q</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>W</td>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise9_1" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise9_2" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise9_3" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise9_4" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <button type="button" id="exercise9-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  </p>
+
+  <hr />
+  <p>
+    3. (p-> -q) & q
+  </p>
+  <table class="table table-striped table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 25%">p-> -q</th>
+        <th scope="col" style="width: 25%">q</th>
+        <th scope="col" style="width: 50%">(p-> -q) & q</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>F</td>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise10_1" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise10_2" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise10_3" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise10_4" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <button type="button" id="exercise10-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  </p>
+
+  <hr />
+  <p>
+    4. -p
+  </p>
+  <table class="table table-striped table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 50%">p</th>
+        <th scope="col" style="width: 50%">-p</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise11_1" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise11_2" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise11_3" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise11_4" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <button type="button" id="exercise11-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  </p>
+
+
+  <hr />
+  <p>
+    5. ((p-> -q) & q) -> -p
+  </p>
+  <table class="table table-striped table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 30%">(p-> -q) & q</th>
+        <th scope="col" style="width: 20%">-p</th>
+        <th scope="col" style="width: 50%">((p-> -q) & q) -> -p</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise12_1" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>F</td>
+        <td>
+          <input type="text" name="exercise12_2" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>W</td>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise12_3" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>W</td>
+        <td>
+          <input type="text" name="exercise12_4" class="form-control" placeholder="W, F">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <button type="button" id="exercise12-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  </p>
+
+  <hr />
+
+  <h4>Ist die Schlussfolgerung gültig?</h4>
+
+  <p>
+    <br />
+    <button type="button" value="yes" class="btn btn-primary btn-lg btn-block my-2 exercise13-check-button">Ja</button>
+    <br />
+    <button type="button" value="no" class="btn btn-primary btn-lg btn-block my-2 exercise13-check-button">Nein</button>
+  </p>
+</div>
+
+
 
 </div>
 
@@ -100,7 +539,7 @@
   $( document ).ready(function() {
     console.log("logic loaded!");
 
-    //Exercise 1_1
+    //Exercise 1
     $( "#exercise1-check-button" ).click(function() {
       exercise1_score = 0;
       check_answer("exercise1_1", "pvq", "exercise1_score");
@@ -113,7 +552,7 @@
 
     });
 
-    //Exercise 2_1
+    //Exercise 2
     $( "#exercise2-check-button" ).click(function() {
       exercise2_score = 0;
       check_answer("exercise2_1", "w", "exercise2_score");
@@ -125,6 +564,156 @@
         alert("Nice!");
       }
 
+    });
+
+    //Exercise 3
+    $( "#exercise3-check-button" ).click(function() {
+      exercise3_score = 0;
+      check_answer("exercise3_1", "f", "exercise3_score");
+      check_answer("exercise3_2", "f", "exercise3_score");
+      check_answer("exercise3_3", "w", "exercise3_score");
+      check_answer("exercise3_4", "w", "exercise3_score");
+
+      if (exercise3_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 4
+    $( "#exercise4-check-button" ).click(function() {
+      exercise4_score = 0;
+      check_answer("exercise4_1", "f", "exercise4_score");
+      check_answer("exercise4_2", "f", "exercise4_score");
+      check_answer("exercise4_3", "w", "exercise4_score");
+      check_answer("exercise4_4", "f", "exercise4_score");
+
+      if (exercise4_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 5
+    $( "#exercise5-check-button" ).click(function() {
+      exercise5_score = 0;
+      check_answer("exercise5_1", "w", "exercise5_score");
+      check_answer("exercise5_2", "w", "exercise5_score");
+      check_answer("exercise5_3", "w", "exercise5_score");
+      check_answer("exercise5_4", "w", "exercise5_score");
+
+      if (exercise5_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 6
+
+    $( ".exercise6-check-button" ).click(function() {
+
+      if($(this).attr("value") === "yes"){
+        alert("Nice!");
+      } else {
+        alert("Wrong!");
+      }
+    });
+
+
+    // --------
+
+    //Exercise 7
+    $( "#exercise7-check-button" ).click(function() {
+      exercise7_score = 0;
+      check_answer("exercise7_1", "p->-q", "exercise7_score");
+      check_answer("exercise7_2", "q", "exercise7_score");
+      check_answer("exercise7_3", "-p", "exercise7_score");
+
+      if (exercise7_score === 3) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 8
+    $( "#exercise8-check-button" ).click(function() {
+      exercise8_score = 0;
+      check_answer("exercise8_1", "f", "exercise8_score");
+      check_answer("exercise8_2", "w", "exercise8_score");
+      check_answer("exercise8_3", "f", "exercise8_score");
+      check_answer("exercise8_4", "w", "exercise8_score");
+
+      if (exercise8_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 9
+    $( "#exercise9-check-button" ).click(function() {
+      exercise9_score = 0;
+      check_answer("exercise9_1", "f", "exercise9_score");
+      check_answer("exercise9_2", "w", "exercise9_score");
+      check_answer("exercise9_3", "w", "exercise9_score");
+      check_answer("exercise9_4", "w", "exercise9_score");
+
+      if (exercise9_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 10
+    $( "#exercise10-check-button" ).click(function() {
+      exercise10_score = 0;
+      check_answer("exercise10_1", "f", "exercise10_score");
+      check_answer("exercise10_2", "f", "exercise10_score");
+      check_answer("exercise10_3", "w", "exercise10_score");
+      check_answer("exercise10_4", "f", "exercise10_score");
+
+      if (exercise10_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 11
+    $( "#exercise11-check-button" ).click(function() {
+      exercise11_score = 0;
+      check_answer("exercise11_1", "f", "exercise11_score");
+      check_answer("exercise11_2", "f", "exercise11_score");
+      check_answer("exercise11_3", "w", "exercise11_score");
+      check_answer("exercise11_4", "w", "exercise11_score");
+
+      if (exercise11_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 12
+    $( "#exercise12-check-button" ).click(function() {
+      exercise12_score = 0;
+      check_answer("exercise12_1", "w", "exercise12_score");
+      check_answer("exercise12_2", "w", "exercise12_score");
+      check_answer("exercise12_3", "w", "exercise12_score");
+      check_answer("exercise12_4", "w", "exercise12_score");
+
+      if (exercise12_score === 4) {
+        alert("Nice!");
+      }
+
+    });
+
+    //Exercise 13
+
+    $( ".exercise13-check-button" ).click(function() {
+
+      if($(this).attr("value") === "yes"){
+        alert("Nice!");
+      } else {
+        alert("Wrong!");
+      }
     });
 
     function check_answer(exercise_name, solution, score) {
