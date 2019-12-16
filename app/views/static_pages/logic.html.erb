@@ -613,9 +613,9 @@
     $( ".exercise6-check-button" ).click(function() {
 
       if($(this).attr("value") === "yes"){
-        alert("Nice!");
+        alert("Richtig! Die Schlussfolgerung ist gültig.");
       } else {
-        alert("Wrong!");
+        alert("Falsch! Die Schlussfolgerung ist gültig.");
       }
     });
 
@@ -710,9 +710,9 @@
     $( ".exercise13-check-button" ).click(function() {
 
       if($(this).attr("value") === "yes"){
-        alert("Nice!");
+        alert("Richtig! Die Schlussfolgerung ist gültig.");
       } else {
-        alert("Wrong!");
+        alert("Falsch! Die Schlussfolgerung ist gültig.");
       }
     });
 
@@ -727,14 +727,6 @@
 
         window[score]++;
 
-        $(".modal-body").empty().append(
-          `
-          <p>
-              Du hast  Punkte erhalten!
-            </p>
-          `
-        );
-        //$('#katimperativ').modal('show')
       } else {
         input_field.removeClass("is-valid");
         input_field.addClass("is-invalid");
