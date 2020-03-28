@@ -531,6 +531,129 @@
   </p>
 </div>
 
+<div class="jumbotron bg-light">
+
+<h4>Formalisiere das folgende Argument!</h4>
+<hr class="my-4">
+<p>
+1. Der Tod nimmt uns alle Sinne.
+</p>
+<p>
+2. Wenn der Tod uns alle Sinne nimmt, dann erleben wir unseren eigenen Tod nicht.
+</p>
+<p>
+3. Wenn wir unseren eigenen Tod nicht erleben, dann müssen wir keine Angst vor dem Tod haben.
+</p>
+<p>
+  4. <b>Folglich müssen wir keine Angst vor dem Tod haben.</b>
+</p>
+
+  <hr class="my-4">
+  <p>
+    p: Der Tod nimmt uns alle Sinne
+    <br />
+    q: Wir erleben unseren eigenen Tod
+    <br />
+    r: Wir müssen Angst vor dem Tod haben
+  </p>
+  <hr class="my-4">
+  <p>
+    <div class="input-group mb-3">
+    1. <input type="text" name="exercise14_1" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+    </div>
+  </p>
+  <p>
+    <div class="input-group mb-3">
+    2. <input type="text" name="exercise14_2" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ..." >
+    </div>
+  </p>
+  <p>
+    <div class="input-group mb-3">
+    3. <input type="text" name="exercise14_3" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+    </div>
+  </p>
+      <hr />
+  <p>
+    <div class="input-group mb-3">
+    4. <input type="text" name="exercise14_4" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+    </div>
+  </p>
+
+  <p>
+    <button type="button" id="exercise14-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+  </p>
+
+  </div>
+  <p class="p-2">
+
+  </p>
+
+  <div class="jumbotron bg-light">
+
+  <h4>Formalisiere das folgende Argument!</h4>
+  <p>
+    <strong>Hinweis: </strong> Bei dieser Übung muss an einer Stelle eine Klammer <strong>(...)</strong> gesetzt werden.
+  </p>
+  <hr class="my-4">
+  <p>
+  1. Menschliche Handlungen sind durch äussere Ursachen vorherbestimmt oder sie sind zufällige Ereignisse.
+  </p>
+  <p>
+  2. Es ist nicht der Fall, dass menschliche Handlungen durch äussere Ursachen vorherbestimmt sind und sie zufällige Ereignisse sind.
+  </p>
+  <p>
+  3. Wenn menschliche Handlungen durch äussere Ursachen vorherbestimmt sind, dann gibt es keinen freien Willen.
+  </p>
+  <p>
+  4. Wenn menschliche Handlungen zufällige Ereignisse sind, dann gibt es keinen freien Willen.
+  </p>
+  <p>
+    5. <b>Folglich gibt es keinen freien Willen.</b>
+  </p>
+
+    <hr class="my-4">
+    <p>
+      p: Menschliche Handlungen sind durch äussere Ursachen vorherbestimmt
+      <br />
+      q: Menschliche Handlungen sind zufällige Ereignisse
+      <br />
+      r: Es gbt einen freien Willen
+    </p>
+    <hr class="my-4">
+    <p>
+      <div class="input-group mb-3">
+      1. <input type="text" name="exercise15_1" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+      </div>
+    </p>
+    <p>
+      <div class="input-group mb-3">
+      2. <input type="text" name="exercise15_2" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ..." >
+      </div>
+    </p>
+    <p>
+      <div class="input-group mb-3">
+      3. <input type="text" name="exercise15_3" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+      </div>
+    </p>
+    <p>
+      <div class="input-group mb-3">
+      4. <input type="text" name="exercise15_4" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+      </div>
+    </p>
+    <hr />
+    <p>
+      <div class="input-group mb-3">
+      5. <input type="text" name="exercise15_5" class="form-control" placeholder="p, q,-p, -q, p & q, p V q, p -> q ...">
+      </div>
+    </p>
+
+    <p>
+      <button type="button" id="exercise15-check-button" class="btn btn-info btn-lg my-3">Antwort prüfen!</button>
+    </p>
+
+    <hr />
+    </div>
+
 
 
 </div>
@@ -714,6 +837,35 @@
       } else {
         alert("Falsch! Die Schlussfolgerung ist gültig.");
       }
+    });
+
+    //Exercise 14
+    $( "#exercise14-check-button" ).click(function() {
+      exercise1_score = 0;
+      check_answer("exercise14_1", "p", "exercise14_score");
+      check_answer("exercise14_2", "p->-q", "exercise14_score");
+      check_answer("exercise14_3", "-q->-r", "exercise14_score");
+      check_answer("exercise14_4", "-r", "exercise14_score");
+
+      if (exercise1_score === 4) {
+        //alert("Nice!");
+      }
+
+    });
+
+    //Exercise 15
+    $( "#exercise15-check-button" ).click(function() {
+      exercise1_score = 0;
+      check_answer("exercise15_1", "pvq", "exercise15_score");
+      check_answer("exercise15_2", "-(p&q)", "exercise15_score");
+      check_answer("exercise15_3", "p->-r", "exercise15_score");
+      check_answer("exercise15_4", "q->-r", "exercise15_score");
+      check_answer("exercise15_5", "-r", "exercise15_score");
+
+      if (exercise1_score === 5) {
+        //alert("Nice!");
+      }
+
     });
 
     function check_answer(exercise_name, solution, score) {
