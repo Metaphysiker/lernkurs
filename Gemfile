@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem "rack", ">= 2.0.8"
 
+gem 'devise'
 #gem 'compass-rails'
 gem "font-awesome-rails"
 #gem 'bootstrap', '~> 4.2.1'

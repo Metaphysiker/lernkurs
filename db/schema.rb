@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_140820) do
+ActiveRecord::Schema.define(version: 2020_04_27_220954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -99,6 +99,13 @@ ActiveRecord::Schema.define(version: 2019_12_16_140820) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "newsletters", force: :cascade do |t|
+    t.string "email", default: ""
+    t.string "purpose", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.integer "counter1", default: 0
     t.integer "counter2", default: 0
@@ -106,6 +113,19 @@ ActiveRecord::Schema.define(version: 2019_12_16_140820) do
     t.string "answer2", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "role", default: ""
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

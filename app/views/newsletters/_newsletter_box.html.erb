@@ -1,0 +1,16 @@
+<div id="newsletter_box" class="jumbotron p-4 p-md-5 m-1 text-center rounded border base-color">
+  <div class="px-0">
+    <p class="lead">
+      Werde benachrichtigt, wenn der neue Beitrag erscheint:
+    </p>
+    <p>
+      <%= render "newsletters/form_for_newsletter_box", newsletter: Newsletter.new %>
+    </p>
+    <p class="small">
+      Die e-Mail-Adresse wird gelöscht, sobald die Benachrichtigung raus ist und wird nicht weiterverwendet.
+    </p>
+    <p class="small">
+      <strong></strong>Sandro Räss (sandro.raess@philosophie.ch).
+    </p>
+  </div>
+</div>

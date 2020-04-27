@@ -96,4 +96,6 @@ Rails.application.configure do
 
   #Idea to fix unprocessable_entity error
   #config.force_ssl = true
+
+  config.action_mailer.default_url_options = { host: 'lernkurs.philosophie.ch'}
 end
