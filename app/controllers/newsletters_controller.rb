@@ -1,6 +1,10 @@
 class NewslettersController < ApplicationController
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!, except: [:new, :add_newsletter_to_list, :newsletter_box]
+  before_action :is_user_allowed?, except: [:new, :add_newsletter_to_list, :newsletter_box]
+
+  include ApplicationHelper
   # GET /newsletters
   # GET /newsletters.json
   def index
@@ -62,6 +66,7 @@ class NewslettersController < ApplicationController
   end
 
   def newsletter_box
+    @purpose = params[:purpose].to_s
     response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
     render
   end
@@ -69,14 +74,14 @@ class NewslettersController < ApplicationController
   def add_newsletter_to_list
   @newsletter = Newsletter.new(newsletter_params)
 
-  respond_to do |format|
-    if @newsletter.save
-      format.js
-    else
-      format.js
+    respond_to do |format|
+      if @newsletter.save
+        format.js
+      else
+        format.js
+      end
     end
   end
-end
 
   private
     # Use callbacks to share common setup or constraints between actions.

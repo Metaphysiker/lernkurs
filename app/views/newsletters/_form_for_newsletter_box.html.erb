@@ -1,14 +1,21 @@
 <% newsletter = newsletter || @newsletter %>
+<% purpose = purpose || "" %>
 <%= simple_form_for(newsletter, url: add_newsletter_to_list_path, method: :post, remote: true) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :email, label: false, placeholder: "e-Mail" %>
-    <%= f.hidden_field :purpose, value: "zoopolis" %>
+    <div class="col-12 col-sm-12 offset-md-1 col-md-10  offset-lg-2 col-lg-8">
+      <%= f.input :email, label: false, placeholder: "e-Mail", input_html: { class: "form-control-lg"} %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "e-Mail eintragen", class: "btn btn-dark" %>
+    </div>
+
+    <%= f.hidden_field :purpose, value: purpose %>
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "e-Mail eintragen", class: "btn btn-dark" %>
-  </div>
+
 <% end %>
