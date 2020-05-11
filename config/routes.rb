@@ -53,7 +53,7 @@ Rails.application.routes.draw do
    post '/add_logic_activity', to: "logic_activities#add_logic_activity", as: 'add_logic_activity'
 
    #newsletters
-   get '/newsletters/newsletter_box/:purpose', to: 'newsletters#newsletter_box', as: 'newsletter_box'
+   get '/newsletters/newsletter_box/:purpose/:text/:footer', to: 'newsletters#newsletter_box', as: 'newsletter_box'
    post '/newsletters/add_newsletter_to_list', to: "newsletters#add_newsletter_to_list", as: "add_newsletter_to_list"
    post '/newsletters/remove_newsletter_from_list/', to: "newsletters#remove_newsletter_from_list", as: "remove_newsletter_from_list"
    get '/newsletters/good_bye', to: "newsletters#good_bye", as: "good_bye"

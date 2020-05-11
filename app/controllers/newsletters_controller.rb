@@ -67,6 +67,9 @@ class NewslettersController < ApplicationController
 
   def newsletter_box
     @purpose = params[:purpose].to_s
+    @text = params[:text].to_s
+    @footer = params[:footer].to_s
+
     response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
     render
   end
@@ -92,7 +95,7 @@ class NewslettersController < ApplicationController
 
     @newsletter.delete unless Newsletter.nil?
 
-    redirect_to root_path, notice: 'e-Mail-Adresse wurde gelöscht.'
+    redirect_to good_bye_path, notice: 'e-Mail-Adresse wurde gelöscht.'
   end
 
   private
