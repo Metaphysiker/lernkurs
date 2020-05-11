@@ -1,8 +1,8 @@
 class NewslettersController < ApplicationController
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, except: [:new, :add_newsletter_to_list, :newsletter_box]
-  before_action :is_user_allowed?, except: [:new, :add_newsletter_to_list, :newsletter_box]
+  before_action :authenticate_user!, except: [:new, :add_newsletter_to_list, :newsletter_box, :good_bye]
+  before_action :is_user_allowed?, except: [:new, :add_newsletter_to_list, :newsletter_box, :good_bye]
 
   include ApplicationHelper
   # GET /newsletters
@@ -71,6 +71,10 @@ class NewslettersController < ApplicationController
     render
   end
 
+  def good_bye
+
+  end
+
   def add_newsletter_to_list
   @newsletter = Newsletter.new(newsletter_params)
 
@@ -83,6 +87,14 @@ class NewslettersController < ApplicationController
     end
   end
 
+  def remove_newsletter_from_list
+    @newsletter = Newsletter.where(email: params[:email]).last
+
+    @newsletter.delete unless Newsletter.nil?
+
+    redirect_to root_path, notice: 'e-Mail-Adresse wurde gelöscht.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_newsletter
@@ -92,5 +104,16 @@ class NewslettersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def newsletter_params
       params.require(:newsletter).permit(:email, :purpose)
+    end
+
+    def is_user_allowed?
+      if !current_user.nil?
+        unless is_current_user_admin?
+          #raise "Unauthorized User"
+          sign_out current_user
+          flash[:notice] = "Sie sind nicht authorisiert!"
+          redirect_to new_user_session_path
+        end
+      end
     end
 end
