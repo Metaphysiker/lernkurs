@@ -63,7 +63,3 @@ RSpec.configure do |config|
 
   #config.include Devise::Test::IntegrationHelpers, type: :request
 end
-
-Capybara::Webkit.configure do |config|
-  config.allow_unknown_urls
-end

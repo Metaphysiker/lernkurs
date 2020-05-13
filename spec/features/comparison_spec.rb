@@ -280,6 +280,8 @@ def create_request
 
   fill_in "search_inputs_search_term", :with => firstname + " " + lastname + " xyz"
 
+  #save_screenshot("echolot.png")
+
   expect(page).to_not have_content(firstname)
   expect(page).to_not have_content(lastname)
 
