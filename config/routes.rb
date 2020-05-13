@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :home_offers
   resources :applications
   resources :courses
   resources :accounts
