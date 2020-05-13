@@ -63,7 +63,8 @@ class SurveysController < ApplicationController
 
   def interactive_survey
     @survey = Survey.find(params[:id])
-    response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
+    #response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://www.philosophie.ch/"
+    response.headers["X-FRAME-OPTIONS"] = "ALLOWALL"
     render
   end
 
