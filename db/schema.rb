@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_091925) do
+ActiveRecord::Schema.define(version: 2020_05_13_094248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 2020_05_13_091925) do
     t.integer "max_age"
     t.integer "min_size"
     t.integer "max_size"
+    t.bigint "offerer_id"
+    t.index ["offerer_id"], name: "index_home_offers_on_offerer_id"
   end
 
   create_table "home_requests", force: :cascade do |t|
@@ -173,6 +175,24 @@ ActiveRecord::Schema.define(version: 2020_05_13_091925) do
     t.string "purpose", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "offerers", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "street"
+    t.string "city"
+    t.string "plz"
+    t.string "phone"
+    t.string "email"
+    t.string "year"
+    t.text "experience"
+    t.text "motivation"
+    t.text "plans"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "search_field", default: ""
+    t.boolean "privacy_statement"
   end
 
   create_table "surveys", force: :cascade do |t|

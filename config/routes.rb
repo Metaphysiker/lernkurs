@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :home_offers
   resources :applications
   resources :courses
   resources :accounts
@@ -78,11 +77,18 @@ Rails.application.routes.draw do
    get '/home_offers/compare/:home_offer_id/:home_request_id', to: "home_offers#compare", as: "home_offers_compare"
    get 'home_offers/search_home_offers', to: 'home_offers#search_home_offers', as: 'search_home_offers'
 
+   #offerer
+    get '/offerers/process_to_create_home_offer', to: 'offerers#process_to_create_home_offer', as: "process_to_create_home_offer"
+    post '/add_offerer', to: "offerers#add_offerer", as: 'add_offerer'
 
+    #home_offer
+    post 'home_offers/add_home_offer_to_offerer', to: "home_offers#add_home_offer_to_offerer", as: 'add_home_offer_to_offerer'
 
 
    resources :newsletters
    resources :home_requests
+   resources :home_offers
+   resources :offerers
 
    devise_for :users
 
