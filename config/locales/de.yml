@@ -27,7 +27,110 @@
 #   'true': 'foo'
 #
 # To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+# available at https://guides.rubyonrails.org/i18n.html.
+# ['pig', 'donkey', 'cow', 'sheep', 'chicken', 'horse', 'dog', 'cat']
 
 de:
-  hello: "Hello world"
+  hello: "Hallo Welt!"
+  pig:
+    one: "Schwein"
+    other: "Schweine"
+  donkey:
+    one: "Esel"
+    other: "Esel"
+  cow:
+    one: "Kuh"
+    other: "Kühe"
+  sheep:
+    one: "Schaf"
+    other: "Schafe"
+  chicken:
+    one: "Huhn"
+    other: "Hühner"
+  horse:
+    one: "Pferd"
+    other: "Pferde"
+  dog:
+    one: "Hund"
+    other: "Hunde"
+  cat:
+    one: "Katze"
+    other: "Katzen"
+  goat:
+    one: "Ziege"
+    other: "Ziegen"
+  camelid:
+    one: "Kamelid"
+    other: "Kameliden"
+  rabbit:
+    one: "Kaninchen"
+    other: "Kaninchen"
+  cavy:
+    one: "Meerschweinchen"
+    other: "Meerschweinchen"
+  other: "Anderes"
+  male: "männlich"
+  female: "weiblich"
+  "yes": "Ja"
+  "no": "Nein"
+  "true": "Ja"
+  "false": "Nein"
+  whatever: "egal"
+  healthy: "gesund"
+  dead: "verstorben"
+  without_sponsorship: "Ohne Paten"
+  with_sponsorship: "Mit Paten"
+  aktuell: "AKTUELL"
+  our_animals: "Unsere Tiere"
+  tiervermittlung: "Tiervermittlung"
+  about_stinah: "Über STINAH"
+  support: "Unterstützen!"
+  faq: "FAQ"
+  homepage: "Startseite"
+  contact: "Kontakt"
+  save_the_chicken: "Rettet das Huhn!"
+  save_the_chicken_welcome: "Rettet das Huhn!"
+  save_the_chicken_faq: "FAQ" #"Fragen & Antworten"
+  save_the_chicken_keeping: "Hühnerhaltung"
+  save_the_chicken_act_sustainable: "Nachhaltig Handeln"
+  save_the_chicken_new_home: "Platz gesucht!"
+  save_the_chicken_picture_gallery: "Foto-Galerie"
+  save_the_chicken_donation: "Spenden"
+  save_the_chicken_contact: "Kontakt"
+  testimonial: "Testimonial"
+  testimonials: "Testimonials"
+  interns: "Praktikantinnen und Praktikanten"
+  volunteers: "Freiwillige"
+  workers: "Angestellte"
+  sponsors: "Paten"
+  exception_handler:
+    not_found: "Diese Seite existiert nicht mehr" # -> 404 page
+    unauthorized: "Sie sind nicht authorisiert"
+    internal_server_error:  "Interner Server Fehler"
+  routes:
+    calendar: "kalender"
+    work_calendar: "kalender"
+    newhome: "tiervermittlung"
+    about: "über-stinah"
+    faq: "faq"
+    contact: "kontakt"
+    internship: "praktikum-bei-stinah"
+    testimonials: "erfahrungsberichte"
+    support: "unterstuetzen"
+    team_members: "team"
+    posts: "aktuell"
+    home_requests: "tier-abgabe"
+    home_offers: "platz-angebot"
+    animals: "unsere-tiere"
+    works: "arbeit"
+    sponsorships: "patenschaft"
+    privacy_statement: "datenschutzerklaerung"
+    save_the_chicken: "rettet-das-huhn"
+    testimonials: "testimonials"
+    pages: "seiten"
+  date:
+    formats:
+      default: "%d-%m-%Y"
+  datetime:
+    formats:
+      default: "%d-%m-%Y %m:%s"

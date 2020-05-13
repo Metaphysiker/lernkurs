@@ -120,3 +120,7 @@ $philosophiech-green: #B7FFAF;
   background-position: center;
   @extend .bg-image-properties;
 }
+
+.hidden {
+  display: none;
+}

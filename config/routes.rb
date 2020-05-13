@@ -58,7 +58,31 @@ Rails.application.routes.draw do
    post '/newsletters/remove_newsletter_from_list/', to: "newsletters#remove_newsletter_from_list", as: "remove_newsletter_from_list"
    get '/newsletters/good_bye', to: "newsletters#good_bye", as: "good_bye"
 
+   #home_requests
+   get 'home_requests/successfully_added_home_request', to: 'home_requests#successfully_added_home_request', as: "successfully_added_home_request"
+
+   post '/home_requests/archive/:id', to: "home_requests#archive", as: "archive_home_request"
+
+   get '/home_requests/compare/:home_request_id/:home_offer_id', to: "home_requests#compare", as: "home_requests_compare"
+   get 'home_requests/search_home_requests', to: 'home_requests#search_home_requests', as: 'search_home_requests'
+
+   get "/download_vermittlungsbedingungen", to: 'home_requests#download_vermittlungsbedingungen', as: 'download_vermittlungsbedingungen'
+
+   #home_offer
+   get 'home_offers/successfully_added_home_offer', to: 'home_offers#successfully_added_home_offer', as: "successfully_added_home_offer"
+
+   post '/home_offers/archive/:id', to: "home_offers#archive", as: "archive_home_offer"
+
+   get '/home_offers/matches_for_home_offer', to: "home_offers#matches_for_home_offer", as: "matches_for_home_offer"
+   get '/home_offers/compare/:home_offer_id/:home_request_id', to: "home_offers#compare", as: "home_offers_compare"
+   get 'home_offers/search_home_offers', to: 'home_offers#search_home_offers', as: 'search_home_offers'
+
+
+
+
    resources :newsletters
+   resources :home_requests
+
    devise_for :users
 
 end

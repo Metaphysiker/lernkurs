@@ -1,0 +1,28 @@
+<div class="container bg-white">
+  <div class="jumbotron bg-white text-justify">
+    <div class="text-darker-base-color">
+    <h2 class="text-center">Bestätigung notwendig</h2>
+    <p>
+      <strong>Das Formular wurde eingereicht.</strong>
+    </p>
+    <p>
+      Unsere Vermittlungshilfe erfolgt unentgeltlich, jedoch nicht unverbindlich, weshalb wir Sie bitten, die
+      nachfolgenden Vermittlungsbedingungen durchzulesen und uns ihr Einverständnis mit diesen Bedingungen
+      mitzuteilen. Wir weisen daraufhin, dass wir <strong>erst nach Erhalt dieser Bestätigung</strong> tätig werden können.
+    </p>
+    <p>
+      <%= link_to "Vermittlungsbedingungen", download_vermittlungsbedingungen_path %>
+    </p>
+    <p>
+      Wenn Sie mit den Bedingungen einverstanden sind,
+      schreiben Sie eine Bestätigungsmail an <%= mail_to "info@stinah.ch", "info@stinah.ch", subject: "Bestätigung der Bedingungen", body: "Hiermit bestätige ich die von STINAH gestellten Bedingungen für die Tiervermittlung" %>
+    </p>
+    <p>
+      <strong></strong>
+    </p>
+</div>
+</div>
+    <p class="p-2">
+
+    </p>
+</div>

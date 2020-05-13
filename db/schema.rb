@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_220954) do
+ActiveRecord::Schema.define(version: 2020_05_13_074744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -90,6 +90,54 @@ ActiveRecord::Schema.define(version: 2020_04_27_220954) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "home_requests", force: :cascade do |t|
+    t.boolean "are_you_owner"
+    t.string "owner_firstname"
+    t.string "owner_lastname"
+    t.string "owner_street"
+    t.string "owner_plz"
+    t.string "owner_city"
+    t.string "owner_phone"
+    t.string "owner_email"
+    t.boolean "does_owner_agree_with_mediation"
+    t.boolean "do_you_own_authority_of_mediation"
+    t.string "messenger_firstname"
+    t.string "messenger_lastname"
+    t.string "messenger_street"
+    t.string "messenger_plz"
+    t.string "messenger_city"
+    t.string "messenger_phone"
+    t.string "messenger_mail"
+    t.boolean "killing_of_animal_intended"
+    t.boolean "killing_of_animal_scheduled"
+    t.date "date_of_killing"
+    t.string "species"
+    t.string "race"
+    t.integer "age"
+    t.integer "size"
+    t.string "color"
+    t.string "gender"
+    t.string "castrated"
+    t.string "current_location"
+    t.text "features"
+    t.string "stable_owner_firstname"
+    t.string "stable_owner_lastname"
+    t.string "stable_street"
+    t.string "stable_plz"
+    t.string "stable_city"
+    t.string "stable_phone"
+    t.text "how_was_animal_held"
+    t.text "how_was_animal_used"
+    t.text "reason_of_request"
+    t.text "is_animal_healthy"
+    t.boolean "privacy_statement"
+    t.boolean "archived", default: false
+    t.boolean "rideable"
+    t.text "search_field", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "logic_activities", force: :cascade do |t|
