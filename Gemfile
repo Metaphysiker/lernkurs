@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem "fuzzy-string-match"
+
 gem "rack", ">= 2.0.8"
 
 gem 'devise'
