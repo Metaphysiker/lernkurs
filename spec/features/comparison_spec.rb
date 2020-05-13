@@ -148,6 +148,8 @@ def create_request
   fill_in "home_request_messenger_phone", :with => messenger_phone
   fill_in "home_request_messenger_mail", :with => messenger_email
 
+
+
   find(:css, "#home_request_killing_of_animal_intended").set(true)
   find(:css, "#home_request_killing_of_animal_scheduled").set(true)
 
