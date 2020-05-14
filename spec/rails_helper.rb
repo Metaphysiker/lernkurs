@@ -73,3 +73,7 @@ RSpec.configure do |config|
     #Rails.application.load_seed # loading seeds
   end
 end
+
+Capybara::Webkit.configure do |config|
+  config.allow_unknown_urls
+end
