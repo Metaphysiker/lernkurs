@@ -116,6 +116,12 @@ class HomeRequestsController < ApplicationController
       )
   end
 
+  def public_new_home_request
+    @home_request = HomeRequest.new
+    response.headers["X-FRAME-OPTIONS"] = "ALLOWALL"
+    render
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_home_request

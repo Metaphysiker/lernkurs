@@ -59,6 +59,7 @@ Rails.application.routes.draw do
    get '/newsletters/good_bye', to: "newsletters#good_bye", as: "good_bye"
 
    #home_requests
+   get '/home_requests/public_new_home_request', to: 'home_requests#public_new_home_request', as: "public_new_home_request"
    get '/home_requests/successfully_added_home_request', to: 'home_requests#successfully_added_home_request', as: "successfully_added_home_request"
 
    post '/home_requests/archive/:id', to: "home_requests#archive", as: "archive_home_request"
