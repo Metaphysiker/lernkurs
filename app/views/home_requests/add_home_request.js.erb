@@ -1,0 +1,17 @@
+var record_id = "#public_new_home_request";
+var errors = <%= raw @home_request.errors.full_messages %>;
+
+if (jQuery.isEmptyObject(errors)) {
+  console.log("keine Fehler");
+
+  window.location.href = "https://stinah.naomisalome.com/index.php/bestaetigung-notwendig/";
+
+} else {
+  console.log("Fehler vorhanden");
+
+    content = $("<%= escape_javascript( render 'home_requests/form_for_home_request', home_request: @home_request ) %>");
+    $(record_id).fadeOut("fast", function(){
+      $(record_id).empty().append(content).fadeIn("fast");
+    });
+
+}

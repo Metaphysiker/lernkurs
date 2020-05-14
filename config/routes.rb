@@ -67,6 +67,9 @@ Rails.application.routes.draw do
    get '/home_requests/compare/:home_request_id/:home_offer_id', to: "home_requests#compare", as: "home_requests_compare"
    get '/home_requests/search_home_requests', to: 'home_requests#search_home_requests', as: 'search_home_requests'
 
+   post '/home_requests/add_home_request', to: "home_requests#add_home_request", as: 'add_home_request'
+
+
    get "/download_vermittlungsbedingungen", to: 'home_requests#download_vermittlungsbedingungen', as: 'download_vermittlungsbedingungen'
 
    #home_offer

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_161702) do
+ActiveRecord::Schema.define(version: 2020_05_14_202029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -154,8 +154,8 @@ ActiveRecord::Schema.define(version: 2020_05_13_161702) do
     t.string "messenger_city"
     t.string "messenger_phone"
     t.string "messenger_mail"
-    t.boolean "killing_of_animal_intended"
-    t.boolean "killing_of_animal_scheduled"
+    t.boolean "killing_of_animal_intended", default: false
+    t.boolean "killing_of_animal_scheduled", default: false
     t.date "date_of_killing"
     t.string "species"
     t.string "race"

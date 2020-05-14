@@ -1,6 +1,6 @@
 class HomeRequestsController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen, :public_new_home_request]
-  before_action :is_user_allowed?, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen, :public_new_home_request]
+  before_action :authenticate_user!, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen, :public_new_home_request, :add_home_request]
+  before_action :is_user_allowed?, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen, :public_new_home_request, :add_home_request]
   before_action :set_home_request, only: [:show, :edit, :update, :destroy, :archive]
 
   include ApplicationHelper
@@ -73,6 +73,20 @@ class HomeRequestsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to home_requests_url, notice: 'Home request was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def add_home_request
+    @home_request = HomeRequest.new(home_request_params)
+    #byebug
+    respond_to do |format|
+      if @home_request.save
+        flash[:notice] = "Tierabgabe wurde eingetragen!"
+        format.js #{ redirect_to offerer_path(@offerer) }
+      else
+        format.js
+        #format.html { render :process_to_create_home_offer }
+      end
     end
   end
 
