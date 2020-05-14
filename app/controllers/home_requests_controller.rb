@@ -1,6 +1,6 @@
 class HomeRequestsController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen]
-  before_action :is_user_allowed?, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen]
+  before_action :authenticate_user!, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen, :public_new_home_request]
+  before_action :is_user_allowed?, except: [:new, :create, :successfully_added_home_request, :download_vermittlungsbedingungen, :public_new_home_request]
   before_action :set_home_request, only: [:show, :edit, :update, :destroy, :archive]
 
   include ApplicationHelper

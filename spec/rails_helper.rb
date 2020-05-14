@@ -63,17 +63,3 @@ RSpec.configure do |config|
 
   #config.include Devise::Test::IntegrationHelpers, type: :request
 end
-
-RSpec.configure do |config|
-  config.before(:suite) do
-    #Rails.application.load_seed # loading seeds
-  end
-
-  config.after(:suite) do
-    #Rails.application.load_seed # loading seeds
-  end
-end
-
-Capybara::Webkit.configure do |config|
-  config.allow_unknown_urls
-end
