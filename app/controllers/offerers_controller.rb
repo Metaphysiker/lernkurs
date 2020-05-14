@@ -29,6 +29,7 @@ class OfferersController < ApplicationController
 
   def add_offerer
     @offerer = Offerer.new(offerer_params)
+    #byebug
     respond_to do |format|
       if @offerer.save
         flash[:notice] = "Angaben wurde eingetragen!"
