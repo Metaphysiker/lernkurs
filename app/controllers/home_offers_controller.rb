@@ -126,6 +126,7 @@ class HomeOffersController < ApplicationController
       if @home_offer.save
         flash[:notice] = "Tier wurde eingetragen!"
         format.js #{ redirect_to offerer_path(@home_offer.offerer) }
+        format.html { redirect_to offerer_path(@home_offer.offerer) }
       else
         format.js
       end

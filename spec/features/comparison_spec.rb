@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "comparisons", :type => :feature do
 
   before(:each) do
+    load Rails.root + "db/seeds.rb"
     #requester = User.create!(:username => Faker::Internet.username, :email => Faker::Internet.email, :password => "secret")
     #offerer = User.create!(:username => Faker::Internet.username, :email => Faker::Internet.email, :password => "secret")
     #User.create!(:username => Faker::Internet.username, :email => Faker::Internet.email, :password => "secret")
@@ -72,12 +73,14 @@ RSpec.describe "comparisons", :type => :feature do
     select_option("#home_offer_from_then_on_1i", date_from_then_on.year)
     select_option("#home_offer_species", species)
     fill_in "home_offer_race", :with => race
+
     #find(:css, "#home_offer_age").set(false)
     fill_in "home_offer_min_age", :with => min_age
     fill_in "home_offer_max_age", :with => max_age
     #find(:css, "#home_offer_size").set(false)
     fill_in "home_offer_min_size", :with => min_size
     fill_in "home_offer_max_size", :with => max_size
+
     select_option("#home_offer_gender", gender)
     select_option("#home_offer_castrated", castrated)
     #find(:css, "#home_request_rideable").set(true)
@@ -282,8 +285,8 @@ def create_request
 
   #save_screenshot("echolot.png")
 
-  #expect(page).to_not have_content(firstname)
-  #expect(page).to_not have_content(lastname)
+  expect(page).to_not have_content(firstname)
+  expect(page).to_not have_content(lastname)
 
   logout
 end
@@ -443,7 +446,7 @@ def login_with(user)
 end
 
 def logout
-  visit(root_path)
+  visit(login_path)
   find("a", :text => "Logout").click
   #expect(page).to have_selector(".navbar-brand", :text => user.username)
 end
