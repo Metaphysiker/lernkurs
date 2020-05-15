@@ -3,7 +3,7 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <%= f.hidden_field :offerer_id, value: offerer.id %>
-  <div class="jumbotron">
+  <div class="jumbotron p-0 m-0">
     <div class="form-inputs">
       <h4>Angaben zum gewünschten Tier</h4>
       <hr />
