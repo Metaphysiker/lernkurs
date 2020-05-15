@@ -14,6 +14,11 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'capybara/rspec'
+
+Capybara.server = :puma # Until your setup is working
+Capybara.server = :puma, { Silent: true } # To clean up your test output
+Capybara.default_driver = :selenium
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

@@ -41,7 +41,7 @@
     <hr />
     <%= f.input :stable, collection: Animal.stables.map {|p| [p, p]}, required: true %>
 
-    <div id="<%= "offerer_home_offers_attributes_#{f.index}" %>_stable_alt_field" class="<%= 'hidden' if home_offer.stable != 'Anderes' %>">
+    <div id="<%= "offerer_home_offers_attributes_#{f.index}" %>_stable_alt_field" class="" style="<%= 'display: none;' if home_offer.stable != 'Anderes' %>">
       <%= f.input :stable_alt %>
     </div>
     <%= f.input :from_then_on, required: true %>
