@@ -25,6 +25,8 @@ class OfferersController < ApplicationController
 
   def process_to_create_home_offer
     @offerer = Offerer.new
+    response.headers["X-FRAME-OPTIONS"] = "ALLOWALL"
+    render
   end
 
   def add_offerer
