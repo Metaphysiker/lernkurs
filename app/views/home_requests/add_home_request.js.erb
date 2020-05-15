@@ -9,7 +9,7 @@ if (jQuery.isEmptyObject(errors)) {
 } else {
   console.log("Fehler vorhanden");
 
-  $(window).scrollTop( $(record_id).offset().top );
+  $(record_id)[0].scrollIntoView();
 
     content = $("<%= escape_javascript( render 'home_requests/form_for_home_request', home_request: @home_request ) %>");
     $(record_id).fadeOut("fast", function(){
