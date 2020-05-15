@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container p-0 m-0">
   <%= flash_messages %>
 </div>
-<div class="jumbotron bg-white text-justify text-darker-base-color">
+<div class="jumbotron bg-white text-justify text-darker-base-color p-0 m-0">
   <h2 class="text-center">Ich möchte folgende Tiere aufnehmen</h2>
   <p>
     Mit dem Formular unten können Sie angeben, welche Tiere Sie aufnehmen möchten.
@@ -10,7 +10,7 @@
     <strong>Sie können mehrere Tiere eintragen!</strong>
   </p>
 
-  <div class="jumbotron">
+  <div class="jumbotron p-0 m-0">
     <%= render 'home_offers/form_for_offerer', home_offer: HomeOffer.new, offerer: offerer %>
   </div>
 
