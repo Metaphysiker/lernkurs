@@ -4,7 +4,7 @@ var errors = <%= raw @home_request.errors.full_messages %>;
 if (jQuery.isEmptyObject(errors)) {
   console.log("keine Fehler");
 
-  window.location.href = "https://stinah.naomisalome.com/index.php/bestaetigung-notwendig/";
+  window.top.location.href = "https://stinah.naomisalome.com/index.php/bestaetigung-notwendig/";
 
 } else {
   console.log("Fehler vorhanden");
