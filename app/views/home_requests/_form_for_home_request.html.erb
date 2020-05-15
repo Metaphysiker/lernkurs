@@ -84,9 +84,19 @@
       <h4>Angaben zur Dringlichkeit</h4>
       <hr />
       <%= f.input :killing_of_animal_intended %>
+
       <%= @home_request.killing_of_animal_intended %>
       <%= @home_request.killing_of_animal_intended == false %>
       <div class="hidden">
+        hidden is not working...
+      </div>
+      <div style="display:none;">
+        display none
+      </div>
+      <div style="<%= "display:none;" if @home_request.killing_of_animal_intended == false %>">
+        conditional display none
+      </div>
+      <div class="hidden2">
         hidden is not working...
       </div>
       <div class="killing_of_animal_scheduled_field <%= "hidden" if @home_request.killing_of_animal_intended == false %>">
