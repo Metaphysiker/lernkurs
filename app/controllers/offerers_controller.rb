@@ -10,6 +10,8 @@ class OfferersController < ApplicationController
   # GET /offerers/1
   # GET /offerers/1.json
   def show
+    response.headers["X-FRAME-OPTIONS"] = "ALLOWALL"
+    render
   end
 
   # GET /offerers/new
