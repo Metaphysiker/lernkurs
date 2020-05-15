@@ -1,0 +1,26 @@
+<% comparison = RequestOfferComparison.new.compare(home_request, home_offer) %>
+<%#= RequestOfferComparison.new.find_matches_for_offer(home_offer).count %>
+<table class="table table-bordered text-center">
+  <thead>
+    <tr>
+      <th scope="col">Attribut</th>
+      <th scope="col"><%= HomeOffer.model_name.human %></th>
+      <th scope="col"><%= HomeRequest.model_name.human %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% comparison[0].each do |c| %>
+    <tr class="<%= c[3] %>">
+      <td>
+        <%= c[0] %>
+      </td>
+      <td>
+        <%= c[2] %>
+      </td>
+      <td>
+        <%= c[1] %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
