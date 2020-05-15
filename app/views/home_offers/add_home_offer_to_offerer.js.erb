@@ -10,6 +10,8 @@ if (jQuery.isEmptyObject(errors)) {
 } else {
   console.log("Fehler vorhanden");
 
+  $(window).scrollTop( $(record_id).offset().top );
+
     content = $("<%= escape_javascript( render 'home_offers/form_for_offerer', home_offer: @home_offer, offerer: @home_offer.offerer ) %>");
 
     $(record_id).replaceWith(function(){
