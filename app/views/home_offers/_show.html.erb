@@ -73,7 +73,7 @@
   </div>
   <div class="card-footer text-muted">
     <%= home_offer.created_at.strftime("%d-%m-%Y") %>
-  <% if is_current_user_admin? %>
+  <% if is_current_user_admin? || is_current_user_stinah? %>
     <div class="text-center m-2">
       <hr />
       <%= render "home_offers/matches", home_offer: home_offer %>
