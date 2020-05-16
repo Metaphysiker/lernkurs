@@ -136,6 +136,10 @@ class HomeRequestsController < ApplicationController
     render
   end
 
+  def stinah_overview
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_home_request

@@ -23,6 +23,22 @@ RSpec.describe "comparisons", :type => :feature do
 
   end
 
+  it "visits stinah overview page and expects links" do
+    create_request
+
+    create_offer
+
+    visit(stinah_overview_path)
+
+    expect(page).to have_content("Sie müssen sich anmelden oder registrieren, bevor Sie fortfahren können.")
+
+    login_with(@stinah_user)
+
+    visit(stinah_overview_path)
+    expect(page).to have_content("Tier-Abgaben")
+    expect(page).to have_content("Platz-Angebote")
+  end
+
   it "creates an offer and a request and expects stinah_user to manage them" do
     create_request
 

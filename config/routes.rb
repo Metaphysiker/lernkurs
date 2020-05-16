@@ -69,6 +69,7 @@ Rails.application.routes.draw do
 
    post '/home_requests/add_home_request', to: "home_requests#add_home_request", as: 'add_home_request'
 
+   get '/home_requests/stinah_overview', to: "home_requests#stinah_overview", as: 'stinah_overview'
 
    get "/download_vermittlungsbedingungen", to: 'home_requests#download_vermittlungsbedingungen', as: 'download_vermittlungsbedingungen'
 
@@ -97,5 +98,6 @@ Rails.application.routes.draw do
    devise_for :users
 
    get '/static_pages/login', to: "static_pages#login", as: 'login'
+
 
 end
