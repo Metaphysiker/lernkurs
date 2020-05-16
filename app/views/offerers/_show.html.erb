@@ -12,6 +12,12 @@
     <%= render 'home_offers/form_for_offerer', home_offer: HomeOffer.new, offerer: offerer %>
   </div>
 
+  <% if offerer.home_offers.count > 0 %>
+  <hr />
+    <a class="btn btn-success btn-lg" href="https://stinah.naomisalome.com/index.php/formular-wurde-eingereicht/" role="button">Ich habe alle Tiere eingetragen - Formular einreichen</a>
+
+  <% end %>
+
   <% offerer.home_offers.each_with_index do |home_offer, i| %>
     <div class="card my-3">
       <div class="card-body text-justify">
