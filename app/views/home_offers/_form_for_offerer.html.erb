@@ -48,7 +48,7 @@
       <div class="stable_alt_field" style="<%= "display:none;" if home_offer.stable != 'Anderes'%>">
         <%= f.input :stable_alt %>
       </div>
-      <%= f.input :from_then_on, required: true %>
+      <%= f.input :from_then_on, start_year: Date.today.year, required: true %>
     </div>
     <hr />
     <div class="form-actions">
