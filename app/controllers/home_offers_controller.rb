@@ -145,7 +145,7 @@ class HomeOffersController < ApplicationController
     end
 
     def is_user_allowed?
-      if !is_current_user_admin?
+      unless is_current_user_admin? || is_current_user_stinah?
         #raise "not authorized"
         sign_out current_user
         flash[:notice] = "Sie sind nicht authorisiert!"

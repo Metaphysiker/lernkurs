@@ -9,8 +9,10 @@ RSpec.describe "comparisons", :type => :feature do
     #User.create!(:username => Faker::Internet.username, :email => Faker::Internet.email, :password => "secret")
     admin = User.create!(:email => Faker::Internet.email, :password => "secret", :role => "admin")
     #login_with(admin)
+    stinah_user = User.create!(:email => Faker::Internet.email, :password => "secret", :role => "stinah")
 
     @admin = admin
+    @stinah_user = stinah_user
   end
 
   it "creates an offer and a request" do
@@ -19,6 +21,87 @@ RSpec.describe "comparisons", :type => :feature do
 
     create_offer
 
+  end
+
+  it "creates an offer and a request and expects stinah_user to manage them" do
+    create_request
+
+    create_offer
+
+    login_with(@stinah_user)
+
+    species = I18n.t(Animal.species.sample, count: 1)
+    race = Faker::Artist.name
+    age = rand(0..50)
+    min_age = age - 2
+    max_age = age + 2
+    size = rand(100..300)
+    min_size = size - 2
+    max_size = size + 2
+    gender = I18n.t(Animal.genders[rand(2)], count: 1)
+    castrated = ["Ja","Nein"].sample
+    #find(:css, "#home_request_rideable").set(true)
+    date = Date.today + rand(1..700).days
+    date_from_then_on = date - rand(1..50).days
+
+    visit(home_requests_path)
+
+    find("a", :text => @home_request1_name).click
+
+    find("a", :text => "Eintrag bearbeiten").click
+
+    select_option("#home_request_date_of_killing_3i", date.day)
+    select_option("#home_request_date_of_killing_2i", I18n.t("date.month_names")[date.month])
+    select_option("#home_request_date_of_killing_1i", date.year)
+    select_option("#home_request_species", species)
+    fill_in "home_request_race", :with => race
+    fill_in "home_request_age", :with => age
+    fill_in "home_request_size", :with => size
+    select_option("#home_request_gender", gender)
+    select_option("#home_request_castrated", castrated)
+    #find(:css, "#home_request_rideable").set(true)
+
+    click_button "Tier-Abgabe aktualisieren"
+
+    visit(home_offers_path)
+
+    find("a", :text => @home_offer1_name).click
+
+    find("a", :text => "Eintrag bearbeiten").click
+
+    select_option("#home_offer_from_then_on_3i", date_from_then_on.day)
+    select_option("#home_offer_from_then_on_2i", I18n.t("date.month_names")[date_from_then_on.month])
+    select_option("#home_offer_from_then_on_1i", date_from_then_on.year)
+    select_option("#home_offer_species", species)
+    fill_in "home_offer_race", :with => race
+
+    #find(:css, "#home_offer_age").set(false)
+    fill_in "home_offer_min_age", :with => min_age
+    fill_in "home_offer_max_age", :with => max_age
+    #find(:css, "#home_offer_size").set(false)
+    fill_in "home_offer_min_size", :with => min_size
+    fill_in "home_offer_max_size", :with => max_size
+
+    select_option("#home_offer_gender", gender)
+    select_option("#home_offer_castrated", castrated)
+    #find(:css, "#home_request_rideable").set(true)
+
+    click_button "Platz-Angebot aktualisieren"
+
+    find("a", :text => "1 Matches gefunden").click
+
+    expect(page).to have_content(species)
+    expect(page).to have_content(race)
+    expect(page).to have_content(age)
+    expect(page).to have_content(min_age)
+    expect(page).to have_content(max_age)
+    expect(page).to have_content(size)
+    expect(page).to have_content(min_size)
+    expect(page).to have_content(max_size)
+    expect(page).to have_content(gender)
+    expect(page).to have_content(castrated)
+    expect(page).to have_content(I18n.l(date))
+    expect(page).to have_content(I18n.l(date_from_then_on))
   end
 
   it "creates an offer and a request, edits them and compares them" do

@@ -1,5 +1,9 @@
 class OfferersController < ApplicationController
   before_action :set_offerer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :new, :create, :process_to_create_home_offer, :add_offerer]
+  before_action :is_user_allowed?, except: [:show, :new, :create, :process_to_create_home_offer, :add_offerer]
+
+  include ApplicationHelper
 
   # GET /offerers
   # GET /offerers.json
@@ -89,6 +93,16 @@ class OfferersController < ApplicationController
   end
 
   private
+
+  def is_user_allowed?
+    unless is_current_user_admin? || is_current_user_stinah?
+      #raise "not authorized"
+      sign_out current_user
+      flash[:notice] = "Sie sind nicht authorisiert!"
+      redirect_to root_path
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_offerer
       @offerer = Offerer.find(params[:id])
