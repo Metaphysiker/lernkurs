@@ -1,3 +1,13 @@
+<div id="top-of-show-offerers">
+
+</div>
+
 <div class="container-fluid p-0 m-0">
   <%= render 'show', offerer: @offerer %>
 </div>
+
+<script>
+  $( document ).ready(function() {
+    $("#top-of-show-offerers")[0].scrollIntoView();
+  });
+  </script>

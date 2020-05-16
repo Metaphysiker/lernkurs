@@ -6,11 +6,6 @@ if (jQuery.isEmptyObject(errors)) {
 
   window.location.href = "<%= offerer_path(@offerer) unless @offerer.id.nil? %>";
 
-  content = $("<%= escape_javascript( render 'offerers/show', offerer: @offerer ) %>");
-  $(record_id).fadeOut("fast", function(){
-    $(record_id).empty().append(content).fadeIn("fast");
-  });
-
 } else {
   console.log("Fehler vorhanden");
 
