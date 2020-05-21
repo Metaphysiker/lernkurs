@@ -117,5 +117,23 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def preparer
+    #byebug
+    if params[:search_inputs].present?
+      @search_inputs = OpenStruct.new(params[:search_inputs])
+    else
+      @search_inputs = OpenStruct.new()
+    end
+
+    doc = Nokogiri::HTML(@search_inputs[:text])
+    doc.xpath('//@style').remove
+    body = doc.css('body')
+    body.children.wrap('<div style="font-size: large"></div>"')
+
+    @result =  doc.css('body').inner_html
+
+    #@result = @search_inputs[:text]
+  end
+
 
 end

@@ -99,5 +99,8 @@ Rails.application.routes.draw do
 
    get '/static_pages/login', to: "static_pages#login", as: 'login'
 
+   get '/static_pages/preparer', to: "static_pages#preparer", as: 'preparer'
+   post '/static_pages/preparer/', to: "static_pages#preparer"
+
 
 end
