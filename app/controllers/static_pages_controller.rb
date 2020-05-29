@@ -125,14 +125,23 @@ class StaticPagesController < ApplicationController
       @search_inputs = OpenStruct.new()
     end
 
+    raw_html = @search_inputs[:text] ? @search_inputs[:text] : ""
+    html = raw_html.encode('UTF-8', invalid: :replace, undef: :replace, replace: '', universal_newline: true).gsub(/\P{ASCII}/, '')
+    doc = Nokogiri::HTML(html, nil, Encoding::UTF_8.to_s)
     doc = Nokogiri::HTML(@search_inputs[:text])
     doc.xpath('//@style').remove
-    body = doc.css('body')
-    body.children.wrap('<div style="font-size: large"></div>"')
+    doc.xpath('//@script').remove
+    body = doc.css('body')    # Or xpath, or whatever method you choose
+    body_with_div = "<div class=\"text-justify\" style=\"font-size: large;\">#{body.inner_html}</div>"
+    @result = body_with_div
 
-    @result =  doc.css('body').inner_html
 
-    #@result = @search_inputs[:text]
+    #html = raw_html.encode('UTF-8', invalid: :replace, undef: :replace, replace: '', universal_newline: true).gsub(/\P{ASCII}/, '')
+    #parser = Nokogiri::HTML(html, nil, Encoding::UTF_8.to_s)
+    #parser.xpath('//@script')&.remove
+    #parser.xpath('//@style')&.remove
+    #parser.xpath('//@text()').map(&:text).join(' ').squish
+    #@result = parser.css('body').inner_html
   end
 
 
