@@ -27,8 +27,12 @@ class Animal < ApplicationRecord
   end
 
   def self.species
-    ['pig', 'donkey', 'cow', 'sheep', 'chicken', 'horse', "goat", "rabbit", "cavy", "camelid", "other"] #cat dog
+    ["horse", "donkey", "pig", "cow", "sheep", "goat", "other"] #cat dog
   end
+
+  #def self.speciesx
+  #  ['pig', 'donkey', 'cow', 'sheep', 'chicken', 'horse', "goat", "rabbit", "cavy", "camelid", "other"] #cat dog
+  #end
 
   def self.genders
     ['male', 'female', 'whatever']

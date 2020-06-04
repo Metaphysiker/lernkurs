@@ -139,7 +139,10 @@ class RequestOfferComparison
 
     #size
     size_match = "table-warning"
-    if home_request.size.between?(home_offer.min_size, home_offer.max_size)
+    if home_request.size.nil? || home_offer.min_size.nil? ||home_offer.max_size.nil?
+      size_match = "table-success"
+      matches += 1
+    elsif home_request.size.between?(home_offer.min_size, home_offer.max_size)
       size_match = "table-success"
       matches += 1
     else

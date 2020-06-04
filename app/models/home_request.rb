@@ -1,7 +1,7 @@
 class HomeRequest < ApplicationRecord
   validates :owner_firstname, :owner_lastname,
             :owner_street, :owner_plz, :owner_city, :owner_phone, :owner_email,
-            :species, :race, :age, :size, :color,
+            :species, :race, :age, :color,
             :gender, :castrated, :features, :stable_owner_firstname,
             :stable_owner_lastname, :stable_street, :stable_plz, :stable_city,
             :stable_phone, :how_was_animal_held, :how_was_animal_used,
@@ -11,10 +11,14 @@ class HomeRequest < ApplicationRecord
             :messenger_plz, :messenger_street, :messenger_city,
             :messenger_phone, :messenger_mail, presence: true,  if: ->(o) { o.are_you_owner == false }
 
+  #validates :size if animal is a horse
+  validates :size, presence: true, if: ->(o) { o.species == "horse" }
+  validates :size, numericality: true, if: ->(o) { o.species == "horse" }
+
   #validates :killing_of_animal_scheduled, presence: true, if: ->(o) { o.killing_of_animal_intended == true }
   validates :date_of_killing, presence: true, if: ->(o) { o.killing_of_animal_scheduled == true }
 
-  validates :age, :size, numericality: true
+  validates :age, numericality: true
 
   validates :owner_email, :messenger_mail, format: { with: URI::MailTo::EMAIL_REGEXP }, allow_blank: true
 
