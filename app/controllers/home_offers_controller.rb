@@ -121,7 +121,15 @@ class HomeOffersController < ApplicationController
   end
 
   def add_home_offer_to_offerer
-    @home_offer = HomeOffer.new(home_offer_params)
+  @home_offer = HomeOffer.new(home_offer_params)
+
+  stinah_offerer_id = cookies.encrypted[:stinah_offerer_id].to_i
+  stinah_offerer_last_date = cookies.encrypted[:stinah_offerer_last_date]
+
+  unless (stinah_offerer_id == @home_offer.offerer.id) && (Date.today < Date.parse(stinah_offerer_last_date) + 24.hours)
+    redirect_to process_to_create_home_offer_path
+  end
+
     respond_to do |format|
       if @home_offer.save
         flash[:notice] = "Tier wurde eingetragen!"

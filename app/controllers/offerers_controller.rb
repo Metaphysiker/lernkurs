@@ -50,6 +50,9 @@ class OfferersController < ApplicationController
         #format.html { render :process_to_create_home_offer }
       end
     end
+
+    cookies.encrypted[:stinah_offerer_last_date] = { value: Date.today.to_s, expires: 24.hours.from_now }
+    cookies.encrypted[:stinah_offerer_id] = { value: @offerer.id, expires: 24.hours.from_now }
   end
 
   # POST /offerers
