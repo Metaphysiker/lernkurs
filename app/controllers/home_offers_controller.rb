@@ -124,9 +124,9 @@ class HomeOffersController < ApplicationController
   @home_offer = HomeOffer.new(home_offer_params)
 
   stinah_offerer_id = cookies.encrypted[:stinah_offerer_id].to_i
-  stinah_offerer_last_date = cookies.encrypted[:stinah_offerer_last_date]
+  #stinah_offerer_last_date = cookies.encrypted[:stinah_offerer_last_date]
 
-  unless (stinah_offerer_id == @home_offer.offerer.id) && (Date.today < Date.parse(stinah_offerer_last_date) + 24.hours)
+  unless stinah_offerer_id == @home_offer.offerer.id
     redirect_to process_to_create_home_offer_path
   end
 
