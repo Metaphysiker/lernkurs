@@ -30,6 +30,8 @@ class OfferersController < ApplicationController
   end
 
   def process_to_create_home_offer
+    #cookies.signed.encrypted[:stinah_offerer_] = { value: "XJ-122", expires: 24.hour.from_now }
+
     @offerer = Offerer.new
     response.headers["X-FRAME-OPTIONS"] = "ALLOWALL"
     render
