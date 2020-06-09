@@ -17,6 +17,65 @@ RSpec.describe "comparisons", :type => :feature do
     end
   end
 
+  it "visits stinah overview page and expects links" do
+    create_request
+    create_offer
+    visit(stinah_overview_path)
+    expect(page).to have_content("Sie müssen sich anmelden oder registrieren, bevor Sie fortfahren können.")
+    login_with(@stinah_user)
+    visit(stinah_overview_path)
+    expect(page).to have_content("Tier-Abgaben")
+    expect(page).to have_content("Platz-Angebote")
+  end
+
+  it "visits stinah overview page and expects links" do
+    create_request
+    create_offer
+    visit(stinah_overview_path)
+    expect(page).to have_content("Sie müssen sich anmelden oder registrieren, bevor Sie fortfahren können.")
+    login_with(@stinah_user)
+    visit(stinah_overview_path)
+    expect(page).to have_content("Tier-Abgaben")
+    expect(page).to have_content("Platz-Angebote")
+  end
+
+  it "creates an offer and a request and expects matches" do
+
+    Animal.species.each do |species|
+      home_offer_firstname = Faker::Name.unique.first_name
+      home_offer_lastname = Faker::Name.unique.last_name
+      home_request_firstname = Faker::Name.unique.first_name
+      home_request_lastname = Faker::Name.unique.last_name
+      race = Faker::Artist.name
+      date = Date.today + rand(1..700).days
+      age = rand(0..50)
+      size = rand(100..300)
+      gender = I18n.t(Animal.genders[rand(2)], count: 1)
+      castrated = ["Ja","Nein"].sample
+
+      create_request(species_name: species, firstname: home_request_firstname, lastname: home_request_lastname,
+                      race: race, date: date, age: age, size: size, gender: gender, castrated: castrated)
+      create_offer(species_name: species, firstname: home_offer_firstname, lastname: home_offer_lastname,
+                    race: race, date: date - rand(1..100).days, min_age: age - rand(0..10), max_age: age + rand(0..10), gender: gender, castrated: castrated,
+                   min_size: size - rand(0..10), max_size: size + rand(0..10))
+
+      login_with(@stinah_user)
+      visit(home_offers_path)
+      find("a", :text => home_offer_firstname).click
+      expect(page).to have_content("1 Matches gefunden")
+      find("a", :text => "1 Matches gefunden").click
+
+
+      visit(home_requests_path)
+      find("a", :text => home_request_firstname).click
+      expect(page).to have_content("1 Matches gefunden")
+      find("a", :text => "1 Matches gefunden").click
+
+      logout
+
+    end
+  end
+
 end
 
 def create_request(species_name: Animal.species.sample,
@@ -25,13 +84,15 @@ def create_request(species_name: Animal.species.sample,
                   age: rand(0..50),
                   size: rand(100..300),
                   gender: I18n.t(Animal.genders[rand(2)], count: 1),
-                  castrated: ["Ja","Nein"].sample
+                  castrated: ["Ja","Nein"].sample,
+                  firstname: Faker::Name.unique.first_name,
+                  lastname: Faker::Name.unique.last_name
               )
 
   visit(public_new_home_request_path)
 
-  firstname = Faker::Name.unique.first_name
-  lastname = Faker::Name.unique.last_name
+  #firstname = Faker::Name.unique.first_name
+  #lastname = Faker::Name.unique.last_name
   street = Faker::Address.street_address
   city = Faker::Address.city
   plz = Faker::Address.zip_code
@@ -224,7 +285,9 @@ def create_offer(species_name: Animal.species.sample,
                   max_size: rand(10..50),
                   size: rand(100..300),
                   gender: I18n.t(Animal.genders[rand(3)], count: 1),
-                  castrated: ["Ja","Nein", "egal"].sample
+                  castrated: ["Ja","Nein", "egal"].sample,
+                  firstname: Faker::Name.unique.first_name,
+                  lastname: Faker::Name.unique.last_name
               )
 
   #visit(root_path)
@@ -236,8 +299,8 @@ def create_offer(species_name: Animal.species.sample,
   #sleep 5
   #save_screenshot("echo1.png")
 
-  firstname = Faker::Name.unique.first_name
-  lastname = Faker::Name.unique.last_name
+  #firstname = Faker::Name.unique.first_name
+  #lastname = Faker::Name.unique.last_name
   street = Faker::Address.street_address
   city = Faker::Address.city
   plz = Faker::Address.zip_code
