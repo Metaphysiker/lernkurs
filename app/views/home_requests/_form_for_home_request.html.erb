@@ -97,7 +97,9 @@
       <%= f.input :species, collection: Animal.species.map {|p| [t("#{p}", count: 1), p]}, required: true %>
       <%= f.input :race, placeholder: "Araber", required: true %>
       <%= f.input :age, placeholder: "4", required: true %>
-      <%= f.input :size, placeholder: "145", required: true  %>
+      <div class="size_field" style="<%= "display:none;" if false %>">
+          <%= f.input :size, placeholder: "145" %>
+      </div>
       <%= f.input :color, placeholder: "Braun", required: true %>
       <%= f.input :gender, collection: Animal.genders.reject{|a| a == "whatever"}.map {|p| [t("#{p}"), p]}, required: true %>
       <%= f.input :castrated, collection: Animal.castrated.reject{|a| a == "whatever"}.map {|p| [t("#{p}"), p]}, required: true %>
@@ -170,6 +172,15 @@
 
     $("#home_request_killing_of_animal_scheduled").change(function(){
       $(".date_of_killing_field").toggle();
+    });
+
+    $("#home_request_species").change(function(){
+      //console.log($(this).val());
+      if (($(this).val().toLowerCase() === "pig") || ($(this).val().toLowerCase() === "cow")) {
+        $(".size_field").hide();
+      } else {
+        $(".size_field").show();
+      }
     });
 
   });
