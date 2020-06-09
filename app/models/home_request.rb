@@ -14,6 +14,7 @@ class HomeRequest < ApplicationRecord
   #validates :size if animal is a horse
   validates :size, presence: true, if: ->(o) { o.species == "horse" }
   validates :size, numericality: true, if: ->(o) { o.species == "horse" }
+  validates :animal_alt, presence: true, if: ->(o) { o.species == "other" }
 
   #validates :killing_of_animal_scheduled, presence: true, if: ->(o) { o.killing_of_animal_intended == true }
   validates :date_of_killing, presence: true, if: ->(o) { o.killing_of_animal_scheduled == true }
@@ -72,6 +73,7 @@ class HomeRequest < ApplicationRecord
       messenger_phone,
       messenger_mail,
       I18n.t(species, count: 1),
+      animal_alt,
       race,
       color,
       features,

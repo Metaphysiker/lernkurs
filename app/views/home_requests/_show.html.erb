@@ -57,6 +57,8 @@
       <hr />
       <b><%= home_request.class.human_attribute_name("species") %></b>: <%= t(home_request.species, count: 1) %>
       <br />
+      <b><%= home_request.class.human_attribute_name("animal_alt") %> (Wenn "Anderes")</b>: <%= home_request.animal_alt %>
+      <br />
       <b><%= home_request.class.human_attribute_name("race") %></b>: <%= t(home_request.race) %>
       <br />
       <b><%= home_request.class.human_attribute_name("age") %></b>: <%= t(home_request.age) %>

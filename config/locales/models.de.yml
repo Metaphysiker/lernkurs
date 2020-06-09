@@ -111,6 +111,7 @@ de:
         killing_of_animal_scheduled: "Ist ein Euthanasie- oder Schlachttermin vereinbart?"
         date_of_killing: "Wann ist der Euthanasie- oder Schlachttermin?"
         species: "Tierart"
+        animal_alt: "Name der Tierart?"
         race: "Rasse"
         age: "Alter (in Jahren)"
         size: "Grösse (in Centimeter)"

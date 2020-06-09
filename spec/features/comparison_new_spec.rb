@@ -107,6 +107,8 @@ def create_request(species_name: Animal.species.sample,
   messenger_phone = Faker::PhoneNumber.cell_phone
   messenger_email = Faker::Internet.email
 
+  animal_alt = Faker::Artist.name
+
 
   fill_in "home_request_owner_firstname", :with => firstname
   fill_in "home_request_owner_lastname", :with => lastname
@@ -142,6 +144,10 @@ def create_request(species_name: Animal.species.sample,
   species = I18n.t(species_name, count: 1)
 
   select_option("#home_request_species", species)
+
+  if species_name == "other"
+    fill_in "home_request_animal_alt", :with => animal_alt
+  end
 
   #race = Faker::Artist.name
   fill_in "home_request_race", :with => race
@@ -234,6 +240,9 @@ def create_request(species_name: Animal.species.sample,
   expect(page).to have_content(I18n.l(date))
 
   expect(page).to have_content(species)
+  if species_name == "other"
+    expect(page).to have_content(animal_alt)
+  end
   expect(page).to have_content(race)
   expect(page).to have_content(features)
   expect(page).to have_content(age)

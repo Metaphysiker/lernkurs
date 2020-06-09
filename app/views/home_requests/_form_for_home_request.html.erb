@@ -95,6 +95,10 @@
       <h4>Angaben zum Abgabetier</h4>
       <hr />
       <%= f.input :species, collection: Animal.species.map {|p| [t("#{p}", count: 1), p]}, required: true %>
+
+      <div class="animal_alt_field" style="<%= 'display: none;' if home_request.species != 'other' %>">
+        <%= f.input :animal_alt %>
+      </div>
       <%= f.input :race, placeholder: "Araber", required: true %>
       <%= f.input :age, placeholder: "4", required: true %>
       <div class="size_field" style="<%= "display:none;" if false %>">
@@ -180,6 +184,15 @@
         $(".size_field").hide();
       } else {
         $(".size_field").show();
+      }
+    });
+
+    $("#home_request_species").change(function(){
+      //console.log($(this).val());
+      if ($(this).val().toLowerCase() === "other") {
+        $(".animal_alt_field").show();
+      } else {
+        $(".animal_alt_field").hide();
       }
     });
 
