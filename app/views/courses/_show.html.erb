@@ -30,14 +30,12 @@
       //get previous slide
         $.ajax({
           url: "/slide/" + course_id + "/" + current_slide + ".js",
-          method: 'GET',
-          async: true,
-          cache: false
+          method: 'GET'
         }).done(function(response) {
-          animateCss('.slide', 'fadeOutRight', function() {
-            $(".slide").empty().append(response);
-            animateCss('.slide', 'fadeInLeft');
-          })
+          $( ".slide" ).fadeOut( "slow", function() {
+            // Animation complete.
+            $(".slide").empty().append(response).fadeIn("slow");
+          });
       });
     }
 
@@ -48,14 +46,12 @@
       //get next slide
         $.ajax({
           url: "/slide/" + course_id + "/" + current_slide + ".js",
-          method: 'GET',
-          async: true,
-          cache: false
+          method: 'GET'
         }).done(function(response) {
-          animateCss('.slide', 'fadeOutLeft', function() {
-            $(".slide").empty().append(response);
-            animateCss('.slide', 'fadeInRight');
-          })
+          $( ".slide" ).fadeOut( "slow", function() {
+            // Animation complete.
+            $(".slide").empty().append(response).fadeIn("slow");
+          });
       });
     }
 

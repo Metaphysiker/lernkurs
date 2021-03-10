@@ -1,16 +1,19 @@
 console.log("animateCss loaded!");
 
-function animateCss(element, animationName, callback) {
-    //const node = document.querySelector(element)
-    var node = document.querySelector(element)
-    node.classList.add('animated', animationName)
+const animateCSS = (element, animation, prefix = 'animate__') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    const node = document.querySelector(element);
 
-    function handleAnimationEnd() {
-        node.classList.remove('animated', animationName)
-        node.removeEventListener('animationend', handleAnimationEnd)
+    node.classList.add(`${prefix}animated`, animationName);
 
-        if (typeof callback === 'function') callback()
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(`${prefix}animated`, animationName);
+      resolve('Animation ended');
     }
 
-    node.addEventListener('animationend', handleAnimationEnd)
-}
+    node.addEventListener('animationend', handleAnimationEnd, {once: true});
+  });
