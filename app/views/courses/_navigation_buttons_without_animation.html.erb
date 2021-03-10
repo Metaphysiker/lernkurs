@@ -2,13 +2,13 @@
   <% if current_slide <= 0 %>
     <button type="button" class="previous-next-button get-slide-button disabled mx-2" disabled>Zurück</button>
   <% else %>
-    <button type="button" id="get-previous-slide" class="previous-next-button get-slide-button mx-2" slide="<%= current_slide - 1 %>">Zurück</button>
+  <%= link_to 'Zurück', course_path(course, slide: current_slide - 1), id: "get-previous-slide", class: "btn btn-dark get-slide-button mx-2" %>
   <% end %>
   <%= current_slide + 1 %> / <%= course.slides.count %>
   <% if current_slide == course.slides.count-1 %>
     <%= link_to 'Weiter', root_path, id: "get-next-slide", class: "btn btn-dark get-slide-button mx-2" %>
   <% else %>
-    <button type="button" id="get-next-slide" class="previous-next-button get-slide-button mx-2" slide="<%= current_slide + 1 %>">Weiter</button>
+    <%= link_to 'Weiter', course_path(course, slide: current_slide + 1), id: "get-next-slide", class: "btn btn-dark get-slide-button mx-2" %>
   <% end %>
   |
   <button type="button" class="ml-1 btn btn-info" data-toggle="modal" data-target="#statusModal">

@@ -12,15 +12,16 @@ gem "aws-sdk-s3", require: false
 
 gem "fuzzy-string-match"
 
-gem "rack", ">= 2.0.8"
-
+#gem "rack", ">= 2.0.8"
+gem 'rack',  '~> 2.1'
 gem 'devise-i18n'
 
 gem 'devise'
 #gem 'compass-rails'
 gem "font-awesome-rails"
 #gem 'bootstrap', '~> 4.2.1'
-gem "bootstrap", ">= 4.3.1"
+#gem "bootstrap", ">= 4.3.1"
+gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'rails-i18n', '~> 5.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -34,7 +35,8 @@ gem 'sitemap_generator'
 gem 'simple_form'
 gem 'cookies_eu'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
+# original gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 6.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
