@@ -2,11 +2,12 @@ console.log("ajax loaded!");
 
 function setCurrentSlide(course_id, number_of_slide){
   console.log("setCurrentSlide: " + course_id + " " + number_of_slide);
+  //console.log($('meta[name="csrf-token"]').attr('content'));
   $.ajax({
     url: "/set_current_slide",
     method: 'POST',
     data: { course_id: course_id, number_of_slide: number_of_slide},
-    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') }
+    headers: { 'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content }
   });
 }
 

@@ -77,7 +77,7 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  skip_before_action :verify_authenticity_token
 
   def render_slidex
     @course = Course.find(params[:id])

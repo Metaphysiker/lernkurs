@@ -34,7 +34,6 @@
           async: true,
           cache: false
         }).done(function(response) {
-          console.log(response);
           animateCss('.slide', 'fadeOutRight', function() {
             $(".slide").empty().append(response);
             animateCss('.slide', 'fadeInLeft');
