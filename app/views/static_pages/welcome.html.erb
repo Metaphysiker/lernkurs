@@ -4,27 +4,39 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <% unless @account.current_course_id.blank? %>
-          <h1 class="jumbotron-heading">Willkommen<%= " #{@account.firstname}" if !@account.firstname.blank?%>!</h1>
-          <p class="lead text-muted">
-            Dein Punktestand: <b><%= @account.total_score %></b>
-          </p>
-          <div align="center">
-            <%= link_to course_path(@account.current_course_id) do %>
-              <button class="pulse-button rounded text-white">Kurs fortsetzen</button>
-            <% end %>
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <% unless @account.current_course_id.blank? %>
+              <h1 class="jumbotron-heading">Willkommen<%= " #{@account.firstname}" if !@account.firstname.blank?%>!</h1>
+              <p class="lead text-muted">
+                Dein Punktestand: <b><%= @account.total_score %></b>
+              </p>
+              <div align="center">
+                <%= link_to course_path(@account.current_course_id) do %>
+                  <button class="pulse-button rounded text-white">Kurs fortsetzen</button>
+                <% end %>
+              </div>
+              <% else %>
+              <h1 class="jumbotron-heading">Was ist Ethik?</h1>
+              <p class="lead text-muted">
+                Finde es heraus in diesem interaktiven Lernkurs!
+              </p>
+              <div align="center">
+                <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
+                  <button class="pulse-button rounded text-white">Mit Kurs anfangen!</button>
+                <% end %>
+              </div>
+              <% end %>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="border rounded p-3">
+                <h2 class="jumbotron-heading">Neue Kurse sind auf dem Weg!</h2>
+
+              </div>
+            </div>
+
           </div>
-          <% else %>
-          <h1 class="jumbotron-heading">Was ist Ethik?</h1>
-          <p class="lead text-muted">
-            Finde es heraus in diesem interaktiven Lernkurs!
-          </p>
-          <div align="center">
-            <%= link_to course_path(Course.find_by_title("Einführung in die Ethik")) do %>
-              <button class="pulse-button rounded text-white">Mit Kurs anfangen!</button>
-            <% end %>
-          </div>
-          <% end %>
+
         </div>
       </section>
       <%= render "courses/courses_in_groups_of_2", courses: @courses %>
