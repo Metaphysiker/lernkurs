@@ -13,7 +13,7 @@ gem "aws-sdk-s3", require: false
 gem "fuzzy-string-match"
 
 #gem "rack", ">= 2.0.8"
-gem 'rack',  '~> 2.1'
+gem 'rack',  '~> 2.2'
 gem 'devise-i18n'
 
 gem 'devise'
